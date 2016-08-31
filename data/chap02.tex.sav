@@ -1,0 +1,1028 @@
+\chapter{相关技术研究}
+\label{chap:chapter02}
+上一章详细描述了课题的研究背景，并深入分析了相关工作和研究现状，最后给出了课题主要研究的四部分内容。本章将详细分析与课题研究内容相关的一些关键技术，包括轨迹数据预处理技术、时间序列相似度度量方法及序列熵值和自然语言处理模型。
+\section{轨迹数据预处理}
+\label{sec:section2-1}
+轨迹数据存在大量噪声，对轨迹数据的来源进行分析，我们可以将其视为数字信号，而滤波是对数字信号降噪非常实用的方法。对于采集的轨迹数据，我们需要通过一些处理得到这些数据对应的语义位置，通常使用各种聚类算法来达到这一目的。因此本节将首先介绍各种常用滤波算法，然后介绍各种常用聚类算法。
+\subsection{滤波算法}
+\label{sec:section2-1-1}
+滤波是将信号中特定波段频率滤除的操作，是抑制和防止干扰的一项重要措施。因为人类移动是连续的，所以GPS 采样结果也应该是连续的，但因为采样过程中存在误差，从而使得采样结果有可能发生跳变，因此我们需要通过滤波算法估算出跳变点的实际值。下面我们主要介绍均值滤波，中值滤波和卡尔曼滤波这三种滤波方法。
+\par 均值滤波：均值滤波也称为线性滤波，通常采用领域平均法，即考虑以当前采样点为中心，前$k$个采样点和后$k$个采样点的平均值作为当前采样点对应的值，计算公式见公式\ref{equ:chap2:meanFilter}。
+\begin{equation}
+\label{equ:chap2:meanFilter}
+g(i)=\frac{1}{2k} \ast \sum_{j=i-k,j\neq i}^{i+k}g(j)
+\end{equation}
+\par 中值滤波：中值滤波是一种非线性平滑技术，将当前采样点某邻域窗口内所有采样点的中值作为当前采样点对应的值，计算公式见公式\ref{equ:chap2:medianFilter}。其中$median(A)$表示计算序列A的中值。
+\begin{equation}
+\label{equ:chap2:medianFilter}
+g(i)=median({g(i-k),...,g(i-1),g(i+1),...,g(i+k)})
+\end{equation}
+\par 卡尔曼滤波：卡尔曼滤波是卡尔曼于1960年提出的\upcite{kalman1960new}，简单来说，卡尔曼滤波是一个最优化自回归数据处理算法。下文将简要介绍卡尔曼滤波器算法的原理。
+\par 首先，我们需要引入一个离散控制过程系统。该系统可以使用一个线性随机微分方程来描述，见公式\ref{equ:chap2:kalman-01}。 再加上系统的测量值，见公式\ref{equ:chap2:kalman-02}。$X(k)$是$k$时刻的系统状态，$U(k)$ 是$k$时刻对系统的控制量。$A$和$B$ 是系统参数，用于多模型系统，实际是矩阵。$Z(k)$是$k$ 时刻的测量值，$H$是测量系统的参数，对于多测量系统，$H$ 为矩阵。$W(k)$ 和$V(k)$ 分别表示过程和测量噪声。通常被假设成高斯白噪声，协方差分别是$Q$和$R$，假设噪声协方差不随系统状态变化而变化。
+\begin{equation}
+\label{equ:chap2:kalman-01}
+X(k)=A \ast X(k-1)+B \ast U(k)+W(k)
+\end{equation}
+\begin{equation}
+\label{equ:chap2:kalman-02}
+Z(k)=H \ast X(k)+V(k)
+\end{equation}
+\par 对于满足上述条件（线性随机微分系统，过程和测量都是高斯白噪声），卡尔曼滤波器是最优的信息处理器。下文给出如何估算系统的最优化输出。
+\par 首先利用系统的过程模型，来预测下一状态的系统。假设现在的系统状态为$k$，根据系统的模型，可以基于系统的上一状态而预测出现在的状态，见公式\ref{equ:chap2:kalman-03}。 其中$X(k|k-1)$是利用上一状态预测的结果，$X(k-1|k-1)$ 是上一状态最优的结果，$U(k)$ 为现在状态的控制量，如果没有控制量，它可以为0。
+\begin{equation}
+\label{equ:chap2:kalman-03}
+X(k|k-1)=A \ast X(k-1|k-1)+B \ast U(k)
+\end{equation}
+\par 系统结果已经更新了，下一步更新$X(k|k-1)$对应协方差（用$P$来表示），更新见公式\ref{equ:chap2:kalman-04}。其中$P(k|k-1)$是$X(k|k-1)$ 对应的协方差，$P(k-1|k-1)$是$X(k-1|k-1)$对应的协方差。$A^{'}$ 表示$A$ 的转置矩阵，$Q$ 是系统过程的协方差。
+\begin{equation}
+\label{equ:chap2:kalman-04}
+P(k|k-1)=A \ast P(k-1|k-1) \ast A^{'}+Q
+\end{equation}
+在现在状态的预测结果的基础上，收集现在状态的测量值。结合预测值和测量值，我们可以得到现在状态$k$ 的最优化估算值$X(k|k)$，见公式\ref{equ:chap2:kalman-05}。 其中$Kg(k)$为状态$k$的卡尔曼增益，见公式\ref{equ:chap2:kalman-06}。
+\begin{equation}
+\label{equ:chap2:kalman-05}
+X(k|k)=X(k|k-1)+Kg(k)(Z(k)-H \ast X(k|k-1))
+\end{equation}
+\begin{equation}
+\label{equ:chap2:kalman-06}
+Kg(k)=P(k|k-1) \ast H^{'}/(H \ast P(k|k-1) \ast H^{'}+R)
+\end{equation}
+\par 得到$k$状态下最优的估算值$X(k|k)$后，需要更新$k$状态下$X(k|k)$对应的协方差，见公式\ref{equ:chap2:kalman-07}。 其中$I$为1的矩阵，对于单模型单测量，$I=1$，按照上文所述的全部公式我们可以通过迭代的方法计算得到最优的估算值。
+\begin{equation}
+\label{equ:chap2:kalman-07}
+P(k|k)=(I-Kg(k) \ast H)P(k|k-1)
+\end{equation}
+\par 对于均值滤波，中值滤波以及卡尔曼滤波三种滤波算法而言，均值滤波比较容易受跳变的影响，中值滤波比均值滤波更鲁棒，卡尔曼滤波效果会更好一些，但是模型也更复杂，运算复杂度相较前两种滤波算法来说也会大一些。
+\subsection{聚类算法}
+聚类算法是无监督学习中非常重要的方法之一。文献\cite{pang2006introduction} 聚类分析仅根据在数据中发现的描述对象及其关系的信息，将数据对象分组。其目标是，组内的对象相互之间是相似的（相关的），而不同组中的对象时不同的（不相关的）。组内相似性越大，组间差别越大，聚类就越好。聚类算法主要分为以下几种，划分的聚类算法，如K均值算法；层次聚类算法；基于密度的聚类算法，如DBSCAN；基于原型的聚类算法，如模糊聚类；基于网格的聚类算法以及基于图的聚类算法。本节我们主要介绍K-MEANS聚类算法，DJ-Cluster聚类算法以及14 年发表在Science上的聚类算法。
+\par K-means是由J.MacQUEEN在1967提出的一种非常简单、高效的聚类算法\upcite{macqueen1967some}。其算法基本思想是：随机初始化K个点，作为K个类别的中心，计算每个点到每个类别中心的距离，将该点划分到距离最近的类别中，对每个类别，将属于该类别的所有点的平均值作为该类别新的聚类中心，不断执行该步骤直到每个类别的聚类中心收敛。其原理示意图见图\ref{fig:2_1}。 该算法优点为思想简单，易于实现，且算法复杂度低，故而对于处理大数据集，该算法是相对可伸缩和高效率的；若待分类的簇是密集的、球状或团装的，而簇与簇之间有明显区别，则能得到非常好的聚类效果。该算法缺点是用户必须事先知道类别的个数；而且该算法对初始值敏感，对于不同的初始值，可能产生不同的聚类结果；不能适用于簇是非凸面形状或者大小差别很大的情况；最后该算法对噪声和孤立点数据敏感，这些数据容易对聚类中心产生极大的影响，从而影响聚类的结果。
+\begin{figure}[htp]
+\centering
+\includegraphics{figure2_1}
+\caption{K-MEANS算法原理示意图}
+\label{fig:2_1}
+\end{figure}
+\par DJ-Cluster是Zhou C在2007年提出的一种基于DBSCAN的聚类算法\upcite{zhou2007discovering}。DJ-Cluster算法的基本思想是计算每个点的密度，若密度值小于某给定值$MinPts$，且其所有邻居密度都小于给定值，则该点为异常点；否则，若该点所有邻居都不属于一个存在类别，则新建一个类别；否则与邻居中存在的类别合并。算法原理示意见图\ref{fig:2_2}。密度的定义见公式\ref{equ:chap2:dj-cluster}。 点$p$ 的密度是$N(p)$中元素的个数，$N(p)$是点$p$ 所有邻居组成的集合。$dist(p,q)$指$p$ 和$q$ 之间的欧氏距离。该算法聚类效果依赖$Eps$和$MinPts$两个常量的设置，且对这两个参数比较敏感。
+\begin{equation}
+\label{equ:chap2:dj-cluster}
+N(p)=\{q \in S|dist(p,q) \leq Eps\}
+\end{equation}
+\begin{figure}[htp]
+\centering
+\includegraphics[width=6in]{figure2_2}
+\caption{DJ-cluster聚类算法原理示意\upcite{zhou2007discovering}}
+\label{fig:2_2}
+\end{figure}
+\par Rodriguez A等人2014年在Science上发表了一种新的基于密度的聚类算法\upcite{rodriguez2014clustering}。该算法不需要类别个数的先验知识，对参数也不敏感。该算法的基本思想是：计算每个点的密度（定义见公式\ref{equ:chap2:dj-cluster}）；计算每个点的距离，定义为该点与密度大于该点的所有点中距离最近的点之间的距离，若该点密度最大，则距离为所有点中与该点距离最远的点之间的距离；按距离对所有点排序，取前面若干个点作为聚类中心（若相邻两个点值差别非常大则以较大点作为聚类中心最后一个点）；每个点的类别与密度大于自己且距离最近的点的类别一致。算法原理示意见图\ref{fig:2_3}和图\ref{fig:2_4}。
+\begin{figure}[htp]
+\centering
+\includegraphics[width=4in]{figure2_3}
+\caption{按密度排序\upcite{rodriguez2014clustering}}
+\label{fig:2_3}
+\end{figure}
+\begin{figure}[htp]
+\centering
+\includegraphics[width=4in]{figure2_4}
+\caption{按距离排序，1、10为聚类中心\upcite{rodriguez2014clustering}}
+\label{fig:2_4}
+\end{figure}
+\par 总的来说，上述三种聚类算法在很精心调整参数的情况下都能取得非常好的聚类结果。不同的算法拥有不同的优缺点，在第三 章我们会通过实验来展示各种算法在不同参数下的聚类结果。
+\section{时间序列相似度度量方法及序列熵值}
+\label{sec:section2-2}
+空间距离能够直观反映用户在物理世界的距离。根据社会心理学的研究成果，文献\upcite{festinger1977leon} 在一个大型住宅区研究了接近性效应（接近性效应指两个人住的越近越可能是朋友），结果表明人们居住得越近，不管这种近是物理距离还是功能性距离，人们越容易称为朋友。文献\upcite{zajonc1968attitudinal}用实验证实了单纯接触效应，即熟悉性能够促进好感，实验结果表明接触频率越高喜欢程度越大。而空间距离非常接近的用户在现实生活中会有更多的面对面的交互，从而增强两个人之间的关系强度。通过日常生活体验我们也很容易发现，如果两个人在晚上等休息时间经常一起出去，则其关系可能更亲密，因而他们之间的轨迹越可能相似。因此，我们可以使用熵值来度量用户每天活动的多样性，若某天活动越多样，则该天轨迹的相似度对总体轨迹的相似度贡献越大，进而对用户之间的关系强度贡献越大。
+\par 用户的轨迹序列由带有时间戳的位置数据构成，位置数据可能是GPS 也可能是基站号。因此我们可以将轨迹序列看作时间序列，从而使用一些时间序列相似度度量模型来度量轨迹的相似度，下面依次介绍编辑距离和DTW这两种相似度度量方法以及序列熵值的计算方法。
+\subsection{编辑距离}
+编辑距离是Levenshtein于1965年提出的一种度量两个字符串之间距离大小的方法\upcite{levenshtein1966binary}，又称为Levenshtein距离。其定义为一个字符串通过插入，删除，改变这三种操作转变为另一个字符串所需要的最少的操作的步数。插入操作是指在某个位置添加一个字符；删除操作是指删除某位置的字符；改变操作是指把某个字符变成另外一个字符。
+\par 若直接计算编辑距离会发现其时间复杂度为指数级别从而使得实际不可计算。通过深入分析发现该问题存在重叠子问题和最优子结构，因此可以用动态规划的思想把算法复杂度降低到多项式级别。其递推公式见公式\ref{equ:chap2:edit_distance}，其中$s1$,$s2$ 表示两个字符串，$M[i,j]$表示字符串$s1[0:i]$ 和字符串$s2[0:j]$ 之间的编辑距离。$E[i,j]$指$s1[i]$ 和$s2[j]$ 之间的距离，若两个字符相同，则距离为0，否则距离为1。
+\begin{equation}
+\label{equ:chap2:edit_distance}
+M[i,j] = min(M[i–1,j],M[i,j–1],M[i–1,j–1] + E[i,j])
+\end{equation}
+\par 编辑距离的计算对象是字符串，因此，经过一些学者的研究，将其扩展到实数域\upcite{chen2005robust}，称为EDR（Edit Distance on Real sequence），并对每个操作附加权重\upcite{chen2004marriage}，称为ERP（Edit distance with Real Penalty）。在实数域中，若两个实数非常接近，则认为这两个数相等，否则认为不相等。ERP对两个相等的数用这两个数的差作为实数惩罚值，否则用其中一个数与一个常量的差做为实数惩罚值。其计算过程与原始编辑距离计算过程类似。
+\subsection{Dynamic Time Warping}
+DTW(Dynamic Time Warping)是Itakura于1987年提出的距离度量方法\upcite{itakura1987distance}，主要用于识别两个读音是否表示同一个单词，Berndt\upcite{berndt1994using}使用DTW方法来度量时间序列的相似度，从而发现时间序列中的模式。
+\par 假设有两个时间序列，序列$Q$长度为$n$ （见公式\ref{equ:chap2:dtw_01}），序列$C$ 长度为$m$ （见公式\ref{equ:chap2:dtw_02}）。为了计算两个序列之间的DTW 距离，需要构造一个$n \ast m$矩阵$d$，其中$d[i,j]$ 表示序列$Q$ 第$i$个元素$q_{i}$ 和序列$C$第$j$ 个元素$c_{j}$之间的距离，通常使用欧氏距离作为两个元素之间的距离度量。构造$n \ast m$ 矩阵$\gamma$。为了寻找这两个序列之间的最佳匹配，需要寻找一条路径使得累积距离$\gamma[i,j]$最小化，可以通过使用动态规划的方法来找到这条路径，$\gamma[n,m]$ 为最终的DTW距离，其递推公式见公式\ref{equ:chap2:dtw_03}。$d[i,j]$指$q_{i}$ 和$c_{j}$ 之间的欧式距离。$\gamma[i,j]$是指当前的累积距离，路径及矩阵可视化见图\ref{fig:2_5}。其中：A)两个异相的相似序列Q 和C；B)为了匹配这两个序列，构造了一个变形矩阵，并搜索最佳的变形路径即红色所示路径，且将搜索局限到一个窗口中；C) 匹配结果
+\begin{equation}
+\label{equ:chap2:dtw_01}
+Q=q_{1},q_{2},…,q_{i},…,q_{n}
+\end{equation}
+\begin{equation}
+\label{equ:chap2:dtw_02}
+C=c_{1},c_{2},…,c_{j},…,c_{m}
+\end{equation}
+\begin{equation}
+\label{equ:chap2:dtw_03}
+\gamma[i,j]=d[i,j]+min\{\gamma[i-1,j-1],\gamma[i-1,j],\gamma[i,j-1]\}
+\end{equation}
+\begin{figure}[htp]
+\centering
+\includegraphics[width=4in]{figure2_5}
+\caption{引自文献\cite{ratanamahatana2004everything}DTW原理示意图。}
+\label{fig:2_5}
+\end{figure}
+\par 通过深入分析DTW算法可知，序列的长度越长，则距离可能越大。因此，我们采用文献\cite{ratanamahatana2004everything}中的三种归一化方法对DTW的计算结果进行进一步的处理和优化，即DTW 结果除以最优变形路径的长度、DTW 结果除以两个序列中较短序列的长度以及DTW结果除以两个序列中较长序列的长度等三种方法对DTW 计算结果进行归一化，以便获得最优结果。
+\subsection{序列熵值}
+通过对用户每天产生的轨迹序列的分析，我们可以将其看作一个由一系列随机变量$X_{n}$构成的随机过程序列$X=\{X_{1},X_{2},…,X_{n}\}$，$X_{n}$表示用户在时刻$n$ 所在的物理位置。熵通常用来度量一个系统的无序程度，熵越大表示该系统越混乱。若用户每天活动单一，则熵值会很小，若活动多样，则熵值会越大。因此，我们可以用熵值来度量用户每天活动的多样性程度，香农熵的定义见公式如公式\ref{equ:chap2:se_01}，其中$P(x_{i})$是$x_{i}=X_{i}$的概率。
+\begin{equation}
+\label{equ:chap2:se_01}
+H=-\sum_{i}p(x_{i})log_{2}p(x_{i})
+\end{equation}
+\par 对于一个长度为n的随机变量序列，我们需要考虑该序列的熵值如何随n增长，这个增长率称为熵率，熵率定义见公式\ref{equ:chap2:se_02}。 同时，熵率存在一个相关的量，定义见公式\ref{equ:chap2:se_03}。 对于平稳随机过程，这两种定义的极限均存在且相等\upcite{cover2012elements}。
+\begin{equation}
+\label{equ:chap2:se_02}
+H(\aleph)=lim_{n \rightarrow \infty} \frac{1}{n}H(X_{1},X_{2}...,X_{n})
+\end{equation}
+\begin{equation}
+\label{equ:chap2:se_03}
+H^{'}(\aleph)=lim_{n \rightarrow \infty} H(X_{n}|X_{n-1},X_{n-2}...,X_{1})
+\end{equation}
+\par 由于条件熵值（公式\ref{equ:chap2:se_03}）难以直接计算，因此我们使用估量值来计算熵率，常用的估量值主要包括LZ (Lempel-Ziv)估量值\upcite{kontoyiannis1998nonparametric}以及实时LZ估量值\upcite{mcinerney2013breaking} 等。LZ估量值的定义见公式\ref{equ:chap2:se_04}，其中$\gamma_i$定义为从位置$i$ 开始，不在序列$(X_{1},X_{2},…,X_{i-1})$中出现的最短的子序列的长度。实时LZ 估量值的定义见公式\ref{equ:chap2:se_05} 和公式\ref{equ:chap2:se_06}，其中$\delta_i$定义为以位置$i$结尾，不在序列$(X_{1},X_{2},…,X_{i-\delta_i})$ 中出现的最短的子序列的长度。这两种度量实际上是等价的，在本文中我们使用实时LZ 估量值，该估量值只利用当前已知的信息。
+\begin{equation}
+\label{equ:chap2:se_04}
+\hat{H}_{N}=(\frac{1}{N-1}\sum_{i=2}^{N}\frac{\gamma_i}{log_{2}(i)})^{-1}
+\end{equation}
+\begin{equation}
+\label{equ:chap2:se_05}
+\tilde{H}_{i}=\frac{log_{2}(i)}{\delta_i}
+\end{equation}
+\begin{equation}
+\label{equ:chap2:se_06}
+\hat{H}_{N}=\frac{N}{\sum_{i=2}^{n}\tilde{H}_{i}^{-1}}
+\end{equation}
+\par 计算轨迹序列的熵值的目的是为了对DTW计算结果进行加权，因为用户每天的轨迹序列的相似度对其总体相似度的贡献是不一样的，如果某一天用户的轨迹序列的熵值越大，则这一天对总的相似度贡献越大，因此，使用用户当天轨迹序列熵值对用户与朋友之间每天的轨迹相似度进行加权，能够更真实地反应用户之间的关系强度（如何使用轨迹序列熵值对DTW 的计算结果进行加权详见第四章第三小节）。
+\par 编辑距离和DTW都是非常常用的两种时间序列相似度度量方法，在第五章我们将通过实验展示这两种方法以及用序列熵值加权后的两种方法用来度量用户关系强度的效果
+\section{自然语言处理模型}
+\label{sec:section2-3}
+在日常生活当中，用户之间尤其是好友之间其行为模式之间具有一定的相似性，如经常去某些地方、经常在某些时间段（晚上）去一些地方（餐馆、酒吧）等等。基于位置的用户行为模式一方面能够反映用户在物理层次的相遇，另一方面能够在一定程度上体现用户的相似性，前文已经从社会心理学的角度阐述了相遇次数与用户关系强度的关系，Singelis\upcite{singelis1994measurement}认为人们倾向于喜欢在态度、兴趣、价值观、背景和人格上和其相似的人，因此，在日常生活当中行为相似的人之间更可能成为朋友，而根据社会心理学的研究成果，用户的相似性对用户的关系强度也有一定的影响，为此，我们在通过基于用户轨迹度量用户之间关系强度的基础上，进一步通过基于位置的用户日常行为来对度量用户之间的关系强度。
+\par 我们通过将位置序列和自然语言中的句子进行类比，就能够发现，自然语言处理中的这些方法可以很自然的用来处理位置轨迹数据。位置序列是用户轨迹语义层次的一种表示，例如一个学生一天的位置轨迹可以表示为宿舍、实验室、食堂、宿舍，实验室、食堂、宿舍。通过深入分析，我们认为自然语言中的每个句子受两方面的约束，即主观约束和客观约束。客观约束指句子的构造受到对应语言语法的约束；主观约束指在句子的构造过程中，部分词的使用和构造者的个人喜好相关。再来分析一下位置序列，位置序列的构成也受主观和客观这两方面的约束，客观约束指用户自身的社会角色限制了用户每天可能的位置序列；主观约束指用户在客观约束下，对于一些位置具有选择性，如用户可以自己决定去什么地方吃饭等。
+\par 文献\cite{farrahi2008did}最先使用LDA主题模型发现用户的行为模式，在使用LDA 模型发现用户基于位置的行为模式基础上，我们进一步使用LDA 主题模型来度量用户之间的关系强度，其核心思想如下：我们把每个用户每天参观过的位置（物理位置或语义位置）序列视为一个句子，每个用户所有天的位置序列视为一篇文档，对所有用户所有天的位置序列使用LDA主题模型训练得到若干个主题。在计算两个用户之间的关系强度时，将这两个用户同一天的数据按固定长度的时间片划分，对于每个时间片内用户参观过的位置，用训练好的LDA主题模型推断这些位置对应的主题分布，以同一时间片内，两个用户分别参观过的位置对应的主题分布的余弦相似度，作为这两个用户之间的关系强度（详细的计算过程见第四章第三节）。
+\par word2vec模型主要通过考虑当前词语的上下文环境来得到当前词语对应的实数值向量表示。而对应向量的相似度从一定程度上反映了两个词语义的相似度。因此我们计算出每个语义位置对应的实数值向量后，希望对应向量的相似度能够从一定程度上反应两个语义位置功能的相似性。
+\subsection{Latent Dirichlet Allocation}
+LDA(Latent Dirichlet Allocation)\upcite{blei2003latent}是Blei等人2003 年提出的一个针对离散数据集合的产生式概率模型。LDA是一个三层的层级贝叶斯模型（其结构如图\ref{fig:2_6} 所示）， LDA模型作为一个文本模型，每个文档由多个主题的概率分布来表示，每个主题由多个单词的分布来表示，图\ref{fig:2_6}中每个方框表示执行，外框表示文档，内框表示文档内主题和单词的重复选取。假设有$K$ 个主题，$W$个不同单词，一个给定词$\omega_{t}$的概率见公式\ref{equ:chap2:lda_01}，其中$z_{t}$ 表示产生第$t$个词的主题对应的隐变量。
+\begin{equation}
+\label{equ:chap2:lda_01}
+p(\omega_{t})=\sum_{k=1}^{K}p(\omega_t|z_{t}=k)p(z_{t}=k)
+\end{equation}
+\begin{figure}[htp]
+\centering
+\includegraphics[width=4in]{figure2_6}
+\caption{LDA的图模型表示\upcite{blei2003latent}}
+\label{fig:2_6}
+\end{figure}
+\par LDA推断的目的是计算每个主题的词分布$P(w|z=k)=\varphi_{w}^{(k)}$和每个文档的主题分布$P(z=k)=\theta_{k}^{(d)}$。在LDA 中，$P(\theta)$服从$Dirichlet(\alpha)$分布，$p(\varphi)$服从$Dirichlet(\beta)$ 分布，其中$\alpha$ 和$\beta$是超参数。LDA模型的估计问题等同于求公式\ref{equ:chap2:lda_02}的最优值问题，但其计算非常复杂，故我们使用MCMC(Markov Chain Monte Carlo)方法求得近似解，其采样公式见公式\ref{equ:chap2:lda_03}，其中$n_{k}^{(\omega)}$和$n_{k}^{(d)}$是单词$\omega$和文档$d$ 分配给主题$k$ 的次数。
+\begin{equation}
+\label{equ:chap2:lda_02}
+p(\omega|\varphi,\alpha)=\int p(\omega|\varphi,\theta)p(\theta|\alpha)d\theta
+\end{equation}
+\begin{equation}
+\label{equ:chap2:lda_03}
+\varphi_{k}^{(\omega)}=\frac{n_{k}^{(\omega)}+\beta}{n_{k}^{(.)}+W\beta},\theta_{k}^{(d)}=\frac{n_{k}^{(d)} + \alpha}{n_{.}^{(k)}+K\alpha}
+\end{equation}
+\subsection{word2vec}
+随着深度学习的提出，概率语言模型也有了新的发展。当前已经有很多深度学习框架的自然语言处理模型，word2vec\upcite{mikolovword2vec} 是应用最广泛的一种。word2vec 共有四种模型，主要介绍第一种使用Hierarchical Softmax 的CBOW （Continuous Bag-of-Words Model）模型。该模型主要思想是依据已知当前词$w_{t}$ 的上下文$w_{t-2}$，$w_{t-1}$，$w_{t+1}$，$w_{t+2}$的前提下预测当前词$w_{t}$。 该模型包括输入层，投影层和输出层。其网络结构\upcite{peghotyw2v}如图\ref{fig:2_7} 所示。
+\begin{figure}[htp]
+\centering
+\includegraphics[width=4in]{figure2_7}
+\caption{word2vec神经网络结构图\upcite{peghotyw2v}}
+\label{fig:2_7}
+\end{figure}
+\par 输入层：包含$Context(w)$中$2c$个词的词向量，每个词向量长度为$m$；投影层：将输入层的$2c$个向量按分量累加求和；输出层：输出层对应一棵二叉树，它以语料中出现过的词作为叶子节点，以其出现次数为权值构造出来的Huffman 树。
+\par 对词典$D$中的任意词$w$，Huffman树中必存在一条从根节点到词$w$ 对应节点的路径（且这条路径是唯一的）。路径上存在分支，每个分支看做一次二次分类，每一次分类就产生一个概率，将这些概率乘起来，就是所需的$p(w|Context(w))$。条件概率的一般公式可写为公式\ref{equ:chap2:w2v_01} 和\ref{equ:chap2:w2v_02}。
+\begin{equation}
+\label{equ:chap2:w2v_01}
+p(w|Context(w)=\Pi_{j=2}^{1^{w}}p(d_{j}^{w}|x_{w},\theta_{j-1}^{w})
+\end{equation}
+\begin{equation}
+\label{equ:chap2:w2v_02}
+p(d_{j}^{w}|x_{w},\theta_{j-1}^{w})=[\sigma(x_{w}^{T}\theta_{j-1}^{w})]^{1-d_{j}^{w}}\ast[1-\sigma(x_{w}^{T}\theta_
+{j-1}^{w})]^{d_{j}^{w}}
+\end{equation}
+\par $1^{w}$表示从根节点到$w$路径上所有节点的个数，$d_{j}^{w}$表示路径上第$j$ 个词，$x_{w}$表示词$w$ 的词向量，$\theta_{j-1}^{w}$表示路径上第$j$个非叶节点对应的向量。$\sigma$表示SIGMOID函数。
+\par 故该神经网络的目标函数见公式\ref{equ:chap2:w2v_03}。
+\begin{equation}
+\label{equ:chap2:w2v_03}
+L=\sum_{w\in C}\sum_{j=2}^{1^{w}}\{(1-d_{j}^{w})log[\sigma(x_{w}^{T}\theta_{j-1}^{w})]+d_{j}^{w}log[1-\sigma(x_{w}^{T}\theta_{j-1}^{w})]\}
+\end{equation}
+\par 使用随机梯度上升法求得该目标函数局部最大值，即可得到每个词对应词向量。
+\par LDA和word2vec在自然语言处理相关的应用中都得到了非常好的结果，我们使用这两个算法度量用户之间的关系强度，在第三章详细描述如何使用这两种方法度量用户之间的关系强度，在第五章将通过实验展示这两个模型在不同的参数下对实验结果的影响。
+\section{小结}
+\label{sec:section2-4}
+本章对与课题密切相关的三方面技术进行的详细的介绍、分析和研究。2.1节描述了GPS预处理中遇到的两个主要问题降噪和聚类。2.2节描述了度量时间序列相似度的两种常见方法以及序列熵值的计算方法，前两种方法用于计算轨迹序列的相似度，并以此相似度作为用户之间的关系强度，在此基础上用序列熵值对对轨迹序列的相似度加权。2.3节描述了LDA和word2vec两种常见的自然语言处理模型，这两种模型能够从不同的角度反映用户基于轨迹的行为模型。
+\chapter{面向GPS数据的语义标签标注系统}
+\label{chap:chapter03}
+上一章我们主要从GPS数据预处理，时间序列相似度度量以及自然语言处理模型三方面介绍了和本课题密切相关的主要算法和技术。本章主要介绍一个面向GPS数据的语义标签标注系统，包括SASLL系统框架、如何计算GPS数据对应的语义位置以及如何对语义位置标语义标签。
+\section{SASLL系统框架}
+\label{sec:section3-1}
+SASLL(A System Annotating Semantic Label of Location)系统框架图如图\ref{fig:3_1}，GPS数据模块访问本地传感器数据存储文件，对文件数据进行解析，得到GPS原始数据，其格式为由经度、维度、时间戳组成的三元组(Lat,Lng,timestamp)。预处理模块在本系统第一次执行时自动学习剔除异常点需要的参数，并使用基于密度的方法剔除异常点。聚类模块对当天采集的数据使用\upcite{rodriguez2014clustering}提出的算法对预处理后的数据进行聚类，得到当天参观过的位置，并与匹配表进行对比，计算得到新的位置。位置提示模块对新位置使用基于规则的推断方法和调用地图接口计算反地理编码的方法计算其可能的语义标签。最后由交互模块和用户交互，展示位置提示模块计算的提示以及记录用户的标注。
+\begin{figure}[htp]
+\centering
+\includegraphics[width=6in]{figure3_1}
+\caption{SASLL系统框架图}
+\label{fig:3_1}
+\end{figure}
+\section{计算对应语义位置}
+\label{sec:section3-2}
+本节主要介绍如何通过GPS发现语义位置，包括如何降低数据噪声、如何剔除异常点以及如何通过聚类得到语义位置。
+\subsection{降低数据噪声}
+根据自己的日常活动发现，我们会经常停留在某一固定位置很长时间，在这段时间内，其实我们本身位置是不变的，但是GPS采样值会包含一些随机误差，从而使得虽然实际上我们一直呆在同一个位置，采样得到的经纬度会在实际经纬度上下震荡。因此我们需要对GPS数据进行滤波使得采样值经过处理后更加接近实际值。在第二章我们介绍了常用的三种降噪方法，即均值滤波、中值滤波和卡尔曼滤波。算法原理不再赘述，这一小节我们主要通过实验来观察各种滤波算法的效果以及在实验的基础上提出分层卡尔曼滤波的方法。
+\par 首先我们使用自己采集的某几天的数据来观察均值滤波的降噪效果，数据采集软件使用\upcite{rawassizadeh2013ubiqlog}。 如图\ref{fig:3_2_1}、\ref{fig:3_2_2}、\ref{fig:3_2_3}所示。
+\begin{figure}[htb]
+  \centering%
+  \subfloat[原始数据]{%
+    \label{fig:3_2_1_1}
+    \includegraphics[height=4cm]{figure3_2_1_1}}\hspace{4em}%
+  \subfloat[均值滤波]{%
+    \label{fig:3_2_2_1}
+    \includegraphics[height=4cm]{figure3_2_1_2}}
+  \caption{均值滤波实验结果3-1}
+  \label{fig:3_2_1}
+\end{figure}
+\begin{figure}[htb]
+  \centering%
+  \subfloat[原始数据]{%
+    \label{fig:3_2_2_1}
+    \includegraphics[height=4cm]{figure3_2_2_1}}\hspace{4em}%
+  \subfloat[均值滤波]{%
+    \label{fig:3_2_2_2}
+    \includegraphics[height=4cm]{figure3_2_2_2}}
+  \caption{均值滤波实验结果3-2}
+  \label{fig:3_2_2}
+\end{figure}
+\begin{figure}[htb]
+  \centering%
+  \subfloat[原始数据]{%
+    \label{fig:3_2_3_1}
+    \includegraphics[height=4cm]{figure3_2_3_1}}\hspace{4em}%
+  \subfloat[均值滤波]{%
+    \label{fig:3_2_3_2}
+    \includegraphics[height=4cm]{figure3_2_3_2}}
+  \caption{均值滤波实验结果3-3}
+  \label{fig:3_2_3}
+\end{figure}
+\par 经过仔细观察我们发现，虽然有一少部分跳变点被滤掉，但是对于非常明显的几个跳变点，均值滤波并没有滤掉。
+\par 我们再来观察中值滤波的实验结果。实验结果见图\ref{fig:3_3_1}、\ref{fig:3_3_2}、\ref{fig:3_3_3}。
+\begin{figure}[htb]
+  \centering%
+  \subfloat[原始数据]{%
+    \label{fig:3_2_1_1}
+    \includegraphics[height=4cm]{figure3_2_1_1}}\hspace{4em}%
+  \subfloat[中值滤波]{%
+    \label{fig:3_2_2_1}
+    \includegraphics[height=4cm]{figure3_3_1_2}}
+  \caption{中值滤波实验结果3-1}
+  \label{fig:3_3_1}
+\end{figure}
+\begin{figure}[htb]
+  \centering%
+  \subfloat[原始数据]{%
+    \label{fig:3_2_2_1}
+    \includegraphics[height=4cm]{figure3_2_2_1}}\hspace{4em}%
+  \subfloat[中值滤波]{%
+    \label{fig:3_2_2_2}
+    \includegraphics[height=4cm]{figure3_3_2_2}}
+  \caption{中值滤波实验结果3-2}
+  \label{fig:3_3_2}
+\end{figure}
+\begin{figure}[htb]
+  \centering%
+  \subfloat[原始数据]{%
+    \label{fig:3_2_3_1}
+    \includegraphics[height=4cm]{figure3_2_3_1}}\hspace{4em}%
+  \subfloat[中值滤波]{%
+    \label{fig:3_2_3_2}
+    \includegraphics[height=4cm]{figure3_3_3_2}}
+  \caption{中值滤波实验结果3-3}
+  \label{fig:3_3_3}
+\end{figure}
+\par 仔细观察实验结果，我们发现，中值滤波的结果明显好于均值滤波，把大部分跳跃点都滤除掉了。
+\par 我们再来观察卡尔曼滤波的实验结果,实验结果见图\ref{fig:3_4_1}、\ref{fig:3_4_2}、\ref{fig:3_4_3}。
+\begin{figure}[htb]
+  \centering%
+  \subfloat[原始数据]{%
+    \label{fig:3_2_1_1}
+    \includegraphics[height=4cm]{figure3_2_1_1}}\hspace{4em}%
+  \subfloat[卡尔曼滤波]{%
+    \label{fig:3_2_2_1}
+    \includegraphics[height=4cm]{figure3_4_1_2}}
+  \caption{卡尔曼滤波实验结果3-1}
+  \label{fig:3_4_1}
+\end{figure}
+\begin{figure}[htb]
+  \centering%
+  \subfloat[原始数据]{%
+    \label{fig:3_2_2_1}
+    \includegraphics[height=4cm]{figure3_2_2_1}}\hspace{4em}%
+  \subfloat[卡尔曼滤波]{%
+    \label{fig:3_2_2_2}
+    \includegraphics[height=4cm]{figure3_4_2_2}}
+  \caption{卡尔曼滤波实验结果3-2}
+  \label{fig:3_4_2}
+\end{figure}
+\begin{figure}[htb]
+  \centering%
+  \subfloat[原始数据]{%
+    \label{fig:3_2_3_1}
+    \includegraphics[height=4cm]{figure3_2_3_1}}\hspace{4em}%
+  \subfloat[卡尔曼滤波]{%
+    \label{fig:3_2_3_2}
+    \includegraphics[height=4cm]{figure3_4_3_2}}
+  \caption{卡尔曼滤波实验结果3-3}
+  \label{fig:3_4_3}
+\end{figure}
+\par 卡尔曼滤波的结果虽然更加平滑，但是我们能明显看出来，滤波结果损失了原来的信息，使得整个轨迹曲线趋于常数值。经过分析我们发现，我们每天的轨迹只有在某些固定位置（即后文所说的语义位置）时会在一段时间内保持不变，因此我们采用一些简单的方法对每天的轨迹进行划分，尽可能使每段轨迹中的点都采样自某一个固定位置，然后对这一段轨迹进行卡尔曼滤波，肯定能够得到一个更好的滤波结果。
+\par 我们采用一些非常简单容易实现的方法对轨迹进行分段。如果在一段时间内，任意相邻两个采样点之间时间间隔不超过十分钟（我们认为超过十分钟很可能用户位置就发生变化，十分钟是一个参数值，也可以根据实际情况进行调节），任意两个采样点之间真实距离不超过20米，我们就认为这段时间内所有的采样点属于一个片段。我们采用贪心的思想寻找满足上述两个条件的序列，即如果加入下一个点，不破坏上述两个条件，则当前序列应该包含下一个点，如果加入下一个点后，上述两个条件之一或全部被破坏，则当前序列为当天轨迹的一个片段，且不包含下一个点。下面我们观察分段处理后卡尔曼滤波的结果，见图\ref{fig:3_5_1}、\ref{fig:3_5_2}、\ref{fig:3_5_3}。
+\begin{figure}[htb]
+  \centering%
+  \subfloat[原始数据]{%
+    \label{fig:3_2_1_1}
+    \includegraphics[height=4cm]{figure3_2_1_1}}\hspace{4em}%
+  \subfloat[分段卡尔曼滤波]{%
+    \label{fig:3_2_2_1}
+    \includegraphics[height=4cm]{figure3_5_1_2}}
+  \caption{分段卡尔曼滤波实验结果3-1}
+  \label{fig:3_5_1}
+\end{figure}
+\begin{figure}[htb]
+  \centering%
+  \subfloat[原始数据]{%
+    \label{fig:3_2_2_1}
+    \includegraphics[height=4cm]{figure3_2_2_1}}\hspace{4em}%
+  \subfloat[分段卡尔曼滤波]{%
+    \label{fig:3_2_2_2}
+    \includegraphics[height=4cm]{figure3_5_2_2}}
+  \caption{分段卡尔曼滤波实验结果3-2}
+  \label{fig:3_5_2}
+\end{figure}
+\begin{figure}[htb]
+  \centering%
+  \subfloat[原始数据]{%
+    \label{fig:3_2_3_1}
+    \includegraphics[height=4cm]{figure3_2_3_1}}\hspace{4em}%
+  \subfloat[分段卡尔曼滤波]{%
+    \label{fig:3_2_3_2}
+    \includegraphics[height=4cm]{figure3_5_3_2}}
+  \caption{分段卡尔曼滤波实验结果3-3}
+  \label{fig:3_5_3}
+\end{figure}
+\par 这一小节主要介绍了均值滤波，中值滤波、卡尔曼滤波以及分段卡尔曼滤波的实验结果，我们发现分段卡尔曼滤波的结果更加平滑，更符合实际情况。下一小节我们将介绍如何剔除路上的点。
+\subsection{剔除路上的点}
+在现实生活中，人们从一个位置行进到另一个位置是连续的，即采集的数据必然存在很多路上的点。而这些路上的点不属于任何一个语义位置。且在我们分析关系强度时，如果两个人同时来到同一个语义位置，但是一个从某一个方向过来，而另一个从相反方向过来，虽然这两个人其实在这段时间内待在同一个地方，如果不剔除路上的点，则这两个人的物理位置会受到路上的点的影响，从而使得这两个人轨迹的空间距离反而比较大。在上文讨论的降噪过程中，已经把误差比较大的点处理了，因此本节主要讨论如何剔除路上的点。
+\par 仔细分析路上的点的特性，我们发现人们通常在语义位置停留时间比较长，而在路上一直处于移动状态，所以路上点密度通常远远小于语义位置的点的密度。密度定义见公式\ref{equ:chap2:dj-cluster}。且在实际生活中，我们在路上时通常处于移动状态，设速度为$v$，且每条路每天走的次数也存在上限，设每条路每天最多走$N$次，计算密度时采用的半径参数为$R$，设GPS采样频率为$f$。 因为半径参数很小，故可视为在该半径对应圆形区域中行走路线为直线。路上点的密度D存在最大值，计算方法见公式\ref{equ:chap3:density_01}。因此本文采用基于密度的方法剔除异常点。该方法的基本思想为若某个点的密度小于给定阈值，则该点为异常点。通过对日常数据的分析，我们发现，路上点的密度确实远远小于处于语义位置点的密度，见图\ref{figure3_6}。
+\begin{equation}
+\label{equ:chap3:density_01}
+D=N \ast \frac{2R}{v} \ast f
+\end{equation}
+\begin{figure}[htp]
+\centering
+\includegraphics[width=6in]{figure3_6}
+\caption{绿色表示正常点，红色表示路上的点}
+\label{fig:3_6}
+\end{figure}
+\par 根绝上文的分析我们发现我们完全可以自己算出来一个密度的上限值，假设我们设计算密度时的半径为10米，每天经过这条路4次，步行速度约为80米每分钟，这样每个点的密度的上限值大概是60。同时我们发现有一种方法可以自动学习参数，后文将会对比学习到的密度上限值和计算值的异同。
+\par 假设对于某一天的数据，我们已经聚好类，即我们知道哪一个点属于哪一个类别，仔细分析每个路上的点对类别中心的影响，假设我们在某个地方处于某一个固定的位置，GPS采样因为采样误差服从高斯分布，因此大多数点都处在该固定位置对应实际点（可能是类别中心，非常有可能在类别中心附近）的周围。而路上的点会距离实际点比较远，因此，该类别所有点到类别中心的距离的平均值会被路上的点拉大，当我们逐渐提高密度的上限值，从而有更多的点因为密度小而被删除，讨论一种理想情况，如果路上的点完全被剔除，剩下的点都是实际点加高斯误差，因为实际点大量存在，使得即使我们剔除一小部分实际点，对该类别所有点到类别中心的距离的平均值也不会产生太大的影响。所以我们可以从一个很小的密度上限值逐渐增加，剔除小于该密度的点之后计算对应的平均距离，若平均距离收敛，则我们认为这个密度值是路上的点的密度的上限值。平均距离的定义见公式\ref{equ:chap3:avgdis_01},其中$p_{ij}$为第$i$类第$j$个点，$c_{i}$为第$i$类的类别中心，$dis(a,b)$表示$a$和$b$之间的距离，$n_{i}$为第$i$类点的个数，$k$为类别的个数，$N$为所有点的个数。我们用连续四天采集的数据做了实验，计算其平均距离，见图\ref{fig:3_7}。
+\begin{equation}
+\label{equ:chap3:avgdis_01}
+AvgDis=\frac{\sum_{i=1}^{k}\sum_{j=1}^{n_{i}}dis(p_{ij},c_{i})}{N}
+\end{equation}
+\begin{figure}[htb]
+  \centering%
+  \subfloat[第一天数据]{%
+    \label{fig:3_7_1}
+    \includegraphics[height=5cm]{figure3_7_1}}%\hspace{4em}
+  \subfloat[第二天数据]{%
+    \label{fig:3_7_2}
+    \includegraphics[height=5cm]{figure3_7_2}}\\
+  \subfloat[第三天数据]{%
+    \label{fig:3_7_3}
+    \includegraphics[height=5cm]{figure3_7_3}}
+  \subfloat[第四天数据]{%
+    \label{fig:3_7_4}
+    \includegraphics[height=5cm]{figure3_7_4}}
+  \caption{平均距离收敛}
+  \label{fig:3_7}
+\end{figure}
+\par 通过观察图\ref{fig:3_7}，我们发现密度上限值大概是40到50之间，我们前面计算的密度上限值是60左右，一方面因为两种计算方法都存在一定的误差，另一方面是在实际过程中，手机并不是持续高频采样，经常会因为各种各样的原因而丢失一些采样点。在实际应用过程中，我们可以先手动处理某一天的数据，然后使用该自动学习的算法学习到密度的上限值，从而用作其他天数据处理的参数。
+\par 这一小节我们主要讨论了如何剔除路上的点，以及如何学习路上点的密度的上限值，下一小节我们将通过实验讨论K-MEANS、DJ-cluster、以及Science上发表算法三种聚类算法的优缺点，以及在实际数据上应用的效果。
+\subsection{聚类得到语义位置}
+这一小节我们将重点介绍使用聚类算法得到语义位置时，不同算法以及不同参数对结果产生的影响。K-MEANS、DJ-Cluster以及Science上发表的三个算法算法原理在第二章已经介绍过了，下文我们将通过实验依次展示三个算法对相同数据聚类得到的结果。数据使用\upcite{rawassizadeh2013ubiqlog}软件采集。
+\par 首先我们介绍K-MEANS聚类算法的实验结果，K-MEANS聚类算法的主要缺点有两个：一个是需要预知类别的个数；另一个是同一类别的数据最好是团状或簇状。对于我们问题来说，通常遇到的建筑都是每栋楼占单独的一块地方，相邻建筑一般都会有一定的间隔，因此K-MEANS聚类算法的第二个缺点因为我们面临的具体的问题而不再存在，故我们主要考虑不同类别个数对实验结果的影响。
+
+
+
+
+本章将进入论文排版的正文, 按元素分主要包括：
+{\kai 字体段落，图片表格，公式定理，参考文献}这几部分。
+这个样例文件将包括模板中使用到的所有格式、模板中自定义命令到或者特有的东西，
+都将被一一介绍，希望大家在排版自己的学位论文前能细致的看一遍，记住样例的格式和
+方法，方便上手。
+
+\section{字体段落}
+\label{sec:font}
+
+陈赓（1903年2月27日－1961年3月16日），原名陈庶康，中国湖南湘乡人，军事家。出生将门，其祖父为湘军将领陈翼怀。
+
+Adobe中文字体有四种：
+
+{\kai 楷体\verb|\kai|：陈赓，中国湖南湘乡人，军事家。出生将门，其祖父为湘军将领陈翼怀。%
+1952年筹办并任人民解放军军事工程学院第一任院长兼政委，培养国防科技人才。1955 年被授予大将军衔。}
+
+{\fs 仿宋\verb|\fs|：陈赓，中国湖南湘乡人，军事家。出生将门，其祖父为湘军将领陈翼怀。%
+1952年筹办并任人民解放军军事工程学院第一任院长兼政委，培养国防科技人才。1955 年被授予大将军衔。}
+
+{\hei 黑体\verb|\hei|：陈赓，中国湖南湘乡人，军事家。出生将门，其祖父为湘军将领陈翼怀。%
+1952年筹办并任人民解放军军事工程学院第一任院长兼政委，培养国防科技人才。1955 年被授予大将军衔。}
+
+宋体就是正文字体了。下面测试字体大小，\LaTeX{}默认的列表环境会在
+条目之间插入过多的行距，在下面这种情况可能正好，若用户需要
+{\kai 正文行距}的列表环境，可以使用compactitem环境，记住这点很重要，不要再
+用那种自己修改\verb|itemsep|的傻傻的办法了。
+\begin{itemize}
+\item[初号] {\song\chuhao 陈赓大将}
+\item[小初] {\song\xiaochu 陈赓大将}
+\item[一号] {\song\yihao 陈赓大将}
+\item[小一] {\song\xiaoyi 陈赓大将}
+\item[二号] {\song\erhao 陈赓大将}
+\item[小二] {\song\xiaoer 陈赓大将}
+\item[三号] {\song\sanhao 陈赓大将}
+\item[小三] {\song\xiaosan 陈赓大将}
+\item[四号] {\song\sihao 陈赓大将}
+\item[小四] {\song\xiaosi 陈赓大将}
+\item[五号] {\song\wuhao 陈赓大将}
+\item[小五] {\song\xiaowu 陈赓大将}
+\end{itemize}
+
+\section{表格明细}
+\label{sec:figure}
+表格是论文的重要组成部分，我们从简单的表格讲起，到复杂的表格为止。
+
+模板中关于表格的宏包有三个： \textsf{booktabs}、\textsf{array} 和
+\textsf{longtabular}。三线表建议使用\textsf{booktabs}中提供的，
+包含toprule、midrule 和 bottomrule三条命令，简单干脆！
+它们与\textsf{longtable} 能很好的配合使用。下面来看一个表格实例：
+\begin{table}[htb]
+  \centering
+  \begin{minipage}[t]{0.8\linewidth} % 如果想在表格中使用脚注，minipage是个不错的办法
+  \caption[模板文件]{模板文件。如果表格的标题很长，那么在表格索引中就会很不美
+    观，所以要像 chapter 那样在前面用中括号写一个简短的标题。这个标题会出现在索
+    引中。}
+  \label{tab:template-files}
+    \begin{tabular*}{\linewidth}{lp{10cm}}
+      \toprule[1.5pt]
+      {\hei 文件名} & {\hei 描述} \\
+      \midrule[1pt]
+      nudtpaper.ins & \LaTeX{} 安装文件，docstrip\footnote{表格中的脚注} \\
+      nudtpaper.dtx & 所有的一切都在这里面\footnote{再来一个}。\\
+      nudtpaper.cls & 模板类文件。\\
+      nudtpaper.cfg & 模板配置文。cls 和 cfg 由前两个文件生成。\\
+      bstutf8.bst   & 参考文献 Bibtex 样式文件。\\
+      mynudt.sty    & 常用的包和命令写在这里，减轻主文件的负担。\\
+      \bottomrule[1.5pt]
+    \end{tabular*}
+  \end{minipage}
+\end{table}
+
+表 \ref{tab:template-files} 列举了本模板主要文件及其功能，基本上来说论文
+中最可能用到的就是这种表格形式了。
+请大家注意三线表中各条线对应的命令。这个例子还展示了如何在表格中正确使用脚注。
+如果你不需要在表格中插入脚注，可以将minipage环境去掉。
+由于\LaTeX{}本身不支持在表格中使用\verb|\footnote|，所以我们不得不将表格放在
+小页中，而且最好将表格的宽度设置为小页的宽度，这样脚注看起来才更美观。
+
+另外六院的同学在使用模板时需要使用一种固定宽度（往往是页宽，下面的例子由
+rongdonghu提供）的表格，内容需要居中且可以自动调整。
+解决办法是自定义了一种\verb|tabularx|中的\textbf{Z}环境，在论文模板中，
+该命令已添加到\verb|mynudt.sty|中。下面是这种情况的实例：
+
+\begin{table}[htbp]
+\centering
+\begin{minipage}[t]{0.9\linewidth}
+\caption{Reed Solomon码的典型应用}
+\label{tab:RSuse}
+\begin{tabularx}{\linewidth}{cZ}
+\toprule[1.5pt]
+{\hei 应用领域} & {\hei 编码方案}\\
+\midrule[1pt]
+磁盘驱动器 & RS(32,28,5)码 \footnote{码长为32、维数为28、最小距离为5} \\
+CD & 交叉交织RS码(CIRC) \\
+DVD & RS(208,192,17)码、RS(182,172,11)码 \\
+光纤通信 & RS(255,229,17)码 \\
+\bottomrule[1.5pt]
+\end{tabularx}
+\end{minipage}
+\end{table}
+
+我们经常会在表格下方标注数据来源，或者对表格里面的条目进行解释。前面的脚注是一种
+不错的方法，如果你不喜欢minipage方法的脚注。
+那么完全可以在表格后面自己写注释，比如表~\ref{tab:tabexamp1}。
+\begin{table}[htbp]
+  \centering
+  \caption{复杂表格示例 1}
+  \label{tab:tabexamp1}
+  \begin{minipage}[t]{0.8\textwidth}
+    \begin{tabularx}{\linewidth}{|l|X|X|X|X|}
+      \hline
+      \multirow{2}*{\backslashbox{x}{y}}  & \multicolumn{2}{c|}{First Half} & \multicolumn{2}{c|}{Second Half}\\
+      \cline{2-5}
+      & 1st Qtr &2nd Qtr&3rd Qtr&4th Qtr \\
+      \hline
+      \multirow{2}*{East$^{*}$} &   20.4&   27.4&   90&     20.4 \\
+       &   30.6 &   38.6 &   34.6 &  31.6 \\
+      West$^{**}$ &   30.6 &   38.6 &   34.6 &  31.6 \\
+      \hline
+    \end{tabularx}\\[2pt]
+    \footnotesize
+    *：东部\\
+    **：西部
+  \end{minipage}
+\end{table}
+
+此外，表~\ref{tab:tabexamp1} 同时还演示了另外三个功能：1）通过 \textsf{tabularx} 的
+ \texttt{|X|} 扩展实现表格内容自动调整；2）通过命令 \verb|\backslashbox| 在表头部分
+插入反斜线（WORD中很简单，但\LaTeX{}做表格需要一定的（极大的）想象力）；3）就是
+使用\verb|multirow|和\verb|multicolumn|命令。
+
+不可否认 \LaTeX{} 的表格功能没有想象中的那么强大，不过只要你足够认真，足够细致，那么
+同样可以排出来非常复杂非常漂亮的表格。可是科技论文中那么复杂表格有什么用呢？
+上面那个表格就够用啦。
+
+浮动体的并排放置一般有两种情况：1）二者没有关系，为两个独立的浮动体；2）二者隶属
+于同一个浮动体。对表格来说并排表格既可以像表~\ref{tab:parallel1}、表~\ref{tab:parallel2}
+使用小页环境，也可以如表~\ref{tab:subtable} 使用子表格来做。
+图与表同出一源，后面我们将讲解子图(subfloat)的例子。
+\begin{table}[htb]
+\centering
+\noindent\begin{minipage}{0.45\textwidth}
+\centering
+\caption{第一个并排子表格}
+\label{tab:parallel1}
+\begin{tabular}{p{2cm}p{2cm}}
+\toprule[1.5pt]
+111 & 222 \\\midrule[1pt]
+222 & 333 \\\bottomrule[1.5pt]
+\end{tabular}
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+\centering
+\caption{第二个并排子表格}
+\label{tab:parallel2}
+\begin{tabular}{p{2cm}p{2cm}}
+\toprule[1.5pt]
+111 & 222 \\\midrule[1pt]
+222 & 333 \\\bottomrule[1.5pt]
+\end{tabular}
+\end{minipage}
+\end{table}
+\begin{table}[htbp]
+\centering
+\caption{并排子表格}
+\label{tab:subtable}
+\subfloat[第一个子表格]{
+\begin{tabular}{p{2cm}p{2cm}}
+\toprule[1.5pt]
+111 & 222 \\\midrule[1pt]
+222 & 333 \\\bottomrule[1.5pt]
+\end{tabular}}\hskip2cm
+\subfloat[第二个子表格]{
+\begin{tabular}{p{2cm}p{2cm}}
+\toprule[1.5pt]
+111 & 222 \\\midrule[1pt]
+222 & 333 \\\bottomrule[1.5pt]
+\end{tabular}}
+\end{table}
+
+如果您要排版的表格长度超过一页，那么推荐使用\textsf{longtable}命令。
+这里随便敲入一些无关的文字，使得正文看上去不是那么的少。
+表~\ref{tab:performance} 就是 \textsf{longtable} 的简单示例。
+\begin{longtable}[c]{c*{6}{r}}
+\caption{实验数据}\label{tab:performance}\\
+\toprule[1.5pt]
+ 测试程序 & \multicolumn{1}{c}{正常运行} & \multicolumn{1}{c}{同步}
+& \multicolumn{1}{c}{检查点}   & \multicolumn{1}{c}{卷回恢复}
+& \multicolumn{1}{c}{进程迁移} & \multicolumn{1}{c}{检查点} 	\\
+& \multicolumn{1}{c}{时间 (s)} & \multicolumn{1}{c}{时间 (s)}
+& \multicolumn{1}{c}{时间 (s)} & \multicolumn{1}{c}{时间 (s)}
+& \multicolumn{1}{c}{时间 (s)} &  文件（KB）			\\
+\midrule[1pt]%
+\endfirsthead%
+
+\multicolumn{7}{c}{续表~\thetable\hskip1em 实验数据}\\
+
+\toprule[1.5pt]
+ 测试程序 & \multicolumn{1}{c}{正常运行} & \multicolumn{1}{c}{同步}
+& \multicolumn{1}{c}{检查点}   & \multicolumn{1}{c}{卷回恢复}
+& \multicolumn{1}{c}{进程迁移} & \multicolumn{1}{c}{检查点} 	\\
+& \multicolumn{1}{c}{时间 (s)} & \multicolumn{1}{c}{时间 (s)}
+& \multicolumn{1}{c}{时间 (s)} & \multicolumn{1}{c}{时间 (s)}
+& \multicolumn{1}{c}{时间 (s)} &  文件（KB）			\\
+\midrule[1pt]%
+\endhead%
+\hline%
+
+\multicolumn{7}{r}{续下页}%
+
+\endfoot%
+\endlastfoot%
+CG.A.2 & 23.05   & 0.002 & 0.116 & 0.035 & 0.589 & 32491  \\
+CG.A.4 & 15.06   & 0.003 & 0.067 & 0.021 & 0.351 & 18211  \\
+CG.A.8 & 13.38   & 0.004 & 0.072 & 0.023 & 0.210 & 9890   \\
+CG.B.2 & 867.45  & 0.002 & 0.864 & 0.232 & 3.256 & 228562 \\
+CG.B.4 & 501.61  & 0.003 & 0.438 & 0.136 & 2.075 & 123862 \\
+CG.B.8 & 384.65  & 0.004 & 0.457 & 0.108 & 1.235 & 63777  \\
+MG.A.2 & 112.27  & 0.002 & 0.846 & 0.237 & 3.930 & 236473 \\
+MG.A.4 & 59.84   & 0.003 & 0.442 & 0.128 & 2.070 & 123875 \\
+MG.A.8 & 31.38   & 0.003 & 0.476 & 0.114 & 1.041 & 60627  \\
+MG.B.2 & 526.28  & 0.002 & 0.821 & 0.238 & 4.176 & 236635 \\
+MG.B.4 & 280.11  & 0.003 & 0.432 & 0.130 & 1.706 & 123793 \\
+MG.B.8 & 148.29  & 0.003 & 0.442 & 0.116 & 0.893 & 60600  \\
+LU.A.2 & 2116.54 & 0.002 & 0.110 & 0.030 & 0.532 & 28754  \\
+LU.A.4 & 1102.50 & 0.002 & 0.069 & 0.017 & 0.255 & 14915  \\
+LU.A.8 & 574.47  & 0.003 & 0.067 & 0.016 & 0.192 & 8655   \\
+LU.B.2 & 9712.87 & 0.002 & 0.357 & 0.104 & 1.734 & 101975 \\
+LU.B.4 & 4757.80 & 0.003 & 0.190 & 0.056 & 0.808 & 53522  \\
+LU.B.8 & 2444.05 & 0.004 & 0.222 & 0.057 & 0.548 & 30134  \\
+EP.A.2 & 123.81  & 0.002 & 0.010 & 0.003 & 0.074 & 1834   \\
+EP.A.4 & 61.92   & 0.003 & 0.011 & 0.004 & 0.073 & 1743   \\
+EP.A.8 & 31.06   & 0.004 & 0.017 & 0.005 & 0.073 & 1661   \\
+EP.B.2 & 495.49  & 0.001 & 0.009 & 0.003 & 0.196 & 2011   \\
+EP.B.4 & 247.69  & 0.002 & 0.012 & 0.004 & 0.122 & 1663   \\
+EP.B.8 & 126.74  & 0.003 & 0.017 & 0.005 & 0.083 & 1656   \\
+\bottomrule[1.5pt]
+\end{longtable}
+
+另外，有的同学不想让某个表格或者图片出现在索引里面，那么请使用命令 \verb|\caption*{}|，
+这个命令不会给表格编号，也就是出来的只有标题文字而没有“表~XX”，“图~XX”，否则
+索引里面序号{\kai 不连续}就显得不伦不类，这也是 \LaTeX{} 里星号命令默认的规则。
+
+\section{绘图插图}
+
+本模板不再预先装载任何绘图包（如 \textsf{pstricks，pgf} 等），完全由你自己来决定。
+个人觉得 \textsf{pgf} 不错，不依赖于 Postscript。 此外还有很多针对 \LaTeX{} 的
+ GUI 作图工具，如 XFig(jFig), WinFig, Tpx, Ipe, Dia, Inkscape, LaTeXPiX,
+jPicEdt 等等。本人强烈推荐\textsf{Ipe}。
+
+一般图形都是处在浮动环境中。之所以称为浮动是指最终排版效果图形的位置不一定与源文
+件中的位置对应，这也是刚使用 \LaTeX{} 同学可能遇到的问题。
+如果要强制固定浮动图形的位置，请使用 \textsf{float} 宏包，
+它提供了 \texttt{[H]}（意思是图片就给我放在这里\textcolor{red}{H}ere）参数，
+但是除非特别需要，不建议使用\texttt{[H]}，而是推荐使用\texttt{[htbp]}，
+给\LaTeX{}更多选择。比如图~\ref{fig:ipe}。
+\begin{figure}[htbp] % use float package if you want it here
+  \centering
+  \includegraphics[width=3in]{hello}
+  \caption{利用IPE制图}
+  \label{fig:ipe}
+\end{figure}
+
+若子图共用一个计数器，
+那么请看图~\ref{fig:big1}，它包含两个小图，分别是图~\ref{fig:subfig1}
+和图~\ref{fig:subfig2}。这里推荐使用\verb|\subfloat|，{\bf 不要再用}
+\verb|\subfigure|和\verb|\subtable|。
+\begin{figure}[htb]
+  \centering%
+  \subfloat[第一个小图形]{%
+    \label{fig:subfig1}
+    \includegraphics[height=2cm]{xh}}\hspace{4em}%
+  \subfloat[第二个小图形。如果标题很长的话，它会自动换行，这个 caption 就是这样的例子]{%
+    \label{fig:subfig2}
+    \includegraphics[height=2cm]{xhh}}
+  \caption{包含子图形的大图形}
+  \label{fig:big1}
+\end{figure}
+
+而下面这个例子显示并排$3\times2$的图片，见图\ref{fig:subfig:3x2}:
+\begin{figure}[htb]
+\centering
+\subfloat[]{\includegraphics[width=.27\textwidth]{typography}} \qquad
+\subfloat[]{\includegraphics[width=.27\textwidth]{typography}} \qquad
+\subfloat[]{\includegraphics[width=.27\textwidth]{typography}} \qquad
+\subfloat[]{\includegraphics[width=.27\textwidth]{typography}} \qquad
+\subfloat[]{\includegraphics[width=.27\textwidth]{typography}} \qquad
+\subfloat[]{\includegraphics[width=.27\textwidth]{typography}}
+\caption{并排图片}
+\label{fig:subfig:3x2}
+\end{figure}
+
+要注意，图\ref{fig:subfig:3x2}例中
+\texttt{qquad}相当于\verb|\hspace{2em}|，也就是2个字符的宽度，约0.08倍页宽，
+图片宽度设定为0.27倍页宽是合适的；在该环境中，尽量不要手动换行，所以，不妨自己计算一下！
+
+如果要把编号的两个图形并排，那么小页(minipage)就非常有用了，可以分别参考
+图\ref{fig:parallel1}和图\ref{fig:parallel2}。其实这个例子和表格一节中并排
+放置的表格一摸一样。
+\begin{figure}[htb]
+\begin{minipage}{0.48\textwidth}
+  \centering
+  \includegraphics[height=1.2cm]{xhh}
+  \caption{并排第一个图}
+  \label{fig:parallel1}
+\end{minipage}\hfill
+\begin{minipage}{0.48\textwidth}
+  \centering
+  \includegraphics[height=1.2cm]{xhh}
+  \caption{并排第二个图}
+  \label{fig:parallel2}
+\end{minipage}
+\end{figure}
+
+图形就说这么多，因为大家在写论文是遇到的最大问题不是怎么把图插进去，
+而是怎样做出专业的、诡异的、震撼的图片来，记得在这时参考前面推荐的那
+些工具吧，当然必不可少的是Matlab了，至于如何加入中文标注、支持中文等等
+可以上网去查，但这里{\kai 推荐一点}，用好export命令，使得插入图片时尽可能的不要
+缩放，保证图文的一致性。
+
+\section{公式定理}
+\label{sec:equation}
+贝叶斯公式如式~(\ref{equ:chap1:bayes})，其中$p(y|\mathbf{x})$为后验；
+$p(\mathbf{x})$为先验；分母$p(\mathbf{x})$ 为归一化因子，这是
+实际应用中十分恐怖的一个积分式。
+\begin{equation}
+\label{equ:chap1:bayes}
+p(y|\mathbf{x}) = \frac{p(\mathbf{x},y)}{p(\mathbf{x})}=
+\frac{p(\mathbf{x}|y)p(y)}{p(\mathbf{x})}
+\end{equation}
+
+论文里面公式越多，\TeX{} 就越 happy。再看一个 \textsf{amsmath} 的例子：
+\newcommand{\envert}[1]{\left\lvert#1\right\rvert}
+\begin{equation}\label{detK2}
+\det\mathbf{K}(t=1,t_1,\dots,t_n)=\sum_{I\in\mathbf{n}}(-1)^{\envert{I}}
+\prod_{i\in I}t_i\prod_{j\in I}(D_j+\lambda_jt_j)\det\mathbf{A}
+^{(\lambda)}(\overline{I}|\overline{I})=0.
+\end{equation}
+
+大家在写公式的时候一定要好好看\textsf{amsmath}的文档，并参考模板中的用法：
+\begin{multline*}%\tag{[b]} % 这个出现在索引中的
+\int_a^b\biggl\{\int_a^b[f(x)^2g(y)^2+f(y)^2g(x)^2]
+ -2f(x)g(x)f(y)g(y)\,dx\biggr\}\,dy \\
+ =\int_a^b\biggl\{g(y)^2\int_a^bf^2+f(y)^2
+  \int_a^b g^2-2f(y)g(y)\int_a^b fg\biggr\}\,dy
+\end{multline*}
+
+再看\ref{equ:split}:
+\begin{equation}\label{equ:split}
+\begin{split}
+C(z) &= [z^n] \biggl[\frac{e^{3/4}}{\sqrt{1-z}} +
+e^{-3/4}(1-z)^{1/2} + \frac{e^{-3/4}}{4}(1-z)^{3/2}
++ O\Bigl( (1-z)^{5/2}\Bigr)\biggr] \\
+&= \frac{e^{-3/4}}{\sqrt{\pi n}} - \frac{5e^{-3/4}}{8\sqrt{\pi
+n^3}} + \frac{e^{-3/4}}{128 \sqrt{\pi n^5}} +
+O\biggl(\frac{1}{\sqrt{\pi
+n^7}}\biggr)
+\end{split}
+\end{equation}
+
+当然了，数学中必不可少的是定理和证明：
+\begin{theorem}
+  \label{chapTSthm:rayleigh solution}
+  假定 $X$ 的二阶矩存在:
+  \begin{equation}
+         O_R(\mathbf{x},F)=\sqrt{\frac{\mathbf{u}_1^T\mathbf{A}\mathbf{u}_1} {\mathbf{u}_1^T\mathbf{B}\mathbf{u}_1}}=\sqrt{\lambda_1},
+  \end{equation}
+  其中 $\mathbf{A}$ 等于 $(\mathbf{x}-EX)(\mathbf{x}-EX)^T$，$\mathbf{B}$ 表示协方差阵 $E(X-EX)(X-EX)^T$，$\lambda_1$
+$\mathbf{u}_1$是$\lambda_1$对应的特征向量，
+\end{theorem}
+
+对于希腊符号使用\verb|mathbf|命令可能有些问题，所以建议对符号
+用\verb|bm|加粗，记得用\verb|\up<greek>|切换正体符号，下面看几个例子：
+\verb|\gamma|斜体代表变量$\gamma$，\verb|\bm{\upgamma}|正体代表向量$\bm{\upgamma}$,
+。\verb|\Gamma|正体代表操作符号$\Gamma$，
+\verb|\bm{\Gamma}|正体粗体代表矩阵形式$\bm{\Gamma}$，
+\verb|\varGamma|斜体代表变量$\varGamma$。另外对于大小写斜体的加粗可以见$\bm{\gamma}$ 和$\bm{\varGamma}$，
+但是这两种科技论文中很少出现，这里只做测试。
+非符号普通向量就用\verb|\mathbf|吧：$\mathbf{x}_k,\mathbf{X}_k$。
+完整测试如下$\omega,\bm{\omega},\upomega,\bm{\upomega},\Omega,\bm{\Omega},\varOmega,\bm{\varOmega}$。
+
+\begin{proof}
+上述优化问题显然是一个Rayleigh商问题。我们有
+  \begin{align}
+     O_R(\mathbf{x},F)=\sqrt{\frac{\mathbf{u}_1^T\mathbf{A}\mathbf{u}_1} {\mathbf{u}_1^T\mathbf{B}\mathbf{u}_1}}=\sqrt{\lambda_1},
+ \end{align}
+ 其中 $\lambda_1$ 下列广义特征值问题的最大特征值：
+$$
+\mathbf{A}\mathbf{z}=\lambda\mathbf{B}\mathbf{z}, \mathbf{z}\neq 0.
+$$
+ $\mathbf{u}_1$ 是 $\lambda_1$对应的特征向量。结论成立。
+\end{proof}
+
+下面来看看算法环境的定义和使用。
+我们知道，故障诊断的最终目的，是将故障定位到部件，而由于信号--部件依赖矩阵的存在，因此，实质性的工作是找出由故障部件发出异常信号，
+不妨称为源异常信号，而如前所述，源异常信号与异常信号依赖矩阵$\mathbf{S_a}$ 的全零列是存在一一对应的关系的。因此，我们只要获得了$\mathbf{S_a}$的全零列的相关信息，
+也就获得了源异常信号的信息，从而能进一步找到故障源。
+通过以上分析，我们构造算法\ref{alg53}，用于实现非回路故障诊断。
+\begin{algorithm}[htbp]
+  \caption{非回路故障诊断算法}
+  \label{alg53}
+  \begin{algorithmic}[1]
+    \REQUIRE 信号--部件依赖矩阵$\mathbf{A}$，信号依赖矩阵$\mathbf{S}$，信号状态向量$\alpha$
+    \ENSURE 部件状态向量$\gamma$
+    \STATE $\mathbf{P}\leftarrow\left(<\alpha>\right)$
+    \STATE $\mathbf{S_{a}}\leftarrow\mathbf{P^T}\mathbf{S}\mathbf{P}$
+    \FOR{$i=1$ to $S_a$的阶数$m$}
+    \STATE $s_i\leftarrow s_i$的第$i$个行向量
+    \ENDFOR
+    \STATE $\beta_a\leftarrow\lnot \left(s_1\lor s_2\lor \cdots\lor s_m\right)^T$
+    \STATE $\beta\leftarrow\mathbf{P}\beta_a$
+    \STATE $\gamma\leftarrow\mathbf{A}\beta$
+  \end{algorithmic}
+\end{algorithm}
+
+第一类故障回路推理与非回路故障推理是算法基本相同，稍微不同的是$\beta_a$的计算。因为第一类故障回路中的信号全部可能是源异常信号，因此我们不必计算
+$\beta_a=\lnot \left(\left[s_1\lor s_2\lor \cdots\lor s_m\right]^T\right)$，而直接取$\beta_a=\underbrace{\left[\begin{array}{cccc}1&1&\cdots&1\end{array}\right]^T}_m$，将$\beta_a$ 代入
+算法\ref{alg53}，有
+\[\beta=\mathbf{P}\beta_a=\mathbf{P}\underbrace{\left[\begin{array}{cccc}1&1&\cdots&1\end{array}\right]^T}_m=\alpha\]
+因此一类故障回路的推理算法变得相当简单，例如算法\ref{alg54}
+\begin{algorithm}[htbp]
+  \caption{第一类故障回路诊断算法}
+  \label{alg54}
+  \begin{algorithmic}[1]
+    \REQUIRE 信号--部件依赖矩阵$\mathbf{A}$，信号状态向量$\alpha$
+    \ENSURE 部件状态向量$\gamma$
+    \STATE $\gamma\leftarrow\mathbf{A}\alpha$
+  \end{algorithmic}
+\end{algorithm}
+
+\section{参考文献}
+\label{sec:bib}
+当然参考文献可以直接写 bibitem，虽然费点功夫，但是好控制，各种格式可以自己随意改
+写，在nudtpaper里面，建议使用JabRef编辑和管理文献，再结合\verb|bstutf8.bst|，
+对中文的支持非常不错，格式也很规范。
+
+本模板推荐使用 BIB\TeX，样式文件为 bstutf8.bst，符合学校的参考文献格式（如专利
+等引用未加详细测试）。看看这个例子，关于书的\upcite{tex, companion}，
+还有这些\upcite{Krasnogor2004e, clzs, zjsw}，关于杂志的\upcite{ELIDRISSI94,
+  MELLINGER96, SHELL02}，硕士论文\upcite{zhubajie, metamori2004}，博士论文
+\upcite{shaheshang, FistSystem01}，标准文件\upcite{IEEE-1363}，会议论文\upcite{DPMG,kocher99}，%
+技术报告\upcite{NPB2}。中文参考文献\upcite{cnarticle}\textsf{特别注意}，需要在\verb|bibitem|中
+增加\verb|language|域并设为\verb|zh|，英文此项可不填，之后由\verb|bstutf8| 统一处理
+(具体就是决定一些文献在中英文不同环境下的显示格式，如等、etc)。
+若使用\verb|JabRef|，则你可按下面步骤来设置：
+选择\textsf{Options}$\rightarrow$\textsf{Set Up General Fields}，
+在\verb|General:|后加入\verb|language|就可以了。
+
+有时候不想要上标，那么可以这样 \cite{shaheshang}，这个非常重要。
+
+\section{代码高亮}
+有些时候我们需要在论文中引入一段代码，用来衬托正文的内容，或者体现关键思路的实现。
+在模板中，统一使用\texttt{listings}宏包，并且设置了基本的内容格式，并建议用户只
+使用三个接口，分别控制：编程语言，行号以及边框。简洁达意即可，下面分别举例说明。
+
+首先是设定语言，来一个C的，使用的是默认设置：
+\begin{lstlisting}[language=C]
+void sort(int arr[], int beg, int end)
+{
+  if (end > beg + 1)
+  {
+    int piv = arr[beg], l = beg + 1, r = end;
+    while (l < r)
+    {
+      if (arr[l] <= piv)
+        l++;
+      else
+        swap(&arr[l], &arr[--r]);
+    }
+    swap(&arr[--l], &arr[beg]);
+    sort(arr, beg, l);
+    sort(arr, r, end);
+  }
+}
+\end{lstlisting}
+
+当我们需要高亮Java代码，不需要行号，不需要边框时，可以：
+\begin{lstlisting}[language=Java,numbers=none,frame=none]
+// A program to display the message
+// "Hello World!" on standard output
+
+public class HelloWorld {
+
+   public static void main(String[] args) {
+      System.out.println("Hello World!");
+   }
+
+}   // end of class HelloWorld
+\end{lstlisting}
+
+细心的用户可能发现，行号被放在了正文框之外，事实上这样是比较美观的，
+如果有些用户希望在正文框架之内布置所有内容，可以：
+\begin{lstlisting}[language=perl,xleftmargin=2em,framexleftmargin=1.5em]
+#!/usr/bin/perl
+print "Hello, world!\n";
+\end{lstlisting}
+
+好了，就这么多，\texttt{listings}宏包的功能很强大也很复杂，如果需要自己定制，
+可以查看其手册，耐心阅读总会找到答案。
+\textbf{注意:} 当前代码环境中文注释的处理还不是很完善，对于注释请妥善处理。
+在本模板中，推荐算法环境或者去掉中文的listings代码环境。
+如果需要包含中文注释，不要求代码高亮，
+就用\texttt{code}环境，这个环境是Verbatim的定制版，简单有效，
+调用的是fancyvbr宏包，用户可在mynudt.sty中修改它的外观等等。
+这里我们还可以给代码加上标签。
+\begin{code}[label=hello.c]
+public class HelloWorld {
+   public static void main(String[] args) {
+      System.out.println("Hello World!");
+   }
+}   // 世界，你好！
+\end{code}
+
+\section{符号列表}
+
+{\hei 前面的话：}{\kai\color{blue}
+2.2版本后默认使用nomencl环境，如果你还是希望使用传统的\verb|definition.tex|，那么只需注释掉
+顶层文件中的nomenclature即可。}
+
+符号列表使用的是\verb|nomencl|包，自己简单定制了下，使用方法分为四步：
+\begin{compactenum}
+\item 将\verb|\makenomenclature|语句放在正文前，即\verb|\begin{document}| 前面；
+\item 将\verb|\printnomenclature|放在论文中，我在例子中将符号列表放在了英文摘要的
+后面，正文第一章的前面，当然，你可以根据自己的需要或者教研室的规范放置在合理的位置上，
+为了页面引用的正确，在这句话前面放上\verb|\cleardoublepage|；
+\item 使用\verb|\nomenclature|命令在论文的各个位置上添加符号定义，语法后面会讲到；
+\item 编译。编译需要首先运行一遍xelatex，之后运行
+\begin{code}
+makeindex -s nomencl.ist -o thesis.nls thesis.nlo
+\end{code}
+\end{compactenum}
+
+你可以把这句编译命令放在\verb|makepdf.bat| 中第一个\verb|xelatex thesis| 下面。然后
+双击\verb|makepdf.bat|就可以了，论文模板中已经为你添加上了，如果你强烈不想使用
+nomencl环境，只要把它注释掉（前面加\verb|rem|）就可以。
+另外，由于我使用的是VIM来编辑\TeX{}代码，具体到每个编辑器（诸如WinEDT，TeXWorks等）
+如何设定该命令的快捷按钮，诸位可以搜索网上的教程。
+
+下面简单说明下\verb|\nomenclature|命令，语法为。这里插入一些随机的文字，希望
+对你在阅读帮助中的思维没有什么不良的影响。
+\begin{code}
+\nomenclature[<prefix>]{<symbol>}{<desc>}{<null>}
+\end{code}
+\verb|nomencl|模板的默认排序方法可能（大多都）不满足要求，
+论文模板里，我们通过设定\verb|<prefix>|来实现符号列表的排序。
+它分为两部分，比如如\verb|[Aa]|，第一个字母的含义是：
+\begin{compactitem}
+\item[`A'] 符号归为拉丁字母
+\item[`G'] 希腊字母
+\item[`X'] 上标
+\item[`Z'] 下标
+\end{compactitem}
+每个标识后边的字幕\verb|a-z|作为当前符号组内的排列顺序，比如$\beta$就可以写成
+\verb|[Gb]|，诸如此类。当然你一定注意到了，这个排序分组的设定只是为了记忆
+方便，并不是强制的，因此你可以有自己的方案，比如Z 是Greek，
+R是Roman什么的，只要统一就好，只需记住，组间排列是按字母顺序排的。
+
+注意符号表分四列，前三列的含义与命令中相同，
+最后一列是符号定义时所在的页码。效果看例子，对于下式:
+\begin{equation}\label{eq:heatflux}
+   \dot{Q} = k \cdot A \cdot \Delta T
+\end{equation}%
+\nomenclature[Aq]{$\dot{Q}$}{heat flux}{}%
+\nomenclature[Ak]{$k$}{overall heat transfer coefficient,式\eqref{eq:ohtc}}{}%
+\nomenclature[Aa]{$A$}{area}{}%
+\nomenclature[Al]{$L$}{length}{}%
+\nomenclature[At]{$T$}{temperature}{}%
+\nomenclature[At]{$\Delta T$}{temperature difference}{}%
+\nomenclature[Gr]{$\gamma$}{中文测试, 以及一句很长的物理意义，很有可能超过当前栏的宽度，主要目的是看一看会不会出现某些异常情况。}{}%
+
+或者:
+\begin{equation}\label{eq:ohtc}
+    \frac{1}{k} = \left[\frac{1}{\alpha _{\mathrm{i}}\,r_{\mathrm{i}}} +
+    \sum^n_{j=1}\frac{1}{\lambda _j}\,
+    \ln \frac{r_{\mathrm{a},j}}{r_{\mathrm{i},j}} +
+    \frac{1}{\alpha _{\mathrm{a}}\,
+    r_{\mathrm{a}}}\right] \cdot r_{\mathrm{reference}}
+\end{equation}%
+\nomenclature[Ga]{$\alpha$}{convection heat transfer coefficient}{}%
+\nomenclature[Zi]{i}{in}{}%
+\nomenclature[Gl]{$\lambda$}{thermal conductivity}{}%
+\nomenclature[Za]{a}{out}{}%
+\nomenclature[Zn]{$n$}{number of walls}{}%
+\nomenclature[Zj]{$j$}{running parameter}{}%
+
+{\hei 注意事项：}{\kai 模板中定制的nomencl 格式在mynudt.sty 中，默认是三栏的，分别是：
+``符号''，``定义''，``首次出现页码''，
+注意这里的符号列表都没有单位，如果你需要额外的栏输入单位（呵呵，聪明的读者可能看出来
+了，\verb|nomenclature|命令最后一个是空的，就是用来让你赋予她各种意义的）。
+此时就需要你有一点点动手能力了（其实只要会修改表格就行），
+方法很简单，比如需要添加``国际单位制''这一栏，则
+\begin{compactenum}
+\item 论文中\verb|\nomenclature|命令的第三个参数就让他代表单位，也可留空；
+\item 将\verb|mynudt.sty|中longtable的表头添加``国际单位制''几个字，
+你也可以取其他的名字，放在那个{\kai 应该出现的}位置上；
+\item 由于增加了5个字，就把前面栏的宽度数字减5，同时设定第三栏宽度为5，
+注意这一步需要你自己调整，记得不要让表格超出边界就行。
+\end{compactenum}
+}
+
+\section{中文习惯}
+\label{sec:chinese}
+
+对于itermize过大的行间距，用户可以使用compactitem 环境来替代，但是模板中不进行默认替代，
+因为只有用户真正发现列表不好看才会找到这里，而且在示例文件中，
+陈赓大将那个列表环境如果压缩了行距会很不好看。谢谢ZhangLei的建议！
+
+{\hei 一个重要的提示：}
+作者自己的定义命令、包等，不要放在模板里面，请放到\verb|mynudt.sty|
+中，这样模板时，只要覆盖\verb|nudtpaper.cls|即可。
+
+中文破折号为一个两个字宽垂直居中的直线，输入法直接得到的破折号是两个断开的小短线
+（——），这看起来不舒服。所以模板中定义了一个破折号的命令 \verb|\pozhehao|，请看：
+
+厚德博学，强军兴国\hfill \pozhehao{}国防科大校训
+

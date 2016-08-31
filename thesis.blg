@@ -1,0 +1,46 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: thesis.aux
+The style file: bstutf8.bst
+Database file #1: ref/refs.bib
+-- BUPTThesis.bst version 1.0 Beta 1 (2009/05/31) by Yu Zhang.
+-- http://code.google.com/p/buptthesis/
+-- See the "userguide.pdf" manual for usage information.
+Warning--The editor in rachuri2010emotionsense is missing.
+Warning--empty editor in rachuri2010emotionsense
+`editor' is a missing field, not a string, for entry miluzzo2007cenceme
+while executing---line 2530 of file bstutf8.bst
+Warning--there's a publisher but no address in miluzzo2007cenceme
+Warning--The editor in dong2011modeling is missing.
+Warning--empty editor in dong2011modeling
+Warning--The editor in thiagarajan2009vtrack is missing.
+Warning--empty editor in thiagarajan2009vtrack
+Warning--The editor in wang2014studentlife is missing.
+Warning--empty editor in wang2014studentlife
+Warning--there's a publisher but no address in burt2009structural
+Warning--The editor in mtibaa2008you is missing.
+Warning--empty editor in mtibaa2008you
+Warning--The editor in crandall2008feedback is missing.
+Warning--empty editor in crandall2008feedback
+Warning--The editor in pang2006introduction is missing.
+Warning--empty editor in pang2006introduction
+Warning--The editor in macqueen1967some is missing.
+Warning--empty editor in macqueen1967some
+Warning--The editor in levenshtein1966binary is missing.
+Warning--empty editor in levenshtein1966binary
+Warning--The editor in chen2005robust is missing.
+Warning--empty editor in chen2005robust
+Warning--The editor in chen2004marriage is missing.
+Warning--empty editor in chen2004marriage
+Warning--The editor in itakura1987distance is missing.
+Warning--empty editor in itakura1987distance
+Warning--The editor in berndt1994using is missing.
+Warning--empty editor in berndt1994using
+Warning--The editor in ratanamahatana2004everything is missing.
+Warning--empty editor in ratanamahatana2004everything
+Warning--empty pages in ratanamahatana2004everything
+Warning--there's a publisher but no address in cover2012elements
+Warning--The editor in farrahi2008did is missing.
+Warning--empty editor in farrahi2008did
+Warning--There is month but no year in mikolovword2vec
+
+Done.
+(There was 1 error message)
