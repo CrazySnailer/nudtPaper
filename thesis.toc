@@ -28,12 +28,12 @@
 \contentsline {chapter}{\numberline {4}GPS数据处理及语义标签标注技术}{23}{chapter.4}
 \contentsline {section}{\numberline {4.1}SASLL标注技术}{23}{section.4.1}
 \contentsline {section}{\numberline {4.2}计算对应语义位置}{23}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}降低数据噪声}{23}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.1}降低数据噪声}{24}{subsection.4.2.1}
 \contentsline {subsection}{\numberline {4.2.2}剔除路上的点}{28}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}聚类得到语义位置}{29}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.3}聚类得到语义位置}{30}{subsection.4.2.3}
 \contentsline {section}{\numberline {4.3}对语义位置标语义标签}{39}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}发现新位置}{39}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}新位置语义标签提示}{40}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.1}发现新位置}{40}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}新位置语义标签提示}{41}{subsection.4.3.2}
 \contentsline {section}{\numberline {4.4}小结}{43}{section.4.4}
 \contentsline {chapter}{\numberline {5}用户关系强度计算方法}{45}{chapter.5}
 \contentsline {section}{\numberline {5.1}用户关系强度计算方法概述}{45}{section.5.1}
@@ -52,7 +52,7 @@
 \contentsline {subsection}{\numberline {6.2.1}构造真实结果}{58}{subsection.6.2.1}
 \contentsline {subsection}{\numberline {6.2.2}评估方法}{59}{subsection.6.2.2}
 \contentsline {section}{\numberline {6.3}实验结果与分析}{61}{section.6.3}
-\contentsline {section}{\numberline {6.4}小结}{68}{section.6.4}
+\contentsline {section}{\numberline {6.4}小结}{71}{section.6.4}
 \contentsline {chapter}{\numberline {7}结束语}{73}{chapter.7}
 \contentsline {section}{\numberline {7.1}工作总结}{73}{section.7.1}
 \contentsline {section}{\numberline {7.2}工作展望}{74}{section.7.2}
