@@ -403,20 +403,3 @@
   howpublished = {\url{http://en.wikipedia.org/w/index.php?title=Inversion_(discrete_mathematics)&oldid=650315847}},
   year = 2014,
 }
-
-
-
-
-
-
-
-@article{starner1996human,
-  title={Human-powered wearable computing},
-  author={Starner, Thad},
-  journal={IBM systems Journal},
-  volume={35},
-  number={3.4},
-  pages={618--629},
-  year={1996},
-  publisher={IBM}
-}
