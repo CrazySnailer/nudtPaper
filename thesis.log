@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2016.1.8)  5 SEP 2016 11:05
+This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2016.1.8)  6 SEP 2016 10:37
 entering extended mode
 **thesis
 (E:\Research_Study\nudtPaper\thesis.tex
@@ -1695,11 +1695,6 @@ LaTeX Font Info:    Font shape `U/fsy/m/n' will be
 \tf@lof=\write7
  [6]
 (E:\Research_Study\nudtPaper\data/abstract.tex
-Underfull \hbox (badness 10000) in paragraph at lines 6--7
-
- []
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [1
@@ -1707,10 +1702,6 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 7--8
-
- []
-
 [2]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -1737,24 +1728,18 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 LaTeX Font Warning: Font shape `EU1/STZhongsong(0)/bx/n' undefined
 (Font)              using `EU1/STZhongsong(0)/m/n' instead on input line 4.
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [1
+[1
 
 
 
-]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [2]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [3]
+] [2] [3]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [4]
-[5]) (E:\Research_Study\nudtPaper\data/chap02.tex [6] [7
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5])
+(E:\Research_Study\nudtPaper\data/chap02.tex [6] [7
 
 
 ]
@@ -2275,14 +2260,14 @@ LaTeX Font Warning: Font shape `EU1/TimesNewRoman(0)/m/sc' undefined
 ) [78] (E:\Research_Study\nudtPaper\thesis.bbl [79
 
 
-] [80]
-Underfull \hbox (badness 3189) in paragraph at lines 241--245
+] [80] [81]
+Underfull \hbox (badness 3189) in paragraph at lines 289--293
 []\EU1/TimesNewRoman(0)/m/sc/12.045 Singelis T M. The measurement of independen
 t and interdependent self-
  []
 
-[81]
-Underfull \hbox (badness 3302) in paragraph at lines 276--280
+
+Underfull \hbox (badness 3302) in paragraph at lines 324--328
 []\EU1/TimesNewRoman(0)/m/sc/12.045 wiki. Inversion. [][]$[][][][] [] [] [] [][
 ] [] [][][][][][][][][] [] [][][] [] [] [] [][][][][] [] [][][] [] [][][][][] [
 ]
@@ -2312,12 +2297,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 27241 strings out of 430478
- 491189 string characters out of 3191503
- 574285 words of memory out of 3000000
- 29852 multiletter control sequences out of 15000+200000
+ 27265 strings out of 430478
+ 491786 string characters out of 3191503
+ 574413 words of memory out of 3000000
+ 29876 multiletter control sequences out of 15000+200000
  68198 words of font info for 267 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 51i,18n,85p,1489b,624s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 51i,18n,85p,1489b,622s stack positions out of 5000i,500n,10000p,200000b,50000s
 
 Output written on thesis.pdf (100 pages).

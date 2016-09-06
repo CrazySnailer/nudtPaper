@@ -7,19 +7,35 @@ Human-powered wearable computing~[J].
 IBM systems Journal.
 1996, 35~(3.4):  618--629.
 
+\bibitem{cheng2012inferring}
+Cheng~N, Mohapatra~P, Cunche~M, et~al.
+Inferring user relationship from hidden information in wlans~[C].
+In MILCOM 2012-2012 IEEE Military Communications Conference.
+2012:  1--6.
+
 \bibitem{eagle2006reality}
 Eagle~N, Pentland~A.
 Reality mining: sensing complex social systems~[J].
 Personal and ubiquitous computing.
 2006, 10~(4):  255--268.
 
-\bibitem{rachuri2010emotionsense}
-Rachuri~K~K, Musolesi~M, Mascolo~C, et~al.
-EmotionSense: a mobile phones based adaptive platform for experimental social
-  psychology research~[C].
-In Proceedings of the 12th ACM international conference on Ubiquitous
-  computing.
-2010:  281--290.
+\bibitem{min2013mining}
+Min~J-K, Wiese~J, Hong~J~I, et~al.
+Mining smartphone data to classify life-facets of social relationships~[C].
+In Proceedings of the 2013 conference on Computer supported cooperative work.
+2013:  285--294.
+
+\bibitem{pentland2009inferring}
+Pentland~A, Eagle~N, Lazer~D.
+Inferring social network structure using mobile phone data~[J].
+Proceedings of the National Academy of Sciences (PNAS).
+2009, 106~(36):  15274--15278.
+
+\bibitem{zhang2011emergence}
+Zhang~D, Guo~B, Yu~Z.
+The emergence of social and community intelligence~[J].
+Computer.
+2011, 44~(7):  21--28.
 
 \bibitem{miluzzo2007cenceme}
 Miluzzo~E, Lane~N~D, Eisenman~S~B, et~al.
@@ -27,34 +43,6 @@ CenceMe--injecting sensing presence into social networking
   applications~[M]~//~Miluzzo~E, Lane~N~D, Eisenman~S~B, et~al.
  Smart Sensing and Context.
 Springer, 2007: 2007: 1--28.
-
-\bibitem{dong2011modeling}
-Dong~W, Lepri~B, Pentland~A~S.
-Modeling the co-evolution of behaviors and social relationships using mobile
-  phone data~[C].
-In Proceedings of the 10th International Conference on Mobile and Ubiquitous
-  Multimedia.
-2011:  134--143.
-
-\bibitem{thiagarajan2009vtrack}
-Thiagarajan~A, Ravindranath~L, LaCurts~K, et~al.
-VTrack: accurate, energy-aware road traffic delay estimation using mobile
-  phones~[C].
-In Proceedings of the 7th ACM Conference on Embedded Networked Sensor Systems.
-2009:  85--98.
-
-\bibitem{kanjo2010noisespy}
-Kanjo~E.
-NoiseSPY: a real-time mobile phone platform for urban noise monitoring and
-  mapping~[J].
-Mobile Networks and Applications.
-2010, 15~(4):  562--574.
-
-\bibitem{aharony2011social}
-Aharony~N, Pan~W, Ip~C, et~al.
-Social fMRI: Investigating and shaping social mechanisms in the real world~[J].
-Pervasive and Mobile Computing.
-2011, 7~(6):  643--659.
 
 \bibitem{wang2014studentlife}
 Wang~R, Chen~F, Chen~Z, et~al.
@@ -64,17 +52,89 @@ In Proceedings of the 2014 ACM International Joint Conference on Pervasive and
   Ubiquitous Computing.
 2014:  3--14.
 
-\bibitem{stopczynski2014measuring}
-Stopczynski~A, Sekara~V, Sapiezynski~P, et~al.
-Measuring large-scale social networks with high resolution~[J].
-PloS one.
-2014, 9~(4):  e95978.
+\bibitem{wang2015smartgpa}
+Wang~R, Harari~G, Hao~P, et~al.
+SmartGPA: how smartphones can assess and predict academic performance of
+  college students~[C].
+In Proceedings of the 2015 ACM International Joint Conference on Pervasive and
+  Ubiquitous Computing.
+2015:  295--306.
 
 \bibitem{granovetter1973strength}
 Granovetter~M~S.
 The strength of weak ties~[J].
 American journal of sociology.
 1973:  1360--1380.
+
+\bibitem{haythornthwaite2002strong}
+Haythornthwaite~C.
+Strong, weak, and latent ties and the impact of new media~[J].
+The information society.
+2002, 18~(5):  385--401.
+
+\bibitem{gustafson2012extracting}
+Gustafson~S, Moitra~A.
+Extracting and Measuring Relationship Strength in Social Networks~[J].
+2012.
+
+\bibitem{khadangi2013measuring}
+Khadangi~E, Zarean~A, Bagheri~A, et~al.
+Measuring relationship strength in online social networks based on users'
+  activities and profile information~[C].
+In Computer and Knowledge Engineering (ICCKE), 2013 3th International
+  eConference on.
+2013:  461--465.
+
+\bibitem{zhao2012relationship}
+Zhao~X, Yuan~J, Li~G, et~al.
+Relationship strength estimation for online social networks with the study on
+  Facebook~[J].
+Neurocomputing.
+2012, 95:  89--97.
+
+\bibitem{zillmann2013selective}
+Zillmann~D, Bryant~J.
+Selective exposure to communication~[M].
+Routledge, 2013.
+
+\bibitem{zajonc1968attitudinal}
+Zajonc~R~B.
+Attitudinal effects of mere exposure.~[J].
+Journal of personality and social psychology.
+1968, 9~(2p2): ~1.
+
+\bibitem{zillmann2000mood}
+Zillmann~D.
+Mood management in the context of selective exposure theory~[J].
+Annals of the International Communication Association.
+2000, 23~(1):  103--123.
+
+\bibitem{zheng2011recommending}
+Zheng~Y, Zhang~L, Ma~Z, et~al.
+Recommending friends and locations based on individual location history~[J].
+ACM Transactions on the Web (TWEB).
+2011, 5~(1): ~5.
+
+\bibitem{lee2007trajectory}
+Lee~J-G, Han~J, Whang~K-Y.
+Trajectory clustering: a partition-and-group framework~[C].
+In Proceedings of the 2007 ACM SIGMOD international conference on Management of
+  data.
+2007:  593--604.
+
+\bibitem{li2008mining}
+Li~Q, Zheng~Y, Xie~X, et~al.
+Mining user similarity based on location history~[C].
+In Proceedings of the 16th ACM SIGSPATIAL international conference on Advances
+  in geographic information systems.
+2008: ~34.
+
+\bibitem{lu2011mining}
+Lu~E H-C, Tseng~V~S, Philip~S~Y.
+Mining cluster-based temporal mobile sequential patterns in location-based
+  service environments~[J].
+IEEE Transactions on Knowledge and Data Engineering.
+2011, 23~(6):  914--927.
 
 \bibitem{burt2009structural}
 Burt~R~S.
@@ -106,12 +166,6 @@ Petr{\'o}czi~A, Nepusz~T, Bazs{\'o}~F.
 Measuring tie-strength in virtual social networks~[J].
 Connections.
 2007, 27~(2):  39--52.
-
-\bibitem{pentland2009inferring}
-Pentland~A, Eagle~N, Lazer~D.
-Inferring social network structure using mobile phone data~[J].
-Proceedings of the National Academy of Sciences (PNAS).
-2009, 106~(36):  15274--15278.
 
 \bibitem{mtibaa2008you}
 Mtibaa~A, Chaintreau~A, LeBrun~J, et~al.
@@ -171,12 +225,6 @@ Festinger~L.
 Leon Festinger~[J].
 Selective Exposure Theory.
 1977: ~14.
-
-\bibitem{zajonc1968attitudinal}
-Zajonc~R~B.
-Attitudinal effects of mere exposure.~[J].
-Journal of personality and social psychology.
-1968, 9~(2p2): ~1.
 
 \bibitem{levenshtein1966binary}
 Levenshtein~V~I.

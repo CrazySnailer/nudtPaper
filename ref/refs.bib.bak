@@ -403,3 +403,55 @@
   howpublished = {\url{http://en.wikipedia.org/w/index.php?title=Inversion_(discrete_mathematics)&oldid=650315847}},
   year = 2014,
 }
+
+
+
+
+
+
+
+@article{starner1996human,
+  title={Human-powered wearable computing},
+  author={Starner, Thad},
+  journal={IBM systems Journal},
+  volume={35},
+  number={3.4},
+  pages={618--629},
+  year={1996},
+  publisher={IBM}
+}
+@inproceedings{cheng2012inferring,
+  title={Inferring user relationship from hidden information in wlans},
+  author={Cheng, Ningning and Mohapatra, Prasant and Cunche, Mathieu and Kaafar, Mohamed Ali and Boreli, Roksana and Krishnamurthy, Srikanth},
+  booktitle={MILCOM 2012-2012 IEEE Military Communications Conference},
+  pages={1--6},
+  year={2012},
+  organization={IEEE}
+}
+@article{eagle2006reality,
+  title={Reality mining: sensing complex social systems},
+  author={Eagle, Nathan and Pentland, Alex Sandy},
+  journal={Personal and ubiquitous computing},
+  volume={10},
+  number={4},
+  pages={255--268},
+  year={2006},
+  publisher={Springer}
+}
+@inproceedings{min2013mining,
+  title={Mining smartphone data to classify life-facets of social relationships},
+  author={Min, Jun-Ki and Wiese, Jason and Hong, Jason I and Zimmerman, John},
+  booktitle={Proceedings of the 2013 conference on Computer supported cooperative work},
+  pages={285--294},
+  year={2013},
+  organization={ACM}
+}
+@article{pentland2009inferring,
+  title={Inferring social network structure using mobile phone data},
+  author={Pentland, A and Eagle, N and Lazer, D},
+  journal={Proceedings of the National Academy of Sciences (PNAS)},
+  volume={106},
+  number={36},
+  pages={15274--15278},
+  year={2009}
+}
