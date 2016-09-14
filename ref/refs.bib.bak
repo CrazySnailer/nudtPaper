@@ -620,3 +620,32 @@
   year={2007},
   organization={ACM}
 }
+
+@article{eagle2009inferring,
+  title={Inferring friendship network structure by using mobile phone data},
+  author={Eagle, Nathan and Pentland, Alex Sandy and Lazer, David},
+  journal={Proceedings of the national academy of sciences},
+  volume={106},
+  number={36},
+  pages={15274--15278},
+  year={2009},
+  publisher={National Acad Sciences}
+}
+
+@inproceedings{zheng2013unsupervised,
+  title={An unsupervised learning approach to social circles detection in ego bluetooth proximity network},
+  author={Zheng, Jiangchuan and Ni, Lionel M},
+  booktitle={Proceedings of the 2013 ACM international joint conference on Pervasive and ubiquitous computing},
+  pages={721--724},
+  year={2013},
+  organization={ACM}
+}
+
+@inproceedings{do2011groupus,
+  title={Groupus: Smartphone proximity data and human interaction type mining},
+  author={Do, Trinh Minh Tri and Gatica-Perez, Daniel},
+  booktitle={2011 15th Annual International Symposium on Wearable Computers},
+  pages={21--28},
+  year={2011},
+  organization={IEEE}
+}
