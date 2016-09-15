@@ -649,3 +649,23 @@
   year={2011},
   organization={IEEE}
 }
+@article{zheng2015trajectory,
+  title={Trajectory data mining: an overview},
+  author={Zheng, Yu},
+  journal={ACM Transactions on Intelligent Systems and Technology (TIST)},
+  volume={6},
+  number={3},
+  pages={29},
+  year={2015},
+  publisher={ACM}
+}
+
+@inproceedings{itakura1987distance,
+  title={Distance measure for speech recognition based on the smoothed group delay spectrum},
+  author={Itakura, Fumitada and Umezaki, Taizo},
+  booktitle={Acoustics, Speech, and Signal Processing, IEEE International Conference on ICASSP'87.},
+  volume={12},
+  pages={1257--1260},
+  year={1987},
+  organization={IEEE}
+}
