@@ -25,6 +25,10 @@ Repeated entry---line 593 of file ref/refs.bib
  : @article{zajonc1968attitudinal
  :                               ,
 I'm skipping whatever remains of this entry
+Repeated entry---line 663 of file ref/refs.bib
+ : @inproceedings{itakura1987distance
+ :                                   ,
+I'm skipping whatever remains of this entry
 -- BUPTThesis.bst version 1.0 Beta 1 (2009/05/31) by Yu Zhang.
 -- http://code.google.com/p/buptthesis/
 -- See the "userguide.pdf" manual for usage information.
@@ -49,10 +53,16 @@ Warning--empty editor in lee2007trajectory
 Warning--The editor in li2008mining is missing.
 Warning--empty editor in li2008mining
 Warning--there's a publisher but no address in burt2009structural
+Warning--The editor in hsu2007mining is missing.
+Warning--empty editor in hsu2007mining
+Warning--The editor in zheng2013unsupervised is missing.
+Warning--empty editor in zheng2013unsupervised
+Warning--The editor in do2011groupus is missing.
+Warning--empty editor in do2011groupus
 Warning--The editor in mtibaa2008you is missing.
 Warning--empty editor in mtibaa2008you
-Warning--The editor in crandall2008feedback is missing.
-Warning--empty editor in crandall2008feedback
+Warning--The editor in itakura1987distance is missing.
+Warning--empty editor in itakura1987distance
 Warning--The editor in pang2006introduction is missing.
 Warning--empty editor in pang2006introduction
 Warning--The editor in macqueen1967some is missing.
@@ -63,8 +73,6 @@ Warning--The editor in chen2005robust is missing.
 Warning--empty editor in chen2005robust
 Warning--The editor in chen2004marriage is missing.
 Warning--empty editor in chen2004marriage
-Warning--The editor in itakura1987distance is missing.
-Warning--empty editor in itakura1987distance
 Warning--The editor in berndt1994using is missing.
 Warning--empty editor in berndt1994using
 Warning--The editor in ratanamahatana2004everything is missing.
@@ -76,4 +84,4 @@ Warning--empty editor in farrahi2008did
 Warning--There is month but no year in mikolovword2vec
 
 Done.
-(There were 7 error messages)
+(There were 8 error messages)
