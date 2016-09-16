@@ -669,3 +669,14 @@
   year={1987},
   organization={IEEE}
 }
+
+@article{gonzalez2008understanding,
+  title={Understanding individual human mobility patterns},
+  author={Gonzalez, Marta C and Hidalgo, Cesar A and Barabasi, Albert-Laszlo},
+  journal={Nature},
+  volume={453},
+  number={7196},
+  pages={779--782},
+  year={2008},
+  publisher={Nature Publishing Group}
+}
