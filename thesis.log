@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2016.1.8)  15 SEP 2016 20:31
+This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2016.1.8)  17 SEP 2016 10:50
 entering extended mode
 **thesis
 (E:\Research_Study\nudtPaper\thesis.tex
@@ -1745,16 +1745,16 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [6])
 (E:\Research_Study\nudtPaper\data/chap02.tex [7] [8
 
-] [9
-
-
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [10]
-File: figures/figure2_1.png Graphic file (type QTm)
+ [9
 
-<use  "figures/figure2_1.png" >
+
+]
+[10]
+File: figures/figure2_1.png Graphic file (type QTm)
+ <use  "figures/figure2_1.png" >
 .................................................
 . fontspec info: "defining-font"
 . 
@@ -1763,9 +1763,14 @@ File: figures/figure2_1.png Graphic file (type QTm)
 . 
 . This font family consists of the following shapes:
 .................................................
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [11]
 File: figures/figure2_2.png Graphic file (type QTm)
- <use  "figures/figure2_2.png" >
-Overfull \hbox (6.82864pt too wide) in paragraph at lines 72--73
+
+<use  "figures/figure2_2.png" >
+Overfull \hbox (6.82864pt too wide) in paragraph at lines 62--63
  [][] 
  []
 
@@ -1775,42 +1780,38 @@ File: figures/figure2_4.png Graphic file (type QTm)
  <use  "figures/figure2_4.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [11]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [12]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [13]
+[13]
 Missing character: There is no – in font txr!
 Missing character: There is no – in font txr!
 Missing character: There is no – in font txr!
 Missing character: There is no – in font txr!
-
-[14]
 Missing character: There is no … in font txr!
 Missing character: There is no … in font txr!
 Missing character: There is no … in font txr!
 Missing character: There is no … in font txr!
+ [14]
 File: figures/figure2_5.png Graphic file (type QTm)
  <use  "figures/figure2_5.png" >
+Missing character: There is no … in font txr!
+Missing character: There is no … in font txr!
 Missing character: There is no … in font txr!
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [15]
-Missing character: There is no … in font txr!
-Missing character: There is no … in font txr!
-
 [16]
+File: figures/figure2_6.png Graphic file (type QTm)
+ <use  "figures/figure2_6.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [17]
-File: figures/figure2_6.png Graphic file (type QTm)
-
-<use  "figures/figure2_6.png" >
 File: figures/figure2_7.png Graphic file (type QTm)
- <use  "figures/figure2_7.png" > [18]
+
+<use  "figures/figure2_7.png" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [18]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [19]
@@ -1828,7 +1829,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ]
 File: figures/figure3_1.png Graphic file (type QTm)
  <use  "figures/figure3_1.png" >
-Overfull \hbox (6.82864pt too wide) in paragraph at lines 242--243
+Overfull \hbox (6.82864pt too wide) in paragraph at lines 232--233
  [][] 
  []
 
@@ -1909,11 +1910,11 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [29]
 
-LaTeX Warning: Reference `figure3_6' on page 30 undefined on input line 393.
+LaTeX Warning: Reference `figure3_6' on page 30 undefined on input line 383.
 
 File: figures/figure3_6.png Graphic file (type QTm)
 <use  "figures/figure3_6.png" >
-Overfull \hbox (6.82864pt too wide) in paragraph at lines 400--401
+Overfull \hbox (6.82864pt too wide) in paragraph at lines 390--391
  [][] 
  []
 
@@ -1939,7 +1940,7 @@ File: figures/figure3_8_1_1.png Graphic file (type QTm)
 <use  "figures/figure3_8_1_1.png" >
 File: figures/figure3_8_1_2.png Graphic file (type QTm)
  <use  "figures/figure3_8_1_2.png" >
-Overfull \hbox (5.54376pt too wide) in paragraph at lines 436--439
+Overfull \hbox (5.54376pt too wide) in paragraph at lines 426--429
  [][][][] 
  []
 
@@ -1947,7 +1948,7 @@ File: figures/figure3_8_1_3.png Graphic file (type QTm)
 <use  "figures/figure3_8_1_3.png" >
 File: figures/figure3_8_1_4.png Graphic file (type QTm)
  <use  "figures/figure3_8_1_4.png" >
-Overfull \hbox (5.54376pt too wide) in paragraph at lines 442--446
+Overfull \hbox (5.54376pt too wide) in paragraph at lines 432--436
  [][][][] 
  []
 
@@ -1960,7 +1961,7 @@ File: figures/figure3_9_1_3.jpg Graphic file (type QTm)
 <use  "figures/figure3_9_1_3.jpg" >
 File: figures/figure3_9_1_4.jpg Graphic file (type QTm)
  <use  "figures/figure3_9_1_4.jpg" >
-Overfull \hbox (12.28738pt too wide) in paragraph at lines 453--463
+Overfull \hbox (12.28738pt too wide) in paragraph at lines 443--453
  [][][][][][][][] 
  []
 
@@ -1968,7 +1969,7 @@ File: figures/figure3_8_2_1.png Graphic file (type QTm)
 <use  "figures/figure3_8_2_1.png" >
 File: figures/figure3_8_2_2.png Graphic file (type QTm)
  <use  "figures/figure3_8_2_2.png" >
-Overfull \hbox (5.54376pt too wide) in paragraph at lines 470--473
+Overfull \hbox (5.54376pt too wide) in paragraph at lines 460--463
  [][][][] 
  []
 
@@ -1976,7 +1977,7 @@ File: figures/figure3_8_2_3.png Graphic file (type QTm)
 <use  "figures/figure3_8_2_3.png" >
 File: figures/figure3_8_2_4.png Graphic file (type QTm)
  <use  "figures/figure3_8_2_4.png" >
-Overfull \hbox (5.54376pt too wide) in paragraph at lines 476--480
+Overfull \hbox (5.54376pt too wide) in paragraph at lines 466--470
  [][][][] 
  []
 
@@ -1989,7 +1990,7 @@ File: figures/figure3_9_2_3.jpg Graphic file (type QTm)
 <use  "figures/figure3_9_2_3.jpg" >
 File: figures/figure3_9_2_4.jpg Graphic file (type QTm)
  <use  "figures/figure3_9_2_4.jpg" >
-Overfull \hbox (12.28738pt too wide) in paragraph at lines 487--497
+Overfull \hbox (12.28738pt too wide) in paragraph at lines 477--487
  [][][][][][][][] 
  []
 
@@ -1997,7 +1998,7 @@ File: figures/figure3_8_3_1.png Graphic file (type QTm)
 <use  "figures/figure3_8_3_1.png" >
 File: figures/figure3_8_3_2.png Graphic file (type QTm)
  <use  "figures/figure3_8_3_2.png" >
-Overfull \hbox (5.54376pt too wide) in paragraph at lines 504--507
+Overfull \hbox (5.54376pt too wide) in paragraph at lines 494--497
  [][][][] 
  []
 
@@ -2005,7 +2006,7 @@ File: figures/figure3_8_3_3.png Graphic file (type QTm)
 <use  "figures/figure3_8_3_3.png" >
 File: figures/figure3_8_3_4.png Graphic file (type QTm)
  <use  "figures/figure3_8_3_4.png" >
-Overfull \hbox (5.54376pt too wide) in paragraph at lines 510--514
+Overfull \hbox (5.54376pt too wide) in paragraph at lines 500--504
  [][][][] 
  []
 
@@ -2018,7 +2019,7 @@ File: figures/figure3_9_3_3.jpg Graphic file (type QTm)
 <use  "figures/figure3_9_3_3.jpg" >
 File: figures/figure3_9_3_4.jpg Graphic file (type QTm)
  <use  "figures/figure3_9_3_4.jpg" >
-Overfull \hbox (12.28738pt too wide) in paragraph at lines 521--531
+Overfull \hbox (12.28738pt too wide) in paragraph at lines 511--521
  [][][][][][][][] 
  []
 
@@ -2140,7 +2141,7 @@ File: figures/figure4_1.png Graphic file (type QTm)
 
 
 ]
-Overfull \hbox (8.70436pt too wide) in paragraph at lines 745--747
+Overfull \hbox (8.70436pt too wide) in paragraph at lines 735--737
 \OML/txmi/m/it/12.045 Trace[]$ \xeCJK@song/m/n/12.045 按 时 间 均 分 为 $
 \OT1/txr/m/n/12.045 48$ \xeCJK@song/m/n/12.045 份，| 表 示 为 $\OML/txmi/m
 /it/12.045 Sep[]trace[] \OT1/txr/m/n/12.045 = \OMS/txsy/m/n/12.045 f\OML/txmi/m
@@ -2149,7 +2150,7 @@ n/12.045 ，|
  []
 
 
-Overfull \hbox (3.09387pt too wide) in paragraph at lines 745--747
+Overfull \hbox (3.09387pt too wide) in paragraph at lines 735--737
 \xeCJK@song/m/n/12.045 按 经 纬 度 计 算 平 均 值，| 并 将 新 的 
 轨 迹 序 列 表 示 为 $\OML/txmi/m/it/12.045 Ntrace[]$\EU1/TimesNewRoman(
 0)/m/n/12.045 ,$\OML/txmi/m/it/12.045 Ntrace[] \OT1/txr/m/n/12.045 = \OMS/txsy/
@@ -2182,7 +2183,7 @@ File: figures/figure5_2.jpg Graphic file (type QTm)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [59]
-Underfull \hbox (badness 10000) in alignment at lines 967--1006
+Underfull \hbox (badness 10000) in alignment at lines 957--996
 [][] 
  []
 
@@ -2267,13 +2268,13 @@ LaTeX Font Warning: Font shape `EU1/TimesNewRoman(0)/m/sc' undefined
 
 
 ] [82] [83]
-Underfull \hbox (badness 3189) in paragraph at lines 320--324
+Underfull \hbox (badness 3189) in paragraph at lines 327--331
 []\EU1/TimesNewRoman(0)/m/sc/12.045 Singelis T M. The measurement of independen
 t and interdependent self-
  []
 
 [84]
-Underfull \hbox (badness 3302) in paragraph at lines 355--359
+Underfull \hbox (badness 3302) in paragraph at lines 362--366
 []\EU1/TimesNewRoman(0)/m/sc/12.045 wiki. Inversion. [][]$[][][][] [] [] [] [][
 ] [] [][][][][][][][][] [] [][][] [] [] [] [][][][][] [] [][][] [] [][][][][] [
 ]
@@ -2305,12 +2306,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 27280 strings out of 430478
- 492173 string characters out of 3191503
- 574495 words of memory out of 3000000
- 29891 multiletter control sequences out of 15000+200000
+ 27277 strings out of 430478
+ 492140 string characters out of 3191503
+ 574398 words of memory out of 3000000
+ 29888 multiletter control sequences out of 15000+200000
  68198 words of font info for 267 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 51i,18n,85p,1489b,685s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 51i,18n,85p,1489b,680s stack positions out of 5000i,500n,10000p,200000b,50000s
 
 Output written on thesis.pdf (104 pages).

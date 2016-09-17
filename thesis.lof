@@ -1,6 +1,6 @@
-\contentsline {figure}{\numberline {2.1}{\ignorespaces K-MEANS算法原理示意图\relax }}{12}{figure.caption.8}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces K-MEANS算法原理示意图\relax }}{11}{figure.caption.8}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces DJ-cluster聚类算法原理示意\textsuperscript {\cite {zhou2007discovering}}\relax }}{12}{figure.caption.9}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces 按密度排序\textsuperscript {\cite {rodriguez2014clustering}}\relax }}{13}{figure.caption.10}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces 按密度排序\textsuperscript {\cite {rodriguez2014clustering}}\relax }}{12}{figure.caption.10}
 \contentsline {figure}{\numberline {2.4}{\ignorespaces 按距离排序，1、10为聚类中心\textsuperscript {\cite {rodriguez2014clustering}}\relax }}{13}{figure.caption.11}
 \contentsline {figure}{\numberline {2.5}{\ignorespaces 引自文献\cite {ratanamahatana2004everything}DTW原理示意图。\relax }}{15}{figure.caption.12}
 \contentsline {figure}{\numberline {2.6}{\ignorespaces LDA的图模型表示\textsuperscript {\cite {blei2003latent}}\relax }}{18}{figure.caption.13}
