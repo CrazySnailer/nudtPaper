@@ -14,50 +14,50 @@
 \contentsline {subsection}{\numberline {2.1.2}轨迹停留点检测}{12}{subsection.2.1.2}
 \contentsline {subsection}{\numberline {2.1.3}聚类算法}{12}{subsection.2.1.3}
 \contentsline {section}{\numberline {2.2}时间序列相似度度量方法及序列熵值}{15}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}编辑距离}{15}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Dynamic Time Warping}{16}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}序列熵值}{16}{subsection.2.2.3}
-\contentsline {section}{\numberline {2.3}自然语言处理模型}{18}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Latent Dirichlet Allocation}{19}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}word2vec}{20}{subsection.2.3.2}
-\contentsline {section}{\numberline {2.4}小结}{21}{section.2.4}
-\contentsline {chapter}{\numberline {3}用户关系强度层级投票模型框架}{23}{chapter.3}
-\contentsline {section}{\numberline {3.1}模型框架描述}{23}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}SASLL系统概述}{23}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}用户关系强度计算模型概述}{24}{subsection.3.1.2}
-\contentsline {section}{\numberline {3.2}模型完整流程描述}{25}{section.3.2}
-\contentsline {chapter}{\numberline {4}GPS数据处理及语义标签标注技术}{27}{chapter.4}
-\contentsline {section}{\numberline {4.1}SASLL标注技术}{27}{section.4.1}
-\contentsline {section}{\numberline {4.2}计算对应语义位置}{27}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}降低数据噪声}{28}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}剔除路上的点}{32}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}聚类得到语义位置}{34}{subsection.4.2.3}
-\contentsline {section}{\numberline {4.3}对语义位置标语义标签}{43}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}发现新位置}{44}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}新位置语义标签提示}{45}{subsection.4.3.2}
-\contentsline {section}{\numberline {4.4}小结}{47}{section.4.4}
-\contentsline {chapter}{\numberline {5}用户关系强度计算方法}{49}{chapter.5}
-\contentsline {section}{\numberline {5.1}用户关系强度计算方法概述}{49}{section.5.1}
-\contentsline {section}{\numberline {5.2}输入数据准备}{49}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}轨迹数据的处理与准备}{50}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}语义位置数据的处理与准备}{51}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}语义标签数据的处理与准备}{51}{subsection.5.2.3}
-\contentsline {section}{\numberline {5.3}关系强度计算}{52}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}基于原始轨迹数据的关系强度计算}{52}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}基于主题模型的关系强度计算}{53}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}结果投票}{54}{subsection.5.3.3}
-\contentsline {section}{\numberline {5.4}小结}{55}{section.5.4}
-\contentsline {chapter}{\numberline {6}数据集、评估方法及实验结果}{57}{chapter.6}
-\contentsline {section}{\numberline {6.1}数据集}{57}{section.6.1}
-\contentsline {section}{\numberline {6.2}评估方法}{61}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}构造真实结果}{62}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}评估方法}{63}{subsection.6.2.2}
-\contentsline {section}{\numberline {6.3}实验结果与分析}{65}{section.6.3}
-\contentsline {section}{\numberline {6.4}小结}{75}{section.6.4}
-\contentsline {chapter}{\numberline {7}结束语}{77}{chapter.7}
-\contentsline {section}{\numberline {7.1}工作总结}{77}{section.7.1}
-\contentsline {section}{\numberline {7.2}工作展望}{78}{section.7.2}
-\contentsline {chapter}{致谢}{81}{chapter*.73}
-\contentsline {chapter}{参考文献}{83}{section*.74}
-\contentsline {chapter}{作者在学期间取得的学术成果}{89}{chapter*.76}
+\contentsline {subsection}{\numberline {2.2.1}编辑距离}{17}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Dynamic Time Warping}{17}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}序列熵值}{18}{subsection.2.2.3}
+\contentsline {section}{\numberline {2.3}自然语言处理模型}{19}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Latent Dirichlet Allocation}{20}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}word2vec}{21}{subsection.2.3.2}
+\contentsline {section}{\numberline {2.4}小结}{23}{section.2.4}
+\contentsline {chapter}{\numberline {3}用户关系强度层级投票模型框架}{25}{chapter.3}
+\contentsline {section}{\numberline {3.1}模型框架描述}{25}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}SASLL系统概述}{25}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}用户关系强度计算模型概述}{26}{subsection.3.1.2}
+\contentsline {section}{\numberline {3.2}模型完整流程描述}{27}{section.3.2}
+\contentsline {chapter}{\numberline {4}GPS数据处理及语义标签标注技术}{29}{chapter.4}
+\contentsline {section}{\numberline {4.1}SASLL标注技术}{29}{section.4.1}
+\contentsline {section}{\numberline {4.2}计算对应语义位置}{29}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}降低数据噪声}{30}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}剔除路上的点}{34}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}聚类得到语义位置}{36}{subsection.4.2.3}
+\contentsline {section}{\numberline {4.3}对语义位置标语义标签}{45}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}发现新位置}{46}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}新位置语义标签提示}{47}{subsection.4.3.2}
+\contentsline {section}{\numberline {4.4}小结}{49}{section.4.4}
+\contentsline {chapter}{\numberline {5}用户关系强度计算方法}{51}{chapter.5}
+\contentsline {section}{\numberline {5.1}用户关系强度计算方法概述}{51}{section.5.1}
+\contentsline {section}{\numberline {5.2}输入数据准备}{51}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}轨迹数据的处理与准备}{52}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}语义位置数据的处理与准备}{53}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}语义标签数据的处理与准备}{53}{subsection.5.2.3}
+\contentsline {section}{\numberline {5.3}关系强度计算}{54}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}基于原始轨迹数据的关系强度计算}{54}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}基于主题模型的关系强度计算}{55}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}结果投票}{56}{subsection.5.3.3}
+\contentsline {section}{\numberline {5.4}小结}{57}{section.5.4}
+\contentsline {chapter}{\numberline {6}数据集、评估方法及实验结果}{59}{chapter.6}
+\contentsline {section}{\numberline {6.1}数据集}{59}{section.6.1}
+\contentsline {section}{\numberline {6.2}评估方法}{63}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}构造真实结果}{64}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}评估方法}{65}{subsection.6.2.2}
+\contentsline {section}{\numberline {6.3}实验结果与分析}{67}{section.6.3}
+\contentsline {section}{\numberline {6.4}小结}{77}{section.6.4}
+\contentsline {chapter}{\numberline {7}结束语}{79}{chapter.7}
+\contentsline {section}{\numberline {7.1}工作总结}{79}{section.7.1}
+\contentsline {section}{\numberline {7.2}工作展望}{80}{section.7.2}
+\contentsline {chapter}{致谢}{83}{chapter*.74}
+\contentsline {chapter}{参考文献}{85}{section*.75}
+\contentsline {chapter}{作者在学期间取得的学术成果}{91}{chapter*.77}
 \contentsfinish 

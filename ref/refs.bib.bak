@@ -680,3 +680,14 @@
   year={2008},
   publisher={Nature Publishing Group}
 }
+
+@article{wegmann2002image,
+  title={Image orientation by combined (A) AT with GPS and IMU},
+  author={Wegmann, Helge},
+  journal={INTERNATIONAL ARCHIVES OF PHOTOGRAMMETRY REMOTE SENSING AND SPATIAL INFORMATION SCIENCES},
+  volume={34},
+  number={1},
+  pages={278--283},
+  year={2002},
+  publisher={NATURAL RESOURCES CANADA}
+}
