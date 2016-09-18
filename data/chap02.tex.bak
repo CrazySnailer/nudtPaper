@@ -20,12 +20,12 @@ g(p)=median({g(p-m),...,g(p-1),g(p),g(p+1),...,g(p+m)})
 \par c)卡尔曼滤波：卡尔曼滤波是卡尔曼于1960年提出的\upcite{kalman1960new}，卡尔曼滤波器由一系列递归数学公式描述。它们提供了一种高效可计算的方法来估计过程的状态，并使估计均方误差最小。卡尔曼滤波
 器应用广泛且功能强大：它可以估计信号的过去和当前状态，甚至能估计将来的状态，即使并不知道模型的确切性质。接下来将介绍卡尔曼理论和实用方法。
 %--------------------------------------------------------------
-\par 在此之前需要引入离散随机过程，卡尔曼滤波器用于估计离散时间过程的状态变量$x\in R^{n}$,这个离散随机过程的方程如\ref{equ:chap2:kalman-01}描述：
+\par 在此之前需要引入离散随机过程，卡尔曼滤波器用于估计离散时间过程的状态变量$x\in \Re^{n}$,这个离散随机过程的方程如\ref{equ:chap2:kalman-01}描述：
 \begin{equation}
 \label{equ:chap2:kalman-01}
 x_{k}=Ax_{k-1}+Bu_{k-1}+w_{k-1}
 \end{equation}
-\par 定义我们所观测到的变量$x\in R^{m}$，在此基础上得到卡尔曼滤波的测量方程见公式\ref{equ:chap2:kalman-02}：
+\par 定义我们所观测到的变量$x\in \Re^{m}$，在此基础上得到卡尔曼滤波的测量方程见公式\ref{equ:chap2:kalman-02}：
 \begin{equation}
 \label{equ:chap2:kalman-02}
 z_{k}=Hx_{k}+v_{k}
@@ -40,10 +40,58 @@ z_{k}=Hx_{k}+v_{k}
 \label{equ:chap2:kalman-04}
   p(v)\sim N(0,R)
 \end{equation}
-%-----------------------------------------------------------------
-
-\par 对于均值滤波，中值滤波以及卡尔曼滤波三种滤波算法而言，均值滤波比较容易受跳变的影响，中值滤波比均值滤波更鲁棒，卡尔曼滤波效果会更好一些，但是模型也更复杂，运算复杂度相较前两种滤波算法来说也会大一些。
+\par 在实际随机过程中，激励噪声$w_{k}$的协方差矩阵$Q$和观测到的噪声$v_{k}$的协方差矩阵$R$是会随着每次迭代计算而改变的，因此为了便于推演我们假设它们都是固定的常数。当函数$u_{k-1}$等于0时或者噪声函数$w_{k-1}$等于0时，随机过程方程\ref{equ:chap2:kalman-01}中的$n*n$阶矩阵$A$将$k-1$时刻的状态通过线性映射到$k$时刻的状态，$n*l$阶矩阵$B$表示变量$u\in \Re^{l}$的增益，为了便于计算，这些变量在此都假设为常数。
+\par 我们定义$\hat{x}_{\bar{k}} \in \Re^{n}$为在第$k$项之前的状态下计算得到的第$k$项的先验状态估计值，设$\hat{x}_{k} \in \Re^{n}$表示已经得到的变量$z_{k}$时，第k步的后验状态估计值。由此根据以上描述我们可以定义出如\ref{equ:chap2:kalman-05}和\ref{equ:chap2:kalman-06}说表示的先验估计误差后后验估计误差：
+\begin{equation}
+\label{equ:chap2:kalman-05}
+  e_{\bar{k}}\equiv x_{k}-\hat{x}_{\bar{k}}
+\end{equation}
+\begin{equation}
+\label{equ:chap2:kalman-06}
+  e_{k}\equiv x_{k}-\hat{x}_{k}
+\end{equation}
+\par 进一步得出先验估计和后验估计的协方差为：
+\begin{equation}
+\label{equ:chap2:kalman-07}
+P_{\bar{k}}=E\left [ e_{\bar{k}} {e_{\bar{k}}}^{T}  \right ]
+\end{equation}
+\begin{equation}
+\label{equ:chap2:kalman-08}
+P_{k}=E\left [ e_{k} {e_{k}}^{T}  \right ]
+\end{equation}
+\par 基于以上的理论准备，构建出卡尔曼滤波算法的数学表达式\ref{equ:chap2:kalman-09}，其含义为：先验估计$\hat{x}_{\bar{k}}$和测量得到的变量$z_{k}$同其预测值$H\hat{x}_{\bar{k}}$之差的线性组合共同组成了后验状态估计$\hat{x}_{x}$
+\begin{equation}
+\label{equ:chap2:kalman-09}
+\hat{x}_{k}=\hat{x}_{\bar{k}} + K(z_{k}-H\hat{x}_{\bar{k}})
+\end{equation}
+\par 根据\ref{equ:chap2:kalman-09}中表示可以进一步得到$K$的具体表达公式，其中真实变量与其预测之差$(z_{k}-H\hat{x}_{\bar{k}})$被称之为残差，该指标有效地反映了预测值与实际值之间的不一致的程度，如果残差为零，则表示二者完全相吻合。$n*m$阶矩阵$K$称之为剩余增益或者混系数，其主要作用是使得\ref{equ:chap2:kalman-08}中所得到的后验估计误差协方差最小，其计算步骤为：首先根据\ref{equ:chap2:kalman-09} 代入\ref{equ:chap2:kalman-06}中求得$e_{k}$,再将$e_{k}$代入\ref{equ:chap2:kalman-08}求得期望后对$K$进行求导，并令一阶导数为零就可以求得$K$的值如\ref{equ:chap2:kalman-10}：
+\begin{align}
+\label{equ:chap2:kalman-10}
+\hat{x}_{k}=\hat{x}_{\bar{k}} + K(z_{k}-H\hat{x}_{\bar{k}})
+\nonumber \\
+=\frac{P_{\bar{k}}H^{T}}{HP_{\bar{k}}H^{T}+R}
+\end{align}
+\par 从\ref{equ:chap2:kalman-10}中能够得知观测到的数据的噪音的协方差$R$越小，残余增益$K$越大，特别地当$R$趋向零时有：
+\begin{equation}
+\label{equ:chap2:kalman-11}
+\lim_{P_{k} \to 0 }K_{k}=H^{-1}
+\end{equation}
+\par 另一方面，先验估计误差的协方差越小，残余增益$K$越小，特别当$P_{\bar{k}}$趋近于零时有：
+\begin{equation}
+\label{equ:chap2:kalman-12}
+\lim_{P_{\bar{k}} \to 0 }K_{k}=0
+\end{equation}
+\par 综合\ref{equ:chap2:kalman-10}、\ref{equ:chap2:kalman-11}、\ref{equ:chap2:kalman-12}针对单个模型的测量利用上述说描述的所有公式就能够通过不断的迭代计算得出最优的估算结果。对于上述介绍的三种滤波技术而言，均值滤波在剔除数值中的随机噪音表现良好，但是不易消除脉冲误差；中值滤波能够减少偶然数据波动带来的误差影响，但是对变化快速的数据不宜使用；卡尔曼滤波最终的结果会优于前两者，但是模型较为复杂，所要求的运算时间复杂度也高于前面的滤波算法。
+\subsection{轨迹停留点检测}
+现实生活中用户的日常轨迹通常是有一系列包含了地理坐标和时间戳的GPS位置点构成，每个坐标点包含了详细的经纬度、时间戳信息、海拔高度、移动速度等信息。如图\ref{figure2_1_gps}所示。
+\begin{figure}[htp]
+\centering
+\includegraphics{figure2_1_gps}
+\caption{K-MEANS算法原理示意图}
+\label{fig:2_1}
+\end{figure}
 \subsection{聚类算法}
+%写到了zhe里--------------
 聚类算法是无监督学习中非常重要的方法之一。文献\cite{pang2006introduction} 聚类分析仅根据在数据中发现的描述对象及其关系的信息，将数据对象分组。其目标是，组内的对象相互之间是相似的（相关的），而不同组中的对象是不同的（不相关的）。组内相似性越大，组间差别越大，聚类就越好。聚类算法主要分为以下几种，划分的聚类算法，如K均值算法；层次聚类算法；基于密度的聚类算法，如DBSCAN；基于原型的聚类算法，如模糊聚类；基于网格的聚类算法以及基于图的聚类算法。本节主要介绍K-MEANS聚类算法，DJ-Cluster聚类算法以及14年发表在Science上的聚类算法。
 \par K-means是由J.MacQUEEN在1967提出的一种非常简单、高效的聚类算法\upcite{macqueen1967some}。其算法基本思想是：随机初始化K个点，作为K 个类别的中心，计算每个点到每个类别中心的距离，将该点划分到距离最近的类别中，对每个类别，将属于该类别的所有点的平均值作为该类别新的聚类中心，不断执行该步骤直到每个类别的聚类中心收敛。其原理示意图见图\ref{fig:2_1}。 该算法优点为思想简单，易于实现，且算法复杂度低，故而对于处理大数据集，该算法是相对可伸缩和高效率的；若待分类的簇是密集的、球状或团装的，而簇与簇之间有明显区别，则能得到非常好的聚类效果。该算法缺点是用户必须事先知道类别的个数；而且该算法对初始值敏感，对于不同的初始值，可能产生不同的聚类结果；不能适用于簇是非凸面形状或者大小差别很大的情况；最后该算法对噪声和孤立点数据敏感，这些数据容易对聚类中心产生极大的影响，从而影响聚类的结果。
 \begin{figure}[htp]
