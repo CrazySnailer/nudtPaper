@@ -252,6 +252,13 @@ In Proceedings of the fifth Berkeley symposium on mathematical statistics and
   probability.
 1967:  281--297.
 
+\bibitem{ester1996density}
+Ester~M, Kriegel~H-P, Sander~J, et~al.
+A density-based algorithm for discovering clusters in large spatial databases
+  with noise.~[C].
+In Kdd.
+1996:  226--231.
+
 \bibitem{zhou2007discovering}
 Zhou~C, Frankowski~D, Ludford~P, et~al.
 Discovering personally meaningful places: An interactive clustering
@@ -265,11 +272,12 @@ Clustering by fast search and find of density peaks~[J].
 Science.
 2014, 344~(6191):  1492--1496.
 
-\bibitem{festinger1977leon}
-Festinger~L.
-Leon Festinger~[J].
-Selective Exposure Theory.
-1977: ~14.
+\bibitem{liu2012similarity}
+Liu~H, Schneider~M.
+Similarity measurement of moving object trajectories~[C].
+In Proceedings of the Third ACM SIGSPATIAL International Workshop on
+  GeoStreaming.
+2012:  19--22.
 
 \bibitem{levenshtein1966binary}
 Levenshtein~V~I.
