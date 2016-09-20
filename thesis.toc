@@ -17,10 +17,10 @@
 \contentsline {subsection}{\numberline {2.2.1}轨迹中心距离}{17}{subsection.2.2.1}
 \contentsline {subsection}{\numberline {2.2.2}Dynamic Time Warping}{18}{subsection.2.2.2}
 \contentsline {subsection}{\numberline {2.2.3}序列熵值}{19}{subsection.2.2.3}
-\contentsline {section}{\numberline {2.3}自然语言处理模型}{20}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Latent Dirichlet Allocation}{21}{subsection.2.3.1}
+\contentsline {section}{\numberline {2.3}自然语言处理模型}{21}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Latent Dirichlet Allocation}{22}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}word2vec}{22}{subsection.2.3.2}
-\contentsline {section}{\numberline {2.4}小结}{23}{section.2.4}
+\contentsline {section}{\numberline {2.4}小结}{24}{section.2.4}
 \contentsline {chapter}{\numberline {3}用户关系强度层级投票模型框架}{25}{chapter.3}
 \contentsline {section}{\numberline {3.1}模型框架描述}{25}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}SASLL系统概述}{25}{subsection.3.1.1}
@@ -57,7 +57,7 @@
 \contentsline {chapter}{\numberline {7}结束语}{79}{chapter.7}
 \contentsline {section}{\numberline {7.1}工作总结}{79}{section.7.1}
 \contentsline {section}{\numberline {7.2}工作展望}{80}{section.7.2}
-\contentsline {chapter}{致谢}{83}{chapter*.74}
-\contentsline {chapter}{参考文献}{85}{section*.75}
-\contentsline {chapter}{作者在学期间取得的学术成果}{91}{chapter*.77}
+\contentsline {chapter}{致谢}{83}{chapter*.75}
+\contentsline {chapter}{参考文献}{85}{section*.76}
+\contentsline {chapter}{作者在学期间取得的学术成果}{91}{chapter*.78}
 \contentsfinish 
