@@ -212,7 +212,8 @@ ctr(Tra)=(\bar{x},\bar{y})=(  \frac{\int x f(x)dx  }{\int f(x)dx},\frac{\int y f
 \par 采用该算法来计算用户轨迹之间的相似度同直接计算轨迹之间的欧氏距离相比较，能够将轨迹的形状考虑在内，这样能够结合避免直接计算轨迹之间的距离所因为离群点造成了计算结果的巨大偏差。
 \subsection{Dynamic Time Warping}
 DTW(Dynamic Time Warping)算法最初是由Itakura提出的的一种新型的计算距离的方法\upcite{itakura1987distance}，在最初的一段时间是被应用于语音识别领域，在语音识别中即使是同一个词语，由不同的人说出口但是他们的语速、语气等不同造成了单词音频的差别。DTW正由于其计算距离的特殊处理使其能够胜任这一工作。DTW算法采用动态时间规整的思想，将需要比较的两个序列在横轴时间维度上进行压缩、拉伸等操作，使得两条序列具有相同的长度具有更有效的匹配度，同时也消除了传统基于欧式距离计算带来的弊端。
-\par 假设有两个时间序列，序列$Q$长度为$n$ （见公式\ref{equ:chap2:dtw_01}），序列$C$ 长度为$m$ （见公式\ref{equ:chap2:dtw_02}）。为了计算两个序列之间的DTW 距离，需要构造一个$n \ast m$矩阵$d$，其中$d[i,j]$ 表示序列$Q$ 第$i$个元素$q_{i}$ 和序列$C$第$j$ 个元素$c_{j}$之间的距离，通常使用欧氏距离作为两个元素之间的距离度量。构造$n \ast m$ 矩阵$\gamma$。为了寻找这两个序列之间的最佳匹配，需要寻找一条路径使得累积距离$\gamma[i,j]$最小化，可以通过使用动态规划的方法来找到这条路径，$\gamma[n,m]$ 为最终的DTW距离，其递推公式见公式\ref{equ:chap2:dtw_03}。$d[i,j]$指$q_{i}$ 和$c_{j}$ 之间的欧式距离。$\gamma[i,j]$是指当前的累积距离，路径及矩阵可视化见图\ref{fig:2_5}。其中：A)两个异相的相似序列Q 和C；B)为了匹配这两个序列，构造了一个变形矩阵，并搜索最佳的变形路径即红色所示路径，且将搜索局限到一个窗口中；C) 匹配结果
+\par 设待计算距离的两个序列，序列$Q$和序列$C$ （两条序列的表示见公式\ref{equ:chap2:dtw_01}、\ref{equ:chap2:dtw_02}）。如果两条序列的长度相同，则计算变得很简单。但是如果$m \neq n$，就需要拉伸变形两条序列，使得它们的长度能够尽量对齐同时保留原有序列的信息，算法首先构造一个$n \ast m$矩阵$d$，其中$d[i,j]$ 表示$q_{i}$ 和$c_{j}$之间的距离。采用动态规划的方法来找出序列$Q$和$C$之间的最佳匹配，其中转移方程为找出一条路径使得所有总和的距离$\gamma[i,j]$最小化，具体公式描述见公式\ref{equ:chap2:dtw_03}。
+路径及矩阵可视化见图\ref{fig:2_5}。其中：A)为两个待计算比较的序列；B)为通过DTW动态规划求解后两条序列计算距离时所对应的点；C) 将原有序列所对应的位置进行拉伸展开后更加直观的DTW匹配计算结果示意图。
 \begin{equation}
 \label{equ:chap2:dtw_01}
 Q=q_{1},q_{2},…,q_{i},…,q_{n}
@@ -225,44 +226,23 @@ C=c_{1},c_{2},…,c_{j},…,c_{m}
 \label{equ:chap2:dtw_03}
 \gamma[i,j]=d[i,j]+min\{\gamma[i-1,j-1],\gamma[i-1,j],\gamma[i,j-1]\}
 \end{equation}
-\begin{figure}[htp]
-\centering
-\includegraphics[width=4in]{figure2_5}
-\caption{引自文献\cite{ratanamahatana2004everything}DTW原理示意图。}
-\label{fig:2_5}
+\begin{figure}[htb]
+  \centering%
+  \subfloat[原始序列]{%
+    \label{fig:dtw-1}
+    \includegraphics[width=0.4\textwidth]{dtw-1}}\hspace{2em}%
+  \subfloat[DTW算法匹配模式结果]{%
+    \label{dtw-2}
+    \includegraphics[width=0.4\textwidth]{dtw-2}}\hspace{2em}
+    \subfloat[DTW算法拉伸序列计算距离]{%
+    \label{dtw-2}
+    \includegraphics[width=0.4\textwidth]{dtw-3}}
+  \caption{DTW算法匹配序列结果示意图}
+  \label{fig:2_5}
 \end{figure}
-\par 通过深入分析DTW算法可知，序列的长度越长，则距离可能越大。因此，采用文献\cite{ratanamahatana2004everything} 中的三种归一化方法对DTW的计算结果进行进一步的处理和优化，即DTW结果除以最优变形路径的长度、DTW结果除以两个序列中较短序列的长度以及DTW结果除以两个序列中较长序列的长度等三种方法对DTW计算结果进行归一化，以便获得最优结果。
-\subsection{序列熵值}
-通过对用户每天产生的轨迹序列的分析，可以将其看作一个由一系列随机变量$X_{n}$构成的随机过程序列$X=\{X_{1},X_{2},…,X_{n}\}$，$X_{n}$表示用户在时刻$n$ 所在的物理位置。熵通常用来度量一个系统的无序程度，熵越大表示该系统越混乱。若用户每天活动单一，则熵值会很小，若活动多样，则熵值会越大。因此，可以用熵值来度量用户每天活动的多样性程度，香农熵的定义见公式如公式\ref{equ:chap2:se_01}，其中$P(x_{i})$是$x_{i}=X_{i}$的概率。
-\begin{equation}
-\label{equ:chap2:se_01}
-H=-\sum_{i}p(x_{i})log_{2}p(x_{i})
-\end{equation}
-\par 对于一个长度为n的随机变量序列，需要考虑该序列的熵值如何随n增长，这个增长率称为熵率，熵率定义见公式\ref{equ:chap2:se_02}。同时，熵率存在一个相关的量，定义见公式\ref{equ:chap2:se_03}。 对于平稳随机过程，这两种定义的极限均存在且相等\upcite{cover2012elements}。
-\begin{equation}
-\label{equ:chap2:se_02}
-H(\aleph)=lim_{n \rightarrow \infty} \frac{1}{n}H(X_{1},X_{2}...,X_{n})
-\end{equation}
-\begin{equation}
-\label{equ:chap2:se_03}
-H^{'}(\aleph)=lim_{n \rightarrow \infty} H(X_{n}|X_{n-1},X_{n-2}...,X_{1})
-\end{equation}
-\par 由于条件熵值（公式\ref{equ:chap2:se_03}）难以直接计算，因此通常使用估量值来计算熵率，常用的估量值主要包括LZ (Lempel-Ziv)估量值\upcite{kontoyiannis1998nonparametric}以及实时LZ估量值\upcite{mcinerney2013breaking} 等。LZ估量值的定义见公式\ref{equ:chap2:se_04}，其中$\gamma_i$定义为从位置$i$ 开始，不在序列$(X_{1},X_{2},…,X_{i-1})$中出现的最短的子序列的长度。实时LZ 估量值的定义见公式\ref{equ:chap2:se_05} 和公式\ref{equ:chap2:se_06}，其中$\delta_i$定义为以位置$i$结尾，不在序列$(X_{1},X_{2},…,X_{i-\delta_i})$ 中出现的最短的子序列的长度。这两种度量实际上是等价的，在本文中我们使用实时LZ 估量值，该估量值只利用当前已知的信息。
-\begin{equation}
-\label{equ:chap2:se_04}
-\hat{H}_{N}=(\frac{1}{N-1}\sum_{i=2}^{N}\frac{\gamma_i}{log_{2}(i)})^{-1}
-\end{equation}
-\begin{equation}
-\label{equ:chap2:se_05}
-\tilde{H}_{i}=\frac{log_{2}(i)}{\delta_i}
-\end{equation}
-\begin{equation}
-\label{equ:chap2:se_06}
-\hat{H}_{N}=\frac{N}{\sum_{i=2}^{n}\tilde{H}_{i}^{-1}}
-\end{equation}
-\par 计算轨迹序列的熵值的目的是为了对DTW计算结果进行加权，因为用户每天的轨迹序列的相似度对其总体相似度的贡献是不一样的，如果某一天用户的轨迹序列的熵值越大，则这一天对总的相似度贡献越大，因此，使用用户当天轨迹序列熵值对用户与朋友之间每天的轨迹相似度进行加权，能够更真实地反应用户之间的关系强度（如何使用轨迹序列熵值对DTW 的计算结果进行加权详见第五章第三小节）。
-\par 编辑距离和DTW都是非常常用的两种时间序列相似度度量方法，在第六章我们将通过实验展示这两种方法以及用序列熵值加权后的两种方法用来度量用户关系强度的效果
-\section{自然语言处理模型}
+\par 通过对DTW算法的原理分析可以得知，序列$Q$和序列$C$的长度越长，则最终计算结果得到的距离就会越大。因此，后者研究中，采用了多种归一化的加权处理方法对结果进行加权处理\cite{ratanamahatana2004everything}，获得最优的DTW计算结果。
+
+\section{自然语言处理方法}
 \label{sec:section2-3}
 在日常生活当中，用户之间尤其是好友之间其行为模式之间具有一定的相似性，如经常去某些地方、经常在某些时间段（晚上）去一些地方（餐馆、酒吧）等等。基于位置的用户行为模式一方面能够反映用户在物理层次的相遇，另一方面能够在一定程度上体现用户的相似性，前文已经从社会心理学的角度阐述了相遇次数与用户关系强度的关系，Singelis\upcite{singelis1994measurement}认为人们倾向于喜欢在态度、兴趣、价值观、背景和人格上和其相似的人，因此，在日常生活当中行为相似的人之间更可能成为朋友，而根据社会心理学的研究成果，用户的相似性对用户的关系强度也有一定的影响，为此，在通过基于用户轨迹度量用户之间关系强度的基础上，进一步通过基于位置的用户日常行为来对度量用户之间的关系强度。
 \par 通过将位置序列和自然语言中的句子进行类比，能够发现，自然语言处理中的这些方法可以很自然的用来处理位置轨迹数据。位置序列是用户轨迹语义层次的一种表示，例如一个学生一天的位置轨迹可以表示为宿舍、实验室、食堂、宿舍，实验室、食堂、宿舍。通过深入分析，认为自然语言中的每个句子受两方面的约束，即主观约束和客观约束。客观约束指句子的构造受到对应语言语法的约束；主观约束指在句子的构造过程中，部分词的使用和构造者的个人喜好相关。再来分析一下位置序列，位置序列的构成也受主观和客观这两方面的约束，客观约束指用户自身的社会角色限制了用户每天可能的位置序列；主观约束指用户在客观约束下，对于一些位置具有选择性，如用户可以自己决定去什么地方吃饭等。

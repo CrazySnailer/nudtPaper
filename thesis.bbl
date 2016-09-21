@@ -279,32 +279,6 @@ In Proceedings of the Third ACM SIGSPATIAL International Workshop on
   GeoStreaming.
 2012:  19--22.
 
-\bibitem{levenshtein1966binary}
-Levenshtein~V~I.
-Binary codes capable of correcting deletions, insertions, and reversals~[C].
-In Soviet physics doklady.
-1966:  707--710.
-
-\bibitem{chen2005robust}
-Chen~L, {\"O}zsu~M~T, Oria~V.
-Robust and fast similarity search for moving object trajectories~[C].
-In Proceedings of the 2005 ACM SIGMOD international conference on Management of
-  data.
-2005:  491--502.
-
-\bibitem{chen2004marriage}
-Chen~L, Ng~R.
-On the marriage of lp-norms and edit distance~[C].
-In Proceedings of the Thirtieth international conference on Very large data
-  bases-Volume 30.
-2004:  792--803.
-
-\bibitem{berndt1994using}
-Berndt~D~J, Clifford~J.
-Using Dynamic Time Warping to Find Patterns in Time Series.~[C].
-In KDD workshop.
-1994:  359--370.
-
 \bibitem{ratanamahatana2004everything}
 Ratanamahatana~C~A, Keogh~E.
 Everything you know about dynamic time warping is wrong~[C].
