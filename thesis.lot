@@ -1,10 +1,10 @@
-\contentsline {table}{\numberline {6.1}{\ignorespaces 调查问卷\textsuperscript {\cite {eagle2006reality}}}}{60}{table.6.1}
-\contentsline {table}{\numberline {6.2}{\ignorespaces 基站区域号与对应的语义标签}}{63}{table.caption.59}
-\contentsline {table}{\numberline {6.3}{\ignorespaces 真实结果}}{66}{table.caption.62}
-\contentsline {table}{\numberline {6.4}{\ignorespaces 无优化DTW方法得到好友列表}}{69}{table.caption.65}
-\contentsline {table}{\numberline {6.5}{\ignorespaces 优化DTW方法得到好友列表}}{70}{table.caption.66}
-\contentsline {table}{\numberline {6.6}{\ignorespaces 基于语义位置行为模式相似度得到好友列表}}{73}{table.caption.68}
-\contentsline {table}{\numberline {6.7}{\ignorespaces LDA模型学习到的主题}}{74}{table.caption.70}
-\contentsline {table}{\numberline {6.8}{\ignorespaces 基于语义标签行为模式相似度得到好友列表}}{75}{table.caption.71}
-\contentsline {table}{\numberline {6.9}{\ignorespaces 三层结果投票得到好友列表}}{76}{table.caption.73}
+\contentsline {table}{\numberline {6.1}{\ignorespaces 调查问卷\textsuperscript {\cite {eagle2006reality}}}}{58}{table.6.1}
+\contentsline {table}{\numberline {6.2}{\ignorespaces 基站区域号与对应的语义标签}}{61}{table.caption.59}
+\contentsline {table}{\numberline {6.3}{\ignorespaces 真实结果}}{64}{table.caption.62}
+\contentsline {table}{\numberline {6.4}{\ignorespaces 无优化DTW方法得到好友列表}}{67}{table.caption.65}
+\contentsline {table}{\numberline {6.5}{\ignorespaces 优化DTW方法得到好友列表}}{68}{table.caption.66}
+\contentsline {table}{\numberline {6.6}{\ignorespaces 基于语义位置行为模式相似度得到好友列表}}{71}{table.caption.68}
+\contentsline {table}{\numberline {6.7}{\ignorespaces LDA模型学习到的主题}}{72}{table.caption.70}
+\contentsline {table}{\numberline {6.8}{\ignorespaces 基于语义标签行为模式相似度得到好友列表}}{73}{table.caption.71}
+\contentsline {table}{\numberline {6.9}{\ignorespaces 三层结果投票得到好友列表}}{74}{table.caption.73}
 \contentsfinish 

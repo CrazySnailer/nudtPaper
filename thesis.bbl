@@ -285,25 +285,6 @@ Everything you know about dynamic time warping is wrong~[C].
 In Third Workshop on Mining Temporal and Sequential Data.
 2004.
 
-\bibitem{cover2012elements}
-Cover~T~M, Thomas~J~A.
-Elements of information theory~[M].
-John Wiley \& Sons, 2012.
-
-\bibitem{kontoyiannis1998nonparametric}
-Kontoyiannis~I, Algoet~P~H, Suhov~Y~M, et~al.
-Nonparametric entropy estimation for stationary processes and random fields,
-  with applications to English text~[J].
-Information Theory, IEEE Transactions on.
-1998, 44~(3):  1319--1327.
-
-\bibitem{mcinerney2013breaking}
-McInerney~J, Stein~S, Rogers~A, et~al.
-Breaking the habit: Measuring and predicting departures from routine in
-  individual human mobility~[J].
-Pervasive and Mobile Computing.
-2013, 9~(6):  808--822.
-
 \bibitem{singelis1994measurement}
 Singelis~T~M.
 The measurement of independent and interdependent self-construals~[J].
@@ -316,6 +297,17 @@ What did you do today?: discovering daily routines from large-scale mobile
   data~[C].
 In Proceedings of the 16th ACM international conference on Multimedia.
 2008:  849--852.
+
+\bibitem{yangruosong}
+杨若松.
+基于轨迹数据的用户关系强度度量方法研究~[D].
+[S.~l.]: 万方数据资源系统, 2016.
+
+\bibitem{mikolov2013efficient}
+Mikolov~T, Chen~K, Corrado~G, et~al.
+Efficient estimation of word representations in vector space~[J].
+arXiv preprint arXiv:1301.3781.
+2013.
 
 \bibitem{blei2003latent}
 Blei~D~M, Ng~A~Y, Jordan~M~I.
