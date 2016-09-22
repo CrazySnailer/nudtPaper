@@ -708,3 +708,19 @@
   pages={226--231},
   year={1996}
 }
+
+@inproceedings{liu2012similarity,
+  title={Similarity measurement of moving object trajectories},
+  author={Liu, Hechen and Schneider, Markus},
+  booktitle={Proceedings of the Third ACM SIGSPATIAL International Workshop on GeoStreaming},
+  pages={19--22},
+  year={2012},
+  organization={ACM}
+}
+
+@phdthesis{yangruosong,
+  title={基于轨迹数据的用户关系强度度量方法研究},
+  author={杨若松},
+  year={2016},
+  school={万方数据资源系统}
+}
