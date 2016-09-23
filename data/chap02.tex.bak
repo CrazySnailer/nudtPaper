@@ -249,52 +249,41 @@ C=c_{1},c_{2},…,c_{j},…,c_{m}
 \par 在以往的研究中，通常使用编辑距离来衡量语句的相似性。在用户轨迹相似分析上，文献\cite{farrahi2008did}借助了LDA主题模型来计算用户语义轨迹之间的相似性，后来的研究在其其基础上对计算方法进行了改进\upcite{yangruosong}。其算法改进在于基于LDA主题模型，将用户的所有语义轨迹看作一篇文档来训练出若干个主题。在计算用户轨迹相似性的时候，将用户用户估计输入到训练好的LDA模型中，然后采用余弦相似度分析比较二者输出的主题分布集合之间的相似度，作为这两个用户之间的关系强度。
 \par word2vec是Google在2013年开源的一种词向量计算算法\upcite{mikolov2013efficient}， word2vec借鉴深度学习方法，将文本通过训练的得到文本的$K$维向量表示，通过词与词之间的距离来计算它们之间的相似度。
 \subsection{LDA主题模型}
-2003年文献\cite{blei2003latent}提出了LDA(Latent Dirichlet Allocation)模型对自然语言进行建模，可以用来识别文档语料中潜在的主题信息。整个计算模型采用了词袋的计算方法，计算出文档的向量表示，每一篇文档计算出一部分主题的概率分布，而每一个主题内又可以表示为很多词语的一个概率分布，LDA的训练过程为：遍历每一个文档，在主题分布袋中随机抽取一个主题；然后在被随机抽取到的主题中再随机抽取一个单词；最后重复上述步骤直到遍历完文档中的所有词语。整个生成的过程可以用图\ref{fig:2_6}表示:对于每一份文档与设定的$T$个主题之间的概率分布对应$\theta $，每个主题与词袋中的$V$个词语之间的概率分布$\phi$，其中$\theta $和$\phi$分别有一个参数$\alpha$和$\beta$的狄利克雷的先验分布，这样对于任意一份文档$d$中的每一词语，我们从与文档相对应的概率分布$\theta $中选取一个主题$z$，随即在根据与主题$z$对应的概率分布$\phi$中选取一个词语$w$，最后重复上述过程$N_{d}$次，就能够产生文档$d$。
-\begin{equation}
-\label{equ:chap2:lda_01}
-p(\omega_{t})=\sum_{k=1}^{K}p(\omega_t|z_{t}=k)p(z_{t}=k)
-\end{equation}
+2003年文献\cite{blei2003latent}提出了LDA(Latent Dirichlet Allocation)模型对自然语言进行建模，可以用来识别文档语料中潜在的主题信息。整个计算模型采用了词袋的计算方法，计算出文档的向量表示，每一篇文档计算出一部分主题的概率分布，而每一个主题内又可以表示为很多词语的一个概率分布，LDA的训练过程为：遍历每一个文档，在主题分布袋中随机抽取一个主题；然后在被随机抽取到的主题中再随机抽取一个单词；最后重复上述步骤直到遍历完文档中的所有词语。整个生成的过程可以用图\ref{fig:2_6}表示:对于每一份文档与设定的$T$个主题之间的概率分布对应$\theta $，每个主题与词袋中的$V$个词语之间的概率分布$\phi$，其中$\theta $和$\phi$分别有一个参数$\alpha$和$\beta$的狄利克雷的先验分布，这样对于任意一份文档$d$中的每一词语，我们从与文档相对应的概率分布$\theta $中选取一个主题$z$，随即在根据与主题$z$对应的概率分布$\phi$中选取一个词语$w$，最后重复上述过程$N_{d}$次，就能够产生文档$d$，公式\ref{equ:chap2:lda_01}为LDA的核心公式。
 \begin{figure}[htp]
 \centering
-\includegraphics[width=4in]{figure2_6_lda}
-\caption{LDA的图模型表示\upcite{blei2003latent}}
+\includegraphics[width=0.6\textwidth]{figure2_6_lda}
+\caption{LDA的图模型表示}
 \label{fig:2_6}
 \end{figure}
-\par LDA推断的目的是计算每个主题的词分布$P(w|z=k)=\varphi_{w}^{(k)}$和每个文档的主题分布$P(z=k)=\theta_{k}^{(d)}$。在LDA 中，$P(\theta)$服从$Dirichlet(\alpha)$分布，$p(\varphi)$服从$Dirichlet(\beta)$分布，其中$\alpha$和$\beta$是超参数。LDA模型的估计问题等同于求公式\ref{equ:chap2:lda_02}的最优值问题，但其计算非常复杂，故使用MCMC(Markov Chain Monte Carlo)方法求得近似解，其采样公式见公式\ref{equ:chap2:lda_03}，其中$n_{k}^{(\omega)}$和$n_{k}^{(d)}$是单词$\omega$和文档$d$分配给主题$k$的次数。
 \begin{equation}
-\label{equ:chap2:lda_02}
-p(\omega|\varphi,\alpha)=\int p(\omega|\varphi,\theta)p(\theta|\alpha)d\theta
+\label{equ:chap2:lda_01}
+p(w|d)=p(w|t) \ast p(t|d)
 \end{equation}
-\begin{equation}
-\label{equ:chap2:lda_03}
-\varphi_{k}^{(\omega)}=\frac{n_{k}^{(\omega)}+\beta}{n_{k}^{(.)}+W\beta},\theta_{k}^{(d)}=\frac{n_{k}^{(d)} + \alpha}{n_{.}^{(k)}+K\alpha}
-\end{equation}
+% 写到了这里------------------
 \subsection{word2vec}
-随着深度学习的提出，概率语言模型也有了新的发展。当前已经有很多深度学习框架的自然语言处理模型，word2vec\upcite{mikolovword2vec}是应用最广泛的一种。word2vec 共有四种模型，主要描述第一种使用Hierarchical Softmax 的CBOW(Continuous Bag-of-Words Model)模型。该模型主要思想是依据已知当前词$w_{t}$的上下文$w_{t-2}$，$w_{t-1}$，$w_{t+1}$，$w_{t+2}$的前提下预测当前词$w_{t}$。该模型包括输入层，投影层和输出层。其网络结构\upcite{peghotyw2v}如图\ref{fig:2_7} 所示。
+word2vec是Google在2013年开源的一种词向量计算算法\upcite{mikolov2013efficient}， word2vec借鉴深度学习方法，将文本通过训练的得到文本的$K$维向量表示，也就是说把特征转换到了$K$维空间进行表示，通过词与词之间的距离来计算它们之间的相似度。word2vec采用了三层的神经网络结构即为输入层-隐含层-输出层构成，其主要方法是借助哈夫曼编码针对相似词频的词语构建出相似的隐藏层激活函数，算法采用了层次化的Log-Bilinear模型，其中一种是基于CBOW(Continuous Bag-of-Words Model)的计算模型，在CBOW模型中，根据上下文信息可以预测下一个词语$w_{t}$，其公式如\ref{equ:chap2:word2vec_01}所示，CBOW的计算模型如图\ref{fig:2_7_cdow}所示。
+\begin{equation}
+\label{equ:chap2:word2vec_01}
+p(w_{t}|context)=p(w_{t}|w_{t-k},w_{t-k+1},\cdots ,w_{t-1},w_{t+1},\cdots w_{t+k})
+\end{equation}
+\par 现在的CBOW计算采用层次的Softmax算法，每个单词$w_{i}$都可以有一条从根节点出发被唯一访问到的路径，这条路径就形成了词语的编码。
 \begin{figure}[htp]
 \centering
-\includegraphics[width=4in]{figure2_7}
-\caption{word2vec神经网络结构图\upcite{peghotyw2v}}
+\includegraphics[width=0.6\textwidth]{figure2_7_cdow}
+\caption{word2vec神经网络结构图\upcite{mikolov2013efficient}}
+\label{fig:2_7_cdow}
+\end{figure}
+\begin{figure}[htp]
+\centering
+\includegraphics[width=0.5\textwidth]{figure2_7_w2cmodel}
+\caption{word2vec神经网络结构图}
 \label{fig:2_7}
 \end{figure}
-\par 输入层：由$Context(w)$中$2c$个词的词向量组成，每个词向量长度为$m$；投影层：对输入层的$2c$个词向量按分量累加求和；输出层：输出层对应一棵二叉树，它以语料中出现过的词作为叶子节点，且以其出现次数为权值构造出来的Huffman树。
-\par 对词典$D$中的任意一个词$w$，Huffman树中必存在一条从根节点到词$w$（该词对应一个叶子节点）对应节点的路径（且这条路径是唯一的）。路径上存在大量分支，而每个分支可以看做一次二次分类，每一次分类产生一个概率，将这些概率全部乘起来，就是所需的$p(w|Context(w))$。条件概率的一般公式可以写成公式\ref{equ:chap2:w2v_01} 和\ref{equ:chap2:w2v_02}。
-\begin{equation}
-\label{equ:chap2:w2v_01}
-p(w|Context(w)=\Pi_{j=2}^{1^{w}}p(d_{j}^{w}|x_{w},\theta_{j-1}^{w})
-\end{equation}
-\begin{equation}
-\label{equ:chap2:w2v_02}
-p(d_{j}^{w}|x_{w},\theta_{j-1}^{w})=[\sigma(x_{w}^{T}\theta_{j-1}^{w})]^{1-d_{j}^{w}}\ast[1-\sigma(x_{w}^{T}\theta_
-{j-1}^{w})]^{d_{j}^{w}}
-\end{equation}
-\par $1^{w}$表示从根节点到节点$w$路径上所有节点的个数，$d_{j}^{w}$表示路径上第$j$个词，$x_{w}$表示词$w$对应的词向量，$\theta_{j-1}^{w}$表示路径上第$j$个非叶节点对应的向量。$\sigma$表示SIGMOID函数。
-\par 故该神经网络的目标函数见公式\ref{equ:chap2:w2v_03}。
-\begin{equation}
-\label{equ:chap2:w2v_03}
-L=\sum_{w\in C}\sum_{j=2}^{1^{w}}\{(1-d_{j}^{w})log[\sigma(x_{w}^{T}\theta_{j-1}^{w})]+d_{j}^{w}log[1-\sigma(x_{w}^{T}\theta_{j-1}^{w})]\}
-\end{equation}
-\par 使用随机梯度上升法求得该目标函数局部最大值，即可得到每个词对应词向量。
+\par 在图\ref{fig:2_7}中，其中第一层，也就是最上面的那一层可以称为输入层。输入的是若干个词的词向量（词向量的意思就是把一个词表示成一个向量的形式表达，后面会介绍）。中间那个层可以成为隐层，是输入的若干个词向量的累加和，注意是向量的累加和，结果是一个向量。第三层是方框里面的那个二叉树，可以称之为输出层，隐层的那个节点要跟输出层的那个二叉树的所有非叶节点链接的，线太多画不过来了。第三层的这个二叉树是一个霍夫曼树，每个非叶节点也是一个向量，但是这个向量不代表某个词，代表某一类别的词；每个叶子节点代表一个词向量，为了简单只用一个w表示，没有下标。另外要注意的是，输入的几个词向量其实跟这个霍夫曼树中的某几个叶子节点是一样的，当然输入的那几个词跟它们最终输出的到的那个词未必是同一个词，而且基本不会是同一个词，只是这几个词跟输出的那个词往往有语义上的关系。
+还有要注意的是，这个霍夫曼树的所有叶子节点就代表了语料库里面的所有词，而且是每个叶子节点对应一个词，不重复。
+这个网络结构的功能是为了完成一个的事情——判断一句话是否是自然语言。怎么判断呢？使用的是概率，就是计算一下这句话的“一列词的组合”的概率的连乘（联合概率）是多少，如果比较低，那么就可以认为不是一句自然语言，如果概率高，就是一句正常的话。这个其实也是语言模型的目标。前面说的“一列词的组合”其实包括了一个词跟它的上下文的联合起来的概率，一种普通的情况就是每一个词跟它前面所有的词的组合的概率的连乘，这个后面介绍。
+
 \par LDA和word2vec在自然语言处理相关的应用中都得到了非常好的结果，因此使用这两个算法度量用户之间的关系强度，在第五章详细描述如何使用这两种方法度量用户之间的关系强度，在第六章将通过实验展示这两个模型在不同的参数下对实验结果的影响。
 \section{小结}
 \label{sec:section2-4}
