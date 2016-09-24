@@ -185,22 +185,35 @@ E=\sum_{i=1}^{k}\sum_{p\subset C}^{p}{\left | p-m_{i} \right |^{2}}
 \label{fig:2_4}
 \end{figure}
 \par 总的来说，上述三种聚类算法通过精心调整参数都能取得非常好的聚类效果。不同的算法拥有不同的优缺点，在第四章我们将通过实验来展示各种算法在不同参数下的聚类结果。
-\section{时间序列相似度度量方法及序列熵值}
+\section{时间序列相似度度量方法}
 \label{sec:section2-2}
 我们阅读了大量社会心理学相关的论文书籍，从中证实得到在现实生活中关系亲密的两个用户会更加倾向于一起进行面对面的交流、共同进行社交活动等，因此通过对手机传感器数据的处理分析能够从中挖掘出人们现实生活中的关系强度。文献[37] 立足于空间距离，提出了在空间距离上非常接近的人们在现实生活中就越可能发生面对面的交互，该文献通过调研一个小区的住户发现人们在现实生活中越是接近，就越容易成为朋友。文献\cite{zajonc1968attitudinal}\cite{zillmann2000mood}进一步通过研究用户的轨迹数据发现由于在空间距离中接近的用户在现实生活中更可能产生交互行为，也就是说拥有相似日常生活轨迹的用户更可能产生交互活动。在现实生活中亦是如此，我们很容易和同自己经常出没同一个地点、行走在同一条轨迹上的人发展友谊关系。
 \par 用户的轨迹序列由带有时间戳的位置数据构成，位置数据可能是GPS 也可能是基站号。因此我们可以将轨迹序列看作时间序列，从而使用一些时间序列相似度度量模型来度量轨迹的相似度，下面依次描述编辑距离和DTW这两种相似度度量方法以及序列熵值的计算方法。前面章节描述到用户的轨迹是由GPS位置点所构成的，包含了$(经度,纬度,时间戳)$等详细信息，因此我们将用户的轨迹看作一条由带有时间戳所构成的坐标点序列，采用序列相似度计算方式来处理轨迹之间的相似度。接下来详细描述两种常用的序列相似度计算方法。
 \subsection{轨迹中心距离}
-传统的计算序列相似度所采用的方法如：编辑距离、汉明距离和夹角余弦等有其优缺点，如果贸然用来计算用户轨迹序列的相似性可能不太符合实际问题的需求，在此基础上，Hechen Liu等学者提出了一种基于
-编辑距离是Levenshtein于1965年提出的一种度量两个字符串之间距离大小的方法\upcite{levenshtein1966binary}，又称为Levenshtein距离。其定义为一个字符串通过插入，删除，改变这三种操作转变为另一个字符串所需要的最少的操作的步数。插入操作是指在某个位置添加一个字符；删除操作是指删除某位置的字符；改变操作是指把某个字符变成另外一个字符。
-\par 若直接计算编辑距离会发现其时间复杂度为指数级别从而使得实际不可计算。通过深入分析发现该问题存在重叠子问题和最优子结构，因此可以用动态规划的思想把算法复杂度降低到多项式级别。其递推公式见公式\ref{equ:chap2:edit_distance}，其中$s1$,$s2$ 表示两个字符串，$M[i,j]$表示字符串$s1[0:i]$ 和字符串$s2[0:j]$ 之间的编辑距离。$E[i,j]$指$s1[i]$ 和$s2[j]$ 之间的距离，若两个字符相同，则距离为0，否则距离为1。
+传统的计算序列相似度所采用的方法如：编辑距离、汉明距离和夹角余弦等有其优缺点，如果贸然用来计算用户轨迹序列的相似性可能不太符合实际问题的需求，在此基础上，Hechen Liu等学者提出了一种基于用户地理轨迹的相似度度量方法\upcite{liu2012similarity}，根据用户的轨迹形状以及时间片内轨迹的中心点之间的距离来作为度量用户轨迹之间相似度的标准。如图\ref{fig:2_3_turn}中(a)图所示，现有两条用户轨迹$Tra_{1}=<a_{1},a_{2},a_{3},a_{4},a_{5}>$和
+$Tra_{2}=<b_{1},b_{2},b_{3}>$从观测来看两条轨迹是非常相似的，但是从整条轨迹对比来看，就很难评判两条轨迹是否相似了，因为$Tra_{1}$中有一处急转弯点$a_{3}$，称为转折点。因此算法首先检测出轨迹中的转折点如图\ref{fig:2_3_turn}中(b)再针对每段轨迹中中心点(Center of mass)来计算轨迹之间的相似性。算法中的Center of mass是轨迹$Tra$的质量中心，计算公式如\ref{equ:chap2:Center_of_mass}所示，轨迹计算结果示意图如图\ref{fig:2_3_Center_of_mass}所示，最后再计算轨迹之间的距离，采用余弦相似度来衡量轨迹之间的相似性。
+\begin{figure}[htp]
+\centering
+\includegraphics[width=0.8\textwidth]{figure2_1_turnTra}
+\caption{轨迹相似计算示例\upcite{liu2012similarity}}
+\label{fig:2_3_turn}
+\end{figure}
 \begin{equation}
-\label{equ:chap2:edit_distance}
-M[i,j] = min(M[i–1,j],M[i,j–1],M[i–1,j–1] + E[i,j])
+\label{equ:chap2:Center_of_mass}
+ctr(Tra)=(\bar{x},\bar{y})=(  \frac{\int x f(x)dx  }{\int f(x)dx},\frac{\int y f(y)dy  }{\int f(y)dy} )
 \end{equation}
-\par 编辑距离的计算对象是字符串，因此，经过一些学者的研究，将其扩展到实数域\upcite{chen2005robust}，称为EDR（Edit Distance on Real sequence），并对每个操作附加权重\upcite{chen2004marriage}，称为ERP（Edit distance with Real Penalty）。在实数域中，若两个实数非常接近，则认为这两个数相等，否则认为不相等。ERP对两个相等的数用这两个数的差作为实数惩罚值，否则用其中一个数与一个常量的差做为实数惩罚值。其计算过程与原始编辑距离计算过程类似。
+\begin{figure}[htp]
+\centering
+\includegraphics[width=0.8\textwidth]{figure2_1_Center_of_mass}
+\caption{基于Center of mass轨迹计算示例\upcite{liu2012similarity}}
+\label{fig:2_3_Center_of_mass}
+\end{figure}
+%-----------------写到这里
+\par 采用该算法来计算用户轨迹之间的相似度同直接计算轨迹之间的欧氏距离相比较，能够将轨迹的形状考虑在内，这样能够结合避免直接计算轨迹之间的距离所因为离群点造成了计算结果的巨大偏差。
 \subsection{Dynamic Time Warping}
-DTW(Dynamic Time Warping)是Itakura于1987年提出的距离度量方法\upcite{itakura1987distance}，主要用于识别两个读音是否表示同一个单词，Berndt\upcite{berndt1994using} 使用DTW方法来度量时间序列的相似度，从而发现时间序列中的模式。
-\par 假设有两个时间序列，序列$Q$长度为$n$ （见公式\ref{equ:chap2:dtw_01}），序列$C$ 长度为$m$ （见公式\ref{equ:chap2:dtw_02}）。为了计算两个序列之间的DTW 距离，需要构造一个$n \ast m$矩阵$d$，其中$d[i,j]$ 表示序列$Q$ 第$i$个元素$q_{i}$ 和序列$C$第$j$ 个元素$c_{j}$之间的距离，通常使用欧氏距离作为两个元素之间的距离度量。构造$n \ast m$ 矩阵$\gamma$。为了寻找这两个序列之间的最佳匹配，需要寻找一条路径使得累积距离$\gamma[i,j]$最小化，可以通过使用动态规划的方法来找到这条路径，$\gamma[n,m]$ 为最终的DTW距离，其递推公式见公式\ref{equ:chap2:dtw_03}。$d[i,j]$指$q_{i}$ 和$c_{j}$ 之间的欧式距离。$\gamma[i,j]$是指当前的累积距离，路径及矩阵可视化见图\ref{fig:2_5}。其中：A)两个异相的相似序列Q 和C；B)为了匹配这两个序列，构造了一个变形矩阵，并搜索最佳的变形路径即红色所示路径，且将搜索局限到一个窗口中；C) 匹配结果
+DTW(Dynamic Time Warping)算法最初是由Itakura提出的的一种新型的计算距离的方法\upcite{itakura1987distance}，在最初的一段时间是被应用于语音识别领域，在语音识别中即使是同一个词语，由不同的人说出口但是他们的语速、语气等不同造成了单词音频的差别。DTW正由于其计算距离的特殊处理使其能够胜任这一工作。DTW算法采用动态时间规整的思想，将需要比较的两个序列在横轴时间维度上进行压缩、拉伸等操作，使得两条序列具有相同的长度具有更有效的匹配度，同时也消除了传统基于欧式距离计算带来的弊端。
+\par 设待计算距离的两个序列，序列$Q$和序列$C$ （两条序列的表示见公式\ref{equ:chap2:dtw_01}、\ref{equ:chap2:dtw_02}）。如果两条序列的长度相同，则计算变得很简单。但是如果$m \neq n$，就需要拉伸变形两条序列，使得它们的长度能够尽量对齐同时保留原有序列的信息，算法首先构造一个$n \ast m$矩阵$d$，其中$d[i,j]$ 表示$q_{i}$ 和$c_{j}$之间的距离。采用动态规划的方法来找出序列$Q$和$C$之间的最佳匹配，其中转移方程为找出一条路径使得所有总和的距离$\gamma[i,j]$最小化，具体公式描述见公式\ref{equ:chap2:dtw_03}。
+路径及矩阵可视化见图\ref{fig:2_5}。其中：A)为两个待计算比较的序列；B)为通过DTW动态规划求解后两条序列计算距离时所对应的点；C) 将原有序列所对应的位置进行拉伸展开后更加直观的DTW匹配计算结果示意图。
 \begin{equation}
 \label{equ:chap2:dtw_01}
 Q=q_{1},q_{2},…,q_{i},…,q_{n}
@@ -213,96 +226,66 @@ C=c_{1},c_{2},…,c_{j},…,c_{m}
 \label{equ:chap2:dtw_03}
 \gamma[i,j]=d[i,j]+min\{\gamma[i-1,j-1],\gamma[i-1,j],\gamma[i,j-1]\}
 \end{equation}
-\begin{figure}[htp]
-\centering
-\includegraphics[width=4in]{figure2_5}
-\caption{引自文献\cite{ratanamahatana2004everything}DTW原理示意图。}
-\label{fig:2_5}
+\begin{figure}[htb]
+  \centering%
+  \subfloat[原始序列]{%
+    \label{fig:dtw-1}
+    \includegraphics[width=0.4\textwidth]{dtw-1}}\hspace{2em}%
+  \subfloat[DTW算法匹配模式结果]{%
+    \label{dtw-2}
+    \includegraphics[width=0.4\textwidth]{dtw-2}}\hspace{2em}
+    \subfloat[DTW算法拉伸序列计算距离]{%
+    \label{dtw-2}
+    \includegraphics[width=0.4\textwidth]{dtw-3}}
+  \caption{DTW算法匹配序列结果示意图}
+  \label{fig:2_5}
 \end{figure}
-\par 通过深入分析DTW算法可知，序列的长度越长，则距离可能越大。因此，采用文献\cite{ratanamahatana2004everything} 中的三种归一化方法对DTW的计算结果进行进一步的处理和优化，即DTW结果除以最优变形路径的长度、DTW结果除以两个序列中较短序列的长度以及DTW结果除以两个序列中较长序列的长度等三种方法对DTW计算结果进行归一化，以便获得最优结果。
-\subsection{序列熵值}
-通过对用户每天产生的轨迹序列的分析，可以将其看作一个由一系列随机变量$X_{n}$构成的随机过程序列$X=\{X_{1},X_{2},…,X_{n}\}$，$X_{n}$表示用户在时刻$n$ 所在的物理位置。熵通常用来度量一个系统的无序程度，熵越大表示该系统越混乱。若用户每天活动单一，则熵值会很小，若活动多样，则熵值会越大。因此，可以用熵值来度量用户每天活动的多样性程度，香农熵的定义见公式如公式\ref{equ:chap2:se_01}，其中$P(x_{i})$是$x_{i}=X_{i}$的概率。
-\begin{equation}
-\label{equ:chap2:se_01}
-H=-\sum_{i}p(x_{i})log_{2}p(x_{i})
-\end{equation}
-\par 对于一个长度为n的随机变量序列，需要考虑该序列的熵值如何随n增长，这个增长率称为熵率，熵率定义见公式\ref{equ:chap2:se_02}。同时，熵率存在一个相关的量，定义见公式\ref{equ:chap2:se_03}。 对于平稳随机过程，这两种定义的极限均存在且相等\upcite{cover2012elements}。
-\begin{equation}
-\label{equ:chap2:se_02}
-H(\aleph)=lim_{n \rightarrow \infty} \frac{1}{n}H(X_{1},X_{2}...,X_{n})
-\end{equation}
-\begin{equation}
-\label{equ:chap2:se_03}
-H^{'}(\aleph)=lim_{n \rightarrow \infty} H(X_{n}|X_{n-1},X_{n-2}...,X_{1})
-\end{equation}
-\par 由于条件熵值（公式\ref{equ:chap2:se_03}）难以直接计算，因此通常使用估量值来计算熵率，常用的估量值主要包括LZ (Lempel-Ziv)估量值\upcite{kontoyiannis1998nonparametric}以及实时LZ估量值\upcite{mcinerney2013breaking} 等。LZ估量值的定义见公式\ref{equ:chap2:se_04}，其中$\gamma_i$定义为从位置$i$ 开始，不在序列$(X_{1},X_{2},…,X_{i-1})$中出现的最短的子序列的长度。实时LZ 估量值的定义见公式\ref{equ:chap2:se_05} 和公式\ref{equ:chap2:se_06}，其中$\delta_i$定义为以位置$i$结尾，不在序列$(X_{1},X_{2},…,X_{i-\delta_i})$ 中出现的最短的子序列的长度。这两种度量实际上是等价的，在本文中我们使用实时LZ 估量值，该估量值只利用当前已知的信息。
-\begin{equation}
-\label{equ:chap2:se_04}
-\hat{H}_{N}=(\frac{1}{N-1}\sum_{i=2}^{N}\frac{\gamma_i}{log_{2}(i)})^{-1}
-\end{equation}
-\begin{equation}
-\label{equ:chap2:se_05}
-\tilde{H}_{i}=\frac{log_{2}(i)}{\delta_i}
-\end{equation}
-\begin{equation}
-\label{equ:chap2:se_06}
-\hat{H}_{N}=\frac{N}{\sum_{i=2}^{n}\tilde{H}_{i}^{-1}}
-\end{equation}
-\par 计算轨迹序列的熵值的目的是为了对DTW计算结果进行加权，因为用户每天的轨迹序列的相似度对其总体相似度的贡献是不一样的，如果某一天用户的轨迹序列的熵值越大，则这一天对总的相似度贡献越大，因此，使用用户当天轨迹序列熵值对用户与朋友之间每天的轨迹相似度进行加权，能够更真实地反应用户之间的关系强度（如何使用轨迹序列熵值对DTW 的计算结果进行加权详见第五章第三小节）。
-\par 编辑距离和DTW都是非常常用的两种时间序列相似度度量方法，在第六章我们将通过实验展示这两种方法以及用序列熵值加权后的两种方法用来度量用户关系强度的效果
-\section{自然语言处理模型}
+\par 通过对DTW算法的原理分析可以得知，序列$Q$和序列$C$的长度越长，则最终计算结果得到的距离就会越大。因此，后者研究中，采用了多种归一化的加权处理方法对结果进行加权处理\cite{ratanamahatana2004everything}，获得最优的DTW计算结果。
+
+\section{自然语言处理方法}
 \label{sec:section2-3}
-在日常生活当中，用户之间尤其是好友之间其行为模式之间具有一定的相似性，如经常去某些地方、经常在某些时间段（晚上）去一些地方（餐馆、酒吧）等等。基于位置的用户行为模式一方面能够反映用户在物理层次的相遇，另一方面能够在一定程度上体现用户的相似性，前文已经从社会心理学的角度阐述了相遇次数与用户关系强度的关系，Singelis\upcite{singelis1994measurement}认为人们倾向于喜欢在态度、兴趣、价值观、背景和人格上和其相似的人，因此，在日常生活当中行为相似的人之间更可能成为朋友，而根据社会心理学的研究成果，用户的相似性对用户的关系强度也有一定的影响，为此，在通过基于用户轨迹度量用户之间关系强度的基础上，进一步通过基于位置的用户日常行为来对度量用户之间的关系强度。
-\par 通过将位置序列和自然语言中的句子进行类比，能够发现，自然语言处理中的这些方法可以很自然的用来处理位置轨迹数据。位置序列是用户轨迹语义层次的一种表示，例如一个学生一天的位置轨迹可以表示为宿舍、实验室、食堂、宿舍，实验室、食堂、宿舍。通过深入分析，认为自然语言中的每个句子受两方面的约束，即主观约束和客观约束。客观约束指句子的构造受到对应语言语法的约束；主观约束指在句子的构造过程中，部分词的使用和构造者的个人喜好相关。再来分析一下位置序列，位置序列的构成也受主观和客观这两方面的约束，客观约束指用户自身的社会角色限制了用户每天可能的位置序列；主观约束指用户在客观约束下，对于一些位置具有选择性，如用户可以自己决定去什么地方吃饭等。
-\par 文献\cite{farrahi2008did}最先使用LDA主题模型发现用户的行为模式，在使用LDA 模型发现用户基于位置的行为模式基础上，本课题进一步使用LDA 主题模型来度量用户之间的关系强度，其核心思想如下：把每个用户每天参观过的位置（物理位置或语义位置）序列视为一个句子，每个用户所有天的位置序列视为一篇文档，对所有用户所有天的位置序列使用LDA主题模型训练得到若干个主题。在计算两个用户之间的关系强度时，将这两个用户同一天的数据按固定长度的时间片划分，对于每个时间片内用户参观过的位置，用训练好的LDA主题模型推断这些位置对应的主题分布，以同一时间片内，两个用户分别参观过的位置对应的主题分布的余弦相似度，作为这两个用户之间的关系强度（详细的计算过程见第五章第三节）。
-\par word2vec模型主要通过考虑当前词语的上下文环境来得到当前词语对应的实数值向量表示。而对应向量的相似度从一定程度上反映了两个词语义的相似度。因此在计算出每个语义位置对应的实数值向量后，希望对应向量的相似度能够从一定程度上反应两个语义位置功能的相似性。
-\subsection{Latent Dirichlet Allocation}
-LDA(Latent Dirichlet Allocation)\upcite{blei2003latent}是Blei等人2003 年提出的一个针对离散数据集合的产生式概率模型。LDA是一个三层的层级贝叶斯模型（其结构如图\ref{fig:2_6} 所示）， LDA模型作为一个文本模型，每个文档由多个主题的概率分布来表示，每个主题由多个单词的分布来表示，图\ref{fig:2_6}中每个方框表示执行，外框表示文档，内框表示文档内主题和单词的重复选取。假设有$K$个主题，$W$个不同单词，一个给定词$\omega_{t}$的概率见公式\ref{equ:chap2:lda_01}，其中$z_{t}$表示产生第$t$个词的主题对应的隐变量。
-\begin{equation}
-\label{equ:chap2:lda_01}
-p(\omega_{t})=\sum_{k=1}^{K}p(\omega_t|z_{t}=k)p(z_{t}=k)
-\end{equation}
+相对于用户的空间轨轨迹度量，用户在日常生活中的语义轨迹蕴含了更丰富的上下文信息同时人与人之间在语义轨迹层次上特别是好友之间可能表现出惊人的一致性，如经常去某些地方，在一天中总是先从某个地点出发，再经过某些地点，最后在某个咖啡店相遇等等。基于轨迹的用户模式的交互能够反映出用户在某个空间中的相遇；而基于用户语义轨迹的分析能够在一定程度上展现出用户在社会活动上的相似性，在绪论部分已经详细从社会心理学的研究中描述了人们在现实生活中相遇频率能够反映出用户之间的关系强度，文献\cite{singelis1994measurement}研究发现人们会更加喜欢那些在兴趣、价值观、人格上和自己相似的人。因此通过用户的语义轨迹来在更高的层次上对用户的行为进行相似度计算，进而推测出用户的关系强度。
+\par 通过将用户的语义位置序集合同自然语言处理中的文档进行对比， 可以借鉴自然语言处理的算法来处理用户的语义轨迹序列。用户每天的活动轨迹通过语义标签标注后，得到的是一个现实生活中语义轨迹的序列集合，如将一个用户的活动轨迹表示为$<寝室，食堂，教室，图书馆，...，公园>$，通过结合自然语言文档文档相似性计算的思路，把用户每天所计算得到的语义轨迹作为一条原始自然语句，用户在$n$天内所采集的所有轨迹记录就生成了一篇文档，最后基于自然语言处理方法通过计算用户语义轨迹生成的文档之间的相似性来表示用户之间的关系强度。
+\par 在以往的研究中，通常使用编辑距离来衡量语句的相似性。在用户轨迹相似分析上，文献\cite{farrahi2008did}借助了LDA主题模型来计算用户语义轨迹之间的相似性，后来的研究在其其基础上对计算方法进行了改进\upcite{yangruosong}。其算法改进在于基于LDA主题模型，将用户的所有语义轨迹看作一篇文档来训练出若干个主题。在计算用户轨迹相似性的时候，将用户用户估计输入到训练好的LDA模型中，然后采用余弦相似度分析比较二者输出的主题分布集合之间的相似度，作为这两个用户之间的关系强度。
+\par word2vec是Google在2013年开源的一种词向量计算算法\upcite{mikolov2013efficient}， word2vec借鉴深度学习方法，将文本通过训练的得到文本的$K$维向量表示，通过词与词之间的距离来计算它们之间的相似度。
+\subsection{LDA主题模型}
+2003年文献\cite{blei2003latent}提出了LDA(Latent Dirichlet Allocation)模型对自然语言进行建模，可以用来识别文档语料中潜在的主题信息。整个计算模型采用了词袋的计算方法，计算出文档的向量表示，每一篇文档计算出一部分主题的概率分布，而每一个主题内又可以表示为很多词语的一个概率分布，LDA的训练过程为：遍历每一个文档，在主题分布袋中随机抽取一个主题；然后在被随机抽取到的主题中再随机抽取一个单词；最后重复上述步骤直到遍历完文档中的所有词语。整个生成的过程可以用图\ref{fig:2_6}表示:对于每一份文档与设定的$T$个主题之间的概率分布对应$\theta $，每个主题与词袋中的$V$个词语之间的概率分布$\phi$，其中$\theta $和$\phi$分别有一个参数$\alpha$和$\beta$的狄利克雷的先验分布，这样对于任意一份文档$d$中的每一词语，我们从与文档相对应的概率分布$\theta $中选取一个主题$z$，随即在根据与主题$z$对应的概率分布$\phi$中选取一个词语$w$，最后重复上述过程$N_{d}$次，就能够产生文档$d$，公式\ref{equ:chap2:lda_01}为LDA的核心公式。
 \begin{figure}[htp]
 \centering
-\includegraphics[width=4in]{figure2_6}
-\caption{LDA的图模型表示\upcite{blei2003latent}}
+\includegraphics[width=0.6\textwidth]{figure2_6_lda}
+\caption{LDA的图模型表示}
 \label{fig:2_6}
 \end{figure}
-\par LDA推断的目的是计算每个主题的词分布$P(w|z=k)=\varphi_{w}^{(k)}$和每个文档的主题分布$P(z=k)=\theta_{k}^{(d)}$。在LDA 中，$P(\theta)$服从$Dirichlet(\alpha)$分布，$p(\varphi)$服从$Dirichlet(\beta)$分布，其中$\alpha$和$\beta$是超参数。LDA模型的估计问题等同于求公式\ref{equ:chap2:lda_02}的最优值问题，但其计算非常复杂，故使用MCMC(Markov Chain Monte Carlo)方法求得近似解，其采样公式见公式\ref{equ:chap2:lda_03}，其中$n_{k}^{(\omega)}$和$n_{k}^{(d)}$是单词$\omega$和文档$d$分配给主题$k$的次数。
 \begin{equation}
-\label{equ:chap2:lda_02}
-p(\omega|\varphi,\alpha)=\int p(\omega|\varphi,\theta)p(\theta|\alpha)d\theta
+\label{equ:chap2:lda_01}
+p(w|d)=p(w|t) \ast p(t|d)
 \end{equation}
-\begin{equation}
-\label{equ:chap2:lda_03}
-\varphi_{k}^{(\omega)}=\frac{n_{k}^{(\omega)}+\beta}{n_{k}^{(.)}+W\beta},\theta_{k}^{(d)}=\frac{n_{k}^{(d)} + \alpha}{n_{.}^{(k)}+K\alpha}
-\end{equation}
+% 写到了这里------------------
 \subsection{word2vec}
-随着深度学习的提出，概率语言模型也有了新的发展。当前已经有很多深度学习框架的自然语言处理模型，word2vec\upcite{mikolovword2vec}是应用最广泛的一种。word2vec 共有四种模型，主要描述第一种使用Hierarchical Softmax 的CBOW(Continuous Bag-of-Words Model)模型。该模型主要思想是依据已知当前词$w_{t}$的上下文$w_{t-2}$，$w_{t-1}$，$w_{t+1}$，$w_{t+2}$的前提下预测当前词$w_{t}$。该模型包括输入层，投影层和输出层。其网络结构\upcite{peghotyw2v}如图\ref{fig:2_7} 所示。
+word2vec是Google在2013年开源的一种词向量计算算法\upcite{mikolov2013efficient}， word2vec借鉴深度学习方法，将文本通过训练的得到文本的$K$维向量表示，也就是说把特征转换到了$K$维空间进行表示，通过词与词之间的距离来计算它们之间的相似度。word2vec采用了三层的神经网络结构即为输入层-隐含层-输出层构成，其主要方法是借助哈夫曼编码针对相似词频的词语构建出相似的隐藏层激活函数，算法采用了层次化的Log-Bilinear模型，其中一种是基于CBOW(Continuous Bag-of-Words Model)的计算模型，在CBOW模型中，根据上下文信息可以预测下一个词语$w_{t}$，其公式如\ref{equ:chap2:word2vec_01}所示，CBOW的计算模型如图\ref{fig:2_7_cdow}所示。
+\begin{equation}
+\label{equ:chap2:word2vec_01}
+p(w_{t}|context)=p(w_{t}|w_{t-k},w_{t-k+1},\cdots ,w_{t-1},w_{t+1},\cdots w_{t+k})
+\end{equation}
+\par 现在的CBOW计算采用层次的Softmax算法，每个单词$w_{i}$都可以有一条从根节点出发被唯一访问到的路径，这条路径就形成了词语的编码。
 \begin{figure}[htp]
 \centering
-\includegraphics[width=4in]{figure2_7}
-\caption{word2vec神经网络结构图\upcite{peghotyw2v}}
+\includegraphics[width=0.8\textwidth]{figure2_7_cdow}
+\caption{word2vec神经网络结构图\upcite{mikolov2013efficient}}
+\label{fig:2_7_cdow}
+\end{figure}
+\begin{figure}[htp]
+\centering
+\includegraphics[width=0.7\textwidth]{figure2_7_w2cmodel}
+\caption{word2vec神经网络结构图}
 \label{fig:2_7}
 \end{figure}
-\par 输入层：由$Context(w)$中$2c$个词的词向量组成，每个词向量长度为$m$；投影层：对输入层的$2c$个词向量按分量累加求和；输出层：输出层对应一棵二叉树，它以语料中出现过的词作为叶子节点，且以其出现次数为权值构造出来的Huffman树。
-\par 对词典$D$中的任意一个词$w$，Huffman树中必存在一条从根节点到词$w$（该词对应一个叶子节点）对应节点的路径（且这条路径是唯一的）。路径上存在大量分支，而每个分支可以看做一次二次分类，每一次分类产生一个概率，将这些概率全部乘起来，就是所需的$p(w|Context(w))$。条件概率的一般公式可以写成公式\ref{equ:chap2:w2v_01} 和\ref{equ:chap2:w2v_02}。
-\begin{equation}
-\label{equ:chap2:w2v_01}
-p(w|Context(w)=\Pi_{j=2}^{1^{w}}p(d_{j}^{w}|x_{w},\theta_{j-1}^{w})
-\end{equation}
-\begin{equation}
-\label{equ:chap2:w2v_02}
-p(d_{j}^{w}|x_{w},\theta_{j-1}^{w})=[\sigma(x_{w}^{T}\theta_{j-1}^{w})]^{1-d_{j}^{w}}\ast[1-\sigma(x_{w}^{T}\theta_
-{j-1}^{w})]^{d_{j}^{w}}
-\end{equation}
-\par $1^{w}$表示从根节点到节点$w$路径上所有节点的个数，$d_{j}^{w}$表示路径上第$j$个词，$x_{w}$表示词$w$对应的词向量，$\theta_{j-1}^{w}$表示路径上第$j$个非叶节点对应的向量。$\sigma$表示SIGMOID函数。
-\par 故该神经网络的目标函数见公式\ref{equ:chap2:w2v_03}。
+\par 在图\ref{fig:2_7}中，第一层也称之为输入层， 它的输入是词向量；中间的层次为隐含层，得到的的输入是输入层若干个词向量的向量累加结果；第三层则是由二叉树所构成的霍夫曼树所组成的输出层，其中每个非叶节点是一个计算后的向量但是不同于输入层的词向量，这里计算后的向量不代表某个词语，而是表示一个类别的词语，同时这棵霍夫曼树的所有叶子节点包含了输入词袋中的所有词。
+\par 对于词袋$BG$中的单词$w$，在图\ref{fig:2_7}中一定能够找到有且仅有一条从Root节点到叶子节点$w$的路径。路径中的每一次分支都是一个概率问题，因此得到\ref{equ:chap2:word2vec_01}中的数学表达式，将其中的$w_{i}$用词向量替换，得到该三层神经网络的目标公式如\ref{equ:chap2:w2v_03}， $Num^{w}$表示从Root节点到词向量节点$w$路径中包含的节点个数，$w_{j}$表示该路径上的第$j$个词，$v_{w}$表示词$w$对应的词向量，$\sigma$表示SIGMOID函数，通过求解目标函数的最大值，就可以得到每个词所对应的向量。
 \begin{equation}
 \label{equ:chap2:w2v_03}
-L=\sum_{w\in C}\sum_{j=2}^{1^{w}}\{(1-d_{j}^{w})log[\sigma(x_{w}^{T}\theta_{j-1}^{w})]+d_{j}^{w}log[1-\sigma(x_{w}^{T}\theta_{j-1}^{w})]\}
+L=\sum_{w\in C}\sum_{j=2}^{Num^{w}}\{(1-w_{j})log[\sigma(v_{w}^{T}\theta_{j-1}^{w})]+w_{j}log[1-\sigma(v_{w}^{T}\theta_{j-1}^{w})]\}
 \end{equation}
-\par 使用随机梯度上升法求得该目标函数局部最大值，即可得到每个词对应词向量。
 \par LDA和word2vec在自然语言处理相关的应用中都得到了非常好的结果，因此使用这两个算法度量用户之间的关系强度，在第五章详细描述如何使用这两种方法度量用户之间的关系强度，在第六章将通过实验展示这两个模型在不同的参数下对实验结果的影响。
 \section{小结}
 \label{sec:section2-4}

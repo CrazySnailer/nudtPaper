@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2016.1.8)  23 SEP 2016 18:37
+This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2016.1.8)  24 SEP 2016 17:23
 entering extended mode
 **thesis
 (E:\Research_Study\nudtPaper\thesis.tex
@@ -1876,9 +1876,7 @@ File: figures/figure2_7_w2cmodel.png Graphic file (type QTm)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [22]
-[23] [24
-
-]
+[23] [24]
 File: figures/figure7_1.jpg Graphic file (type QTm)
  <use  "figures/figure7_1.jpg" > [25
 
@@ -1892,7 +1890,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ]
 File: figures/figure3_1.png Graphic file (type QTm)
  <use  "figures/figure3_1.png" >
-Overfull \hbox (6.82864pt too wide) in paragraph at lines 322--323
+Overfull \hbox (6.82864pt too wide) in paragraph at lines 333--334
  [][] 
  []
 
@@ -1974,14 +1972,14 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [33]
 
 LaTeX Warning: Reference `equ:chap2:dj-cluster' on page 34 undefined on input l
-ine 473.
+ine 484.
 
 
-LaTeX Warning: Reference `figure3_6' on page 34 undefined on input line 473.
+LaTeX Warning: Reference `figure3_6' on page 34 undefined on input line 484.
 
 File: figures/figure3_6.png Graphic file (type QTm)
 <use  "figures/figure3_6.png" >
-Overfull \hbox (6.82864pt too wide) in paragraph at lines 480--481
+Overfull \hbox (6.82864pt too wide) in paragraph at lines 491--492
  [][] 
  []
 
@@ -2007,7 +2005,7 @@ File: figures/figure3_8_1_1.png Graphic file (type QTm)
 <use  "figures/figure3_8_1_1.png" >
 File: figures/figure3_8_1_2.png Graphic file (type QTm)
  <use  "figures/figure3_8_1_2.png" >
-Overfull \hbox (5.54376pt too wide) in paragraph at lines 516--519
+Overfull \hbox (5.54376pt too wide) in paragraph at lines 527--530
  [][][][] 
  []
 
@@ -2015,7 +2013,7 @@ File: figures/figure3_8_1_3.png Graphic file (type QTm)
 <use  "figures/figure3_8_1_3.png" >
 File: figures/figure3_8_1_4.png Graphic file (type QTm)
  <use  "figures/figure3_8_1_4.png" >
-Overfull \hbox (5.54376pt too wide) in paragraph at lines 522--526
+Overfull \hbox (5.54376pt too wide) in paragraph at lines 533--537
  [][][][] 
  []
 
@@ -2028,7 +2026,7 @@ File: figures/figure3_9_1_3.jpg Graphic file (type QTm)
 <use  "figures/figure3_9_1_3.jpg" >
 File: figures/figure3_9_1_4.jpg Graphic file (type QTm)
  <use  "figures/figure3_9_1_4.jpg" >
-Overfull \hbox (12.28738pt too wide) in paragraph at lines 533--543
+Overfull \hbox (12.28738pt too wide) in paragraph at lines 544--554
  [][][][][][][][] 
  []
 
@@ -2036,7 +2034,7 @@ File: figures/figure3_8_2_1.png Graphic file (type QTm)
 <use  "figures/figure3_8_2_1.png" >
 File: figures/figure3_8_2_2.png Graphic file (type QTm)
  <use  "figures/figure3_8_2_2.png" >
-Overfull \hbox (5.54376pt too wide) in paragraph at lines 550--553
+Overfull \hbox (5.54376pt too wide) in paragraph at lines 561--564
  [][][][] 
  []
 
@@ -2044,7 +2042,7 @@ File: figures/figure3_8_2_3.png Graphic file (type QTm)
 <use  "figures/figure3_8_2_3.png" >
 File: figures/figure3_8_2_4.png Graphic file (type QTm)
  <use  "figures/figure3_8_2_4.png" >
-Overfull \hbox (5.54376pt too wide) in paragraph at lines 556--560
+Overfull \hbox (5.54376pt too wide) in paragraph at lines 567--571
  [][][][] 
  []
 
@@ -2057,7 +2055,7 @@ File: figures/figure3_9_2_3.jpg Graphic file (type QTm)
 <use  "figures/figure3_9_2_3.jpg" >
 File: figures/figure3_9_2_4.jpg Graphic file (type QTm)
  <use  "figures/figure3_9_2_4.jpg" >
-Overfull \hbox (12.28738pt too wide) in paragraph at lines 567--577
+Overfull \hbox (12.28738pt too wide) in paragraph at lines 578--588
  [][][][][][][][] 
  []
 
@@ -2065,7 +2063,7 @@ File: figures/figure3_8_3_1.png Graphic file (type QTm)
 <use  "figures/figure3_8_3_1.png" >
 File: figures/figure3_8_3_2.png Graphic file (type QTm)
  <use  "figures/figure3_8_3_2.png" >
-Overfull \hbox (5.54376pt too wide) in paragraph at lines 584--587
+Overfull \hbox (5.54376pt too wide) in paragraph at lines 595--598
  [][][][] 
  []
 
@@ -2073,7 +2071,7 @@ File: figures/figure3_8_3_3.png Graphic file (type QTm)
 <use  "figures/figure3_8_3_3.png" >
 File: figures/figure3_8_3_4.png Graphic file (type QTm)
  <use  "figures/figure3_8_3_4.png" >
-Overfull \hbox (5.54376pt too wide) in paragraph at lines 590--594
+Overfull \hbox (5.54376pt too wide) in paragraph at lines 601--605
  [][][][] 
  []
 
@@ -2086,7 +2084,7 @@ File: figures/figure3_9_3_3.jpg Graphic file (type QTm)
 <use  "figures/figure3_9_3_3.jpg" >
 File: figures/figure3_9_3_4.jpg Graphic file (type QTm)
  <use  "figures/figure3_9_3_4.jpg" >
-Overfull \hbox (12.28738pt too wide) in paragraph at lines 601--611
+Overfull \hbox (12.28738pt too wide) in paragraph at lines 612--622
  [][][][][][][][] 
  []
 
@@ -2208,7 +2206,7 @@ File: figures/figure4_1.png Graphic file (type QTm)
 
 
 ]
-Overfull \hbox (8.70436pt too wide) in paragraph at lines 825--827
+Overfull \hbox (8.70436pt too wide) in paragraph at lines 836--838
 \OML/txmi/m/it/12.045 Trace[]$ \xeCJK@song/m/n/12.045 按 时 间 均 分 为 $
 \OT1/txr/m/n/12.045 48$ \xeCJK@song/m/n/12.045 份，| 表 示 为 $\OML/txmi/m
 /it/12.045 Sep[]trace[] \OT1/txr/m/n/12.045 = \OMS/txsy/m/n/12.045 f\OML/txmi/m
@@ -2217,7 +2215,7 @@ n/12.045 ，|
  []
 
 
-Overfull \hbox (3.09387pt too wide) in paragraph at lines 825--827
+Overfull \hbox (3.09387pt too wide) in paragraph at lines 836--838
 \xeCJK@song/m/n/12.045 按 经 纬 度 计 算 平 均 值，| 并 将 新 的 
 轨 迹 序 列 表 示 为 $\OML/txmi/m/it/12.045 Ntrace[]$\EU1/TimesNewRoman(
 0)/m/n/12.045 ,$\OML/txmi/m/it/12.045 Ntrace[] \OT1/txr/m/n/12.045 = \OMS/txsy/
@@ -2250,7 +2248,7 @@ File: figures/figure5_2.jpg Graphic file (type QTm)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [63]
-Underfull \hbox (badness 10000) in alignment at lines 1047--1086
+Underfull \hbox (badness 10000) in alignment at lines 1058--1097
 [][] 
  []
 
@@ -2341,7 +2339,7 @@ t and interdependent self-
  []
 
 
-Underfull \hbox (badness 3302) in paragraph at lines 325--329
+Underfull \hbox (badness 3302) in paragraph at lines 331--335
 []\EU1/TimesNewRoman(0)/m/sc/12.045 wiki. Inversion. [][]$[][][][] [] [] [] [][
 ] [] [][][][][][][][][] [] [][][] [] [] [] [][][][][] [] [][][] [] [][][][][] [
 ]
@@ -2371,10 +2369,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 27330 strings out of 430478
- 492678 string characters out of 3191503
- 574793 words of memory out of 3000000
- 29935 multiletter control sequences out of 15000+200000
+ 27326 strings out of 430478
+ 492598 string characters out of 3191503
+ 575042 words of memory out of 3000000
+ 29931 multiletter control sequences out of 15000+200000
  68198 words of font info for 267 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  51i,18n,85p,1491b,964s stack positions out of 5000i,500n,10000p,200000b,50000s

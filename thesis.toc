@@ -19,7 +19,9 @@
 \contentsline {section}{\numberline {2.3}自然语言处理方法}{19}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}LDA主题模型}{20}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}word2vec}{20}{subsection.2.3.2}
-\contentsline {section}{\numberline {2.4}小结}{23}{section.2.4}
+\contentsline {subsection}{\numberline {2.3.3}快速Hash算法}{23}{subsection.2.3.3}
+\contentsline {section}{\numberline {2.4}WiFi和蓝牙数据的度量方法}{23}{section.2.4}
+\contentsline {section}{\numberline {2.5}小结}{23}{section.2.5}
 \contentsline {chapter}{\numberline {3}用户关系强度层级投票模型框架}{25}{chapter.3}
 \contentsline {section}{\numberline {3.1}模型框架描述}{25}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}SASLL系统概述}{25}{subsection.3.1.1}
