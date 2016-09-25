@@ -12,7 +12,7 @@
 \contentsline {figure}{\numberline {2.9}{\ignorespaces LDA的图模型表示\relax }}{21}{figure.caption.16}
 \contentsline {figure}{\numberline {2.10}{\ignorespaces word2vec神经网络结构图\textsuperscript {\cite {mikolov2013efficient}}\relax }}{21}{figure.caption.17}
 \contentsline {figure}{\numberline {2.11}{\ignorespaces word2vec神经网络结构图\relax }}{22}{figure.caption.18}
-\contentsline {figure}{\numberline {3.1}{\ignorespaces 用户关系强度层级投票模型框架图\relax }}{26}{figure.caption.20}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces RSMHD用户关系强度计算模型框架图\relax }}{26}{figure.caption.20}
 \contentsline {figure}{\numberline {4.1}{\ignorespaces SASLL系统框架图\relax }}{29}{figure.caption.22}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces 均值滤波实验结果3-1\relax }}{30}{figure.caption.23}
 \contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始数据}}}{30}{subfigure.2.1}
