@@ -27,11 +27,11 @@
 \contentsline {subsection}{\numberline {3.1.1}基于轨迹数据的关系强度计算模块概述}{25}{subsection.3.1.1}
 \contentsline {subsection}{\numberline {3.1.2}基于WiFi和蓝牙数据的关系强度计算模块概述}{27}{subsection.3.1.2}
 \contentsline {section}{\numberline {3.2}RSMHD模型计算流程概述}{27}{section.3.2}
-\contentsline {chapter}{\numberline {4}GPS数据处理及语义标签标注技术}{29}{chapter.4}
-\contentsline {section}{\numberline {4.1}SASLL标注技术}{29}{section.4.1}
-\contentsline {section}{\numberline {4.2}计算对应语义位置}{29}{section.4.2}
+\contentsline {chapter}{\numberline {4}RSMHD框架的相关技术研究}{29}{chapter.4}
+\contentsline {section}{\numberline {4.1}GPS轨迹处理计算技术}{29}{section.4.1}
+\contentsline {section}{\numberline {4.2}计算对应语义位置}{30}{section.4.2}
 \contentsline {subsection}{\numberline {4.2.1}降低数据噪声}{30}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}剔除路上的点}{34}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.2}剔除路上的点}{33}{subsection.4.2.2}
 \contentsline {subsection}{\numberline {4.2.3}聚类得到语义位置}{36}{subsection.4.2.3}
 \contentsline {section}{\numberline {4.3}对语义位置标语义标签}{45}{section.4.3}
 \contentsline {subsection}{\numberline {4.3.1}发现新位置}{46}{subsection.4.3.1}

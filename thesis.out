@@ -27,8 +27,8 @@
 \BOOKMARK [2][-]{subsection.3.1.1}{基于轨迹数据的关系强度计算模块概述}{section.3.1}% 27
 \BOOKMARK [2][-]{subsection.3.1.2}{基于WiFi和蓝牙数据的关系强度计算模块概述}{section.3.1}% 28
 \BOOKMARK [1][-]{section.3.2}{RSMHD模型计算流程概述}{chapter.3}% 29
-\BOOKMARK [0][-]{chapter.4}{GPS数据处理及语义标签标注技术}{}% 30
-\BOOKMARK [1][-]{section.4.1}{SASLL标注技术}{chapter.4}% 31
+\BOOKMARK [0][-]{chapter.4}{RSMHD框架的相关技术研究}{}% 30
+\BOOKMARK [1][-]{section.4.1}{GPS轨迹处理计算技术}{chapter.4}% 31
 \BOOKMARK [1][-]{section.4.2}{计算对应语义位置}{chapter.4}% 32
 \BOOKMARK [2][-]{subsection.4.2.1}{降低数据噪声}{section.4.2}% 33
 \BOOKMARK [2][-]{subsection.4.2.2}{剔除路上的点}{section.4.2}% 34

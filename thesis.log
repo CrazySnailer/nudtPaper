@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2016.1.8)  27 SEP 2016 20:50
+This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2016.1.8)  28 SEP 2016 10:10
 entering extended mode
 **thesis
 (E:\Research_Study\nudtPaper\thesis.tex
@@ -1892,13 +1892,8 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [26]
 [27] [28]
-File: figures/figure3_1.png Graphic file (type QTm)
- <use  "figures/figure3_1.png" >
-Overfull \hbox (6.82864pt too wide) in paragraph at lines 345--346
- [][] 
- []
-
-
+File: figures/figure4_2.png Graphic file (type QTm)
+ <use  "figures/figure4_2.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [29
@@ -1920,9 +1915,9 @@ File: figures/figure3_2_3_1.png Graphic file (type QTm)
 <use  "figures/figure3_2_3_1.png" >
 File: figures/figure3_2_3_2.png Graphic file (type QTm)
  <use  "figures/figure3_2_3_2.png" >
+[30]
 File: figures/figure3_2_1_1.png Graphic file (type QTm)
-
-<use  "figures/figure3_2_1_1.png" >
+ <use  "figures/figure3_2_1_1.png" >
 File: figures/figure3_3_1_2.png Graphic file (type QTm)
  <use  "figures/figure3_3_1_2.png" >
 File: figures/figure3_2_2_1.png Graphic file (type QTm)
@@ -1950,9 +1945,12 @@ File: figures/figure3_2_3_1.png Graphic file (type QTm)
 <use  "figures/figure3_2_3_1.png" >
 File: figures/figure3_4_3_2.png Graphic file (type QTm)
  <use  "figures/figure3_4_3_2.png" >
-[30]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [31]
 File: figures/figure3_2_1_1.png Graphic file (type QTm)
- <use  "figures/figure3_2_1_1.png" >
+
+<use  "figures/figure3_2_1_1.png" >
 File: figures/figure3_5_1_2.png Graphic file (type QTm)
  <use  "figures/figure3_5_1_2.png" >
 File: figures/figure3_2_2_1.png Graphic file (type QTm)
@@ -1967,13 +1965,8 @@ File: figures/figure3_5_3_2.png Graphic file (type QTm)
  <use  "figures/figure3_5_3_2.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [31]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [32]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [33]
+[33]
 
 LaTeX Warning: Reference `equ:chap2:dj-cluster' on page 34 undefined on input l
 ine 496.
@@ -2093,8 +2086,15 @@ Overfull \hbox (12.28738pt too wide) in paragraph at lines 624--634
  []
 
 [36]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [37]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [38]
 File: figures/figure3_8_1_1.png Graphic file (type QTm)
- <use  "figures/figure3_8_1_1.png" >
+
+<use  "figures/figure3_8_1_1.png" >
 File: figures/figure3_10_1_2.png Graphic file (type QTm)
  <use  "figures/figure3_10_1_2.png" >
 File: figures/figure3_9_1_1.jpg Graphic file (type QTm)
@@ -2124,20 +2124,14 @@ File: figures/figure3_11_3_2.jpg Graphic file (type QTm)
  <use  "figures/figure3_11_3_2.jpg" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [37]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [38]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [39]
-
-LaTeX Warning: Text page 40 contains only floats.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [40]
+
+LaTeX Warning: Text page 41 contains only floats.
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [41]
@@ -2187,21 +2181,27 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [45]
-[46]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [46]
+[47]
 File: figures/figure3_14_1.jpg Graphic file (type QTm)
  <use  "figures/figure3_14_1.jpg" >
 File: figures/figure3_14_2.jpg Graphic file (type QTm)
  <use  "figures/figure3_14_2.jpg" >
 File: figures/figure3_14_3.jpg Graphic file (type QTm)
 
-<use  "figures/figure3_14_3.jpg" > [47]
+<use  "figures/figure3_14_3.jpg" >
 File: figures/figure3_15_1.jpg Graphic file (type QTm)
  <use  "figures/figure3_15_1.jpg" >
 File: figures/figure3_15_2.jpg Graphic file (type QTm)
 
 <use  "figures/figure3_15_2.jpg" >
 File: figures/figure3_15_3.jpg Graphic file (type QTm)
- <use  "figures/figure3_15_3.jpg" > [48]
+ <use  "figures/figure3_15_3.jpg" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [48]
 [49] [50
 
 ]
@@ -2374,8 +2374,8 @@ LaTeX Warning: There were multiply-defined labels.
  ) 
 Here is how much of TeX's memory you used:
  27329 strings out of 430478
- 492684 string characters out of 3191503
- 575203 words of memory out of 3000000
+ 492689 string characters out of 3191503
+ 575214 words of memory out of 3000000
  29932 multiletter control sequences out of 15000+200000
  68198 words of font info for 267 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
