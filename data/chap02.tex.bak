@@ -351,113 +351,78 @@ AMVD(A,B)=\frac{1}{\left | A \right |}\sum_{\forall a_{i} \in A}^{ }  \mathop{\a
 本节主要讲述如何对GPS轨迹数据进行清洗规整，以及得到用户的语义轨迹进行结构化存储。
 \subsection{剔除轨迹中的异常点}
 前文已经提到，由于在获取GPS位置信息的时候会受到位置漂移的影响，导致在获取用户实际位置的时候可能产生采样的误差甚至跳跃，为了使得最终计算得到的关系强度结果更为准确我们需要对GPS轨迹数据进行滤波分析。在第二章中描述了常用的三种滤波方法，在本章中将会针对三种滤波算法进行最后结果展示并根据结果分析最终采用此滤波算法的原因。
-根据自己的日常活动发现，用户会经常停留在某一固定位置很长时间，在这段时间内，其实用户本身位置是不变的，但是GPS采样值会包含一些随机误差，从而使得虽然实际上用户一直呆在同一个位置，采样得到的经纬度会在实际经纬度上下震荡。因此需要对GPS数据进行滤波使得采样值经过处理后更加接近实际值。第二章描述了常用的三种降噪方法，即均值滤波、中值滤波和卡尔曼滤波。算法原理不再赘述，这一小节主要通过实验来观察各种滤波算法的效果以及在实验的基础上提出分层卡尔曼滤波的方法。
-\par 首先使用自己日常采集的某几天的数据来观察均值滤波的降噪效果，数据采集软件使用\upcite{rawassizadeh2013ubiqlog}。 如图\ref{fig:3_2_1}、\ref{fig:3_2_2}、\ref{fig:3_2_3}所示。
+\par 首先接下来使用我们自己开发的用户感知数据收集软件StarLog，来分析观察各种滤波算法对用户轨迹中异常点检测剔除的效果，如图如图\ref{fig:3_2_1}、\ref{fig:3_2_2}所示。
 \begin{figure}[htb]
   \centering%
-  \subfloat[原始数据]{%
+  \subfloat[原始轨迹数据]{%
     \label{fig:3_2_1_1}
-    \includegraphics[height=4cm]{figure3_2_1_1}}\hspace{4em}%
-  \subfloat[均值滤波]{%
+    \includegraphics[height=4cm]{figure_4_mid_location1}}\hspace{4em}%
+  \subfloat[中值滤波后的轨迹数据]{%
     \label{fig:3_2_2_1}
-    \includegraphics[height=4cm]{figure3_2_1_2}}
-  \caption{均值滤波实验结果3-1}
+    \includegraphics[height=4cm]{figure_4_mid_location1_ed}}
+  \caption{轨迹中值滤波实验结果1}
   \label{fig:3_2_1}
 \end{figure}
 \begin{figure}[htb]
   \centering%
-  \subfloat[原始数据]{%
+  \subfloat[原始轨迹数据]{%
     \label{fig:3_2_2_1}
-    \includegraphics[height=4cm]{figure3_2_2_1}}\hspace{4em}%
-  \subfloat[均值滤波]{%
+    \includegraphics[height=4cm]{figure_4_mid_location2}}\hspace{4em}%
+  \subfloat[中值滤波后的轨迹数据]{%
     \label{fig:3_2_2_2}
-    \includegraphics[height=4cm]{figure3_2_2_2}}
-  \caption{均值滤波实验结果3-2}
+    \includegraphics[height=4cm]{figure_4_mid_location2_ed}}
+  \caption{轨迹中值滤波实验结果2}
   \label{fig:3_2_2}
 \end{figure}
+\par 从实验结果中我们可以观察到虽然中值滤波能够过滤掉其中少部分的位置漂移点，但是针对于一些明显的轨漂移点却没有能够很有效的识别过滤。
+\par 接下来我们再使用均值滤波算法对用户轨迹进行分析，观察均值滤波算法对用户轨迹中异常点的检测情况，部分实验结果见图图\ref{fig:3_3_1}、\ref{fig:3_3_2}。
 \begin{figure}[htb]
   \centering%
-  \subfloat[原始数据]{%
-    \label{fig:3_2_3_1}
-    \includegraphics[height=4cm]{figure3_2_3_1}}\hspace{4em}%
-  \subfloat[均值滤波]{%
-    \label{fig:3_2_3_2}
-    \includegraphics[height=4cm]{figure3_2_3_2}}
-  \caption{均值滤波实验结果3-3}
-  \label{fig:3_2_3}
-\end{figure}
-\par 仔细分析实验结果发现，虽然滤掉一少部分跳变点，但是对于非常明显的几个跳变点，均值滤波并没有滤掉。
-\par 下文展示中值滤波的实验结果。实验结果见图\ref{fig:3_3_1}、\ref{fig:3_3_2}、\ref{fig:3_3_3}。
-\begin{figure}[htb]
-  \centering%
-  \subfloat[原始数据]{%
+  \subfloat[原始轨迹数据]{%
     \label{fig:3_2_1_1}
-    \includegraphics[height=4cm]{figure3_2_1_1}}\hspace{4em}%
-  \subfloat[中值滤波]{%
+    \includegraphics[height=4cm]{figure_4_mid_location1}}\hspace{4em}%
+  \subfloat[均值滤波后的轨迹数据]{%
     \label{fig:3_2_2_1}
-    \includegraphics[height=4cm]{figure3_3_1_2}}
-  \caption{中值滤波实验结果3-1}
+    \includegraphics[height=4cm]{figure_4_mid_location1_avg}}
+  \caption{轨迹均值滤波实验结果1}
   \label{fig:3_3_1}
 \end{figure}
 \begin{figure}[htb]
   \centering%
-  \subfloat[原始数据]{%
+  \subfloat[原始轨迹数据]{%
     \label{fig:3_2_2_1}
-    \includegraphics[height=4cm]{figure3_2_2_1}}\hspace{4em}%
-  \subfloat[中值滤波]{%
+    \includegraphics[height=4cm]{figure_4_mid_location2}}\hspace{4em}%
+  \subfloat[均值滤波后的轨迹数据]{%
     \label{fig:3_2_2_2}
-    \includegraphics[height=4cm]{figure3_3_2_2}}
-  \caption{中值滤波实验结果3-2}
+    \includegraphics[height=4cm]{figure_4_mid_location2_avg}}
+  \caption{轨迹均值滤波实验结果2}
   \label{fig:3_3_2}
 \end{figure}
+\par 通过对比观察滤波结果图可以发现，相对于中值滤波，均值滤波能够较好的平滑用户的轨迹变化曲线，剔除GPS漂移点。但是，同样无法很有效的处理漂移偏差大的位置点。
+\par 通过采取卡尔曼滤波算法得到的用户轨迹如图\ref{fig:3_4_1}、\ref{fig:3_4_2}，根据观察图中滤波后的用户轨迹数据，我们可以发现虽然图形变得平滑了许多，但是却使得原有的轨迹信息收到了模糊，难以有效的将两个用户轨迹进行相似度计算。
 \begin{figure}[htb]
   \centering%
-  \subfloat[原始数据]{%
-    \label{fig:3_2_3_1}
-    \includegraphics[height=4cm]{figure3_2_3_1}}\hspace{4em}%
-  \subfloat[中值滤波]{%
-    \label{fig:3_2_3_2}
-    \includegraphics[height=4cm]{figure3_3_3_2}}
-  \caption{中值滤波实验结果3-3}
-  \label{fig:3_3_3}
-\end{figure}
-\par 仔细分析实验结果，中值滤波的结果明显好于均值滤波，滤除掉了大部分跳跃点。
-\par 下文展示卡尔曼滤波的实验结果,实验结果见图\ref{fig:3_4_1}、\ref{fig:3_4_2}、\ref{fig:3_4_3}。
-\begin{figure}[htb]
-  \centering%
-  \subfloat[原始数据]{%
+  \subfloat[原始轨迹数据]{%
     \label{fig:3_2_1_1}
-    \includegraphics[height=4cm]{figure3_2_1_1}}\hspace{4em}%
-  \subfloat[卡尔曼滤波]{%
+    \includegraphics[height=4cm]{figure_4_mid_location1}}\hspace{4em}%
+  \subfloat[卡尔曼滤波后的轨迹数据]{%
     \label{fig:3_2_2_1}
-    \includegraphics[height=4cm]{figure3_4_1_2}}
-  \caption{卡尔曼滤波实验结果3-1}
+    \includegraphics[height=4cm]{figure_4_mid_location1_kalman}}
+  \caption{卡尔曼滤波实验结果1}
   \label{fig:3_4_1}
 \end{figure}
 \begin{figure}[htb]
   \centering%
-  \subfloat[原始数据]{%
+  \subfloat[原始轨迹数据]{%
     \label{fig:3_2_2_1}
-    \includegraphics[height=4cm]{figure3_2_2_1}}\hspace{4em}%
-  \subfloat[卡尔曼滤波]{%
+    \includegraphics[height=4cm]{figure_4_mid_2}}\hspace{4em}%
+  \subfloat[卡尔曼滤波后的轨迹数据]{%
     \label{fig:3_2_2_2}
-    \includegraphics[height=4cm]{figure3_4_2_2}}
-  \caption{卡尔曼滤波实验结果3-2}
+    \includegraphics[height=4cm]{figure_4_mid_location1_kalman}}
+  \caption{卡尔曼滤波实验结果2}
   \label{fig:3_4_2}
 \end{figure}
-\begin{figure}[htb]
-  \centering%
-  \subfloat[原始数据]{%
-    \label{fig:3_2_3_1}
-    \includegraphics[height=4cm]{figure3_2_3_1}}\hspace{4em}%
-  \subfloat[卡尔曼滤波]{%
-    \label{fig:3_2_3_2}
-    \includegraphics[height=4cm]{figure3_4_3_2}}
-  \caption{卡尔曼滤波实验结果3-3}
-  \label{fig:3_4_3}
-\end{figure}
-\par 卡尔曼滤波的结果虽然更加平滑，但是通过分析实验结果发现，滤波结果严重损坏了原来的信息，使得整个轨迹曲线趋于常数值。经过更深一步的分析发现，用户每天的轨迹只有在某些固定位置（即后文所说的语义位置）时会在一段时间内保持不变，因此采用一些简单的方法对每天的轨迹进行划分，尽可能使每段轨迹中的点都采样自某一个固定位置，然后对这一段轨迹进行卡尔曼滤波，肯定能够得到一个更好的滤波结果。
-\par 本课题采用一些非常简单且容易实现的方法对轨迹进行分段。如果在一段时间内，任意相邻两个采样点之间时间间隔不超过十分钟（超过十分钟用户位置就很可能发生变化，十分钟是一个参数值，也可以根据实际情况进行调节），任意两个采样点之间真实距离不超过20米，则认为这段时间内所有的采样点属于一个片段。采用贪心的思想寻找满足上述两个条件的序列，即如果加入下一个点，不破坏上述两个条件，则当前序列应该包含下一个点，如果加入下一个点后，上述两个条件之一或全部被破坏，则当前序列为当天轨迹的一个片段，且不包含下一个点。下文展示分段处理后卡尔曼滤波的结果，见图\ref{fig:3_5_1}、\ref{fig:3_5_2}、\ref{fig:3_5_3}。
+\par 在本研究中，我们采用了一种基于速度的分段卡尔曼滤波方法。考虑到在一个时间片内，如果当前位置点的速度和它之前的位置点的速度绝对差大于$\Delta v$时（$\Delta v$作为一个未知的参数，需要我们在实际使用中给出）采用这样的方法将原有用户轨迹切分为$n$段然后针对每一段轨迹采用卡尔曼滤波算法，最终的部分轨迹滤波结果见图\ref{fig:3_5_1}、\ref{fig:3_5_2}、\ref{fig:3_5_3}
 \begin{figure}[htb]
   \centering%
   \subfloat[原始数据]{%

@@ -29,8 +29,8 @@
 \BOOKMARK [1][-]{section.3.2}{RSMHD模型计算流程概述}{chapter.3}% 29
 \BOOKMARK [0][-]{chapter.4}{RSMHD框架的相关技术研究}{}% 30
 \BOOKMARK [1][-]{section.4.1}{GPS轨迹处理计算技术}{chapter.4}% 31
-\BOOKMARK [1][-]{section.4.2}{计算对应语义位置}{chapter.4}% 32
-\BOOKMARK [2][-]{subsection.4.2.1}{降低数据噪声}{section.4.2}% 33
+\BOOKMARK [1][-]{section.4.2}{GPS轨迹预处理与语义化}{chapter.4}% 32
+\BOOKMARK [2][-]{subsection.4.2.1}{剔除轨迹中的异常点}{section.4.2}% 33
 \BOOKMARK [2][-]{subsection.4.2.2}{剔除路上的点}{section.4.2}% 34
 \BOOKMARK [2][-]{subsection.4.2.3}{聚类得到语义位置}{section.4.2}% 35
 \BOOKMARK [1][-]{section.4.3}{对语义位置标语义标签}{chapter.4}% 36
@@ -58,6 +58,6 @@
 \BOOKMARK [0][-]{chapter.7}{结束语}{}% 58
 \BOOKMARK [1][-]{section.7.1}{工作总结}{chapter.7}% 59
 \BOOKMARK [1][-]{section.7.2}{工作展望}{chapter.7}% 60
-\BOOKMARK [0][-]{chapter*.78}{致谢}{}% 61
-\BOOKMARK [0][-]{section*.79}{参考文献}{}% 62
-\BOOKMARK [0][-]{chapter*.81}{作者在学期间取得的学术成果}{}% 63
+\BOOKMARK [0][-]{chapter*.74}{致谢}{}% 61
+\BOOKMARK [0][-]{section*.75}{参考文献}{}% 62
+\BOOKMARK [0][-]{chapter*.77}{作者在学期间取得的学术成果}{}% 63
