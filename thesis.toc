@@ -19,7 +19,7 @@
 \contentsline {section}{\numberline {2.3}自然语言处理方法}{19}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}LDA主题模型}{20}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}word2vec}{20}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}快速Hash算法}{23}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.3}快速Hash算法}{22}{subsection.2.3.3}
 \contentsline {section}{\numberline {2.4}WiFi和蓝牙数据的度量方法}{23}{section.2.4}
 \contentsline {section}{\numberline {2.5}小结}{23}{section.2.5}
 \contentsline {chapter}{\numberline {3}RSMHD用户关系强度计算框架模型}{25}{chapter.3}
@@ -34,9 +34,9 @@
 \contentsline {subsection}{\numberline {4.2.2}轨迹中停留点检测}{32}{subsection.4.2.2}
 \contentsline {subsection}{\numberline {4.2.3}聚类得到语义位置}{35}{subsection.4.2.3}
 \contentsline {section}{\numberline {4.3}对语义位置标语义标签}{44}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}发现新位置}{45}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.1}发现新位置}{44}{subsection.4.3.1}
 \contentsline {subsection}{\numberline {4.3.2}新位置语义标签提示}{46}{subsection.4.3.2}
-\contentsline {section}{\numberline {4.4}小结}{48}{section.4.4}
+\contentsline {section}{\numberline {4.4}小结}{47}{section.4.4}
 \contentsline {chapter}{\numberline {5}用户关系强度计算方法}{49}{chapter.5}
 \contentsline {section}{\numberline {5.1}用户关系强度计算方法概述}{49}{section.5.1}
 \contentsline {section}{\numberline {5.2}输入数据准备}{49}{section.5.2}
@@ -54,7 +54,7 @@
 \contentsline {subsection}{\numberline {6.2.1}构造真实结果}{62}{subsection.6.2.1}
 \contentsline {subsection}{\numberline {6.2.2}评估方法}{63}{subsection.6.2.2}
 \contentsline {section}{\numberline {6.3}实验结果与分析}{65}{section.6.3}
-\contentsline {section}{\numberline {6.4}小结}{75}{section.6.4}
+\contentsline {section}{\numberline {6.4}小结}{72}{section.6.4}
 \contentsline {chapter}{\numberline {7}结束语}{77}{chapter.7}
 \contentsline {section}{\numberline {7.1}工作总结}{77}{section.7.1}
 \contentsline {section}{\numberline {7.2}工作展望}{78}{section.7.2}
