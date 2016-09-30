@@ -83,9 +83,8 @@ P_{k}=E\left [ e_{k} {e_{k}}^{T}  \right ]
 \end{equation}
 \par 综合\ref{equ:chap2:kalman-10}、\ref{equ:chap2:kalman-11}、\ref{equ:chap2:kalman-12}针对单个模型的测量利用上述说描述的所有公式就能够通过不断的迭代计算得出最优的估算结果。对于上述介绍的三种滤波技术而言，均值滤波在剔除数值中的随机噪音表现良好，但是不易消除脉冲误差；中值滤波能够减少偶然数据波动带来的误差影响，但是对变化快速的数据不宜使用；卡尔曼滤波最终的结果会优于前两者，但是模型较为复杂，所要求的运算时间复杂度也高于前面的滤波算法。
 \subsection{轨迹停留点检测}
-现实生活中用户的日常轨迹通常是有一系列包含了地理坐标和时间戳的GPS位置点构成，每个坐标点包含了详细的经纬度、时间戳信息、海拔高度、移动速度等信息。如图\ref{figure2_1_gps}所示。我们可以通过一些算法检测出用户在一段轨迹运动中停留过的地方称之为停留点\upcite{zheng2011computing}，本文的停留点并不是指运动速度静止的点，而是由一系列GPS点构成的。如图\ref{figure2_1_gps}中$p_{4} \sim p_{8}$构成了一个停留点stay point在图中由红色点表示。这个点表示用户在该区域内的停留时间超过了一个设定的时间阈值$\Delta T$，相比于用户的其他轨迹位置点，这些计算得出的停留点蕴含了更重要的信息，通过语义标签甚至可以得出用户去过某家餐馆和电影院等。基于以上理论，用户的GPS位置轨迹可以转换为一组由停留点所组成的序列，如$sp_{1}\overset{\Delta_{t1}}{\rightarrow} sp_{2}\overset{\Delta_{t2}}{\rightarrow}\cdots \overset{\Delta_{tn-1}}{\rightarrow}sp_{n}$，这样由停留点所表示的序列不仅对原有数据维度进行了压缩，同时也保存了用户的重要信息。
+现实生活中用户的日常轨迹通常是有一系列包含了地理坐标和时间戳的GPS位置点构成，每个坐标点包含了详细的经纬度、时间戳信息、海拔高度、移动速度等信息。如图\ref{fig:2_1}所示。我们可以通过一些算法检测出用户在一段轨迹运动中停留过的地方称之为停留点\upcite{zheng2011computing}，本文的停留点并不是指运动速度静止的点，而是由一系列GPS点构成的。如图\ref{fig:2_1}中$p_{4} \sim p_{8}$构成了一个停留点stay point在图中由红色点表示。这个点表示用户在该区域内的停留时间超过了一个设定的时间阈值$\Delta T$，相比于用户的其他轨迹位置点，这些计算得出的停留点蕴含了更重要的信息，通过语义标签甚至可以得出用户去过某家餐馆和电影院等。基于以上理论，用户的GPS位置轨迹可以转换为一组由停留点所组成的序列，如$sp_{1}\overset{\Delta_{t1}}{\rightarrow} sp_{2}\overset{\Delta_{t2}}{\rightarrow}\cdots \overset{\Delta_{tn-1}}{\rightarrow}sp_{n}$，这样由停留点所表示的序列不仅对原有数据维度进行了压缩，同时也保存了用户的重要信息。
 \begin{figure}[H]
-\label{figure2_1_gps}
 \centering
 \includegraphics[width=0.8\textwidth]{figure2_1_gps}
 \caption{用户GPS轨迹示例图}
@@ -407,7 +406,7 @@ AMVD(A,B)=\frac{1}{\left | A \right |}\sum_{\forall a_{i} \in A}^{ }  \mathop{\a
     \includegraphics[height=4cm]{figure_4_mid_location1}}\hspace{4em}%
   \subfloat[卡尔曼滤波后的轨迹数据]{%
     \label{fig:3_2_2_1}
-    \includegraphics[height=4cm]{figure_4_mid_location1_kalman}}
+    \includegraphics[height=4cm]{figure_4_mid_location1_kalman_ed}}
   \caption{卡尔曼滤波实验结果1}
   \label{fig:3_4_1}
 \end{figure}
@@ -415,49 +414,38 @@ AMVD(A,B)=\frac{1}{\left | A \right |}\sum_{\forall a_{i} \in A}^{ }  \mathop{\a
   \centering%
   \subfloat[原始轨迹数据]{%
     \label{fig:3_2_2_1}
-    \includegraphics[height=4cm]{figure_4_mid_2}}\hspace{4em}%
+    \includegraphics[height=4cm]{figure_4_mid_location2}}\hspace{4em}%
   \subfloat[卡尔曼滤波后的轨迹数据]{%
     \label{fig:3_2_2_2}
-    \includegraphics[height=4cm]{figure_4_mid_location1_kalman}}
+    \includegraphics[height=4cm]{figure_4_mid_location2_kalman_ed}}
   \caption{卡尔曼滤波实验结果2}
   \label{fig:3_4_2}
 \end{figure}
-\par 在本研究中，我们采用了一种基于速度的分段卡尔曼滤波方法。考虑到在一个时间片内，如果当前位置点的速度和它之前的位置点的速度绝对差大于$\Delta v$时（$\Delta v$作为一个未知的参数，需要我们在实际使用中给出）采用这样的方法将原有用户轨迹切分为$n$段然后针对每一段轨迹采用卡尔曼滤波算法，最终的部分轨迹滤波结果见图\ref{fig:3_5_1}、\ref{fig:3_5_2}、\ref{fig:3_5_3}
+\par 在本研究中，我们采用了一种基于速度的分段卡尔曼滤波方法。考虑到在一个时间片内，如果当前位置点的速度和它之前的位置点的速度绝对差大于$\Delta v$时（$\Delta v$作为一个未知的参数，需要我们在实际使用中给出）采用这样的方法将原有用户轨迹切分为$n$段然后针对每一段轨迹采用卡尔曼滤波算法，最终的部分轨迹滤波结果见图\ref{fig:3_5_1}、\ref{fig:3_5_2},可见经过按照速度分段后使用卡尔曼滤波能够比较好的过滤掉漂移点。
 \begin{figure}[htb]
   \centering%
-  \subfloat[原始数据]{%
+  \subfloat[原始轨迹数据]{%
     \label{fig:3_2_1_1}
-    \includegraphics[height=4cm]{figure3_2_1_1}}\hspace{4em}%
-  \subfloat[分段卡尔曼滤波]{%
+    \includegraphics[height=4cm]{figure_4_mid_location1}}\hspace{4em}%
+  \subfloat[分段卡尔曼滤波数据]{%
     \label{fig:3_2_2_1}
-    \includegraphics[height=4cm]{figure3_5_1_2}}
-  \caption{分段卡尔曼滤波实验结果3-1}
+    \includegraphics[height=4cm]{figure_4_mid_location1_kalman}}
+  \caption{分段卡尔曼滤波轨迹结果1}
   \label{fig:3_5_1}
 \end{figure}
 \begin{figure}[htb]
   \centering%
-  \subfloat[原始数据]{%
+  \subfloat[原始轨迹数据]{%
     \label{fig:3_2_2_1}
-    \includegraphics[height=4cm]{figure3_2_2_1}}\hspace{4em}%
-  \subfloat[分段卡尔曼滤波]{%
+    \includegraphics[height=4cm]{figure_4_mid_location1}}\hspace{4em}%
+  \subfloat[分段卡尔曼滤波数据]{%
     \label{fig:3_2_2_2}
-    \includegraphics[height=4cm]{figure3_5_2_2}}
-  \caption{分段卡尔曼滤波实验结果3-2}
+    \includegraphics[height=4cm]{figure_4_mid_location2_kalman}}
+  \caption{分段卡尔曼滤波轨迹结果2}
   \label{fig:3_5_2}
 \end{figure}
-\begin{figure}[htb]
-  \centering%
-  \subfloat[原始数据]{%
-    \label{fig:3_2_3_1}
-    \includegraphics[height=4cm]{figure3_2_3_1}}\hspace{4em}%
-  \subfloat[分段卡尔曼滤波]{%
-    \label{fig:3_2_3_2}
-    \includegraphics[height=4cm]{figure3_5_3_2}}
-  \caption{分段卡尔曼滤波实验结果3-3}
-  \label{fig:3_5_3}
-\end{figure}
-\par 这一小节主要描述了均值滤波，中值滤波、卡尔曼滤波以及分段卡尔曼滤波的实验结果，通过实验发现分段卡尔曼滤波的结果更加平滑，更符合实际情况。下一小节将描述如何剔除路上的点。
-\subsection{剔除路上的点}
+\par 本小节主要针对前文中提及的三种常用的滤波算法进行了实验结果展示和效果分析，初步得出了使用卡尔曼滤波更加可行的判断结果。
+\subsection{轨迹中停留点检测}
 在现实生活中，人们从一个位置行进到另一个位置是连续的，即采集的数据必然存在很多路上的点。而这些路上的点不属于任何一个语义位置。且在分析关系强度时，如果两个人同时来到同一个语义位置，但是一个从某一个方向过来，而另一个从相反方向过来，虽然这两个人其实在这段时间内待在同一个地方，如果不剔除路上的点，则这两个人的物理位置会受到路上的点的影响，从而使得这两个人轨迹的空间距离反而比较大。在上文讨论的降噪过程中，已经处理了误差比较大的点，因此本节主要讨论如何剔除路上的点。
 \par 仔细分析路上的点的特性，发现人们通常在语义位置停留时间比较长，而在路上一直处于移动状态，所以路上点密度通常远远小于语义位置的点的密度。密度定义见公式\ref{equ:chap2:dj-cluster}。且在实际生活中，在路上时通常处于移动状态，设速度为$v$，且每条路每天走的次数也存在上限，设每条路每天最多走$N$ 次，计算密度时采用的半径参数为$R$，设GPS采样频率为$f$。 因为半径参数很小，故可视为在该半径对应圆形区域中行走路线为直线。路上点的密度D存在最大值，计算方法见公式\ref{equ:chap3:density_01}。因此本文采用基于密度的方法剔除异常点。该方法的基本思想为若某个点的密度小于给定阈值，则该点为异常点。通过对日常数据的分析发现，路上点的密度确实远远小于处于语义位置点的密度，见图\ref{figure3_6}。
 \begin{equation}

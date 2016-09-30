@@ -83,9 +83,8 @@ P_{k}=E\left [ e_{k} {e_{k}}^{T}  \right ]
 \end{equation}
 \par 综合\ref{equ:chap2:kalman-10}、\ref{equ:chap2:kalman-11}、\ref{equ:chap2:kalman-12}针对单个模型的测量利用上述说描述的所有公式就能够通过不断的迭代计算得出最优的估算结果。对于上述介绍的三种滤波技术而言，均值滤波在剔除数值中的随机噪音表现良好，但是不易消除脉冲误差；中值滤波能够减少偶然数据波动带来的误差影响，但是对变化快速的数据不宜使用；卡尔曼滤波最终的结果会优于前两者，但是模型较为复杂，所要求的运算时间复杂度也高于前面的滤波算法。
 \subsection{轨迹停留点检测}
-现实生活中用户的日常轨迹通常是有一系列包含了地理坐标和时间戳的GPS位置点构成，每个坐标点包含了详细的经纬度、时间戳信息、海拔高度、移动速度等信息。如图\ref{figure2_1_gps}所示。我们可以通过一些算法检测出用户在一段轨迹运动中停留过的地方称之为停留点\upcite{zheng2011computing}，本文的停留点并不是指运动速度静止的点，而是由一系列GPS点构成的。如图\ref{figure2_1_gps}中$p_{4} \sim p_{8}$构成了一个停留点stay point在图中由红色点表示。这个点表示用户在该区域内的停留时间超过了一个设定的时间阈值$\Delta T$，相比于用户的其他轨迹位置点，这些计算得出的停留点蕴含了更重要的信息，通过语义标签甚至可以得出用户去过某家餐馆和电影院等。基于以上理论，用户的GPS位置轨迹可以转换为一组由停留点所组成的序列，如$sp_{1}\overset{\Delta_{t1}}{\rightarrow} sp_{2}\overset{\Delta_{t2}}{\rightarrow}\cdots \overset{\Delta_{tn-1}}{\rightarrow}sp_{n}$，这样由停留点所表示的序列不仅对原有数据维度进行了压缩，同时也保存了用户的重要信息。
+现实生活中用户的日常轨迹通常是有一系列包含了地理坐标和时间戳的GPS位置点构成，每个坐标点包含了详细的经纬度、时间戳信息、海拔高度、移动速度等信息。如图\ref{fig:2_1}所示。我们可以通过一些算法检测出用户在一段轨迹运动中停留过的地方称之为停留点\upcite{zheng2011computing}，本文的停留点并不是指运动速度静止的点，而是由一系列GPS点构成的。如图\ref{fig:2_1}中$p_{4} \sim p_{8}$构成了一个停留点stay point在图中由红色点表示。这个点表示用户在该区域内的停留时间超过了一个设定的时间阈值$\Delta T$，相比于用户的其他轨迹位置点，这些计算得出的停留点蕴含了更重要的信息，通过语义标签甚至可以得出用户去过某家餐馆和电影院等。基于以上理论，用户的GPS位置轨迹可以转换为一组由停留点所组成的序列，如$sp_{1}\overset{\Delta_{t1}}{\rightarrow} sp_{2}\overset{\Delta_{t2}}{\rightarrow}\cdots \overset{\Delta_{tn-1}}{\rightarrow}sp_{n}$，这样由停留点所表示的序列不仅对原有数据维度进行了压缩，同时也保存了用户的重要信息。
 \begin{figure}[H]
-\label{figure2_1_gps}
 \centering
 \includegraphics[width=0.8\textwidth]{figure2_1_gps}
 \caption{用户GPS轨迹示例图}
@@ -438,7 +437,7 @@ AMVD(A,B)=\frac{1}{\left | A \right |}\sum_{\forall a_{i} \in A}^{ }  \mathop{\a
   \centering%
   \subfloat[原始轨迹数据]{%
     \label{fig:3_2_2_1}
-    \includegraphics[height=4cm]{figure_4_mid_location1}}\hspace{4em}%
+    \includegraphics[height=4cm]{figure_4_mid_location2}}\hspace{4em}%
   \subfloat[分段卡尔曼滤波数据]{%
     \label{fig:3_2_2_2}
     \includegraphics[height=4cm]{figure_4_mid_location2_kalman}}
@@ -446,18 +445,31 @@ AMVD(A,B)=\frac{1}{\left | A \right |}\sum_{\forall a_{i} \in A}^{ }  \mathop{\a
   \label{fig:3_5_2}
 \end{figure}
 \par 本小节主要针对前文中提及的三种常用的滤波算法进行了实验结果展示和效果分析，初步得出了使用卡尔曼滤波更加可行的判断结果。
-\subsection{剔除路上的点}
+\subsection{轨迹中停留点检测}
+在实际生活中用户的轨迹是由一系列GPS点构成的，剔除其中的噪音点和用户在路上的点，能够从中挖掘出进一步信息的位置信息即为轨迹中的停留点，通常停留点并不是指用户轨迹中速度为零的点，而是由一组GPS 点构成区域，一个停留点通常对应现实生活中富有具体意义的点，能够更好的反映出用户之间轨迹的相似程度。
 在现实生活中，人们从一个位置行进到另一个位置是连续的，即采集的数据必然存在很多路上的点。而这些路上的点不属于任何一个语义位置。且在分析关系强度时，如果两个人同时来到同一个语义位置，但是一个从某一个方向过来，而另一个从相反方向过来，虽然这两个人其实在这段时间内待在同一个地方，如果不剔除路上的点，则这两个人的物理位置会受到路上的点的影响，从而使得这两个人轨迹的空间距离反而比较大。在上文讨论的降噪过程中，已经处理了误差比较大的点，因此本节主要讨论如何剔除路上的点。
 \par 仔细分析路上的点的特性，发现人们通常在语义位置停留时间比较长，而在路上一直处于移动状态，所以路上点密度通常远远小于语义位置的点的密度。密度定义见公式\ref{equ:chap2:dj-cluster}。且在实际生活中，在路上时通常处于移动状态，设速度为$v$，且每条路每天走的次数也存在上限，设每条路每天最多走$N$ 次，计算密度时采用的半径参数为$R$，设GPS采样频率为$f$。 因为半径参数很小，故可视为在该半径对应圆形区域中行走路线为直线。路上点的密度D存在最大值，计算方法见公式\ref{equ:chap3:density_01}。因此本文采用基于密度的方法剔除异常点。该方法的基本思想为若某个点的密度小于给定阈值，则该点为异常点。通过对日常数据的分析发现，路上点的密度确实远远小于处于语义位置点的密度，见图\ref{figure3_6}。
-\begin{equation}
-\label{equ:chap3:density_01}
-D=N \ast \frac{2R}{v} \ast f
-\end{equation}
-\begin{figure}[htp]
-\centering
-\includegraphics[width=6in]{figure3_6}
-\caption{绿色表示正常点，红色表示路上的点}
-\label{fig:3_6}
+\begin{figure}[htb]
+  \centering%
+  \subfloat[原始轨迹数据]{%
+    \label{fig:3_3_1_1}
+    \includegraphics[height=4cm]{figure_4_location1_scater}}\hspace{4em}%
+  \subfloat[检测出的停留点]{%
+    \label{fig:sp_1}
+    \includegraphics[height=4cm]{figure_4_location1_sp}}
+  \caption{停留点检测实验结果1}
+  \label{fig:SP_1}
+\end{figure}
+\begin{figure}[htb]
+  \centering%
+  \subfloat[原始轨迹数据]{%
+    \label{fig:3_3_1_1}
+    \includegraphics[height=4cm]{figure_4_location2_scater}}\hspace{4em}%
+  \subfloat[检测出的停留点]{%
+    \label{fig:sp_2}
+    \includegraphics[height=4cm]{figure_4_location2_sp}}
+  \caption{停留点检测实验结果2}
+  \label{fig:SP_2}
 \end{figure}
 \par 根据上下文的分析，可以计算出密度的上限值，假设计算密度时的半径设为10米，每天经过这条路4次，步行速度约为80 米每分钟，这样每个点的密度的上限值大概是60。 同时本课题研究发现有一种方法可以自动学习参数，后文将会对比学习到的密度上限值和计算值的异同。
 \par 假设对于某一天的数据，已经聚好类，即我们知道哪一个点属于哪一个类别，仔细分析每个路上的点对类别中心的影响，假设用户在某个地方时处于某一个固定的位置，GPS采样因为采样误差服从高斯分布，因此大多数点都处在该固定位置对应实际点（可能是类别中心，非常有可能在类别中心附近）的周围。而路上的点会距离实际点比较远，因此，该类别所有点到类别中心的距离的平均值会被路上的点拉大，如果逐渐提高密度的上限值，从而有更多的点因为密度小而被删除，讨论一种理想情况，如果路上的点完全被剔除，剩下的点都是实际点加高斯误差，因为实际点大量存在，使得即使我们剔除一小部分实际点，对该类别所有点到类别中心的距离的平均值也不会产生太大的影响。所以可以从一个很小的密度上限值逐渐增加，剔除小于该密度的点之后计算对应的平均距离，若平均距离收敛，则认为这个密度值是路上的点的密度的上限值。平均距离的定义见公式\ref{equ:chap3:avgdis_01},其中$p_{ij}$为第$i$类第$j$个点，$c_{i}$为第$i$类的类别中心，$dis(a,b)$表示$a$和$b$之间的距离，$n_{i}$为第$i$类点的个数，$k$为类别的个数，$N$为所有点的个数。使用连续四天采集的数据做了实验，计算其平均距离，见图\ref{fig:3_7}。

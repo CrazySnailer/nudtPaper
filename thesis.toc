@@ -31,12 +31,12 @@
 \contentsline {section}{\numberline {4.1}GPS轨迹处理计算技术}{29}{section.4.1}
 \contentsline {section}{\numberline {4.2}GPS轨迹预处理与语义化}{30}{section.4.2}
 \contentsline {subsection}{\numberline {4.2.1}剔除轨迹中的异常点}{30}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}剔除路上的点}{32}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.2}轨迹中停留点检测}{32}{subsection.4.2.2}
 \contentsline {subsection}{\numberline {4.2.3}聚类得到语义位置}{35}{subsection.4.2.3}
 \contentsline {section}{\numberline {4.3}对语义位置标语义标签}{44}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}发现新位置}{44}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.1}发现新位置}{45}{subsection.4.3.1}
 \contentsline {subsection}{\numberline {4.3.2}新位置语义标签提示}{46}{subsection.4.3.2}
-\contentsline {section}{\numberline {4.4}小结}{47}{section.4.4}
+\contentsline {section}{\numberline {4.4}小结}{48}{section.4.4}
 \contentsline {chapter}{\numberline {5}用户关系强度计算方法}{49}{chapter.5}
 \contentsline {section}{\numberline {5.1}用户关系强度计算方法概述}{49}{section.5.1}
 \contentsline {section}{\numberline {5.2}输入数据准备}{49}{section.5.2}
@@ -58,7 +58,7 @@
 \contentsline {chapter}{\numberline {7}结束语}{77}{chapter.7}
 \contentsline {section}{\numberline {7.1}工作总结}{77}{section.7.1}
 \contentsline {section}{\numberline {7.2}工作展望}{78}{section.7.2}
-\contentsline {chapter}{致谢}{81}{chapter*.74}
-\contentsline {chapter}{参考文献}{83}{section*.75}
-\contentsline {chapter}{作者在学期间取得的学术成果}{87}{chapter*.77}
+\contentsline {chapter}{致谢}{81}{chapter*.75}
+\contentsline {chapter}{参考文献}{83}{section*.76}
+\contentsline {chapter}{作者在学期间取得的学术成果}{87}{chapter*.78}
 \contentsfinish 
