@@ -19,7 +19,7 @@
 \contentsline {section}{\numberline {2.3}自然语言处理方法}{19}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}LDA主题模型}{20}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}word2vec}{20}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}快速Hash算法}{22}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.3}快速Hash算法}{23}{subsection.2.3.3}
 \contentsline {section}{\numberline {2.4}WiFi和蓝牙数据的度量方法}{23}{section.2.4}
 \contentsline {section}{\numberline {2.5}小结}{23}{section.2.5}
 \contentsline {chapter}{\numberline {3}RSMHD用户关系强度计算框架模型}{25}{chapter.3}
@@ -32,33 +32,33 @@
 \contentsline {section}{\numberline {4.2}GPS轨迹预处理与语义化}{30}{section.4.2}
 \contentsline {subsection}{\numberline {4.2.1}剔除轨迹中的异常点}{30}{subsection.4.2.1}
 \contentsline {subsection}{\numberline {4.2.2}轨迹中停留点检测}{32}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}聚类得到语义位置}{35}{subsection.4.2.3}
-\contentsline {section}{\numberline {4.3}对语义位置标语义标签}{44}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}发现新位置}{44}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}新位置语义标签提示}{46}{subsection.4.3.2}
-\contentsline {section}{\numberline {4.4}小结}{47}{section.4.4}
-\contentsline {chapter}{\numberline {5}用户关系强度计算方法}{49}{chapter.5}
-\contentsline {section}{\numberline {5.1}用户关系强度计算方法概述}{49}{section.5.1}
-\contentsline {section}{\numberline {5.2}输入数据准备}{49}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}轨迹数据的处理与准备}{50}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}语义位置数据的处理与准备}{51}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}语义标签数据的处理与准备}{51}{subsection.5.2.3}
-\contentsline {section}{\numberline {5.3}关系强度计算}{52}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}基于原始轨迹数据的关系强度计算}{52}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}基于主题模型的关系强度计算}{53}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}结果投票}{54}{subsection.5.3.3}
-\contentsline {section}{\numberline {5.4}小结}{55}{section.5.4}
-\contentsline {chapter}{\numberline {6}数据集、评估方法及实验结果}{57}{chapter.6}
-\contentsline {section}{\numberline {6.1}数据集}{57}{section.6.1}
-\contentsline {section}{\numberline {6.2}评估方法}{61}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}构造真实结果}{62}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}评估方法}{63}{subsection.6.2.2}
-\contentsline {section}{\numberline {6.3}实验结果与分析}{65}{section.6.3}
-\contentsline {section}{\numberline {6.4}小结}{72}{section.6.4}
-\contentsline {chapter}{\numberline {7}结束语}{77}{chapter.7}
-\contentsline {section}{\numberline {7.1}工作总结}{77}{section.7.1}
-\contentsline {section}{\numberline {7.2}工作展望}{78}{section.7.2}
-\contentsline {chapter}{致谢}{81}{chapter*.75}
-\contentsline {chapter}{参考文献}{83}{section*.76}
-\contentsline {chapter}{作者在学期间取得的学术成果}{87}{chapter*.78}
+\contentsline {subsection}{\numberline {4.2.3}停留点聚类语义化}{34}{subsection.4.2.3}
+\contentsline {section}{\numberline {4.3}对语义位置标语义标签}{41}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}发现新位置}{42}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}新位置语义标签提示}{43}{subsection.4.3.2}
+\contentsline {section}{\numberline {4.4}小结}{45}{section.4.4}
+\contentsline {chapter}{\numberline {5}用户关系强度计算方法}{47}{chapter.5}
+\contentsline {section}{\numberline {5.1}用户关系强度计算方法概述}{47}{section.5.1}
+\contentsline {section}{\numberline {5.2}输入数据准备}{47}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}轨迹数据的处理与准备}{48}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}语义位置数据的处理与准备}{49}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}语义标签数据的处理与准备}{49}{subsection.5.2.3}
+\contentsline {section}{\numberline {5.3}关系强度计算}{50}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}基于原始轨迹数据的关系强度计算}{50}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}基于主题模型的关系强度计算}{51}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}结果投票}{52}{subsection.5.3.3}
+\contentsline {section}{\numberline {5.4}小结}{53}{section.5.4}
+\contentsline {chapter}{\numberline {6}数据集、评估方法及实验结果}{55}{chapter.6}
+\contentsline {section}{\numberline {6.1}数据集}{55}{section.6.1}
+\contentsline {section}{\numberline {6.2}评估方法}{59}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}构造真实结果}{60}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}评估方法}{61}{subsection.6.2.2}
+\contentsline {section}{\numberline {6.3}实验结果与分析}{63}{section.6.3}
+\contentsline {section}{\numberline {6.4}小结}{73}{section.6.4}
+\contentsline {chapter}{\numberline {7}结束语}{75}{chapter.7}
+\contentsline {section}{\numberline {7.1}工作总结}{75}{section.7.1}
+\contentsline {section}{\numberline {7.2}工作展望}{76}{section.7.2}
+\contentsline {chapter}{致谢}{79}{chapter*.71}
+\contentsline {chapter}{参考文献}{81}{section*.72}
+\contentsline {chapter}{作者在学期间取得的学术成果}{85}{chapter*.74}
 \contentsfinish 

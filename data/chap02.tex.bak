@@ -446,15 +446,14 @@ AMVD(A,B)=\frac{1}{\left | A \right |}\sum_{\forall a_{i} \in A}^{ }  \mathop{\a
 \end{figure}
 \par 本小节主要针对前文中提及的三种常用的滤波算法进行了实验结果展示和效果分析，初步得出了使用卡尔曼滤波更加可行的判断结果。
 \subsection{轨迹中停留点检测}
-在实际生活中用户的轨迹是由一系列GPS点构成的，剔除其中的噪音点和用户在路上的点，能够从中挖掘出进一步信息的位置信息即为轨迹中的停留点，通常停留点并不是指用户轨迹中速度为零的点，而是由一组GPS 点构成区域，一个停留点通常对应现实生活中富有具体意义的点，能够更好的反映出用户之间轨迹的相似程度。如图\ref{fig:staypoint}所示，在现实生活中的停留点可以是一个区域，也可以是一个具体的建筑名称，甚至可以是一个具有特殊意义的点。
+在实际生活中用户的轨迹是由一系列GPS点构成的，剔除其中的噪音点和用户在路上的点，能够从中挖掘出进一步信息的位置信息即为轨迹中的停留点，通常停留点并不是指用户轨迹中速度为零的点，而是由一组GPS 点构成区域，一个停留点通常对应现实生活中富有具体意义的点，能够更好的反映出用户之间轨迹的相似程度。如图\ref{fig:staypoint}所示，在现实生活中的停留点可以是一个具体的建筑名称，也可以是代表一个固定的区域，甚至可以是一个具有特殊意义的点。
 \begin{figure}[htp]
 \centering
-\includegraphics[width=0.8\textwidth]{figure_4_stay-point}
+\includegraphics[width=0.8\textwidth]{figure_4_stay-points}
 \caption{现实生活中的停留点示意图}
 \label{fig:staypoint}
 \end{figure}
-在现实生活中，人们从一个位置行进到另一个位置是连续的，即采集的数据必然存在很多路上的点。而这些路上的点不属于任何一个语义位置。且在分析关系强度时，如果两个人同时来到同一个语义位置，但是一个从某一个方向过来，而另一个从相反方向过来，虽然这两个人其实在这段时间内待在同一个地方，如果不剔除路上的点，则这两个人的物理位置会受到路上的点的影响，从而使得这两个人轨迹的空间距离反而比较大。在上文讨论的降噪过程中，已经处理了误差比较大的点，因此本节主要讨论如何剔除路上的点。
-\par 仔细分析路上的点的特性，发现人们通常在语义位置停留时间比较长，而在路上一直处于移动状态，所以路上点密度通常远远小于语义位置的点的密度。密度定义见公式\ref{equ:chap2:dj-cluster}。且在实际生活中，在路上时通常处于移动状态，设速度为$v$，且每条路每天走的次数也存在上限，设每条路每天最多走$N$ 次，计算密度时采用的半径参数为$R$，设GPS采样频率为$f$。 因为半径参数很小，故可视为在该半径对应圆形区域中行走路线为直线。路上点的密度D存在最大值，计算方法见公式\ref{equ:chap3:density_01}。因此本文采用基于密度的方法剔除异常点。该方法的基本思想为若某个点的密度小于给定阈值，则该点为异常点。通过对日常数据的分析发现，路上点的密度确实远远小于处于语义位置点的密度，见图\ref{figure3_6}。
+\par 通过对停留点的识别，能够让我们更加深入的了解和认识用户的日常轨迹，同时从一个更加细粒度的层次来分析用户之间的轨迹相似度，停留点检测实验结果如图\ref{fig:SP_1}、\ref{fig:SP_2}所示，图中所得到的每一个停留点都具有丰富的现实意义，能够有效地表示用户访问的地点、位置。
 \begin{figure}[htb]
   \centering%
   \subfloat[原始轨迹数据]{%
@@ -477,136 +476,79 @@ AMVD(A,B)=\frac{1}{\left | A \right |}\sum_{\forall a_{i} \in A}^{ }  \mathop{\a
   \caption{停留点检测实验结果2}
   \label{fig:SP_2}
 \end{figure}
-\par 根据上下文的分析，可以计算出密度的上限值，假设计算密度时的半径设为10米，每天经过这条路4次，步行速度约为80 米每分钟，这样每个点的密度的上限值大概是60。 同时本课题研究发现有一种方法可以自动学习参数，后文将会对比学习到的密度上限值和计算值的异同。
-\par 假设对于某一天的数据，已经聚好类，即我们知道哪一个点属于哪一个类别，仔细分析每个路上的点对类别中心的影响，假设用户在某个地方时处于某一个固定的位置，GPS采样因为采样误差服从高斯分布，因此大多数点都处在该固定位置对应实际点（可能是类别中心，非常有可能在类别中心附近）的周围。而路上的点会距离实际点比较远，因此，该类别所有点到类别中心的距离的平均值会被路上的点拉大，如果逐渐提高密度的上限值，从而有更多的点因为密度小而被删除，讨论一种理想情况，如果路上的点完全被剔除，剩下的点都是实际点加高斯误差，因为实际点大量存在，使得即使我们剔除一小部分实际点，对该类别所有点到类别中心的距离的平均值也不会产生太大的影响。所以可以从一个很小的密度上限值逐渐增加，剔除小于该密度的点之后计算对应的平均距离，若平均距离收敛，则认为这个密度值是路上的点的密度的上限值。平均距离的定义见公式\ref{equ:chap3:avgdis_01},其中$p_{ij}$为第$i$类第$j$个点，$c_{i}$为第$i$类的类别中心，$dis(a,b)$ 表示$a$和$b$之间的距离，$n_{i}$为第$i$类点的个数，$k$为类别的个数，$N$为所有点的个数。使用连续四天采集的数据做了实验，计算其平均距离，见图\ref{fig:3_7}。
-\begin{equation}
-\label{equ:chap3:avgdis_01}
-AvgDis=\frac{\sum_{i=1}^{k}\sum_{j=1}^{n_{i}}dis(p_{ij},c_{i})}{N}
-\end{equation}
+\subsection{停留点聚类语义化}
+本节针对上面得到的用户轨迹中的停留点，采用不同的聚类算法所得到的不同的聚类结果进行描述。在前面的章节中我们详细介绍了聚类中常用的三种算法K-means聚类、DJ-Cluster的密度聚类和最新发表的改进的密度聚类算法，接下来我们将在实验中对这三种聚类算法进行比较。
+\par 首先我们对用户轨迹数据采用K-means算法进行聚类实验，但是K-means聚类算法具有以下的明显的缺点：首先是K-means聚类结果依赖于参数$k$的初始化，其中$k$是指聚类个数。$k$个数的确定往往是靠经验值设定；其次是K-means算法初始化时聚类中心的选择，因为该算法采用的随机初始化聚类中心点，中心点选择不同会导致聚类的结果也出现差异甚至影响聚类的时间复杂度，使得聚类结果容易得到局部最优解而非全局最优解；最后的一个缺点是K-means聚类算法对原始数据中的噪音点和离群点非常敏感，聚类结果很容易受到离群点的影响从而导致簇的偏移。
+\par 在本研究中因为是针对用户的空间轨迹进行聚类分析，而现实生活中用户的停留点主要是以相隔距离比较大的建筑等，因此在采用K-means聚类过程中，对噪音点的影响基本可以忽略不计，最主要的就是考虑不同的参数$k$对最终聚类结果的影响，图\ref{fig:3_8_1}、\ref{fig:3_8_2}主要展示不同的参数$k$取值对最终轨迹聚类结果的影响。图\ref{fig:3_9_1}、\ref{fig:3_9_2}在地图上标记了在不同参数$k$取值情况下的簇中心使得能够有更加直观的观察。
 \begin{figure}[htb]
   \centering%
-  \subfloat[第一天数据]{%
-    \label{fig:3_7_1}
-    \includegraphics[height=5cm]{figure3_7_1}}%\hspace{4em}
-  \subfloat[第二天数据]{%
-    \label{fig:3_7_2}
-    \includegraphics[height=5cm]{figure3_7_2}}\\
-  \subfloat[第三天数据]{%
-    \label{fig:3_7_3}
-    \includegraphics[height=5cm]{figure3_7_3}}
-  \subfloat[第四天数据]{%
-    \label{fig:3_7_4}
-    \includegraphics[height=5cm]{figure3_7_4}}
-  \caption{平均距离收敛}
-  \label{fig:3_7}
-\end{figure}
-\par 通过观察图\ref{fig:3_7}，发现密度上限值大概是40到50之间，前文计算的密度上限值是60左右，一方面因为两种计算方法都存在一定的误差，另一方面是在实际过程中，手机并不是持续高频采样，经常会因为各种各样的原因而丢失一些采样点。在实际应用中，可以先手动处理某一天的数据，然后使用该自动学习的算法学习到密度的上限值，从而用作其他天数据处理的参数。
-\par 这一小节主要讨论了如何剔除路上的点，以及如何学习路上点的密度的上限值，下一小节将通过实验讨论K-MEANS、DJ-cluster、以及Science上发表算法三种聚类算法的优缺点，以及在实际数据上应用的效果。
-\subsection{聚类得到语义位置}
-这一小节将重点描述使用聚类算法得到语义位置时，不同算法以及不同参数对结果产生的影响。K-MEANS、DJ-Cluster以及Science 上发表的三个算法算法原理在第二章已经描述过了，下文将通过实验依次展示三个算法对相同数据聚类得到的结果。数据使用文献\cite{rawassizadeh2013ubiqlog}中的采集工具采集。
-\par 首先展示K-MEANS聚类算法的实验结果，K-MEANS聚类算法的主要缺点有两个：一个是需要预知类别的个数；另一个是同一类别的数据最好是团状或簇状。对于本课题研究的问题而言，通常遇到的建筑都是每栋楼占单独的一块地方，相邻建筑一般都会有一定的间隔，因此K-MEANS聚类算法的第二个缺点因为本课题研究的具体问题而不复存在，故主要考虑不同类别个数对实验结果的影响。图\ref{fig:3_8_1}、\ref{fig:3_8_2}、\ref{fig:3_8_3} 主要展示了不同参数对K-MEANS聚类结果的影响。图\ref{fig:3_9_1}、\ref{fig:3_9_2}、\ref{fig:3_9_3}在地图上标记了不同参数聚类得到的聚类中心。
-\begin{figure}[htb]
-  \centering%
-  \subfloat[原始数据]{%
+  \subfloat[原始轨迹数据]{%
     \label{fig:3_8_1_1}
-    \includegraphics[height=5cm]{figure3_8_1_1}}%\hspace{4em}
-  \subfloat[k=3]{%
+    \includegraphics[height=5cm]{figure4_tra1}}%\hspace{4em}
+  \subfloat[参数k=3]{%
     \label{fig:3_8_1_2}
-    \includegraphics[height=5cm]{figure3_8_1_2}}\\
-  \subfloat[k=4]{%
+    \includegraphics[height=5cm]{figure4_tra1_kmeans_3}}\\
+  \subfloat[参数k=4]{%
     \label{fig:3_8_1_3}
-    \includegraphics[height=5cm]{figure3_8_1_3}}
-  \subfloat[k=5]{%
+    \includegraphics[height=5cm]{figure4_tra1_kmeans_4}}
+  \subfloat[参数k=5]{%
     \label{fig:3_8_1_4}
-    \includegraphics[height=5cm]{figure3_8_1_4}}
-  \caption{K-MEANS聚类实验结果3-1}
+    \includegraphics[height=5cm]{figure4_tra1_kmeans_5}}
+  \caption{基于K-means的轨迹聚类实验结果1}
   \label{fig:3_8_1}
 \end{figure}
 \begin{figure}[htb]
   \centering%
-  \subfloat[原始数据]{%
+  \subfloat[原始轨迹数据]{%
     \label{fig:3_9_1_1}
-    \includegraphics[height=6cm]{figure3_9_1_1}}%\hspace{4em}
-  \subfloat[k=3]{%
+    \includegraphics[height=6cm]{figure3_9_2_1}}%\hspace{4em}
+  \subfloat[参数k=3]{%
     \label{fig:3_9_1_2}
-    \includegraphics[height=6cm]{figure3_9_1_2}}
-  \subfloat[k=4]{%
+    \includegraphics[height=6cm]{figure3_9_2_2}}
+  \subfloat[参数k=4]{%
     \label{fig:3_9_1_3}
-    \includegraphics[height=6cm]{figure3_9_1_3}}
-  \subfloat[k=5]{%
+    \includegraphics[height=6cm]{figure3_9_2_3}}
+  \subfloat[参数k=5]{%
     \label{fig:3_9_1_4}
-    \includegraphics[height=6cm]{figure3_9_1_4}}
-  \caption{K-MEANS聚类实验结果地图展示3-1}
+    \includegraphics[height=6cm]{figure3_9_2_4}}
+  \caption{基于K-means的轨迹聚类实验结果地图展示1}
   \label{fig:3_9_1}
 \end{figure}
 \begin{figure}[htb]
   \centering%
-  \subfloat[原始数据]{%
+  \subfloat[原始轨迹数据]{%
     \label{fig:3_8_2_1}
-    \includegraphics[height=5cm]{figure3_8_2_1}}%\hspace{4em}
-  \subfloat[k=3]{%
+    \includegraphics[height=5cm]{figure4_tra2}}%\hspace{4em}
+  \subfloat[参数k=3]{%
     \label{fig:3_8_2_2}
-    \includegraphics[height=5cm]{figure3_8_2_2}}\\
-  \subfloat[k=4]{%
+    \includegraphics[height=5cm]{figure4_tra2_kmeans_3}}\\
+  \subfloat[参数k=4]{%
     \label{fig:3_8_2_3}
-    \includegraphics[height=5cm]{figure3_8_2_3}}
-  \subfloat[k=5]{%
+    \includegraphics[height=5cm]{figure4_tra2_kmeans_4}}
+  \subfloat[参数k=5]{%
     \label{fig:3_8_2_4}
-    \includegraphics[height=5cm]{figure3_8_2_4}}
-  \caption{K-MEANS聚类实验结果3-2}
+    \includegraphics[height=5cm]{figure4_tra2_kmeans_5}}
+  \caption{基于K-means的轨迹聚类实验结果2}
   \label{fig:3_8_2}
 \end{figure}
 \begin{figure}[htb]
   \centering%
-  \subfloat[原始数据]{%
+  \subfloat[原始轨迹数据]{%
     \label{fig:3_9_2_1}
     \includegraphics[height=6cm]{figure3_9_2_1}}%\hspace{4em}
-  \subfloat[k=3]{%
+  \subfloat[参数k=3]{%
     \label{fig:3_9_2_2}
     \includegraphics[height=6cm]{figure3_9_2_2}}
-  \subfloat[k=4]{%
+  \subfloat[参数k=4]{%
     \label{fig:3_9_2_3}
     \includegraphics[height=6cm]{figure3_9_2_3}}
-  \subfloat[k=5]{%
+  \subfloat[参数k=5]{%
     \label{fig:3_9_2_4}
     \includegraphics[height=6cm]{figure3_9_2_4}}
-  \caption{K-MEANS聚类实验结果地图展示3-2}
+  \caption{基于K-means的轨迹聚类实验结果地图展示2}
   \label{fig:3_9_2}
 \end{figure}
-\begin{figure}[htb]
-  \centering%
-  \subfloat[原始数据]{%
-    \label{fig:3_8_3_1}
-    \includegraphics[height=5cm]{figure3_8_3_1}}%\hspace{4em}
-  \subfloat[k=3]{%
-    \label{fig:3_8_3_2}
-    \includegraphics[height=5cm]{figure3_8_3_2}}\\
-  \subfloat[k=4]{%
-    \label{fig:3_8_3_3}
-    \includegraphics[height=5cm]{figure3_8_3_3}}
-  \subfloat[k=5]{%
-    \label{fig:3_8_3_4}
-    \includegraphics[height=5cm]{figure3_8_3_4}}
-  \caption{K-MEANS聚类实验结果3-3}
-  \label{fig:3_8_3}
-\end{figure}
-\begin{figure}[htb]
-  \centering%
-  \subfloat[原始数据]{%
-    \label{fig:3_9_3_1}
-    \includegraphics[height=6cm]{figure3_9_3_1}}%\hspace{4em}
-  \subfloat[k=2]{%
-    \label{fig:3_9_3_2}
-    \includegraphics[height=6cm]{figure3_9_3_2}}
-  \subfloat[k=3]{%
-    \label{fig:3_9_3_3}
-    \includegraphics[height=6cm]{figure3_9_3_3}}
-  \subfloat[k=4]{%
-    \label{fig:3_9_3_4}
-    \includegraphics[height=6cm]{figure3_9_3_4}}
-  \caption{K-MEANS聚类实验结果地图展示3-3}
-  \label{fig:3_9_3}
-\end{figure}
+\par 通过对轨迹数据的聚类分析我们可以得知，如果在聚类前我们能够确切的知道用户的轨迹数据应该划分的簇的个数，那么K-means聚类算法将会得出非常合理的结果，我们在观察图\ref{fig:3_9_1}、\ref{fig:3_9_2}时发现，当簇的个数越接近符合用户访问位置个数的时候，那么聚类点将更能够反映出真实的情况，在图**中，(a)所对应的聚类得到的簇包含了实际上没有正确的将用户访问过的位置区分开，因为这两个访问的位置距离相隔太近，导致K-means算法将这两个簇合并为一个簇，但是如果我们将聚类个数设置为5就能够成功的识别出这两个位置。%----写到这里了
 \par 仔细分析这三组数据的实验结果发现，如果能够预先知道类别的个数，K-MEANS算法确实能够得到一个非常好的结果，特别对于图\ref{fig:3_9_2}，仔细观察(a)对应的原始数据，地图右下角白色点群表明其实去了两个教学楼，但是两个教学楼距离太近以及GPS本身存在的采样误差使得采样点混合在一起。如果假设去了三个地方时，该聚类算法将两个教学楼识别成了一个位置，如果假设去了四个地方时，聚类算法成功的区分了这两个实验楼，在另外两个算法的实验中将发现，另外两个算法无法区分这两个实验楼。对于图\ref{fig:3_9_1}，其实只参观了三个地方，但是如果假设去了四个地方，该聚类算法也能将数据分成四类，仔细观察得到第四个类别其实是两条路的交叉点，从另一个角度证明前文论述应该剔除路上的点是非常合理的，而后文的实验也证明剔除路上的点之后，聚类算法就不会再把路上的点识别成聚类中心。
 \par 下文将展示DJ-Cluster算法的实验结果，DJ-Cluster是基于DBSCAN算法的一种基于密度的聚类算法，通过边界点将相邻类别合并从而使得算法对参数更加鲁棒。但是算法本身仍然严重依赖半径值和密度值这两个参数，在实际应用过程中，仍然需要仔细调节参数，在参数设置理想的情况下，仍然能够得到非常理想的结果，见图\ref{fig:3_10_1}、\ref{fig:3_10_2}、\ref{fig:3_10_3}，其地图表示见图\ref{fig:3_11_1}、\ref{fig:3_11_2}、\ref{fig:3_11_3}。
 \begin{figure}[htb]

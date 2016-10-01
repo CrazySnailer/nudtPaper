@@ -40,97 +40,77 @@
 \contentsline {figure}{\numberline {4.9}{\ignorespaces 分段卡尔曼滤波轨迹结果2\relax }}{33}{figure.caption.32}
 \contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始轨迹数据}}}{33}{subfigure.9.1}
 \contentsline {subfigure}{\numberline {((b))}{\ignorespaces {分段卡尔曼滤波数据}}}{33}{subfigure.9.2}
-\contentsline {figure}{\numberline {4.10}{\ignorespaces 停留点检测实验结果1\relax }}{34}{figure.caption.33}
-\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始轨迹数据}}}{34}{subfigure.10.1}
-\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {检测出的停留点}}}{34}{subfigure.10.2}
-\contentsline {figure}{\numberline {4.11}{\ignorespaces 停留点检测实验结果2\relax }}{34}{figure.caption.34}
-\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始轨迹数据}}}{34}{subfigure.11.1}
-\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {检测出的停留点}}}{34}{subfigure.11.2}
-\contentsline {figure}{\numberline {4.12}{\ignorespaces 平均距离收敛\relax }}{35}{figure.caption.35}
-\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {第一天数据}}}{35}{subfigure.12.1}
-\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {第二天数据}}}{35}{subfigure.12.2}
-\contentsline {subfigure}{\numberline {((c))}{\ignorespaces {第三天数据}}}{35}{subfigure.12.3}
-\contentsline {subfigure}{\numberline {((d))}{\ignorespaces {第四天数据}}}{35}{subfigure.12.4}
-\contentsline {figure}{\numberline {4.13}{\ignorespaces K-MEANS聚类实验结果3-1\relax }}{36}{figure.caption.36}
-\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始数据}}}{36}{subfigure.13.1}
-\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {k=3}}}{36}{subfigure.13.2}
-\contentsline {subfigure}{\numberline {((c))}{\ignorespaces {k=4}}}{36}{subfigure.13.3}
-\contentsline {subfigure}{\numberline {((d))}{\ignorespaces {k=5}}}{36}{subfigure.13.4}
-\contentsline {figure}{\numberline {4.14}{\ignorespaces K-MEANS聚类实验结果地图展示3-1\relax }}{37}{figure.caption.37}
-\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始数据}}}{37}{subfigure.14.1}
-\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {k=3}}}{37}{subfigure.14.2}
-\contentsline {subfigure}{\numberline {((c))}{\ignorespaces {k=4}}}{37}{subfigure.14.3}
-\contentsline {subfigure}{\numberline {((d))}{\ignorespaces {k=5}}}{37}{subfigure.14.4}
-\contentsline {figure}{\numberline {4.15}{\ignorespaces K-MEANS聚类实验结果3-2\relax }}{37}{figure.caption.38}
-\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始数据}}}{37}{subfigure.15.1}
-\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {k=3}}}{37}{subfigure.15.2}
-\contentsline {subfigure}{\numberline {((c))}{\ignorespaces {k=4}}}{37}{subfigure.15.3}
-\contentsline {subfigure}{\numberline {((d))}{\ignorespaces {k=5}}}{37}{subfigure.15.4}
-\contentsline {figure}{\numberline {4.16}{\ignorespaces K-MEANS聚类实验结果地图展示3-2\relax }}{38}{figure.caption.39}
-\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始数据}}}{38}{subfigure.16.1}
-\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {k=3}}}{38}{subfigure.16.2}
-\contentsline {subfigure}{\numberline {((c))}{\ignorespaces {k=4}}}{38}{subfigure.16.3}
-\contentsline {subfigure}{\numberline {((d))}{\ignorespaces {k=5}}}{38}{subfigure.16.4}
-\contentsline {figure}{\numberline {4.17}{\ignorespaces K-MEANS聚类实验结果3-3\relax }}{38}{figure.caption.40}
-\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始数据}}}{38}{subfigure.17.1}
-\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {k=3}}}{38}{subfigure.17.2}
-\contentsline {subfigure}{\numberline {((c))}{\ignorespaces {k=4}}}{38}{subfigure.17.3}
-\contentsline {subfigure}{\numberline {((d))}{\ignorespaces {k=5}}}{38}{subfigure.17.4}
-\contentsline {figure}{\numberline {4.18}{\ignorespaces K-MEANS聚类实验结果地图展示3-3\relax }}{39}{figure.caption.41}
-\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始数据}}}{39}{subfigure.18.1}
-\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {k=2}}}{39}{subfigure.18.2}
-\contentsline {subfigure}{\numberline {((c))}{\ignorespaces {k=3}}}{39}{subfigure.18.3}
-\contentsline {subfigure}{\numberline {((d))}{\ignorespaces {k=4}}}{39}{subfigure.18.4}
-\contentsline {figure}{\numberline {4.19}{\ignorespaces DJ-Cluster实验结果3-1\relax }}{39}{figure.caption.42}
-\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始数据}}}{39}{subfigure.19.1}
-\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {聚类结果}}}{39}{subfigure.19.2}
-\contentsline {figure}{\numberline {4.20}{\ignorespaces DJ-Cluster实验结果地图表示3-1\relax }}{39}{figure.caption.43}
-\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始数据}}}{39}{subfigure.20.1}
-\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {聚类结果}}}{39}{subfigure.20.2}
-\contentsline {figure}{\numberline {4.21}{\ignorespaces DJ-Cluster实验结果3-2\relax }}{40}{figure.caption.44}
-\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始数据}}}{40}{subfigure.21.1}
-\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {聚类结果}}}{40}{subfigure.21.2}
-\contentsline {figure}{\numberline {4.22}{\ignorespaces DJ-Cluster实验结果地图表示3-2\relax }}{40}{figure.caption.45}
-\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始数据}}}{40}{subfigure.22.1}
-\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {聚类结果}}}{40}{subfigure.22.2}
-\contentsline {figure}{\numberline {4.23}{\ignorespaces DJ-Cluster实验结果3-3\relax }}{40}{figure.caption.46}
-\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始数据}}}{40}{subfigure.23.1}
-\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {聚类结果}}}{40}{subfigure.23.2}
-\contentsline {figure}{\numberline {4.24}{\ignorespaces DJ-Cluster实验结果地图表示3-3\relax }}{41}{figure.caption.47}
-\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始数据}}}{41}{subfigure.24.1}
-\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {聚类结果}}}{41}{subfigure.24.2}
-\contentsline {figure}{\numberline {4.25}{\ignorespaces Science发表算法实验结果3-1\relax }}{42}{figure.caption.48}
-\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始数据}}}{42}{subfigure.25.1}
-\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {聚类结果}}}{42}{subfigure.25.2}
-\contentsline {figure}{\numberline {4.26}{\ignorespaces Science发表算法实验结果地图表示3-1\relax }}{42}{figure.caption.49}
-\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始数据}}}{42}{subfigure.26.1}
-\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {聚类结果}}}{42}{subfigure.26.2}
-\contentsline {figure}{\numberline {4.27}{\ignorespaces Science发表算法实验结果3-2\relax }}{42}{figure.caption.50}
-\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始数据}}}{42}{subfigure.27.1}
-\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {聚类结果}}}{42}{subfigure.27.2}
-\contentsline {figure}{\numberline {4.28}{\ignorespaces Science发表算法实验结果地图表示3-2\relax }}{43}{figure.caption.51}
-\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始数据}}}{43}{subfigure.28.1}
-\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {聚类结果}}}{43}{subfigure.28.2}
-\contentsline {figure}{\numberline {4.29}{\ignorespaces Science发表算法实验结果3-3\relax }}{43}{figure.caption.52}
-\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始数据}}}{43}{subfigure.29.1}
-\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {聚类结果}}}{43}{subfigure.29.2}
-\contentsline {figure}{\numberline {4.30}{\ignorespaces Science发表算法实验结果地图表示3-3\relax }}{43}{figure.caption.53}
-\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始数据}}}{43}{subfigure.30.1}
-\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {聚类结果}}}{43}{subfigure.30.2}
-\contentsline {figure}{\numberline {4.31}{\ignorespaces 语义标签推断结果示意\relax }}{47}{figure.caption.54}
-\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {推断宿舍}}}{47}{subfigure.31.1}
-\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {推断实验室}}}{47}{subfigure.31.2}
-\contentsline {subfigure}{\numberline {((c))}{\ignorespaces {语义标签地图示意}}}{47}{subfigure.31.3}
-\contentsline {figure}{\numberline {4.32}{\ignorespaces 语义标签推断结果示意\relax }}{48}{figure.caption.55}
-\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {推断宿舍}}}{48}{subfigure.32.1}
-\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {推断实验室}}}{48}{subfigure.32.2}
-\contentsline {subfigure}{\numberline {((c))}{\ignorespaces {语义标签地图示意}}}{48}{subfigure.32.3}
-\contentsline {figure}{\numberline {5.1}{\ignorespaces URSHV模型框架\relax }}{49}{figure.caption.57}
-\contentsline {figure}{\numberline {6.1}{\ignorespaces 志愿者采集基站数据可视化\relax }}{60}{figure.caption.60}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces 朋友关系可视化\relax }}{62}{figure.caption.61}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces DTW实验结果\relax }}{69}{figure.caption.63}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces 加权前后实验结果对比\relax }}{69}{figure.caption.64}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces 基于语义位置实验结果\relax }}{70}{figure.caption.67}
-\contentsline {figure}{\numberline {6.6}{\ignorespaces 基于语义标签实验结果\relax }}{72}{figure.caption.69}
-\contentsline {figure}{\numberline {6.7}{\ignorespaces 投票结果\relax }}{75}{figure.caption.72}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces 现实生活中的停留点示意图\relax }}{33}{figure.caption.33}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces 停留点检测实验结果1\relax }}{33}{figure.caption.34}
+\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始轨迹数据}}}{33}{subfigure.11.1}
+\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {检测出的停留点}}}{33}{subfigure.11.2}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces 停留点检测实验结果2\relax }}{34}{figure.caption.35}
+\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始轨迹数据}}}{34}{subfigure.12.1}
+\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {检测出的停留点}}}{34}{subfigure.12.2}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces 基于K-means的轨迹聚类实验结果1\relax }}{35}{figure.caption.36}
+\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始轨迹数据}}}{35}{subfigure.13.1}
+\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {参数k=3}}}{35}{subfigure.13.2}
+\contentsline {subfigure}{\numberline {((c))}{\ignorespaces {参数k=4}}}{35}{subfigure.13.3}
+\contentsline {subfigure}{\numberline {((d))}{\ignorespaces {参数k=5}}}{35}{subfigure.13.4}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces 基于K-means的轨迹聚类实验结果地图展示1\relax }}{35}{figure.caption.37}
+\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始轨迹数据}}}{35}{subfigure.14.1}
+\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {参数k=3}}}{35}{subfigure.14.2}
+\contentsline {subfigure}{\numberline {((c))}{\ignorespaces {参数k=4}}}{35}{subfigure.14.3}
+\contentsline {subfigure}{\numberline {((d))}{\ignorespaces {参数k=5}}}{35}{subfigure.14.4}
+\contentsline {figure}{\numberline {4.15}{\ignorespaces 基于K-means的轨迹聚类实验结果2\relax }}{36}{figure.caption.38}
+\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始轨迹数据}}}{36}{subfigure.15.1}
+\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {参数k=3}}}{36}{subfigure.15.2}
+\contentsline {subfigure}{\numberline {((c))}{\ignorespaces {参数k=4}}}{36}{subfigure.15.3}
+\contentsline {subfigure}{\numberline {((d))}{\ignorespaces {参数k=5}}}{36}{subfigure.15.4}
+\contentsline {figure}{\numberline {4.16}{\ignorespaces 基于K-means的轨迹聚类实验结果地图展示2\relax }}{36}{figure.caption.39}
+\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始轨迹数据}}}{36}{subfigure.16.1}
+\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {参数k=3}}}{36}{subfigure.16.2}
+\contentsline {subfigure}{\numberline {((c))}{\ignorespaces {参数k=4}}}{36}{subfigure.16.3}
+\contentsline {subfigure}{\numberline {((d))}{\ignorespaces {参数k=5}}}{36}{subfigure.16.4}
+\contentsline {figure}{\numberline {4.17}{\ignorespaces 基于DJ-Cluster的轨迹聚类实验结果1\relax }}{37}{figure.caption.40}
+\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始轨迹数据}}}{37}{subfigure.17.1}
+\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {DJ-Cluster聚类结果}}}{37}{subfigure.17.2}
+\contentsline {figure}{\numberline {4.18}{\ignorespaces 基于DJ-Cluster的轨迹聚类实验结果地图展示1\relax }}{37}{figure.caption.41}
+\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始轨迹数据}}}{37}{subfigure.18.1}
+\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {DJ-Cluster聚类结果}}}{37}{subfigure.18.2}
+\contentsline {figure}{\numberline {4.19}{\ignorespaces 基于DJ-Cluster的轨迹聚类实验结果2\relax }}{38}{figure.caption.42}
+\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始轨迹数据}}}{38}{subfigure.19.1}
+\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {DJ-Cluster聚类结果}}}{38}{subfigure.19.2}
+\contentsline {figure}{\numberline {4.20}{\ignorespaces 基于DJ-Cluster的轨迹聚类实验结果地图展示2\relax }}{38}{figure.caption.43}
+\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始轨迹数据}}}{38}{subfigure.20.1}
+\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {DJ-Cluster聚类结果}}}{38}{subfigure.20.2}
+\contentsline {figure}{\numberline {4.21}{\ignorespaces Science发表算法实验结果3-1\relax }}{39}{figure.caption.44}
+\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始数据}}}{39}{subfigure.21.1}
+\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {聚类结果}}}{39}{subfigure.21.2}
+\contentsline {figure}{\numberline {4.22}{\ignorespaces Science发表算法实验结果地图表示3-1\relax }}{39}{figure.caption.45}
+\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始数据}}}{39}{subfigure.22.1}
+\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {聚类结果}}}{39}{subfigure.22.2}
+\contentsline {figure}{\numberline {4.23}{\ignorespaces Science发表算法实验结果3-2\relax }}{39}{figure.caption.46}
+\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始数据}}}{39}{subfigure.23.1}
+\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {聚类结果}}}{39}{subfigure.23.2}
+\contentsline {figure}{\numberline {4.24}{\ignorespaces Science发表算法实验结果地图表示3-2\relax }}{40}{figure.caption.47}
+\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始数据}}}{40}{subfigure.24.1}
+\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {聚类结果}}}{40}{subfigure.24.2}
+\contentsline {figure}{\numberline {4.25}{\ignorespaces Science发表算法实验结果3-3\relax }}{40}{figure.caption.48}
+\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始数据}}}{40}{subfigure.25.1}
+\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {聚类结果}}}{40}{subfigure.25.2}
+\contentsline {figure}{\numberline {4.26}{\ignorespaces Science发表算法实验结果地图表示3-3\relax }}{40}{figure.caption.49}
+\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始数据}}}{40}{subfigure.26.1}
+\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {聚类结果}}}{40}{subfigure.26.2}
+\contentsline {figure}{\numberline {4.27}{\ignorespaces 语义标签推断结果示意\relax }}{44}{figure.caption.50}
+\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {推断宿舍}}}{44}{subfigure.27.1}
+\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {推断实验室}}}{44}{subfigure.27.2}
+\contentsline {subfigure}{\numberline {((c))}{\ignorespaces {语义标签地图示意}}}{44}{subfigure.27.3}
+\contentsline {figure}{\numberline {4.28}{\ignorespaces 语义标签推断结果示意\relax }}{45}{figure.caption.51}
+\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {推断宿舍}}}{45}{subfigure.28.1}
+\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {推断实验室}}}{45}{subfigure.28.2}
+\contentsline {subfigure}{\numberline {((c))}{\ignorespaces {语义标签地图示意}}}{45}{subfigure.28.3}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces URSHV模型框架\relax }}{47}{figure.caption.53}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces 志愿者采集基站数据可视化\relax }}{58}{figure.caption.56}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces 朋友关系可视化\relax }}{60}{figure.caption.57}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces DTW实验结果\relax }}{67}{figure.caption.59}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces 加权前后实验结果对比\relax }}{67}{figure.caption.60}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces 基于语义位置实验结果\relax }}{68}{figure.caption.63}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces 基于语义标签实验结果\relax }}{70}{figure.caption.65}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces 投票结果\relax }}{73}{figure.caption.68}
 \contentsfinish 

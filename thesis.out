@@ -32,7 +32,7 @@
 \BOOKMARK [1][-]{section.4.2}{GPS轨迹预处理与语义化}{chapter.4}% 32
 \BOOKMARK [2][-]{subsection.4.2.1}{剔除轨迹中的异常点}{section.4.2}% 33
 \BOOKMARK [2][-]{subsection.4.2.2}{轨迹中停留点检测}{section.4.2}% 34
-\BOOKMARK [2][-]{subsection.4.2.3}{聚类得到语义位置}{section.4.2}% 35
+\BOOKMARK [2][-]{subsection.4.2.3}{停留点聚类语义化}{section.4.2}% 35
 \BOOKMARK [1][-]{section.4.3}{对语义位置标语义标签}{chapter.4}% 36
 \BOOKMARK [2][-]{subsection.4.3.1}{发现新位置}{section.4.3}% 37
 \BOOKMARK [2][-]{subsection.4.3.2}{新位置语义标签提示}{section.4.3}% 38
@@ -58,6 +58,6 @@
 \BOOKMARK [0][-]{chapter.7}{结束语}{}% 58
 \BOOKMARK [1][-]{section.7.1}{工作总结}{chapter.7}% 59
 \BOOKMARK [1][-]{section.7.2}{工作展望}{chapter.7}% 60
-\BOOKMARK [0][-]{chapter*.75}{致谢}{}% 61
-\BOOKMARK [0][-]{section*.76}{参考文献}{}% 62
-\BOOKMARK [0][-]{chapter*.78}{作者在学期间取得的学术成果}{}% 63
+\BOOKMARK [0][-]{chapter*.71}{致谢}{}% 61
+\BOOKMARK [0][-]{section*.72}{参考文献}{}% 62
+\BOOKMARK [0][-]{chapter*.74}{作者在学期间取得的学术成果}{}% 63

@@ -59,7 +59,7 @@ P_{\bar{k}}=E\left [ e_{\bar{k}} {e_{\bar{k}}}^{T}  \right ]
 \label{equ:chap2:kalman-08}
 P_{k}=E\left [ e_{k} {e_{k}}^{T}  \right ]
 \end{equation}
-\par 基于以上的理论准备，构建出卡尔曼滤波算法的数学表达式\ref{equ:chap2:kalman-09}，其含义为：先验估计$\hat{x}_{\bar{k}}$和测量得到的变量$z_{k}$同其预测值$H\hat{x}_{\bar{k}}$之差的线性组合共同组成了后验状态估计$\hat{x}_{x}$
+\par 基于以上的理论准备，构建出卡尔曼滤波算法的数学表达式\ref{equ:chap2:kalman-09}，其含义为：先验估计$\hat{x}_{\bar{k}}$和测量得到的变量$z_{k}$ 同其预测值$H\hat{x}_{\bar{k}}$之差的线性组合共同组成了后验状态估计$\hat{x}_{x}$
 \begin{equation}
 \label{equ:chap2:kalman-09}
 \hat{x}_{k}=\hat{x}_{\bar{k}} + K(z_{k}-H\hat{x}_{\bar{k}})
@@ -446,9 +446,14 @@ AMVD(A,B)=\frac{1}{\left | A \right |}\sum_{\forall a_{i} \in A}^{ }  \mathop{\a
 \end{figure}
 \par 本小节主要针对前文中提及的三种常用的滤波算法进行了实验结果展示和效果分析，初步得出了使用卡尔曼滤波更加可行的判断结果。
 \subsection{轨迹中停留点检测}
-在实际生活中用户的轨迹是由一系列GPS点构成的，剔除其中的噪音点和用户在路上的点，能够从中挖掘出进一步信息的位置信息即为轨迹中的停留点，通常停留点并不是指用户轨迹中速度为零的点，而是由一组GPS 点构成区域，一个停留点通常对应现实生活中富有具体意义的点，能够更好的反映出用户之间轨迹的相似程度。如图**所示，在现实生活中的停留点可以
-在现实生活中，人们从一个位置行进到另一个位置是连续的，即采集的数据必然存在很多路上的点。而这些路上的点不属于任何一个语义位置。且在分析关系强度时，如果两个人同时来到同一个语义位置，但是一个从某一个方向过来，而另一个从相反方向过来，虽然这两个人其实在这段时间内待在同一个地方，如果不剔除路上的点，则这两个人的物理位置会受到路上的点的影响，从而使得这两个人轨迹的空间距离反而比较大。在上文讨论的降噪过程中，已经处理了误差比较大的点，因此本节主要讨论如何剔除路上的点。
-\par 仔细分析路上的点的特性，发现人们通常在语义位置停留时间比较长，而在路上一直处于移动状态，所以路上点密度通常远远小于语义位置的点的密度。密度定义见公式\ref{equ:chap2:dj-cluster}。且在实际生活中，在路上时通常处于移动状态，设速度为$v$，且每条路每天走的次数也存在上限，设每条路每天最多走$N$ 次，计算密度时采用的半径参数为$R$，设GPS采样频率为$f$。 因为半径参数很小，故可视为在该半径对应圆形区域中行走路线为直线。路上点的密度D存在最大值，计算方法见公式\ref{equ:chap3:density_01}。因此本文采用基于密度的方法剔除异常点。该方法的基本思想为若某个点的密度小于给定阈值，则该点为异常点。通过对日常数据的分析发现，路上点的密度确实远远小于处于语义位置点的密度，见图\ref{figure3_6}。
+在实际生活中用户的轨迹是由一系列GPS点构成的，剔除其中的噪音点和用户在路上的点，能够从中挖掘出进一步信息的位置信息即为轨迹中的停留点，通常停留点并不是指用户轨迹中速度为零的点，而是由一组GPS 点构成区域，一个停留点通常对应现实生活中富有具体意义的点，能够更好的反映出用户之间轨迹的相似程度。如图\ref{fig:staypoint}所示，在现实生活中的停留点可以是一个具体的建筑名称，也可以是代表一个固定的区域，甚至可以是一个具有特殊意义的点。
+\begin{figure}[htp]
+\centering
+\includegraphics[width=0.8\textwidth]{figure_4_stay-points}
+\caption{现实生活中的停留点示意图}
+\label{fig:staypoint}
+\end{figure}
+\par 通过对停留点的识别，能够让我们更加深入的了解和认识用户的日常轨迹，同时从一个更加细粒度的层次来分析用户之间的轨迹相似度，停留点检测实验结果如图\ref{fig:SP_1}、\ref{fig:SP_2}所示，图中所得到的每一个停留点都具有丰富的现实意义，能够有效地表示用户访问的地点、位置。
 \begin{figure}[htb]
   \centering%
   \subfloat[原始轨迹数据]{%
@@ -471,137 +476,80 @@ AMVD(A,B)=\frac{1}{\left | A \right |}\sum_{\forall a_{i} \in A}^{ }  \mathop{\a
   \caption{停留点检测实验结果2}
   \label{fig:SP_2}
 \end{figure}
-\par 根据上下文的分析，可以计算出密度的上限值，假设计算密度时的半径设为10米，每天经过这条路4次，步行速度约为80 米每分钟，这样每个点的密度的上限值大概是60。 同时本课题研究发现有一种方法可以自动学习参数，后文将会对比学习到的密度上限值和计算值的异同。
-\par 假设对于某一天的数据，已经聚好类，即我们知道哪一个点属于哪一个类别，仔细分析每个路上的点对类别中心的影响，假设用户在某个地方时处于某一个固定的位置，GPS采样因为采样误差服从高斯分布，因此大多数点都处在该固定位置对应实际点（可能是类别中心，非常有可能在类别中心附近）的周围。而路上的点会距离实际点比较远，因此，该类别所有点到类别中心的距离的平均值会被路上的点拉大，如果逐渐提高密度的上限值，从而有更多的点因为密度小而被删除，讨论一种理想情况，如果路上的点完全被剔除，剩下的点都是实际点加高斯误差，因为实际点大量存在，使得即使我们剔除一小部分实际点，对该类别所有点到类别中心的距离的平均值也不会产生太大的影响。所以可以从一个很小的密度上限值逐渐增加，剔除小于该密度的点之后计算对应的平均距离，若平均距离收敛，则认为这个密度值是路上的点的密度的上限值。平均距离的定义见公式\ref{equ:chap3:avgdis_01},其中$p_{ij}$为第$i$类第$j$个点，$c_{i}$为第$i$类的类别中心，$dis(a,b)$表示$a$和$b$之间的距离，$n_{i}$为第$i$类点的个数，$k$为类别的个数，$N$为所有点的个数。使用连续四天采集的数据做了实验，计算其平均距离，见图\ref{fig:3_7}。
-\begin{equation}
-\label{equ:chap3:avgdis_01}
-AvgDis=\frac{\sum_{i=1}^{k}\sum_{j=1}^{n_{i}}dis(p_{ij},c_{i})}{N}
-\end{equation}
+\subsection{停留点聚类语义化}
+本节针对上面得到的用户轨迹中的停留点，采用不同的聚类算法所得到的不同的聚类结果进行描述。在前面的章节中我们详细介绍了聚类中常用的三种算法K-means聚类、DJ-Cluster的密度聚类和最新发表的改进的密度聚类算法，接下来我们将在实验中对这三种聚类算法进行比较。
+\par 首先我们对用户轨迹数据采用K-means算法进行聚类实验，但是K-means聚类算法具有以下的明显的缺点：首先是K-means聚类结果依赖于参数$k$的初始化，其中$k$是指聚类个数。$k$个数的确定往往是靠经验值设定；其次是K-means算法初始化时聚类中心的选择，因为该算法采用的随机初始化聚类中心点，中心点选择不同会导致聚类的结果也出现差异甚至影响聚类的时间复杂度，使得聚类结果容易得到局部最优解而非全局最优解；最后的一个缺点是K-means聚类算法对原始数据中的噪音点和离群点非常敏感，聚类结果很容易受到离群点的影响从而导致簇的偏移。
+\par 在本研究中因为是针对用户的空间轨迹进行聚类分析，而现实生活中用户的停留点主要是以相隔距离比较大的建筑等，因此在采用K-means聚类过程中，对噪音点的影响基本可以忽略不计，最主要的就是考虑不同的参数$k$对最终聚类结果的影响，图\ref{fig:3_8_1}、\ref{fig:3_8_2}主要展示不同的参数$k$取值对最终轨迹聚类结果的影响。图\ref{fig:3_9_1}、\ref{fig:3_9_2}在地图上标记了在不同参数$k$取值情况下的簇中心使得能够有更加直观的观察。
 \begin{figure}[htb]
   \centering%
-  \subfloat[第一天数据]{%
-    \label{fig:3_7_1}
-    \includegraphics[height=5cm]{figure3_7_1}}%\hspace{4em}
-  \subfloat[第二天数据]{%
-    \label{fig:3_7_2}
-    \includegraphics[height=5cm]{figure3_7_2}}\\
-  \subfloat[第三天数据]{%
-    \label{fig:3_7_3}
-    \includegraphics[height=5cm]{figure3_7_3}}
-  \subfloat[第四天数据]{%
-    \label{fig:3_7_4}
-    \includegraphics[height=5cm]{figure3_7_4}}
-  \caption{平均距离收敛}
-  \label{fig:3_7}
-\end{figure}
-\par 通过观察图\ref{fig:3_7}，发现密度上限值大概是40到50之间，前文计算的密度上限值是60左右，一方面因为两种计算方法都存在一定的误差，另一方面是在实际过程中，手机并不是持续高频采样，经常会因为各种各样的原因而丢失一些采样点。在实际应用中，可以先手动处理某一天的数据，然后使用该自动学习的算法学习到密度的上限值，从而用作其他天数据处理的参数。
-\par 这一小节主要讨论了如何剔除路上的点，以及如何学习路上点的密度的上限值，下一小节将通过实验讨论K-MEANS、DJ-cluster、以及Science上发表算法三种聚类算法的优缺点，以及在实际数据上应用的效果。
-\subsection{聚类得到语义位置}
-这一小节将重点描述使用聚类算法得到语义位置时，不同算法以及不同参数对结果产生的影响。K-MEANS、DJ-Cluster以及Science 上发表的三个算法算法原理在第二章已经描述过了，下文将通过实验依次展示三个算法对相同数据聚类得到的结果。数据使用文献\cite{rawassizadeh2013ubiqlog}中的采集工具采集。
-\par 首先展示K-MEANS聚类算法的实验结果，K-MEANS聚类算法的主要缺点有两个：一个是需要预知类别的个数；另一个是同一类别的数据最好是团状或簇状。对于本课题研究的问题而言，通常遇到的建筑都是每栋楼占单独的一块地方，相邻建筑一般都会有一定的间隔，因此K-MEANS聚类算法的第二个缺点因为本课题研究的具体问题而不复存在，故主要考虑不同类别个数对实验结果的影响。图\ref{fig:3_8_1}、\ref{fig:3_8_2}、\ref{fig:3_8_3} 主要展示了不同参数对K-MEANS聚类结果的影响。图\ref{fig:3_9_1}、\ref{fig:3_9_2}、\ref{fig:3_9_3}在地图上标记了不同参数聚类得到的聚类中心。
-\begin{figure}[htb]
-  \centering%
-  \subfloat[原始数据]{%
+  \subfloat[原始轨迹数据]{%
     \label{fig:3_8_1_1}
-    \includegraphics[height=5cm]{figure3_8_1_1}}%\hspace{4em}
-  \subfloat[k=3]{%
+    \includegraphics[height=5cm]{figure4_tra1}}%\hspace{4em}
+  \subfloat[参数k=3]{%
     \label{fig:3_8_1_2}
-    \includegraphics[height=5cm]{figure3_8_1_2}}\\
-  \subfloat[k=4]{%
+    \includegraphics[height=5cm]{figure4_tra1_kmeans_3}}\\
+  \subfloat[参数k=4]{%
     \label{fig:3_8_1_3}
-    \includegraphics[height=5cm]{figure3_8_1_3}}
-  \subfloat[k=5]{%
+    \includegraphics[height=5cm]{figure4_tra1_kmeans_4}}
+  \subfloat[参数k=5]{%
     \label{fig:3_8_1_4}
-    \includegraphics[height=5cm]{figure3_8_1_4}}
-  \caption{K-MEANS聚类实验结果3-1}
+    \includegraphics[height=5cm]{figure4_tra1_kmeans_5}}
+  \caption{基于K-means的轨迹聚类实验结果1}
   \label{fig:3_8_1}
 \end{figure}
 \begin{figure}[htb]
   \centering%
-  \subfloat[原始数据]{%
+  \subfloat[原始轨迹数据]{%
     \label{fig:3_9_1_1}
-    \includegraphics[height=6cm]{figure3_9_1_1}}%\hspace{4em}
-  \subfloat[k=3]{%
+    \includegraphics[height=6cm]{figure3_9_2_1}}%\hspace{4em}
+  \subfloat[参数k=3]{%
     \label{fig:3_9_1_2}
-    \includegraphics[height=6cm]{figure3_9_1_2}}
-  \subfloat[k=4]{%
+    \includegraphics[height=6cm]{figure3_9_2_2}}
+  \subfloat[参数k=4]{%
     \label{fig:3_9_1_3}
-    \includegraphics[height=6cm]{figure3_9_1_3}}
-  \subfloat[k=5]{%
+    \includegraphics[height=6cm]{figure3_9_2_3}}
+  \subfloat[参数k=5]{%
     \label{fig:3_9_1_4}
-    \includegraphics[height=6cm]{figure3_9_1_4}}
-  \caption{K-MEANS聚类实验结果地图展示3-1}
+    \includegraphics[height=6cm]{figure3_9_2_4}}
+  \caption{基于K-means的轨迹聚类实验结果地图展示1}
   \label{fig:3_9_1}
 \end{figure}
 \begin{figure}[htb]
   \centering%
-  \subfloat[原始数据]{%
+  \subfloat[原始轨迹数据]{%
     \label{fig:3_8_2_1}
-    \includegraphics[height=5cm]{figure3_8_2_1}}%\hspace{4em}
-  \subfloat[k=3]{%
+    \includegraphics[height=5cm]{figure4_tra2}}%\hspace{4em}
+  \subfloat[参数k=3]{%
     \label{fig:3_8_2_2}
-    \includegraphics[height=5cm]{figure3_8_2_2}}\\
-  \subfloat[k=4]{%
+    \includegraphics[height=5cm]{figure4_tra2_kmeans_3}}\\
+  \subfloat[参数k=4]{%
     \label{fig:3_8_2_3}
-    \includegraphics[height=5cm]{figure3_8_2_3}}
-  \subfloat[k=5]{%
+    \includegraphics[height=5cm]{figure4_tra2_kmeans_4}}
+  \subfloat[参数k=5]{%
     \label{fig:3_8_2_4}
-    \includegraphics[height=5cm]{figure3_8_2_4}}
-  \caption{K-MEANS聚类实验结果3-2}
+    \includegraphics[height=5cm]{figure4_tra2_kmeans_5}}
+  \caption{基于K-means的轨迹聚类实验结果2}
   \label{fig:3_8_2}
 \end{figure}
 \begin{figure}[htb]
   \centering%
-  \subfloat[原始数据]{%
+  \subfloat[原始轨迹数据]{%
     \label{fig:3_9_2_1}
     \includegraphics[height=6cm]{figure3_9_2_1}}%\hspace{4em}
-  \subfloat[k=3]{%
+  \subfloat[参数k=3]{%
     \label{fig:3_9_2_2}
     \includegraphics[height=6cm]{figure3_9_2_2}}
-  \subfloat[k=4]{%
+  \subfloat[参数k=4]{%
     \label{fig:3_9_2_3}
     \includegraphics[height=6cm]{figure3_9_2_3}}
-  \subfloat[k=5]{%
+  \subfloat[参数k=5]{%
     \label{fig:3_9_2_4}
     \includegraphics[height=6cm]{figure3_9_2_4}}
-  \caption{K-MEANS聚类实验结果地图展示3-2}
+  \caption{基于K-means的轨迹聚类实验结果地图展示2}
   \label{fig:3_9_2}
 \end{figure}
-\begin{figure}[htb]
-  \centering%
-  \subfloat[原始数据]{%
-    \label{fig:3_8_3_1}
-    \includegraphics[height=5cm]{figure3_8_3_1}}%\hspace{4em}
-  \subfloat[k=3]{%
-    \label{fig:3_8_3_2}
-    \includegraphics[height=5cm]{figure3_8_3_2}}\\
-  \subfloat[k=4]{%
-    \label{fig:3_8_3_3}
-    \includegraphics[height=5cm]{figure3_8_3_3}}
-  \subfloat[k=5]{%
-    \label{fig:3_8_3_4}
-    \includegraphics[height=5cm]{figure3_8_3_4}}
-  \caption{K-MEANS聚类实验结果3-3}
-  \label{fig:3_8_3}
-\end{figure}
-\begin{figure}[htb]
-  \centering%
-  \subfloat[原始数据]{%
-    \label{fig:3_9_3_1}
-    \includegraphics[height=6cm]{figure3_9_3_1}}%\hspace{4em}
-  \subfloat[k=2]{%
-    \label{fig:3_9_3_2}
-    \includegraphics[height=6cm]{figure3_9_3_2}}
-  \subfloat[k=3]{%
-    \label{fig:3_9_3_3}
-    \includegraphics[height=6cm]{figure3_9_3_3}}
-  \subfloat[k=4]{%
-    \label{fig:3_9_3_4}
-    \includegraphics[height=6cm]{figure3_9_3_4}}
-  \caption{K-MEANS聚类实验结果地图展示3-3}
-  \label{fig:3_9_3}
-\end{figure}
-\par 仔细分析这三组数据的实验结果发现，如果能够预先知道类别的个数，K-MEANS算法确实能够得到一个非常好的结果，特别对于图\ref{fig:3_9_2}，仔细观察(a)对应的原始数据，地图右下角白色点群表明其实去了两个教学楼，但是两个教学楼距离太近以及GPS本身存在的采样误差使得采样点混合在一起。如果假设去了三个地方时，该聚类算法将两个教学楼识别成了一个位置，如果假设去了四个地方时，聚类算法成功的区分了这两个实验楼，在另外两个算法的实验中将发现，另外两个算法无法区分这两个实验楼。对于图\ref{fig:3_9_1}，其实只参观了三个地方，但是如果假设去了四个地方，该聚类算法也能将数据分成四类，仔细观察得到第四个类别其实是两条路的交叉点，从另一个角度证明前文论述应该剔除路上的点是非常合理的，而后文的实验也证明剔除路上的点之后，聚类算法就不会再把路上的点识别成聚类中心。
+\par 通过对轨迹数据的聚类分析我们可以得知，如果在聚类前我们能够确切的知道用户的轨迹数据应该划分的簇的个数，那么K-means聚类算法将会得出非常合理的结果，我们在观察图\ref{fig:3_9_1}、\ref{fig:3_9_2}时发现，当簇的个数越接近符合用户访问位置个数的时候，那么聚类点将更能够反映出真实的情况，在图**中，(a)所对应的聚类得到的簇包含了实际上没有正确的将用户访问过的位置区分开，因为这两个访问的位置距离相隔太近，导致K-means算法将这两个簇合并为一个簇，但是如果我们将聚类个数设置为5就能够成功的识别出这两个位置。在另一实验结果图**中也出现了类似的情况。但是根据图中实验情况分析发现对于一部分在路上的点被划分到了聚类簇中，同时有些应该被单独聚类成一个独立的簇的点被划分到了在路上的点中，这些都是因为我们无法正确的给出符合当前轨迹访问点个数的聚类个数所造成的。
+\par 接下来将会针对
 \par 下文将展示DJ-Cluster算法的实验结果，DJ-Cluster是基于DBSCAN算法的一种基于密度的聚类算法，通过边界点将相邻类别合并从而使得算法对参数更加鲁棒。但是算法本身仍然严重依赖半径值和密度值这两个参数，在实际应用过程中，仍然需要仔细调节参数，在参数设置理想的情况下，仍然能够得到非常理想的结果，见图\ref{fig:3_10_1}、\ref{fig:3_10_2}、\ref{fig:3_10_3}，其地图表示见图\ref{fig:3_11_1}、\ref{fig:3_11_2}、\ref{fig:3_11_3}。
 \begin{figure}[htb]
   \centering%
@@ -669,7 +617,7 @@ AvgDis=\frac{\sum_{i=1}^{k}\sum_{j=1}^{n_{i}}dis(p_{ij},c_{i})}{N}
   \caption{DJ-Cluster实验结果地图表示3-3}
   \label{fig:3_11_3}
 \end{figure}
-\par 通过对实验结果的分析能够发现，DJ-Cluster基本上能够得到一个令人满意的结果，在仔细调节参数后，基本上识别出了所有的位置，但是图\ref{fig:3_11_2}右下角其实是两个教学楼，前文已经论述过，DJ-Cluster 将其识别为一个位置，主要是因为这两个教学楼本身距离太小，且GPS采样误差比较大使得本来分属于两栋楼的采样点有重合，从而使得基于密度的方法无法区分。除此情况外，对于另外两天的数据，该算法都表现出了非常好的识别结果。该算法最大的缺陷还是对参数比较敏感，下文将介绍Science 发表的聚类算法的实验结果，同时会从算法原理上简要论述其对参数的鲁棒性确实优于DJ-Cluster。
+\par 通过对实验结果的分析能够发现，DJ-Cluster基本上能够得到一个令人满意的结果，在仔细调节参数后，基本上识别出了所有的位置，但是图\ref{fig:3_11_2} 右下角其实是两个教学楼，前文已经论述过，DJ-Cluster 将其识别为一个位置，主要是因为这两个教学楼本身距离太小，且GPS采样误差比较大使得本来分属于两栋楼的采样点有重合，从而使得基于密度的方法无法区分。除此情况外，对于另外两天的数据，该算法都表现出了非常好的识别结果。该算法最大的缺陷还是对参数比较敏感，下文将介绍Science 发表的聚类算法的实验结果，同时会从算法原理上简要论述其对参数的鲁棒性确实优于DJ-Cluster。
 \par 下文描述Science发表的聚类算法对应的实验结果，在描述具体实验之前，首先分析该算法的原理：该算法对每个点计算对应的密度（密度定义见前文），对所有点按密度排序；然后计算每个点的距离，再对每个点按距离和密度的乘积排序得到最终的聚类结果。DJ-Cluster算法之所以对参数敏感是因为不同的半径值就需要对应不同的密度值（半径大了，此半径对应的圆形区域内其他点的数目肯定会更多），而Science发表的算法会对所有点按密度排序，这样在很大程度上降低了半径值对算法本身的影响，通常情况下半径越大点密度越大，如果随着半径的增长，密度的相对顺序保持不变，则半径对该算法基本没有影响，本课题收集的GPS 采样点基本满足这一条件，若某个点在小半径时密度小，则在大半径是其密度依然相对较小。所以Science发表的算法对当前问题而言有非常好的鲁棒性。具体的实验结果见图\ref{fig:3_12_1}、\ref{fig:3_12_2}、\ref{fig:3_12_3}。实验结果地图表示见图\ref{fig:3_13_1}、\ref{fig:3_13_2}、\ref{fig:3_13_3}。
 \begin{figure}[htb]
   \centering%
@@ -816,10 +764,10 @@ avgLat = (avgLat\ast n+newLat)/(n+1),avgLng = (avgLng\ast n+newLng)/(n+1)
 Ntrace_{i,k,48}\}$，其中$Ntrace_{i,k,s}=\frac{sum(Sep\_trace_{i,k,s})}{len(Sep\_trace_{i,k,s})}$;其中$sum(A)$表示对序列A中的元素求和，$len(A)$表示序列$A$的长度。将$Ntrace_{i}$作为用户$u_{i}$使用第一层算法计算其与全部好友关系强度的输入。
 \par 处理基站数据: 对每个用户每天的数据按半个小时进行切割，即将用户$u_{i}$在$k$这一天的数据$Trace_{i,k}$按时间均分为$48$份，表示为$Sep\_trace_{i,k}=\{Sep\_trace_{i,k,1},...,Sep\_trace_{i,k,48}\}$，其中每一份数据表示为$Sep\_trace_{i,k,s}=\{l_{a_i}|l_{a_i}\in Trace_{i,k}\bigwedge a_{i}\in s\}$；对每半个小时内数据计算依次不重复的基站号序列，即对每一份数据计算其对应的集合$set(Sep\_trace_{i,k,s})$，确保基站号不重复；再将每天$48$份数据重新拼成一个序列，目的是对每天轨迹序列降维，否则计算量太大而实际无法计算，新序列记为$Ntrace_{i,k}$。其中$Ntrace_(i,k)=\bigcup_{s=1}^{48}set(Sep\_trace_{i,k,s})$；将$Ntrace_{i}$作为用户$u_{i}$使用第一层算法的输入。
 \subsection{语义位置数据的处理与准备}
-GPS数据准备：采用上一章中讨论的聚类方法对所有用户的轨迹数据进行聚类，得到全部语义位置表示为$Loc=\{pl_{1},...,pl_{g}\}$，其中$g$ 表示总共的语义位置的个数。通过聚类得到用户$u_{i}$在$k$这一天的语义位置序列表示为$Ltrace_{i,k}=\{loc(l_{1}),loc(l_{2}),...,loc(l_{n_{i,k}})\}$，其中$loc(l_{j})$表示位置数据记录$l_{j}$对应的语义位置标号。所有用户的所有语义位置序列表示为$Ltrace=\{Ltrace_{1},...,Ltrace_{n}\}$，其中用户$u_{i}$的全部语义位置序列表示$Ltrace_{i}=\{Ltrace_{i,k}|k\in D_{i}\}$。对每个用户每天的数据按半个小时进行切割，即将用户$u_{i}$的每天数据$Ltrace_{i,k}$按时间均分为$48$份，表示为$Sep\_ltrace_{i,k}=\{Sep\_ltrace_{i,k,1},...,Sep\_ltrace_{i,k,48}\}$，其中每一份数据表示为$Sep\_ltrace_{i,k,s}=\{loc(l_{a_{i}})|l_{a_{i}}\in Trace_{i,k}\bigwedge a_{i}\in s\}$。在准备word2vec 模型的输入数据以及对应的模型输入数据时：我们需要首先计算每份数据不重复的语义位置序列，即$Lsep\_ltrace_{i,k,s}=set(Sep\_ltrace_{i,k,s})$，然后将每天的$48$ 分数据合并成一个序列得到$LLtrace$，$LLtrace_{i,k}=\bigcup_{s=1}^{48}Lsep\_ltrace_{i,k,s}$。将$LLtrace$作为word2vec模型的输入，训练得到对应模型$LW2V(M)$，$M$表示每个语义位置对应的实数值向量的长度。将$Lsep\_ltrace_{i}$作为用户$u_{i}$在第二层使用word2vec 模型计算关系强度时的输入。其中$Lsep\_ltrace_{i,k}=\{Lsep\_ltrace_{i,k,1},...,Lsep\_ltrace_{i,k,48}\}$。在准备LDA 模型的输入数据以及对应的模型输入数据时：在已得到$Sep\_ltrace$的基础上，对每份数据计算不重复出现的语义位置，并对每个位置加上时间标记。用户$u_{i}$在$k$这一天第$s$时间段语义位置序列表示为$Tltrace_{i,k,s}=\{TT(sl_{b})|sl_b\in set(Sep\_ltrace_{i,k,s})\}$，其中$TT(sl_{b})$表示对$sl_{b}$添加时间标记，表示该语义位置在该时间段出现。$set(A)$表示计算序列$A$对应的集合，即$A$中无重复元素。将$Tltrace_{i}$作为用户$u_{i}$在第二层算法使用LDA模型计算关系强度时的输入。将$Tltrace_{i,k}$中的$48$份数据合并成一个序列$LTltrace$，其中$LTltrace_{i,k}=\bigcup_{s=1}^{48}Tltrace_{i,k,s}$ 。将$LTltrace$ 作为LDA模型的输入，训练得到对应的LDA主题模型$LLDA(K)$，$K$表示主题的个数。
+GPS数据准备：采用上一章中讨论的聚类方法对所有用户的轨迹数据进行聚类，得到全部语义位置表示为$Loc=\{pl_{1},...,pl_{g}\}$，其中$g$ 表示总共的语义位置的个数。通过聚类得到用户$u_{i}$在$k$这一天的语义位置序列表示为$Ltrace_{i,k}=\{loc(l_{1}),loc(l_{2}),...,loc(l_{n_{i,k}})\}$，其中$loc(l_{j})$表示位置数据记录$l_{j}$对应的语义位置标号。所有用户的所有语义位置序列表示为$Ltrace=\{Ltrace_{1},...,Ltrace_{n}\}$，其中用户$u_{i}$的全部语义位置序列表示$Ltrace_{i}=\{Ltrace_{i,k}|k\in D_{i}\}$。对每个用户每天的数据按半个小时进行切割，即将用户$u_{i}$的每天数据$Ltrace_{i,k}$按时间均分为$48$ 份，表示为$Sep\_ltrace_{i,k}=\{Sep\_ltrace_{i,k,1},...,Sep\_ltrace_{i,k,48}\}$，其中每一份数据表示为$Sep\_ltrace_{i,k,s}=\{loc(l_{a_{i}})|l_{a_{i}}\in Trace_{i,k}\bigwedge a_{i}\in s\}$。在准备word2vec 模型的输入数据以及对应的模型输入数据时：我们需要首先计算每份数据不重复的语义位置序列，即$Lsep\_ltrace_{i,k,s}=set(Sep\_ltrace_{i,k,s})$，然后将每天的$48$ 分数据合并成一个序列得到$LLtrace$，$LLtrace_{i,k}=\bigcup_{s=1}^{48}Lsep\_ltrace_{i,k,s}$。将$LLtrace$作为word2vec模型的输入，训练得到对应模型$LW2V(M)$，$M$表示每个语义位置对应的实数值向量的长度。将$Lsep\_ltrace_{i}$作为用户$u_{i}$在第二层使用word2vec 模型计算关系强度时的输入。其中$Lsep\_ltrace_{i,k}=\{Lsep\_ltrace_{i,k,1},...,Lsep\_ltrace_{i,k,48}\}$。在准备LDA 模型的输入数据以及对应的模型输入数据时：在已得到$Sep\_ltrace$ 的基础上，对每份数据计算不重复出现的语义位置，并对每个位置加上时间标记。用户$u_{i}$在$k$这一天第$s$时间段语义位置序列表示为$Tltrace_{i,k,s}=\{TT(sl_{b})|sl_b\in set(Sep\_ltrace_{i,k,s})\}$，其中$TT(sl_{b})$表示对$sl_{b}$添加时间标记，表示该语义位置在该时间段出现。$set(A)$表示计算序列$A$对应的集合，即$A$中无重复元素。将$Tltrace_{i}$作为用户$u_{i}$在第二层算法使用LDA模型计算关系强度时的输入。将$Tltrace_{i,k}$中的$48$份数据合并成一个序列$LTltrace$，其中$LTltrace_{i,k}=\bigcup_{s=1}^{48}Tltrace_{i,k,s}$ 。将$LTltrace$ 作为LDA模型的输入，训练得到对应的LDA主题模型$LLDA(K)$，$K$表示主题的个数。
 \par 基站数据准备：将每一个基站视为一个物理位置，即Ltrace=Trace。其余处理与GPS处理完全相同。
 \subsection{语义标签数据的处理与准备}
-GPS数据准备：对前文得到的$Loc$中每一个语义位置采用上一章中讨论的方法标记其语义标签，标语义标签后用户$u_{i}$第$k$天的语义标签序列表示为$Strace_{i,k}=\{Label(ll_{b})|ll_{b}\in ltrace_{i,k}$，其中$Label(ll_{b})$表示$ll_{b}$对应的语义标签。所有用户的所有语义标签序列表示为$Strace=\{Strace_{1},...,Strace_{n}\}$，其中用户$u_{i}$的全部语义位置序列表示$Strace_{i}=\{Strace_{i,k}|k\in D_{i}\}$。 对每个用户每天的数据按半个小时进行切割，即将用户$u_{i}$的每天数据$Strace_{i,k}$按时间均分为$48$份，表示为$Sep\_strace_{i,k}=\{Sep\_strace_{i,k,1},...,Sep\_strace_{i,k,48}\}$，其中每一份数据表示为$Sep\_strace_{i,k,s}=\{Label(l_{a_{i}})|l_{a_{i}}\in Ltrace_{i,k} \bigwedge a_{i}\in s\}$。在准备word2vec 模型的输入数据以及对应的模型输入数据时：我们需要首先计算每份数据不重复的语义标签序列，即$Ssep\_strace_{i,k,s}=set(Sep\_strace_{i,k,s})$，然后将每天的$48$份数据合并成一个序列得到$SLtrace$，$SLtrace_{i,k}=\bigcup_{s=1}^{48}Ssep\_strace_{i,k,s}$。将$SLtrace$作为word2vec模型的输入，训练得到对应模型$SW2V(M)$，$M$表示每个语义位置对应的实数值向量的长度。将$Ssep\_strace_{i}$作为用户$u_{i}$在第三层使用word2vec 模型计算关系强度时的输入。其中$Ssep\_strace_{i,k}=\{Ssep\_strace_{i,k,1},...,Ssep\_strace_{i,k,48}\}$。在准备LDA 模型的输入数据以及对应的模型输入数据时：在已得到$Sep\_strace$的基础上，对每份数据计算不重复出现的语义位置，并对每个位置加上时间标记。用户$u_{i}$在$k$这一天第$s$时间段物理位置序列表示为$Tstrace_{i,k,s}=\{TT(sl_{b})|sl_{b}\in set(Sep\_strace_{i,k,s})\}$，其中$TT(sl_{b})$表示对$sl_{b}$ 添加时间标记，表示该语义位置在该时间段出现。$set(A)$表示计算序列$A$对应的集合，即$A$中无重复元素。将$Tstrace_{i}$作为用户$u_{i}$在第三层算法使用LDA模型计算关系强度时的输入。将$Tstrace_{i,k}$中的$48$份数据合并成一个序列$STstrace$，其中$STstrace_{i,k}=\bigcup_{s=1}^{48}Tstrace_{i,k,s}$ 。将$STstrace$ 作为LDA模型的输入，训练得到对应的LDA主题模型$SLDA(K)$，$K$表示主题的个数。
+GPS数据准备：对前文得到的$Loc$中每一个语义位置采用上一章中讨论的方法标记其语义标签，标语义标签后用户$u_{i}$第$k$天的语义标签序列表示为$Strace_{i,k}=\{Label(ll_{b})|ll_{b}\in ltrace_{i,k}$，其中$Label(ll_{b})$表示$ll_{b}$对应的语义标签。所有用户的所有语义标签序列表示为$Strace=\{Strace_{1},...,Strace_{n}\}$，其中用户$u_{i}$的全部语义位置序列表示$Strace_{i}=\{Strace_{i,k}|k\in D_{i}\}$。 对每个用户每天的数据按半个小时进行切割，即将用户$u_{i}$的每天数据$Strace_{i,k}$按时间均分为$48$份，表示为$Sep\_strace_{i,k}=\{Sep\_strace_{i,k,1},...,Sep\_strace_{i,k,48}\}$，其中每一份数据表示为$Sep\_strace_{i,k,s}=\{Label(l_{a_{i}})|l_{a_{i}}\in Ltrace_{i,k} \bigwedge a_{i}\in s\}$。在准备word2vec 模型的输入数据以及对应的模型输入数据时：我们需要首先计算每份数据不重复的语义标签序列，即$Ssep\_strace_{i,k,s}=set(Sep\_strace_{i,k,s})$，然后将每天的$48$份数据合并成一个序列得到$SLtrace$，$SLtrace_{i,k}=\bigcup_{s=1}^{48}Ssep\_strace_{i,k,s}$。将$SLtrace$作为word2vec模型的输入，训练得到对应模型$SW2V(M)$，$M$表示每个语义位置对应的实数值向量的长度。将$Ssep\_strace_{i}$作为用户$u_{i}$在第三层使用word2vec 模型计算关系强度时的输入。其中$Ssep\_strace_{i,k}=\{Ssep\_strace_{i,k,1},...,Ssep\_strace_{i,k,48}\}$。在准备LDA 模型的输入数据以及对应的模型输入数据时：在已得到$Sep\_strace$ 的基础上，对每份数据计算不重复出现的语义位置，并对每个位置加上时间标记。用户$u_{i}$在$k$这一天第$s$时间段物理位置序列表示为$Tstrace_{i,k,s}=\{TT(sl_{b})|sl_{b}\in set(Sep\_strace_{i,k,s})\}$，其中$TT(sl_{b})$表示对$sl_{b}$ 添加时间标记，表示该语义位置在该时间段出现。$set(A)$表示计算序列$A$对应的集合，即$A$中无重复元素。将$Tstrace_{i}$作为用户$u_{i}$在第三层算法使用LDA模型计算关系强度时的输入。将$Tstrace_{i,k}$中的$48$份数据合并成一个序列$STstrace$，其中$STstrace_{i,k}=\bigcup_{s=1}^{48}Tstrace_{i,k,s}$ 。将$STstrace$ 作为LDA模型的输入，训练得到对应的LDA主题模型$SLDA(K)$，$K$表示主题的个数。
 \par 基站数据准备：计算每一个基站对应的语义标签，其余处理与GPS数据处理完全相同。
 \par 准备好模型各个层次的输入数据后，在下一节我们将详细描述如何使用输入数据计算用户之间的关系强度。
 \section{关系强度计算}
@@ -1095,7 +1043,7 @@ Score=\frac{1}{n}\sum_{i=1}^{n}score(u_{i})
 如果对任意两个基站都从所有用户所有天的基站序列中找出同时出现这两个基站的序列，然后按照上文所述的方法计算这两个基站之间的距离，则其时间复杂度非常大，因此，我们通过对每个基站号建立倒排索引来减少计算量。倒排索引是指对每个基站号，我们可以找到它在哪个用户那一天的轨迹数据中哪个位置出现。这样对于计算两个基站号之间的距离，我们可以依次通过查找是否有相同用户，是否在同一天，以及同一天的位置来计算距离，最后取最小值。使用倒排索引，整个数据集只需要遍历一遍。如果不使用倒排索引，本文使用数据集中不同的基站区域号总共有30991 个，则需要计算的基站距离共有480205545个，若对全部数据遍历四亿多次，可以想象时间复杂度将会特别大。
 \par 实验1：基于轨迹相似性计算用户之间的关系强度
 通过上面的处理方法，可以计算出任意两个基站之间的距离，因而就可以使用DTW方法来计算每一个用户$u_{i}$与其所有朋友$F_{i}$中每个人之间的关系强度，进而得到每个用户与其所有朋友之间的关系强度序列，记为$W_{0,i}$。将该序列与$G_{i}$进行对比，并按公式\ref{equ:chap5:conScore}对两者的一致性进行评分，进而对所有用户使用公式\ref{equ:chap5:score}计算最终的一致性评分，验证结果的有效性。
-与此同时，一方面，第二章描述DTW算法时指出可以使用三种正则化方法对DTW计算结果进行优化处理来提升算法的效果，为此，我们使用这三种方法对DTW计算结果进行优化来获得每一个用户与其所有朋友之间的关系强度，进而得到优化后的每个用户与其所有朋友之间的关系强度序列，记为$W_{1,i}$、$W_{2,i}$以及$W_{3,i}$。将$W_{1,i}$、$W_{2,i}$以及$W_{3,i}$与$G_{i}$进行对比，并按公式\ref{equ:chap5:conScore}对两者的一致性进行评分，进而对所有用户使用公式\ref{equ:chap5:score}计算最终的一致性评分。另一方面，前面提到，如果两个基站A和B从未在同一个基站序列中出现过，则定义A和B之间的距离为所有两个基站之间距离最大值的$K$ 倍，$K$为一个正实数参数，$K$的设置对两个关系强度序列的一致性评分具有一定的影响，图\ref{fig:5_3}描述了参数$K$ 的不同设置对$W_{1,i}$、$W_{2,i}$以及$W_{3,i}$分别和$G_{i}$一致性评分的影响情况。观察\ref{fig:5_3}可以发现，当$K$ 为2.5 时，通过DTW 计算方法得到的$W_{0,i}$与$G_{i}$更加接近一致。通过对比经过三种正则化方法优化后的DTW计算结果，可以发现，通过使用DTW结果除以最优序列长度这种优化方法，得到的$W_{3,i}$与$G_{i}$更加接近一致。不进行任何优化的DTW方法计算得到的用户好友序列见表\ref{tab:dtwResult}，使用最优序列长度归一化DTW距离并使用序列熵值加权得到的用户好友列表见表\ref{tab:dtwEntResult}。
+与此同时，一方面，第二章描述DTW算法时指出可以使用三种正则化方法对DTW计算结果进行优化处理来提升算法的效果，为此，我们使用这三种方法对DTW计算结果进行优化来获得每一个用户与其所有朋友之间的关系强度，进而得到优化后的每个用户与其所有朋友之间的关系强度序列，记为$W_{1,i}$、$W_{2,i}$以及$W_{3,i}$。 将$W_{1,i}$、$W_{2,i}$以及$W_{3,i}$与$G_{i}$进行对比，并按公式\ref{equ:chap5:conScore}对两者的一致性进行评分，进而对所有用户使用公式\ref{equ:chap5:score}计算最终的一致性评分。另一方面，前面提到，如果两个基站A和B从未在同一个基站序列中出现过，则定义A和B之间的距离为所有两个基站之间距离最大值的$K$ 倍，$K$为一个正实数参数，$K$的设置对两个关系强度序列的一致性评分具有一定的影响，图\ref{fig:5_3}描述了参数$K$ 的不同设置对$W_{1,i}$、$W_{2,i}$以及$W_{3,i}$分别和$G_{i}$一致性评分的影响情况。观察\ref{fig:5_3}可以发现，当$K$ 为2.5 时，通过DTW 计算方法得到的$W_{0,i}$与$G_{i}$更加接近一致。通过对比经过三种正则化方法优化后的DTW计算结果，可以发现，通过使用DTW结果除以最优序列长度这种优化方法，得到的$W_{3,i}$与$G_{i}$更加接近一致。不进行任何优化的DTW方法计算得到的用户好友序列见表\ref{tab:dtwResult}，使用最优序列长度归一化DTW距离并使用序列熵值加权得到的用户好友列表见表\ref{tab:dtwEntResult}。
 \par 在使用DTW及其经三种优化方法获得$W_{0,i}$、$W_{1,i}$、$W_{2,i}$及$W_{3,i}$的基础上，我们对每个用户每天的轨迹序列进行熵值加权，进而得到每个用户与其所有朋友之间的关系强度序列$E_{i}$，再使用公式\ref{equ:chap5:conScore}对$E_{i}$ 与$G_{i}$的一致性进行评分，进而对所有用户使用公式\ref{equ:chap5:score}计算最终的一致性评分，验证其有效性。图\ref{fig:5_4}描述了加权前后计算得到的$E_{i}$与$G_{i}$对应的全部用户的一致性评分结果。经验证，对于不同的$K$值，使用熵值加权后得到的一致性评分均好于不加权得到的一致性评分，图\ref{fig:5_4}中仅列出当$K=2.5$的实验结果。通过对实验结果的进一步分析，我们发现对于编辑距离，使用熵值加权后计算得到的用户与其所有朋友关系强度序列与$G_{i}$更加一致，因此我们可以认为使用熵值加权的确能够更好的度量用户之间的关系强度。
 \begin{figure}[htp]
 \centering
@@ -1211,7 +1159,7 @@ Score=\frac{1}{n}\sum_{i=1}^{n}score(u_{i})
 \caption{基于语义位置实验结果}
 \label{fig:5_5}
 \end{figure}
-\par 对图\ref{fig:5_5}进行分析，可以发现对于不同的主题个数有两个峰值：当主题个数为50时，一致性评分为65.6\%；当主题个数为90时，一致性评分为66.2\%。若主题个数太少，则区别能力太小，两个用户不管是非常相似还是比较相似都拥有相同的行为模式，则因为行为模式完全相同，因而无法区分这两个用户是非常相似还是比较相似。若主题个数太多，区别能力也将降低，每个用户分别对应不同的行为模式，即使两个用户实际上非常相似，当时因为行为模式不同，导致计算结果表明两个用户不相似。有两个峰值有可能是因为主题其实是一个层级概念，在某个抽象层次上可能主题数在50个左右，在另一个抽象层次上，主题数可能在90个左右。50个主题对应的LDA模型计算得到的好友序列见表\ref{tab:locldaResult}。
+\par 对图\ref{fig:5_5}进行分析，可以发现对于不同的主题个数有两个峰值：当主题个数为50时，一致性评分为65.6\%；当主题个数为90时，一致性评分为66.2\%。若主题个数太少，则区别能力太小，两个用户不管是非常相似还是比较相似都拥有相同的行为模式，则因为行为模式完全相同，因而无法区分这两个用户是非常相似还是比较相似。若主题个数太多，区别能力也将降低，每个用户分别对应不同的行为模式，即使两个用户实际上非常相似，当时因为行为模式不同，导致计算结果表明两个用户不相似。有两个峰值有可能是因为主题其实是一个层级概念，在某个抽象层次上可能主题数在50个左右，在另一个抽象层次上，主题数可能在90 个左右。50个主题对应的LDA模型计算得到的好友序列见表\ref{tab:locldaResult}。
 \begin{table}[htbp]
   \centering
 %  \begin{minipage}[t]{0.8\linewidth} % 如果想在表格中使用脚注，minipage是个不错的办法
