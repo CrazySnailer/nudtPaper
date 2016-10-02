@@ -501,16 +501,16 @@ AMVD(A,B)=\frac{1}{\left | A \right |}\sum_{\forall a_{i} \in A}^{ }  \mathop{\a
   \centering%
   \subfloat[原始轨迹数据]{%
     \label{fig:3_9_1_1}
-    \includegraphics[height=6cm]{figure3_9_2_1}}%\hspace{4em}
+    \includegraphics[height=6cm]{figure4_tra1_map}}%\hspace{4em}
   \subfloat[参数k=3]{%
     \label{fig:3_9_1_2}
-    \includegraphics[height=6cm]{figure3_9_2_2}}
+    \includegraphics[height=6cm]{figure4_tra1_map_k3}}
   \subfloat[参数k=4]{%
     \label{fig:3_9_1_3}
-    \includegraphics[height=6cm]{figure3_9_2_3}}
+    \includegraphics[height=6cm]{figure4_tra1_map_k4}}
   \subfloat[参数k=5]{%
     \label{fig:3_9_1_4}
-    \includegraphics[height=6cm]{figure3_9_2_4}}
+    \includegraphics[height=6cm]{figure4_tra1_map_k5}}
   \caption{基于K-means的轨迹聚类实验结果地图展示1}
   \label{fig:3_9_1}
 \end{figure}
@@ -535,98 +535,76 @@ AMVD(A,B)=\frac{1}{\left | A \right |}\sum_{\forall a_{i} \in A}^{ }  \mathop{\a
   \centering%
   \subfloat[原始轨迹数据]{%
     \label{fig:3_9_2_1}
-    \includegraphics[height=6cm]{figure3_9_2_1}}%\hspace{4em}
+    \includegraphics[height=6cm]{figure4_tra2_map}}%\hspace{4em}
   \subfloat[参数k=3]{%
     \label{fig:3_9_2_2}
-    \includegraphics[height=6cm]{figure3_9_2_2}}
+    \includegraphics[height=6cm]{figure4_tra2_map_k3}}
   \subfloat[参数k=4]{%
     \label{fig:3_9_2_3}
-    \includegraphics[height=6cm]{figure3_9_2_3}}
+    \includegraphics[height=6cm]{figure4_tra2_map_k4}}
   \subfloat[参数k=5]{%
     \label{fig:3_9_2_4}
-    \includegraphics[height=6cm]{figure3_9_2_4}}
+    \includegraphics[height=6cm]{figure4_tra2_map_k5}}
   \caption{基于K-means的轨迹聚类实验结果地图展示2}
   \label{fig:3_9_2}
 \end{figure}
-\par 通过对轨迹数据的聚类分析我们可以得知，如果在聚类前我们能够确切的知道用户的轨迹数据应该划分的簇的个数，那么K-means聚类算法将会得出非常合理的结果，我们在观察图\ref{fig:3_9_1}、\ref{fig:3_9_2}时发现，当簇的个数越接近符合用户访问位置个数的时候，那么聚类点将更能够反映出真实的情况，在图**中，(a)所对应的聚类得到的簇包含了实际上没有正确的将用户访问过的位置区分开，因为这两个访问的位置距离相隔太近，导致K-means算法将这两个簇合并为一个簇，但是如果我们将聚类个数设置为5就能够成功的识别出这两个位置。%----写到这里了
-\par 仔细分析这三组数据的实验结果发现，如果能够预先知道类别的个数，K-MEANS算法确实能够得到一个非常好的结果，特别对于图\ref{fig:3_9_2}，仔细观察(a)对应的原始数据，地图右下角白色点群表明其实去了两个教学楼，但是两个教学楼距离太近以及GPS本身存在的采样误差使得采样点混合在一起。如果假设去了三个地方时，该聚类算法将两个教学楼识别成了一个位置，如果假设去了四个地方时，聚类算法成功的区分了这两个实验楼，在另外两个算法的实验中将发现，另外两个算法无法区分这两个实验楼。对于图\ref{fig:3_9_1}，其实只参观了三个地方，但是如果假设去了四个地方，该聚类算法也能将数据分成四类，仔细观察得到第四个类别其实是两条路的交叉点，从另一个角度证明前文论述应该剔除路上的点是非常合理的，而后文的实验也证明剔除路上的点之后，聚类算法就不会再把路上的点识别成聚类中心。
-\par 下文将展示DJ-Cluster算法的实验结果，DJ-Cluster是基于DBSCAN算法的一种基于密度的聚类算法，通过边界点将相邻类别合并从而使得算法对参数更加鲁棒。但是算法本身仍然严重依赖半径值和密度值这两个参数，在实际应用过程中，仍然需要仔细调节参数，在参数设置理想的情况下，仍然能够得到非常理想的结果，见图\ref{fig:3_10_1}、\ref{fig:3_10_2}、\ref{fig:3_10_3}，其地图表示见图\ref{fig:3_11_1}、\ref{fig:3_11_2}、\ref{fig:3_11_3}。
+\par 通过对轨迹数据的聚类分析我们可以得知，如果在聚类前我们能够确切的知道用户的轨迹数据应该划分的簇的个数，那么K-means聚类算法将会得出非常合理的结果，我们在观察图\ref{fig:3_9_1}、\ref{fig:3_9_2}时发现，当簇的个数越接近符合用户访问位置个数的时候，那么聚类点将更能够反映出真实的情况，在图**中，(a)所对应的聚类得到的簇包含了实际上没有正确的将用户访问过的位置区分开，因为这两个访问的位置距离相隔太近，导致K-means算法将这两个簇合并为一个簇，但是如果我们将聚类个数设置为5就能够成功的识别出这两个位置。在另一实验结果图**中也出现了类似的情况。但是根据图中实验情况分析发现对于一部分在路上的点被划分到了聚类簇中，同时有些应该被单独聚类成一个独立的簇的点被划分到了在路上的点中，这些都是因为我们无法正确的给出符合当前轨迹访问点个数的聚类个数所造成的。
+\par 接下来将会基于DJ-Cluster 算法来对轨迹数据进行聚类并对结果进行分析。DJ-Cluster算法是基于密度聚类算法DBSCAN而改进的一种密度聚类算法，通过利用密度相连的原理可以发现任意形状的簇，但是算法存在有一个局限性：算法的性能和准确性依赖于参数$Eps$（邻域半径）和$MinPts$（最少点数量），如果邻域半径的取值过大那么所有的点将会划分为同一个簇，因此在实际的使用过程中，需要不断地对参数进行调整才能得到比较理想的结果，如图\ref{fig:3_10_1}、\ref{fig:3_10_2}结果所示，实际地图中结果展示如图\ref{fig:3_11_1}、\ref{fig:3_11_2}所示。
 \begin{figure}[htb]
   \centering%
-  \subfloat[原始数据]{%
+  \subfloat[原始轨迹数据]{%
     \label{fig:3_10_1_1}
-    \includegraphics[height=4cm]{figure3_8_1_1}}\hspace{4em}%
-  \subfloat[聚类结果]{%
+    \includegraphics[height=4cm]{figure4_tra_for_dj_1}}\hspace{4em}%
+  \subfloat[DJ-Cluster聚类结果]{%
     \label{fig:3_10_1_2}
-    \includegraphics[height=4cm]{figure3_10_1_2}}
-  \caption{DJ-Cluster实验结果3-1}
+    \includegraphics[height=4cm]{figure4_tra_result_dj_1}}
+  \caption{基于DJ-Cluster的轨迹聚类实验结果1}
   \label{fig:3_10_1}
 \end{figure}
 \begin{figure}[htb]
   \centering%
-  \subfloat[原始数据]{%
+  \subfloat[原始轨迹数据]{%
     \label{fig:3_11_1_1}
-    \includegraphics[height=6cm]{figure3_9_1_1}}\hspace{4em}%
-  \subfloat[聚类结果]{%
+    \includegraphics[height=6cm]{figure3_9_2_1}}\hspace{4em}%
+  \subfloat[DJ-Cluster聚类结果]{%
     \label{fig:3_11_1_2}
-    \includegraphics[height=6cm]{figure3_11_1_2}}
-  \caption{DJ-Cluster实验结果地图表示3-1}
+    \includegraphics[height=6cm]{figure3_11_2_2}}
+  \caption{基于DJ-Cluster的轨迹聚类实验结果地图展示1}
   \label{fig:3_11_1}
 \end{figure}
 \begin{figure}[htb]
   \centering%
-  \subfloat[原始数据]{%
+  \subfloat[原始轨迹数据]{%
     \label{fig:3_10_2_1}
-    \includegraphics[height=4cm]{figure3_8_2_1}}\hspace{4em}%
-  \subfloat[聚类结果]{%
+    \includegraphics[height=4cm]{figure4_tra_for_dj_2}}\hspace{4em}%
+  \subfloat[DJ-Cluster聚类结果]{%
     \label{fig:3_10_2_2}
-    \includegraphics[height=4cm]{figure3_10_2_2}}
-  \caption{DJ-Cluster实验结果3-2}
+    \includegraphics[height=4cm]{figure4_tra_result_dj_2}}
+  \caption{基于DJ-Cluster的轨迹聚类实验结果2}
   \label{fig:3_10_2}
 \end{figure}
 \begin{figure}[htb]
   \centering%
-  \subfloat[原始数据]{%
+  \subfloat[原始轨迹数据]{%
     \label{fig:3_11_2_1}
     \includegraphics[height=6cm]{figure3_9_2_1}}\hspace{4em}%
-  \subfloat[聚类结果]{%
+  \subfloat[DJ-Cluster聚类结果]{%
     \label{fig:3_11_2_2}
     \includegraphics[height=6cm]{figure3_11_2_2}}
-  \caption{DJ-Cluster实验结果地图表示3-2}
+  \caption{基于DJ-Cluster的轨迹聚类实验结果地图展示2}
   \label{fig:3_11_2}
 \end{figure}
-\begin{figure}[htb]
-  \centering%
-  \subfloat[原始数据]{%
-    \label{fig:3_10_3_1}
-    \includegraphics[height=4cm]{figure3_8_3_1}}\hspace{4em}%
-  \subfloat[聚类结果]{%
-    \label{fig:3_10_3_2}
-    \includegraphics[height=4cm]{figure3_10_3_2}}
-  \caption{DJ-Cluster实验结果3-3}
-  \label{fig:3_10_3}
-\end{figure}
-\begin{figure}[htb]
-  \centering%
-  \subfloat[原始数据]{%
-    \label{fig:3_11_3_1}
-    \includegraphics[height=6cm]{figure3_9_3_1}}\hspace{4em}%
-  \subfloat[聚类结果]{%
-    \label{fig:3_11_3_2}
-    \includegraphics[height=6cm]{figure3_11_3_2}}
-  \caption{DJ-Cluster实验结果地图表示3-3}
-  \label{fig:3_11_3}
-\end{figure}
+
 \par 通过对实验结果的分析能够发现，DJ-Cluster基本上能够得到一个令人满意的结果，在仔细调节参数后，基本上识别出了所有的位置，但是图\ref{fig:3_11_2} 右下角其实是两个教学楼，前文已经论述过，DJ-Cluster 将其识别为一个位置，主要是因为这两个教学楼本身距离太小，且GPS采样误差比较大使得本来分属于两栋楼的采样点有重合，从而使得基于密度的方法无法区分。除此情况外，对于另外两天的数据，该算法都表现出了非常好的识别结果。该算法最大的缺陷还是对参数比较敏感，下文将介绍Science 发表的聚类算法的实验结果，同时会从算法原理上简要论述其对参数的鲁棒性确实优于DJ-Cluster。
 \par 下文描述Science发表的聚类算法对应的实验结果，在描述具体实验之前，首先分析该算法的原理：该算法对每个点计算对应的密度（密度定义见前文），对所有点按密度排序；然后计算每个点的距离，再对每个点按距离和密度的乘积排序得到最终的聚类结果。DJ-Cluster算法之所以对参数敏感是因为不同的半径值就需要对应不同的密度值（半径大了，此半径对应的圆形区域内其他点的数目肯定会更多），而Science发表的算法会对所有点按密度排序，这样在很大程度上降低了半径值对算法本身的影响，通常情况下半径越大点密度越大，如果随着半径的增长，密度的相对顺序保持不变，则半径对该算法基本没有影响，本课题收集的GPS 采样点基本满足这一条件，若某个点在小半径时密度小，则在大半径是其密度依然相对较小。所以Science发表的算法对当前问题而言有非常好的鲁棒性。具体的实验结果见图\ref{fig:3_12_1}、\ref{fig:3_12_2}、\ref{fig:3_12_3}。实验结果地图表示见图\ref{fig:3_13_1}、\ref{fig:3_13_2}、\ref{fig:3_13_3}。
 \begin{figure}[htb]
   \centering%
   \subfloat[原始数据]{%
     \label{fig:3_12_1_1}
-    \includegraphics[height=4cm]{figure3_8_1_1}}\hspace{4em}%
+    \includegraphics[height=4cm]{figure4_tra_for_science1}}\hspace{4em}%
   \subfloat[聚类结果]{%
     \label{fig:3_12_1_2}
-    \includegraphics[height=4cm]{figure3_12_1_2}}
+    \includegraphics[height=4cm]{figure4_science_1_cluster}}
   \caption{Science发表算法实验结果3-1}
   \label{fig:3_12_1}
 \end{figure}
@@ -645,10 +623,10 @@ AMVD(A,B)=\frac{1}{\left | A \right |}\sum_{\forall a_{i} \in A}^{ }  \mathop{\a
   \centering%
   \subfloat[原始数据]{%
     \label{fig:3_12_2_1}
-    \includegraphics[height=4cm]{figure3_8_2_1}}\hspace{4em}%
+    \includegraphics[height=4cm]{figure4_tra_for_science2}}\hspace{4em}%
   \subfloat[聚类结果]{%
     \label{fig:3_12_2_2}
-    \includegraphics[height=4cm]{figure3_12_2_2}}
+    \includegraphics[height=4cm]{figure4_science_2_cluster}}
   \caption{Science发表算法实验结果3-2}
   \label{fig:3_12_2}
 \end{figure}

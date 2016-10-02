@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2016.1.8)  1 OCT 2016 21:06
+This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2016.1.8)  2 OCT 2016 20:31
 entering extended mode
 **thesis
 (E:\Research_Study\nudtPaper\thesis.tex
@@ -1937,130 +1937,127 @@ File: figures/figure4_tra1_kmeans_4.png Graphic file (type QTm)
 File: figures/figure4_tra1_kmeans_5.png Graphic file (type QTm)
 
 <use  "figures/figure4_tra1_kmeans_5.png" >
-File: figures/figure3_9_2_1.jpg Graphic file (type QTm)
+File: figures/figure4_tra1_map.png Graphic file (type QTm)
 
-<use  "figures/figure3_9_2_1.jpg" >
-File: figures/figure3_9_2_2.jpg Graphic file (type QTm)
- <use  "figures/figure3_9_2_2.jpg" >
-File: figures/figure3_9_2_3.jpg Graphic file (type QTm)
+<use  "figures/figure4_tra1_map.png" >
+File: figures/figure4_tra1_map_k3.png Graphic file (type QTm)
 
-<use  "figures/figure3_9_2_3.jpg" >
-File: figures/figure3_9_2_4.jpg Graphic file (type QTm)
- <use  "figures/figure3_9_2_4.jpg" >
-Overfull \hbox (12.28738pt too wide) in paragraph at lines 504--514
- [][][][][][][][] 
- []
+<use  "figures/figure4_tra1_map_k3.png" >
+File: figures/figure4_tra1_map_k4.png Graphic file (type QTm)
 
+<use  "figures/figure4_tra1_map_k4.png" >
+File: figures/figure4_tra1_map_k5.png Graphic file (type QTm)
+
+<use  "figures/figure4_tra1_map_k5.png" >
 File: figures/figure4_tra2.png Graphic file (type QTm)
-<use  "figures/figure4_tra2.png" >
+ <use  "figures/figure4_tra2.png" >
 File: figures/figure4_tra2_kmeans_3.png Graphic file (type QTm)
- <use  "figures/figure4_tra2_kmeans_3.png" >
+
+<use  "figures/figure4_tra2_kmeans_3.png" >
 File: figures/figure4_tra2_kmeans_4.png Graphic file (type QTm)
 
 <use  "figures/figure4_tra2_kmeans_4.png" >
 File: figures/figure4_tra2_kmeans_5.png Graphic file (type QTm)
 
 <use  "figures/figure4_tra2_kmeans_5.png" >
-File: figures/figure3_9_2_1.jpg Graphic file (type QTm)
+File: figures/figure4_tra2_map.png Graphic file (type QTm)
 
-<use  "figures/figure3_9_2_1.jpg" >
-File: figures/figure3_9_2_2.jpg Graphic file (type QTm)
- <use  "figures/figure3_9_2_2.jpg" >
-File: figures/figure3_9_2_3.jpg Graphic file (type QTm)
+<use  "figures/figure4_tra2_map.png" >
+File: figures/figure4_tra2_map_k3.png Graphic file (type QTm)
 
-<use  "figures/figure3_9_2_3.jpg" >
-File: figures/figure3_9_2_4.jpg Graphic file (type QTm)
- <use  "figures/figure3_9_2_4.jpg" >
-Overfull \hbox (12.28738pt too wide) in paragraph at lines 538--548
- [][][][][][][][] 
- []
+<use  "figures/figure4_tra2_map_k3.png" >
+File: figures/figure4_tra2_map_k4.png Graphic file (type QTm)
 
-[34]
+<use  "figures/figure4_tra2_map_k4.png" >
+File: figures/figure4_tra2_map_k5.png Graphic file (type QTm)
+
+<use  "figures/figure4_tra2_map_k5.png" > [34]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [35]
-File: figures/figure4_tra1.png Graphic file (type QTm)
+File: figures/figure4_tra_for_dj_1.png Graphic file (type QTm)
 
-<use  "figures/figure4_tra1.png" >
-File: figures/figure4_tra1_djcluster.png Graphic file (type QTm)
+<use  "figures/figure4_tra_for_dj_1.png" >
+File: figures/figure4_tra_result_dj_1.png Graphic file (type QTm)
 
-<use  "figures/figure4_tra1_djcluster.png" >
-File: figures/figure3_9_2_1.jpg Graphic file (type QTm)
+<use  "figures/figure4_tra_result_dj_1.png" >
+File: figures/figure4_tra_map_dj1.png Graphic file (type QTm)
 
-<use  "figures/figure3_9_2_1.jpg" >
-File: figures/figure3_11_2_2.jpg Graphic file (type QTm)
- <use  "figures/figure3_11_2_2.jpg" >
-File: figures/figure4_tra1.png Graphic file (type QTm)
+<use  "figures/figure4_tra_map_dj1.png" >
+File: figures/figure4_tra_map_result_dj_1.png Graphic file (type QTm)
 
-<use  "figures/figure4_tra1.png" >
-File: figures/figure4_tra2_djcluster.png Graphic file (type QTm)
+<use  "figures/figure4_tra_map_result_dj_1.png" >
+File: figures/figure4_tra_for_dj_2.png Graphic file (type QTm)
 
-<use  "figures/figure4_tra2_djcluster.png" >
-File: figures/figure3_9_2_1.jpg Graphic file (type QTm)
+<use  "figures/figure4_tra_for_dj_2.png" >
+File: figures/figure4_tra_result_dj_2.png Graphic file (type QTm)
 
-<use  "figures/figure3_9_2_1.jpg" >
-File: figures/figure3_11_2_2.jpg Graphic file (type QTm)
- <use  "figures/figure3_11_2_2.jpg" >
+<use  "figures/figure4_tra_result_dj_2.png" >
+File: figures/figure4_tra_map_dj2.png Graphic file (type QTm)
+
+<use  "figures/figure4_tra_map_dj2.png" >
+File: figures/figure4_tra_map_result_dj_2.png Graphic file (type QTm)
+
+<use  "figures/figure4_tra_map_result_dj_2.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [36]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [37]
-File: figures/figure3_8_1_1.png Graphic file (type QTm)
 
-<use  "figures/figure3_8_1_1.png" >
-File: figures/figure3_12_1_2.png Graphic file (type QTm)
- <use  "figures/figure3_12_1_2.png" >
-File: figures/figure3_9_1_1.jpg Graphic file (type QTm)
+LaTeX Warning: Reference `fig:3_12_3' on page 38 undefined on input line 599.
 
-<use  "figures/figure3_9_1_1.jpg" >
-File: figures/figure3_13_1_2.jpg Graphic file (type QTm)
- <use  "figures/figure3_13_1_2.jpg" >
-File: figures/figure3_8_2_1.png Graphic file (type QTm)
 
-<use  "figures/figure3_8_2_1.png" >
-File: figures/figure3_12_2_2.png Graphic file (type QTm)
- <use  "figures/figure3_12_2_2.png" >
-File: figures/figure3_9_2_1.jpg Graphic file (type QTm)
+LaTeX Warning: Reference `fig:3_13_3' on page 38 undefined on input line 599.
 
-<use  "figures/figure3_9_2_1.jpg" >
-File: figures/figure3_13_2_2.jpg Graphic file (type QTm)
- <use  "figures/figure3_13_2_2.jpg" >
-File: figures/figure3_8_3_1.png Graphic file (type QTm)
+File: figures/figure4_tra_for_science1.png Graphic file (type QTm)
+<use  "figures/figure4_tra_for_science1.png" >
+File: figures/figure4_science_1_cluster.png Graphic file (type QTm)
 
-<use  "figures/figure3_8_3_1.png" >
-File: figures/figure3_12_3_2.png Graphic file (type QTm)
- <use  "figures/figure3_12_3_2.png" >
-File: figures/figure3_9_3_1.jpg Graphic file (type QTm)
+<use  "figures/figure4_science_1_cluster.png" >
+File: figures/figure4_tra_map_science1.png Graphic file (type QTm)
 
-<use  "figures/figure3_9_3_1.jpg" >
-File: figures/figure3_13_3_2.jpg Graphic file (type QTm)
- <use  "figures/figure3_13_3_2.jpg" >
+<use  "figures/figure4_tra_map_science1.png" >
+File: figures/figure4_tra_map_result_science1.png Graphic file (type QTm)
+
+<use  "figures/figure4_tra_map_result_science1.png" >
+File: figures/figure4_tra_for_science2.png Graphic file (type QTm)
+
+<use  "figures/figure4_tra_for_science2.png" >
+File: figures/figure4_science_2_cluster.png Graphic file (type QTm)
+
+<use  "figures/figure4_science_2_cluster.png" >
+File: figures/figure4_tra_map_science2.png Graphic file (type QTm)
+
+<use  "figures/figure4_tra_map_science2.png" >
+File: figures/figure4_tra_map_result_science2.png Graphic file (type QTm)
+
+<use  "figures/figure4_tra_map_result_science2.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [38]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [39]
-
-LaTeX Warning: Text page 40 contains only floats.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [40]
+[41]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [41]
-[42] [43]
+ [42]
 File: figures/figure3_14_1.jpg Graphic file (type QTm)
- <use  "figures/figure3_14_1.jpg" >
-File: figures/figure3_14_2.jpg Graphic file (type QTm)
 
-<use  "figures/figure3_14_2.jpg" >
+<use  "figures/figure3_14_1.jpg" >
+File: figures/figure3_14_2.jpg Graphic file (type QTm)
+ <use  "figures/figure3_14_2.jpg" >
 File: figures/figure3_14_3.jpg Graphic file (type QTm)
- <use  "figures/figure3_14_3.jpg" >
+
+<use  "figures/figure3_14_3.jpg" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [43]
 File: figures/figure3_15_1.jpg Graphic file (type QTm)
 
 <use  "figures/figure3_15_1.jpg" >
@@ -2068,16 +2065,19 @@ File: figures/figure3_15_2.jpg Graphic file (type QTm)
  <use  "figures/figure3_15_2.jpg" >
 File: figures/figure3_15_3.jpg Graphic file (type QTm)
 
-<use  "figures/figure3_15_3.jpg" > [44] [45] [46
+<use  "figures/figure3_15_3.jpg" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [44]
+[45] [46
 
 ]
 File: figures/figure4_1.png Graphic file (type QTm)
-
-<use  "figures/figure4_1.png" > [47
+ <use  "figures/figure4_1.png" > [47
 
 
 ]
-Overfull \hbox (8.70436pt too wide) in paragraph at lines 741--743
+Overfull \hbox (8.70436pt too wide) in paragraph at lines 720--722
 \OML/txmi/m/it/12.045 Trace[]$ \xeCJK@song/m/n/12.045 按 时 间 均 分 为 $
 \OT1/txr/m/n/12.045 48$ \xeCJK@song/m/n/12.045 份，| 表 示 为 $\OML/txmi/m
 /it/12.045 Sep[]trace[] \OT1/txr/m/n/12.045 = \OMS/txsy/m/n/12.045 f\OML/txmi/m
@@ -2086,7 +2086,7 @@ n/12.045 ，|
  []
 
 
-Overfull \hbox (3.09387pt too wide) in paragraph at lines 741--743
+Overfull \hbox (3.09387pt too wide) in paragraph at lines 720--722
 \xeCJK@song/m/n/12.045 按 经 纬 度 计 算 平 均 值，| 并 将 新 的 
 轨 迹 序 列 表 示 为 $\OML/txmi/m/it/12.045 Ntrace[]$\EU1/TimesNewRoman(
 0)/m/n/12.045 ,$\OML/txmi/m/it/12.045 Ntrace[] \OT1/txr/m/n/12.045 = \OMS/txsy/
@@ -2119,7 +2119,7 @@ File: figures/figure5_2.jpg Graphic file (type QTm)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [59]
-Underfull \hbox (badness 10000) in alignment at lines 963--1002
+Underfull \hbox (badness 10000) in alignment at lines 942--981
 [][] 
  []
 
@@ -2233,14 +2233,17 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 107.
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 
+LaTeX Warning: There were undefined references.
+
+
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 27247 strings out of 430478
- 491722 string characters out of 3191503
- 573005 words of memory out of 3000000
- 29865 multiletter control sequences out of 15000+200000
+ 27251 strings out of 430478
+ 492236 string characters out of 3191503
+ 572435 words of memory out of 3000000
+ 29863 multiletter control sequences out of 15000+200000
  68198 words of font info for 267 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  51i,18n,85p,1493b,964s stack positions out of 5000i,500n,10000p,200000b,50000s

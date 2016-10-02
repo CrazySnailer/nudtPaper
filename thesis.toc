@@ -34,8 +34,8 @@
 \contentsline {subsection}{\numberline {4.2.2}轨迹中停留点检测}{32}{subsection.4.2.2}
 \contentsline {subsection}{\numberline {4.2.3}停留点聚类语义化}{34}{subsection.4.2.3}
 \contentsline {section}{\numberline {4.3}对语义位置标语义标签}{41}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}发现新位置}{42}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}新位置语义标签提示}{43}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.1}发现新位置}{41}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}新位置语义标签提示}{42}{subsection.4.3.2}
 \contentsline {section}{\numberline {4.4}小结}{45}{section.4.4}
 \contentsline {chapter}{\numberline {5}用户关系强度计算方法}{47}{chapter.5}
 \contentsline {section}{\numberline {5.1}用户关系强度计算方法概述}{47}{section.5.1}
@@ -58,7 +58,7 @@
 \contentsline {chapter}{\numberline {7}结束语}{75}{chapter.7}
 \contentsline {section}{\numberline {7.1}工作总结}{75}{section.7.1}
 \contentsline {section}{\numberline {7.2}工作展望}{76}{section.7.2}
-\contentsline {chapter}{致谢}{79}{chapter*.71}
-\contentsline {chapter}{参考文献}{81}{section*.72}
-\contentsline {chapter}{作者在学期间取得的学术成果}{85}{chapter*.74}
+\contentsline {chapter}{致谢}{79}{chapter*.69}
+\contentsline {chapter}{参考文献}{81}{section*.70}
+\contentsline {chapter}{作者在学期间取得的学术成果}{85}{chapter*.72}
 \contentsfinish 
