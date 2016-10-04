@@ -92,20 +92,15 @@
 \contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始轨迹数据}}}{40}{subfigure.24.1}
 \contentsline {subfigure}{\numberline {((b))}{\ignorespaces {聚类结果}}}{40}{subfigure.24.2}
 \contentsline {figure}{\numberline {4.25}{\ignorespaces 位置语义标签示意图\relax }}{41}{figure.caption.48}
-\contentsline {figure}{\numberline {4.26}{\ignorespaces 语义标签推断结果示意\relax }}{43}{figure.caption.49}
-\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {推断宿舍}}}{43}{subfigure.26.1}
-\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {推断实验室}}}{43}{subfigure.26.2}
-\contentsline {subfigure}{\numberline {((c))}{\ignorespaces {语义标签地图示意}}}{43}{subfigure.26.3}
-\contentsline {figure}{\numberline {4.27}{\ignorespaces 语义标签推断结果示意\relax }}{44}{figure.caption.50}
-\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {推断宿舍}}}{44}{subfigure.27.1}
-\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {推断实验室}}}{44}{subfigure.27.2}
-\contentsline {subfigure}{\numberline {((c))}{\ignorespaces {语义标签地图示意}}}{44}{subfigure.27.3}
-\contentsline {figure}{\numberline {5.1}{\ignorespaces URSHV模型框架\relax }}{45}{figure.caption.52}
-\contentsline {figure}{\numberline {6.1}{\ignorespaces 志愿者采集基站数据可视化\relax }}{56}{figure.caption.55}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces 朋友关系可视化\relax }}{58}{figure.caption.56}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces DTW实验结果\relax }}{65}{figure.caption.58}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces 加权前后实验结果对比\relax }}{65}{figure.caption.59}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces 基于语义位置实验结果\relax }}{66}{figure.caption.62}
-\contentsline {figure}{\numberline {6.6}{\ignorespaces 基于语义标签实验结果\relax }}{68}{figure.caption.64}
-\contentsline {figure}{\numberline {6.7}{\ignorespaces 投票结果\relax }}{71}{figure.caption.67}
+\contentsline {figure}{\numberline {4.26}{\ignorespaces 语义标签识别示意图\relax }}{42}{figure.caption.49}
+\contentsline {figure}{\numberline {4.27}{\ignorespaces 用户轨迹的抽象表示\relax }}{43}{figure.caption.50}
+\contentsline {figure}{\numberline {4.28}{\ignorespaces 用户语义轨迹描述模型\relax }}{44}{figure.caption.51}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces URSHV模型框架\relax }}{45}{figure.caption.53}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces 志愿者采集基站数据可视化\relax }}{56}{figure.caption.56}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces 朋友关系可视化\relax }}{58}{figure.caption.57}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces DTW实验结果\relax }}{65}{figure.caption.59}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces 加权前后实验结果对比\relax }}{65}{figure.caption.60}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces 基于语义位置实验结果\relax }}{66}{figure.caption.63}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces 基于语义标签实验结果\relax }}{68}{figure.caption.65}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces 投票结果\relax }}{71}{figure.caption.68}
 \contentsfinish 
