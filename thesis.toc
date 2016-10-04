@@ -35,29 +35,31 @@
 \contentsline {subsection}{\numberline {4.2.3}用户轨迹停留点聚类}{34}{subsection.4.2.3}
 \contentsline {subsection}{\numberline {4.2.4}对用户轨迹的语义位置添加语义标签}{40}{subsection.4.2.4}
 \contentsline {section}{\numberline {4.3}用户轨迹模型结构化表示}{42}{section.4.3}
-\contentsline {section}{\numberline {4.4}小结}{44}{section.4.4}
-\contentsline {chapter}{\numberline {5}用户关系强度计算方法}{45}{chapter.5}
-\contentsline {section}{\numberline {5.1}用户关系强度计算方法概述}{45}{section.5.1}
-\contentsline {section}{\numberline {5.2}输入数据准备}{45}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}轨迹数据的处理与准备}{46}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}语义位置数据的处理与准备}{47}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}语义标签数据的处理与准备}{47}{subsection.5.2.3}
-\contentsline {section}{\numberline {5.3}关系强度计算}{48}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}基于原始轨迹数据的关系强度计算}{48}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}基于主题模型的关系强度计算}{49}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}结果投票}{50}{subsection.5.3.3}
-\contentsline {section}{\numberline {5.4}小结}{51}{section.5.4}
-\contentsline {chapter}{\numberline {6}数据集、评估方法及实验结果}{53}{chapter.6}
-\contentsline {section}{\numberline {6.1}数据集}{53}{section.6.1}
-\contentsline {section}{\numberline {6.2}评估方法}{57}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}构造真实结果}{58}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}评估方法}{59}{subsection.6.2.2}
-\contentsline {section}{\numberline {6.3}实验结果与分析}{61}{section.6.3}
-\contentsline {section}{\numberline {6.4}小结}{71}{section.6.4}
-\contentsline {chapter}{\numberline {7}结束语}{73}{chapter.7}
-\contentsline {section}{\numberline {7.1}工作总结}{73}{section.7.1}
-\contentsline {section}{\numberline {7.2}工作展望}{74}{section.7.2}
-\contentsline {chapter}{致谢}{77}{chapter*.71}
-\contentsline {chapter}{参考文献}{79}{section*.72}
-\contentsline {chapter}{作者在学期间取得的学术成果}{83}{chapter*.74}
+\contentsline {section}{\numberline {4.4}WiFi感知数据处理计算技术}{45}{section.4.4}
+\contentsline {section}{\numberline {4.5}蓝牙感知数据处理计算技术}{46}{section.4.5}
+\contentsline {section}{\numberline {4.6}小结}{47}{section.4.6}
+\contentsline {chapter}{\numberline {5}用户关系强度计算方法}{49}{chapter.5}
+\contentsline {section}{\numberline {5.1}用户关系强度计算方法概述}{49}{section.5.1}
+\contentsline {section}{\numberline {5.2}输入数据准备}{49}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}轨迹数据的处理与准备}{50}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}语义位置数据的处理与准备}{51}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}语义标签数据的处理与准备}{51}{subsection.5.2.3}
+\contentsline {section}{\numberline {5.3}关系强度计算}{52}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}基于原始轨迹数据的关系强度计算}{52}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}基于主题模型的关系强度计算}{53}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}结果投票}{54}{subsection.5.3.3}
+\contentsline {section}{\numberline {5.4}小结}{55}{section.5.4}
+\contentsline {chapter}{\numberline {6}数据集、评估方法及实验结果}{57}{chapter.6}
+\contentsline {section}{\numberline {6.1}数据集}{57}{section.6.1}
+\contentsline {section}{\numberline {6.2}评估方法}{61}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}构造真实结果}{62}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}评估方法}{63}{subsection.6.2.2}
+\contentsline {section}{\numberline {6.3}实验结果与分析}{65}{section.6.3}
+\contentsline {section}{\numberline {6.4}小结}{75}{section.6.4}
+\contentsline {chapter}{\numberline {7}结束语}{77}{chapter.7}
+\contentsline {section}{\numberline {7.1}工作总结}{77}{section.7.1}
+\contentsline {section}{\numberline {7.2}工作展望}{78}{section.7.2}
+\contentsline {chapter}{致谢}{81}{chapter*.78}
+\contentsline {chapter}{参考文献}{83}{section*.79}
+\contentsline {chapter}{作者在学期间取得的学术成果}{87}{chapter*.81}
 \contentsfinish 
