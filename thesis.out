@@ -34,11 +34,11 @@
 \BOOKMARK [2][-]{subsection.4.2.2}{轨迹中停留点检测}{section.4.2}% 34
 \BOOKMARK [2][-]{subsection.4.2.3}{用户轨迹停留点聚类}{section.4.2}% 35
 \BOOKMARK [2][-]{subsection.4.2.4}{对用户轨迹的语义位置添加语义标签}{section.4.2}% 36
-\BOOKMARK [1][-]{section.4.3}{用户轨迹模型结构化表示}{chapter.4}% 37
+\BOOKMARK [1][-]{section.4.3}{用户GPS轨迹数据结构化表示}{chapter.4}% 37
 \BOOKMARK [1][-]{section.4.4}{WiFi感知数据处理计算技术}{chapter.4}% 38
 \BOOKMARK [1][-]{section.4.5}{蓝牙感知数据处理计算技术}{chapter.4}% 39
 \BOOKMARK [1][-]{section.4.6}{小结}{chapter.4}% 40
-\BOOKMARK [0][-]{chapter.5}{用户关系强度计算方法}{}% 41
+\BOOKMARK [0][-]{chapter.5}{RSMHD用户关系强度计算方法概述}{}% 41
 \BOOKMARK [1][-]{section.5.1}{用户关系强度计算方法概述}{chapter.5}% 42
 \BOOKMARK [1][-]{section.5.2}{输入数据准备}{chapter.5}% 43
 \BOOKMARK [2][-]{subsection.5.2.1}{轨迹数据的处理与准备}{section.5.2}% 44
@@ -59,6 +59,6 @@
 \BOOKMARK [0][-]{chapter.7}{结束语}{}% 59
 \BOOKMARK [1][-]{section.7.1}{工作总结}{chapter.7}% 60
 \BOOKMARK [1][-]{section.7.2}{工作展望}{chapter.7}% 61
-\BOOKMARK [0][-]{chapter*.78}{致谢}{}% 62
-\BOOKMARK [0][-]{section*.79}{参考文献}{}% 63
-\BOOKMARK [0][-]{chapter*.81}{作者在学期间取得的学术成果}{}% 64
+\BOOKMARK [0][-]{chapter*.79}{致谢}{}% 62
+\BOOKMARK [0][-]{section*.80}{参考文献}{}% 63
+\BOOKMARK [0][-]{chapter*.82}{作者在学期间取得的学术成果}{}% 64

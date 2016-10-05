@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2016.1.8)  4 OCT 2016 21:35
+This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2016.1.8)  5 OCT 2016 10:56
 entering extended mode
 **thesis
 (E:\Research_Study\nudtPaper\thesis.tex
@@ -2050,6 +2050,15 @@ File: figures/figure4_matchlabel.png Graphic file (type QTm)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [41]
+File: figures/figure4_map_label1.png Graphic file (type QTm)
+
+<use  "figures/figure4_map_label1.png" >
+File: figures/figure4_map_label2.png Graphic file (type QTm)
+
+<use  "figures/figure4_map_label2.png" >
+File: figures/figure4_map_label3.png Graphic file (type QTm)
+
+<use  "figures/figure4_map_label3.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [42]
@@ -2059,9 +2068,12 @@ File: figures/figure4_tra_model.png Graphic file (type QTm)
 File: figures/figure4_semantic_model.png Graphic file (type QTm)
 
 <use  "figures/figure4_semantic_model.png" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [43]
 File: figures/figure4_tra_semantic_model.png Graphic file (type QTm)
 
-<use  "figures/figure4_tra_semantic_model.png" > [43]
+<use  "figures/figure4_tra_semantic_model.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [44]
@@ -2076,27 +2088,20 @@ File: figures/figure4_wifi_context_graph.png Graphic file (type QTm)
 <use  "figures/figure4_wifi_context_graph.png" >
 File: figures/figure4_Bluetoothmodel.png Graphic file (type QTm)
 
-<use  "figures/figure4_Bluetoothmodel.png" >
+<use  "figures/figure4_Bluetoothmodel.png" > [46]
 File: figures/figure4_Bluetooth_contex.png Graphic file (type QTm)
 
 <use  "figures/figure4_Bluetooth_contex.png" >
 File: figures/figure4_Bluetooth_contex_graph.png Graphic file (type QTm)
 
-<use  "figures/figure4_Bluetooth_contex_graph.png" >
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [46]
-[47]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [48]
+<use  "figures/figure4_Bluetooth_contex_graph.png" > [47] [48]
 File: figures/figure4_1.png Graphic file (type QTm)
 
 <use  "figures/figure4_1.png" > [49
 
 
 ]
-Overfull \hbox (8.70436pt too wide) in paragraph at lines 758--760
+Overfull \hbox (8.70436pt too wide) in paragraph at lines 777--779
 \OML/txmi/m/it/12.045 Trace[]$ \xeCJK@song/m/n/12.045 按 时 间 均 分 为 $
 \OT1/txr/m/n/12.045 48$ \xeCJK@song/m/n/12.045 份，| 表 示 为 $\OML/txmi/m
 /it/12.045 Sep[]trace[] \OT1/txr/m/n/12.045 = \OMS/txsy/m/n/12.045 f\OML/txmi/m
@@ -2105,7 +2110,7 @@ n/12.045 ，|
  []
 
 
-Overfull \hbox (3.09387pt too wide) in paragraph at lines 758--760
+Overfull \hbox (3.09387pt too wide) in paragraph at lines 777--779
 \xeCJK@song/m/n/12.045 按 经 纬 度 计 算 平 均 值，| 并 将 新 的 
 轨 迹 序 列 表 示 为 $\OML/txmi/m/it/12.045 Ntrace[]$\EU1/TimesNewRoman(
 0)/m/n/12.045 ,$\OML/txmi/m/it/12.045 Ntrace[] \OT1/txr/m/n/12.045 = \OMS/txsy/
@@ -2138,7 +2143,7 @@ File: figures/figure5_2.jpg Graphic file (type QTm)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [61]
-Underfull \hbox (badness 10000) in alignment at lines 980--1019
+Underfull \hbox (badness 10000) in alignment at lines 999--1038
 [][] 
  []
 
@@ -2256,10 +2261,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 27251 strings out of 430478
- 492588 string characters out of 3191503
- 572295 words of memory out of 3000000
- 29858 multiletter control sequences out of 15000+200000
+ 27264 strings out of 430478
+ 492843 string characters out of 3191503
+ 572693 words of memory out of 3000000
+ 29868 multiletter control sequences out of 15000+200000
  68198 words of font info for 267 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  51i,18n,85p,1493b,964s stack positions out of 5000i,500n,10000p,200000b,50000s

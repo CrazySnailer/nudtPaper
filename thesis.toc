@@ -34,11 +34,11 @@
 \contentsline {subsection}{\numberline {4.2.2}轨迹中停留点检测}{32}{subsection.4.2.2}
 \contentsline {subsection}{\numberline {4.2.3}用户轨迹停留点聚类}{34}{subsection.4.2.3}
 \contentsline {subsection}{\numberline {4.2.4}对用户轨迹的语义位置添加语义标签}{40}{subsection.4.2.4}
-\contentsline {section}{\numberline {4.3}用户轨迹模型结构化表示}{42}{section.4.3}
+\contentsline {section}{\numberline {4.3}用户GPS轨迹数据结构化表示}{43}{section.4.3}
 \contentsline {section}{\numberline {4.4}WiFi感知数据处理计算技术}{45}{section.4.4}
 \contentsline {section}{\numberline {4.5}蓝牙感知数据处理计算技术}{46}{section.4.5}
-\contentsline {section}{\numberline {4.6}小结}{47}{section.4.6}
-\contentsline {chapter}{\numberline {5}用户关系强度计算方法}{49}{chapter.5}
+\contentsline {section}{\numberline {4.6}小结}{48}{section.4.6}
+\contentsline {chapter}{\numberline {5}RSMHD用户关系强度计算方法概述}{49}{chapter.5}
 \contentsline {section}{\numberline {5.1}用户关系强度计算方法概述}{49}{section.5.1}
 \contentsline {section}{\numberline {5.2}输入数据准备}{49}{section.5.2}
 \contentsline {subsection}{\numberline {5.2.1}轨迹数据的处理与准备}{50}{subsection.5.2.1}
@@ -59,7 +59,7 @@
 \contentsline {chapter}{\numberline {7}结束语}{77}{chapter.7}
 \contentsline {section}{\numberline {7.1}工作总结}{77}{section.7.1}
 \contentsline {section}{\numberline {7.2}工作展望}{78}{section.7.2}
-\contentsline {chapter}{致谢}{81}{chapter*.78}
-\contentsline {chapter}{参考文献}{83}{section*.79}
-\contentsline {chapter}{作者在学期间取得的学术成果}{87}{chapter*.81}
+\contentsline {chapter}{致谢}{81}{chapter*.79}
+\contentsline {chapter}{参考文献}{83}{section*.80}
+\contentsline {chapter}{作者在学期间取得的学术成果}{87}{chapter*.82}
 \contentsfinish 
