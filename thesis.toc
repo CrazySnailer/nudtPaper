@@ -41,11 +41,11 @@
 \contentsline {chapter}{\numberline {5}RSMHD用户关系强度计算方法概述}{49}{chapter.5}
 \contentsline {section}{\numberline {5.1}用户关系强度计算方法概述}{49}{section.5.1}
 \contentsline {section}{\numberline {5.2}RSMHD框架模型的数据输入}{50}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}用户GPS轨迹数据的预处理和输入}{50}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}轨迹数据的处理与准备}{50}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}语义位置数据的处理与准备}{51}{subsection.5.2.3}
-\contentsline {subsection}{\numberline {5.2.4}语义标签数据的处理与准备}{52}{subsection.5.2.4}
-\contentsline {section}{\numberline {5.3}关系强度计算}{53}{section.5.3}
+\contentsline {subsection}{\numberline {5.2.1}轨迹数据的预处理}{50}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}用户空间GPS轨迹数据处理和输入}{50}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}用户语义轨迹数据的处理和输入}{51}{subsection.5.2.3}
+\contentsline {subsection}{\numberline {5.2.4}用户运动模式的处理和输入}{51}{subsection.5.2.4}
+\contentsline {section}{\numberline {5.3}关系强度计算}{52}{section.5.3}
 \contentsline {subsection}{\numberline {5.3.1}基于原始轨迹数据的关系强度计算}{53}{subsection.5.3.1}
 \contentsline {subsection}{\numberline {5.3.2}基于主题模型的关系强度计算}{53}{subsection.5.3.2}
 \contentsline {subsection}{\numberline {5.3.3}结果投票}{54}{subsection.5.3.3}
