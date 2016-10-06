@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2016.1.8)  6 OCT 2016 10:53
+This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2016.1.8)  6 OCT 2016 20:59
 entering extended mode
 **thesis
 (E:\Research_Study\nudtPaper\thesis.tex
@@ -2102,14 +2102,35 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ]
 [50] [51] [52]
-Missing character: There is no ⁡ in font txr!
-Missing character: There is no ⁡ in font txr!
-Missing character: There is no ⁡ in font txr!
-Missing character: There is no ⁡ in font txr!
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+LaTeX Warning: Reference `figure7_1_tra' on page 53 undefined on input line 792
+.
 
- [53]
+
+LaTeX Warning: Reference `figure4_2' on page 53 undefined on input line 792.
+
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font STZhongsong does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'STZhongsong(0)' created for font 'STZhongsong' with options
+. [Mapping=tex-text,].
+. 
+. This font family consists of the following shapes:
+.................................................
+Missing character: There is no 词 in font txr!
+Missing character: There is no 语 in font txr!
+Missing character: There is no 词 in font txr!
+Missing character: There is no 语 in font txr!
+Missing character: There is no 权 in font txr!
+Missing character: There is no 值 in font txr!
+[53]
+File: figures/figure5_quick_hash.png Graphic file (type QTm)
+ <use  "figures/figure5_quick_hash.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [54]
@@ -2127,7 +2148,7 @@ File: figures/figure5_2.jpg Graphic file (type QTm)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [61]
-Underfull \hbox (badness 10000) in alignment at lines 999--1038
+Underfull \hbox (badness 10000) in alignment at lines 981--1020
 [][] 
  []
 
@@ -2241,16 +2262,19 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 107.
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 
+LaTeX Warning: There were undefined references.
+
+
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 27261 strings out of 430478
- 492800 string characters out of 3191503
- 572743 words of memory out of 3000000
- 29866 multiletter control sequences out of 15000+200000
- 68198 words of font info for 267 fonts, out of 3000000 for 9000
+ 27272 strings out of 430478
+ 493060 string characters out of 3191503
+ 572772 words of memory out of 3000000
+ 29873 multiletter control sequences out of 15000+200000
+ 68222 words of font info for 270 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 51i,18n,85p,1437b,964s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 51i,13n,85p,1341b,964s stack positions out of 5000i,500n,10000p,200000b,50000s
 
 Output written on thesis.pdf (104 pages).

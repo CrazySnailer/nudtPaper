@@ -45,10 +45,14 @@
 \contentsline {subsection}{\numberline {5.2.2}用户空间GPS轨迹数据处理和输入}{50}{subsection.5.2.2}
 \contentsline {subsection}{\numberline {5.2.3}用户语义轨迹数据的处理和输入}{51}{subsection.5.2.3}
 \contentsline {subsection}{\numberline {5.2.4}用户运动模式的处理和输入}{51}{subsection.5.2.4}
-\contentsline {section}{\numberline {5.3}关系强度计算}{52}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}基于原始轨迹数据的关系强度计算}{53}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}基于主题模型的关系强度计算}{53}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}结果投票}{54}{subsection.5.3.3}
+\contentsline {subsection}{\numberline {5.2.5}用户WiFi感知数据的处理和输入}{52}{subsection.5.2.5}
+\contentsline {subsection}{\numberline {5.2.6}用户蓝牙感知数据的处理和输入}{52}{subsection.5.2.6}
+\contentsline {section}{\numberline {5.3}RSMHD计算用户支之间的关系强度}{53}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}基于用户轨迹数据的关系强度计算}{53}{subsection.5.3.1}
+\contentsline {subsubsection}{\numberline {5.3.1.1}基于用户GPS轨迹数据的关系强度计算}{53}{subsubsection.5.3.1.1}
+\contentsline {subsubsection}{\numberline {5.3.1.2}基于用户日常语义轨迹的关系强度计算}{53}{subsubsection.5.3.1.2}
+\contentsline {subsubsection}{\numberline {5.3.1.3}基于用户轨迹运动模式的关系强度计算}{54}{subsubsection.5.3.1.3}
+\contentsline {subsection}{\numberline {5.3.2}结果投票}{55}{subsection.5.3.2}
 \contentsline {section}{\numberline {5.4}小结}{55}{section.5.4}
 \contentsline {chapter}{\numberline {6}数据集、评估方法及实验结果}{57}{chapter.6}
 \contentsline {section}{\numberline {6.1}数据集}{57}{section.6.1}
@@ -60,7 +64,7 @@
 \contentsline {chapter}{\numberline {7}结束语}{77}{chapter.7}
 \contentsline {section}{\numberline {7.1}工作总结}{77}{section.7.1}
 \contentsline {section}{\numberline {7.2}工作展望}{78}{section.7.2}
-\contentsline {chapter}{致谢}{81}{chapter*.78}
-\contentsline {chapter}{参考文献}{83}{section*.79}
-\contentsline {chapter}{作者在学期间取得的学术成果}{87}{chapter*.81}
+\contentsline {chapter}{致谢}{81}{chapter*.79}
+\contentsline {chapter}{参考文献}{83}{section*.80}
+\contentsline {chapter}{作者在学期间取得的学术成果}{87}{chapter*.82}
 \contentsfinish 
