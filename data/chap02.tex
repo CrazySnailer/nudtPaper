@@ -780,9 +780,11 @@ AMVD(A,B)=\frac{1}{\left | A \right |}\sum_{\forall a_{i} \in A}^{ }  \mathop{\a
 现用户在日常生活中常有规律的访问相似的路径，说明用户的轨迹运动模式能反映出用户之间的相似性。从用户的历史轨迹数据中所挖掘出的频繁模式和序列模式能够反映出用户的日常轨迹运动习惯和行为规律，运动模式在现实生活中表现为用户经常行走的路径序列，是用户轨迹数据规律的抽象表示。根据上文得到的用户$u_{i}$每天的语义轨迹$Ltra_{i,k}$，我们同样按照时间刻度单位对用户每天的语义轨迹集合进行频繁模式挖掘和系列模式挖掘，得到用户$u_{i}$的关于第$k$天语义轨迹的频繁模式序列$TraPF_{i,k}$，其中$TraPF_{i,k}=\{ TraPF_{i,k,1},TraPF_{i,k,2},...,TraPF_{i,k,n} \}$，项$TraPF_{i,k,m}$表示当前计算出的轨迹频繁模型的第$m$项频繁表达式记为$TraPF_{i,k,m}=\{  (Loc_{1}),(Loc_{1},...,(Loc_{m}),...)  \}$；用户$u_{i}$的关于第$k$天语义轨迹的序列模式结果表示为$TraSQ_{i,k}$，其中$TraSQ_{i,k}=\{ TraSQ_{i,k,1},TraSQ_{i,k,2},...,TraSQ_{i,k,n} \}$，项$TraSQ_{i,k,m}$表示当前计算出的轨迹频繁模型的第$m$项频繁表达式记为$TraSQ_{i,k,m}=\{  <Loc_{1}>,< Loc_{1},...,Loc_{m}>,...\}$，然后将$TraFP_{i}$和$TraSQ_{i}$作为当前维度计算的数据输入，计算用户基于轨迹运动模式的相似度，将其作为用户基于GPS轨迹关系强度计算结果之一输出。
 
 \subsection{用户WiFi感知数据的处理和输入}
+\label{sec:wifi_input}
 WiFi和蓝牙作为一种主动对外界感知和探索所得到的感知信息，已经证实能够被用来分析用户之间的社交关系。在日常生活中WiFi的感知距离因为受到发射器功率以及周围环境的影响，导致正常WiFi的覆盖范围大约在20米左右。当用户处在不用的上下文环境中时其周围能够被StarLog所感知到的WiFi环境也是不同的。我们首先针对用户每天所收集的WiFi感知数据进行处理，假设搜集的所有WiFi感知上下文数据为$WiFi\_D$，进一步表示为$WiFi_D=\{  WiFi\_D_{1},WiFi\_D_{2},...WiFi\_D_{n}  \}$，$WiFi\_D_{i}$表示用户$u_{i}$在所有时间$Date_{i}$内所采集的WiFi上下文感知数据。用户$u_{i}$每天采集的数据我们用$WiFi\_D_{i,k}$表示其在日期为$k$天时采集的WiFi感知数据，对于用户在第$k$天的数据，我们将会按照时间片进行切分（这里将会采用更加细粒度的时间，以为了计算的可信性保证）将用户每天的WiFi感知数据按照15分钟的时间刻度划分为96份，用$Sli\_WiFi$表示，$Sli\_WiFi_{i,k}=\{Sli\_WiFi_{i,k,1},Sli\_WiFi_{i,k,2},...,Sli\_WiFi_{i,k,96}\}$，由数据的定义可知$Sli\_WiFi_{i,k,m} \in WiFi\_D_{i,k}$。对于每一个感知时刻$t$得到的WiFi上下文数据$Sli\_WiFi_{i,k,t}$，我们采用采用图\ref{fig:wifi_context_graph}中的图形数据结构进行处理，将$Sli\_WiFi$作为基于WiFi感知数据计算用户之间社交关系的数据输入。
 
 \subsection{用户蓝牙感知数据的处理和输入}
+\label{sec:bl_input}
 相比于WiFi设备的感知距离，蓝牙设备的感知距离进一步受限缩减为5到10米左右，在这样短距离的情况下，则可以考虑二者有现实生活中的交互。当用户处在不用的上下文环境中时其周围能够被StarLog所感知到的蓝牙环境也是不同的。我们首先针对用户每天所收集的蓝牙感知数据进行处理，假设搜集的所有蓝牙感知上下文数据为$Bth\_D$，进一步表示为$Bth\_D=\{Bth\_D_{1},Bth\_D_{2},...Bth\_D_{n} \}$，$Bth\_D_{i}$表示用户$u_{i}$在所有时间$Date_{i}$内所采集的蓝牙上下文感知数据。用户$u_{i}$每天采集的数据我们用$Bth\_D_{i,k}$表示其在日期为$k$天时采集的蓝牙感知数据，对于用户在第$k$天的数据，我们将会按照时间片进行切分（这里将会采用更加细粒度的时间，以为了计算的可信性保证）将用户每天的蓝牙感知数据按照15分钟的时间刻度划分为96份，用$Sli\_Bth$表示，$Sli\_Bth_{i,k}=\{Sli\_Bth_{i,k,1},Sli\_Bth_{i,k,2},...,Sli\_Bth_{i,k,96}\}$，由数据的定义可知$Sli\_Bth_{i,k,m} \in Bth\_D_{i,k}$。对于每一个感知时刻$t$得到的蓝牙上下文数据$Sli\_Bth_{i,k,t}$，我们采用采用图\ref{fig:bluetooth_context_graph} 中的图形数据结构进行处理，将$Sli\_Bth$作为基于蓝牙感知数据计算用户之间社交关系的数据输入。
 \par 在准备好了RSMHD模型中各个计算模块的输入数据之后，接下来我们将根据每个模块中的输入数据详细介绍如何经过RSMHD的处理计算输出之间的社交关系强度。
 \section{RSMHD计算用户支之间的关系强度}
@@ -791,13 +793,13 @@ WiFi和蓝牙作为一种主动对外界感知和探索所得到的感知信息�
 \subsection{基于用户轨迹数据的关系强度计算}
 在这里我们需要计算用户集$U$中的用户$u_{i}$与用户$u_{j}$之间基于位置轨迹感知数据而得到的关系强度（$u_{j} \in U,u_{j} \neq u_{i}$）。根据图\ref{figure7_1_tra}以及图\ref{figure4_2}中的计算模块的详细流程描述，我们需要分别从三个维度，三种数据粒度来计算轨迹数据之间的相似性并得出用户之间的关系强度结果。
 \subsubsection{基于用户GPS轨迹数据的关系强度计算}
-针对采集到的用户GPS轨迹数据$Tra$，经过滤波、时间片切分后我们得到了每位用户经过处理后的位置轨迹数据集合$Ntra_{i}$，我们采用加权的DTW算法来计算基于$Ntra$的用户间的关系强度。对于需要计算的对象用户$u_{i}$与用户$u_{j}$，我们分从轨迹数据集$Tra$中找出各自所对应的轨迹数据，并处理得到$Ntra_{i}$和$Ntra_{j}$，然后以自然日为比较单位，计算$Ntra_{i,x}$和$Ntra_{j,y}$之间的相似度，其中$x \ Date_{i}$，$y \ Date_{j}$，分别表示用户$u_{i}$与$u_{j}$在时间日期为$x$和$y$当天收集的位置轨迹数据。为了便于识别用户轨迹数据是否是相同日期，我们令$W_{x,y}=1$如果当前$x=y$，否则$W_{x,y}=0$，调用函数$DTW(Ntra_{i,x},Ntra_{j,y})$计算返回用户$u_{i}$在日期为$x$和用户$u_{j}$在日期为$y$这天的空间轨迹相似度，具体计算用户之间基于空间轨迹的关系强度的数学公式描述如公式\ref{equ:chap4:dtw}，最后根据轨迹序列长度对结算结果进行加权处理。
+针对采集到的用户GPS轨迹数据$Tra$，经过滤波、时间片切分后我们得到了每位用户经过处理后的位置轨迹数据集合$Ntra_{i}$，我们采用加权的DTW算法来计算基于$Ntra$的用户间的关系强度。对于需要计算的对象用户$u_{i}$与用户$u_{j}$，我们分从轨迹数据集$Tra$中找出各自所对应的轨迹数据，并处理得到$Ntra_{i}$和$Ntra_{j}$，然后以自然日为比较单位，计算$Ntra_{i,x}$和$Ntra_{j,y}$之间的相似度，其中$x 、 Date_{i}$，$y 、 Date_{j}$，分别表示用户$u_{i}$与$u_{j}$在时间日期为$x$和$y$当天收集的位置轨迹数据。为了便于识别用户轨迹数据是否是相同日期，我们令$W_{x,y}=1$如果当前$x=y$，否则$W_{x,y}=0$，调用函数$DTW(Ntra_{i,x},Ntra_{j,y})$计算返回用户$u_{i}$在日期为$x$和用户$u_{j}$在日期为$y$这天的空间轨迹相似度，具体计算用户之间基于空间轨迹的关系强度的数学公式描述如公式\ref{equ:chap4:dtw}，最后根据轨迹序列长度对结算结果进行加权处理。
 \begin{equation}
 \label{equ:chap4:dtw}
 RS_{dtw}(u_{i},u_{j})=\sum_{x ,y }^{ Date_{i}, Date_{j}}W_{x,y}\sum_{s=1}^{24} \frac{DTW(Ntra_{i,x,s},Ntra_{j,y,s})}{Max(\left | Ntra_{i,x,s},Ntra_{j,y,s}  \right |)}
 \end{equation}
 \subsubsection{基于用户日常语义轨迹的关系强度计算}
-基于空间轨迹的度量能够反映出用户在地理空间上的相遇或者相邻，基于语义轨迹的度量能够进一步得出用户之间的关系强度。通过将用户的空间轨迹语义化得到语义化轨迹序列$Ltra$，$Ltra_{i}$代表前小节中得到的用户$u_{i}$的语义轨迹序列集合。$W_{i,j,x,y,s,t}$表示用户$u_{i}$在日期为$x$这天的第$s$个时间片下的语义轨迹序列和用户$u_{j}$在日期为$y$这天的第$t$个时间片下的语义轨迹序列，由已有知识可知，当且仅当$x=y$且时间片$s$和$t$下均有数据时，$W_{i,j,x,y,s,t}=1$，否则$W_{i,j,x,y,s,t}=0$。我们将用户每段时间内的语义轨迹看做是一条语句，每一个语义位置标签$Loc_{m}$当做句子分词后的词语，同时将每个语义标签的出现次数作为此语义标签的权值；接下来通过hash函数计算每一个词语$Loc_{m}$的n-bit签名（n的值需要参考整篇文档中的词语数量）；然后采用$w=词语hash*词语权值*(-1)^{bit}$对每个词语的签名进行加权处理，$(-1)^{bit}$的作用是当hash中bit位为0时结果乘以-1，当bit为1时结果乘以1；接下来就将当前时间段内的语义标签进行合并，将标签hash进行相加得到并对相加结果进行逐位扫描（如果位大于0就令当前位为1，否则为0）最后计算它们的余弦相似度得到结果，变换流程如图\ref{fig:quick_hash}所示，相似度计算公式如\ref{equ:chap4:simhash}所示。
+基于空间轨迹的度量能够反映出用户在地理空间上的相遇或者相邻，基于语义轨迹的度量能够进一步得出用户之间的关系强度。通过将用户的空间轨迹语义化得到语义化轨迹序列$Ltra$，$Ltra_{i}$代表前小节中得到的用户$u_{i}$的语义轨迹序列集合。$W_{i,j,x,y,s,t}$表示用户$u_{i}$在日期为$x$这天的第$s$个时间片下的语义轨迹序列和用户$u_{j}$在日期为$y$这天的第$t$个时间片下的语义轨迹序列，由已有知识可知，当且仅当$x=y$且时间片$s$和$t$下均有数据时，$W_{i,j,x,y,s,t}=1$，否则$W_{i,j,x,y,s,t}=0$。我们将用户每段时间内的语义轨迹看做是一条语句，每一个语义位置标签$Loc_{m}$当做句子分词后的词语，同时将每个语义标签的出现次数作为此语义标签的权值；接下来通过hash函数计算每一个词语$Loc_{m}$的n-bit签名（n的值需要参考整篇文档中的词语数量）；然后采用$w=\text{词语}hash*\text{词语权值}*(-1)^{bit}$对每个词语的签名进行加权处理，$(-1)^{bit}$的作用是当hash中bit位为0时结果乘以-1，当bit为1时结果乘以1；接下来就将当前时间段内的语义标签进行合并，将标签hash进行相加得到并对相加结果进行逐位扫描（如果位大于0就令当前位为1，否则为0）最后计算它们的余弦相似度得到结果，变换流程如图\ref{fig:quick_hash}所示，相似度计算公式如\ref{equ:chap4:simhash}所示。
 \begin{equation}
 \label{equ:chap4:simhash}
 RS_{Ltra}(u_{i},u_{j})=\sum_{x ,y }^{ Date_{i}, Date_{j}}W_{i,j,x,y,s,t}\sum_{s,t=1}^{24} cos(quick\_hash(Ntra_{i,x,s},Ntra_{j,y,t}))
@@ -829,7 +831,7 @@ RS_{Ltra}(u_{i},u_{j})=\sum_{x ,y }^{ Date_{i}, Date_{j}}W_{i,j,x,y,s,t}\sum_{s,
     \STATE \mbox{{$L_{k} = \left \{   c\in C_{k}  |  c.num /\sum_{i=1}^{n}w_{n} \geq MinSup  \right \}$ }}
     \ENDWHILE
     \STATE {$TraFP_{i,k}=TraFP_{i,k}\cup L_{k}$}
-    \STATE \RETURN{$TraFP_{i,k}$}			
+    \RETURN{$TraFP_{i,k}$}			
 \end{algorithmic}
 \end{algorithm}
 \par 其中$C_{temp}$代表频繁项集的候选项，$w_{temp}$则表示语义轨迹$Ltra_{i,k,temp}$的权值，即最长语义标签时间除以时间窗口值与记录中不同语义标签数量的倒数乘积，用户关系强度计算公式如\ref{equ:chap4:rs_trafp} 。
@@ -837,9 +839,38 @@ RS_{Ltra}(u_{i},u_{j})=\sum_{x ,y }^{ Date_{i}, Date_{j}}W_{i,j,x,y,s,t}\sum_{s,
 \label{equ:chap4:rs_trafp}
 RS_{TraFP}(u_{i},u_{j})=\sum_{x ,y }^{ Date_{i}, Date_{j}} p_{x,y} W_{i,j,x,y} \left |TraFP_{i,x} \cap TraFP_{j,y}   \right |
 \end{equation}
-\par 公式\ref{equ:chap4:rs_trafp}中
+\par 公式\ref{equ:chap4:rs_trafp}中$p_{x,y}$是对计算过程进行加权的权值，$p_{x,y}=1-{p}'\log_{2}^{{p}'}$，${p}'$是由公式\ref{equ:chap4:p}计算得到的。
+\begin{equation}
+\label{equ:chap4:p}
+{p}'=\frac{\left |TraFP_{i,x} \cap TraFP_{j,y}   \right |}{\left |TraFP_{i,x} + TraFP_{j,y}   \right |}
+\end{equation}
+\par 最后我们将每个维度所计算的结果进行合并得到用户$u_{i}$和$u_{j}$基于GPS轨迹数据的关系强度计算结果如公式\ref{equ:chap4:rs_tra}，其中$ \sum_{i=1}^{n}\frac{1}{w_{i}}=1$，为了便于计算我们可以取$\frac{1}{w_{i}}=\frac{1}{n}$。
+\begin{equation}
+\label{equ:chap4:rs_tra}
+RS_{Tra}=\frac{1}{w_{1}} RS_{dtw}(u_{i},u_{j})+\frac{1}{w_{2}}RS_{Ltra}(u_{i},u_{j})+\frac{1}{w_{3}}RS_{TraFP}(u_{i},u_{j})  
+\end{equation}
+\subsection{基于用户WiFi感知数据的关系强度计算}
+根据节\ref{sec:wifi_input}中的WiFi输入数据$WiFi\_D$，我们对用户$u_{i}$和$u_{j}$分别基于WiFi感知数据$WiFi\_D_{i,x}$和$WiFi\_D_{i,y}$进行关系强度计算，$W_{i,j,x,y,s,t}$表示用户$u_{i}$在日期为$x$这天的第$s$个时间片下的WiFi感知上下文数据和用户$u_{j}$在日期为$y$这天的第$t$个时间片下的WiFi感知上下文数据，由已有知识可知，当且仅当$x=y$且时间片$s$和$t$下均有数据时，$W_{i,j,x,y,s,t}=1$，否则$W_{i,j,x,y,s,t}=0$。根据图\ref{fig:wifi_context_graph}中所展示的WiFi数据的图结构表示，我们可以得到基于WiFi感知数据的用户关系强度计算方法如公式\ref{equ:chap4:rs_wifi}所示。
+\begin{equation}
+\label{equ:chap4:rs_wifi}
+RS_{dtw}(u_{i},u_{j})=\sum_{x ,y }^{ Date_{i}, Date_{j}}W_{i,j,x,y,s,t}\sum_{s,t=1}^{96} \frac{C}{ \left |\Gamma (a_{i})  \right |\left |\Gamma (b_{j})  \right | } \sum_{m}^{\left |\Gamma (a_{i})  \right |}  \sum_{n}^{\left |\Gamma (b_{j})  \right |}s(\Gamma_{m} (a_{i}),\Gamma_{n} (b_{j}))
+\end{equation}
+%\begin{equation}
+%\label{equ:chap4:rs_wifimuti}
+%RS_{dtw}(u_{i},u_{j})=
+%\begin{cases}
+%0 &  \centerline {{\Gamma (a_{i})= \varnothing  or \Gamma (b_{j})=\varnothing }}\\
+%1 & \centerline{{\Gamma (a_{i})=\Gamma (b_{j})}}\\
+%\sum_{x ,y }^{ Date_{i}, Date_{j}}W_{i,j,x,y,s,t}\sum_{s,t=1}^{96} \frac{C}{ \left |\Gamma (a_{i})  \right |\left |\Gamma (b_{j})  \right | } \sum_{m}^{\left |\Gamma (a_{i})  \right |}  \sum_{n}^{\left |\Gamma (b_{j})  \right |}s(\Gamma_{m} (a_{i}),\Gamma_{n} (b_{j})) 
+%\end{cases}
+%\end{equation}
+\par 公式\ref{equ:chap4:rs_wifi}中$\Gamma (a_{i}) $表示图中所有指向用户$u_{i}$设备的WiFi节点的集合，$\Gamma (b_{j}) $表示图中所有指向用户$u_{j}$设备的WiFi节点的集合。$s(\Gamma_{m} (a_{i}),\Gamma_{n} (b_{j}))$表示两个用户设备当前WiFi上下文环境的相似，当$\Gamma (a_{i})= \O$或者$\Gamma (b_{j})=\O$时候，$s(\Gamma_{m} (a_{i}),\Gamma_{n} (b_{j}))=0$，当且仅当$\Gamma (a_{i})=\Gamma (b_{j})$时，$s(\Gamma_{m} (a_{i}),\Gamma_{n} (b_{j}))=1$。
 
-\subsection{结果投票}
+\subsection{基于用户蓝牙感知数据的关系强度计算}
+在前面章节中我们详细描述了将用户蓝牙感知数据参照WiFi感知数据计算关系强度的方法来计算用户之间的关系强度，根据节\ref{sec:bl_input}中的用户蓝牙数据$Bth\_D$，我们对用户$u_{i}$和$u_{j}$分别基于WiFi感知数据$Bth\_D_{i,x}$和$Bth\_D_{i,y}$进行关系强度计算。设$W_{i,j,x,y,s,t}$表示用户$u_{i}$在日期为$x$这天的第$s$个时间片下的蓝牙感知上下文数据和用户$u_{j}$在日期为$y$这天的第$t$个时间片下的蓝牙感知上下文数据，由已有知识可知，当且仅当$x=y$且时间片$s$和$t$下均有数据时，$W_{i,j,x,y,s,t}=1$，否则$W_{i,j,x,y,s,t}=0$，详细的计算方法同\ref{equ:chap4:rs_wifi}中描述大同小异，这里为了节约篇幅便不再赘述。
+
+\subsection{关系强度计算结果融合}
+
 对于用户$u_{i}$，我们对其全部好友$F_{i}$中的每一个朋友$u_{k}$使用$Ent_DTW(u_{i},u_{k})$计算用户$u_{i}$和用户$u_{k}$之间的关系强度，并对$F_{i}$中的每一个朋友按照计算得到的关系强度降序排列得到$E_{i}=\{u_{d_{1}},...,u_{d_{f_{i}}}\}$，其中$Ent_DTW(u_{i},u_{d_{a}})>Ent_DTW(u_{i},u_{d_{b}})$如果$a<b$。在此基础上，我们使用$LocLDA(u_{i},u_{k})$或者$LocW2V(u_{i},u_{k})$ 计算用户$u_{i}$和用户$u_{k}$ 之间的关系强度，并对$F_{i}$中的每一个朋友按照计算得到的关系强度降序排列得到$L_{i}=\{u_{l_{1}},...,u_{l_{f_{i}}}\}$，其中$LocLDA(u_{i},u_{l_{a}})>LocLDA(u_{i},u_{l_{b}})$或者$LocW2V(u_{i},u_{l_{a}})>LocW2V(u_{i},u_{l_{b}})$如果$a<b$。 最后我们使用$SemLDA(u_{i},u_{k})$或者$SemW2V(u_{i},u_{k})$计算用户$u_{i}$ 和用户$u_{k}$之间的关系强度，并对$F_{i}$ 中的每一个朋友按照计算得到的关系强度降序排列得到$S_{i}=\{u_{s_{1}},...,u_{s_{f_{i}}}\}$，其中$SemLDA(u_{i},u_{l_{a}})>SemLDA(u_{i},u_{l_{b}})$或者$SemW2V(u_{i},u_{l_{a}})>SemW2V(u_{i},u_{l_{b}})$如果$a<b$。 我们采用集成学习的思想对三个层次的计算结果$E_{i}$、$L_{i}$、$S_{i}$ 进行投票，投票规则为：对于与用户$u_{i}$关系第$k$强的好友$u_{v_{k}}$（$k\leq 1$且$k\ll f_{i}$），我们使用三个层次对应的方法分别计算得到$u_{d_{k}}$、$u_{l_{k}}$ 和$u_{s_{k}}$，若这三个用户都不相同，则我们认为$u_{v_{k}}=u_{d_{k}}$，若某个用户比如$u_{l_{k}}=u_{s_{k}}$出现两次及以上，我们认为$u_{v_{k}}=u_{l_{k}}$。以$V_{i}=\{u_{v_{1}},...,u_{v_{f_{1}}}\}$作为投票的最终结果。
 \section{小结}
 \label{sec:section4-4}
