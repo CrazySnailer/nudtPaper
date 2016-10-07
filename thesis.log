@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2016.1.8)  6 OCT 2016 20:59
+This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2016.1.8)  7 OCT 2016 08:34
 entering extended mode
 **thesis
 (E:\Research_Study\nudtPaper\thesis.tex
@@ -2130,13 +2130,11 @@ Missing character: There is no 权 in font txr!
 Missing character: There is no 值 in font txr!
 [53]
 File: figures/figure5_quick_hash.png Graphic file (type QTm)
- <use  "figures/figure5_quick_hash.png" >
+ <use  "figures/figure5_quick_hash.png" > [54]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [54]
-[55] [56
-
-] [57
+ [55]
+[56] [57
 
 
 ] [58] [59]
@@ -2148,7 +2146,7 @@ File: figures/figure5_2.jpg Graphic file (type QTm)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [61]
-Underfull \hbox (badness 10000) in alignment at lines 981--1020
+Underfull \hbox (badness 10000) in alignment at lines 1005--1044
 [][] 
  []
 
@@ -2269,10 +2267,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 27272 strings out of 430478
- 493060 string characters out of 3191503
- 572772 words of memory out of 3000000
- 29873 multiletter control sequences out of 15000+200000
+ 27275 strings out of 430478
+ 493105 string characters out of 3191503
+ 572816 words of memory out of 3000000
+ 29876 multiletter control sequences out of 15000+200000
  68222 words of font info for 270 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  51i,13n,85p,1341b,964s stack positions out of 5000i,500n,10000p,200000b,50000s

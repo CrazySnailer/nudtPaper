@@ -800,7 +800,7 @@ RS_{dtw}(u_{i},u_{j})=\sum_{x ,y }^{ Date_{i}, Date_{j}}W_{x,y}\sum_{s=1}^{24} \
 基于空间轨迹的度量能够反映出用户在地理空间上的相遇或者相邻，基于语义轨迹的度量能够进一步得出用户之间的关系强度。通过将用户的空间轨迹语义化得到语义化轨迹序列$Ltra$，$Ltra_{i}$代表前小节中得到的用户$u_{i}$的语义轨迹序列集合。$W_{i,j,x,y,s,t}$表示用户$u_{i}$在日期为$x$这天的第$s$个时间片下的语义轨迹序列和用户$u_{j}$在日期为$y$这天的第$t$个时间片下的语义轨迹序列，由已有知识可知，当且仅当$x=y$且时间片$s$和$t$下均有数据时，$W_{i,j,x,y,s,t}=1$，否则$W_{i,j,x,y,s,t}=0$。我们将用户每段时间内的语义轨迹看做是一条语句，每一个语义位置标签$Loc_{m}$当做句子分词后的词语，同时将每个语义标签的出现次数作为此语义标签的权值；接下来通过hash函数计算每一个词语$Loc_{m}$的n-bit签名（n的值需要参考整篇文档中的词语数量）；然后采用$w=词语hash*词语权值*(-1)^{bit}$对每个词语的签名进行加权处理，$(-1)^{bit}$的作用是当hash中bit位为0时结果乘以-1，当bit为1时结果乘以1；接下来就将当前时间段内的语义标签进行合并，将标签hash进行相加得到并对相加结果进行逐位扫描（如果位大于0就令当前位为1，否则为0）最后计算它们的余弦相似度得到结果，变换流程如图\ref{fig:quick_hash}所示，相似度计算公式如\ref{equ:chap4:simhash}所示。
 \begin{equation}
 \label{equ:chap4:simhash}
-RS_{Ltra}=\sum_{x ,y }^{ Date_{i}, Date_{j}}W_{i,j,x,y,s,t}\sum_{s,t=1}^{24} cos(quick\_hash(Ntra_{i,x,s},Ntra_{j,y,t}))
+RS_{Ltra}(u_{i},u_{j})=\sum_{x ,y }^{ Date_{i}, Date_{j}}W_{i,j,x,y,s,t}\sum_{s,t=1}^{24} cos(quick\_hash(Ntra_{i,x,s},Ntra_{j,y,t}))
 \end{equation}
 \begin{figure}[htb]
 \centering
@@ -809,7 +809,36 @@ RS_{Ltra}=\sum_{x ,y }^{ Date_{i}, Date_{j}}W_{i,j,x,y,s,t}\sum_{s,t=1}^{24} cos
 \label{fig:quick_hash}
 \end{figure}
 \subsubsection{基于用户轨迹运动模式的关系强度计算}
-人们的日常活动具有很强的时间和空间的规律性，因此用户的轨迹运动模式能反映出用户之间的相似性。我们根据前面小节中得到的用户$u_{i}$语义轨迹的频繁模式$TraFP_{i}$和序列模式$TraSQ_{i}$，为确保计算结果的准确性，假设$W_{i,j,x,y}$表示用户$u_{i}$与$u_{j}$在时间日期为$x$和$y$计算得到的语义轨迹频繁模式或序列模式的存在性权值，当且仅当$x=y$且当天得到的轨迹运动模式不为空时令$W_{i,j,x,y}=1$否则$W_{i,j,x,y}=0$。
+人们的日常活动具有很强的时间和空间的规律性，因此用户的轨迹运动模式能反映出用户之间的相似性。我们根据前面小节中得到的用户$u_{i}$语义轨迹的频繁模式$TraFP_{i}$和序列模式$TraSQ_{i}$，为确保计算结果的准确性，假设$W_{i,j,x,y}$表示用户$u_{i}$与$u_{j}$在时间日期为$x$和$y$计算得到的语义轨迹频繁模式或序列模式的存在性权值，当且仅当$x=y$且当天得到的轨迹运动模式不为空时取$W_{i,j,x,y}=1$否则取$W_{i,j,x,y}=0$。在计算过程中，分别将用户$u_{i}$、$u_{j}$的轨迹运动模式结果$TraFP_{i}$和$TraFP_{j}$、$TraSQ_{i}$和$TraSQ_{j}$做比较，通过比较在同一日期所得到的轨迹运动模型相似度来推测计算用户之间的关系强度，用户在日常活动轨迹中访问某个位置的次数以及持续时间导致了在最终计算过程中每段位置的贡献度不同，因此本文采用语义位置的持续时间以及频率对结果进行加权，得到最终的加权后的轨迹运动模式，$TraFP$加权计算算法如算法\ref{weightfrequency}所示。
+\begin{algorithm}[H]
+    \caption{用户轨迹运动模式加权算法}
+    \label{weightfrequency}
+    \begin{algorithmic}[1] %每行显示行号
+    \REQUIRE 用户的语义轨迹$Ltra_{i,k}$
+    \ENSURE 加权后的用户轨迹运动模式$TraFP_{i,k}$
+    \STATE $L_{1}= get_{1}FP(Ltra_{i,k})$
+    \STATE $k=2$
+    \WHILE {$L_{k}\neq \emptyset $}
+    \STATE $C_{k}=apriori(L_{k})$
+    \FOR {$each \ set \ in \ SP\_tra_{i,k}$}
+    \STATE $C_{temp}=C_{k}\cap set$
+    \FOR {each item in $C_{temp}$}
+    \STATE $c.num+=w_{temp}$
+    \ENDFOR
+    \ENDFOR	
+    \STATE \mbox{{$L_{k} = \left \{   c\in C_{k}  |  c.num /\sum_{i=1}^{n}w_{n} \geq MinSup  \right \}$ }}
+    \ENDWHILE
+    \STATE {$TraFP_{i,k}=TraFP_{i,k}\cup L_{k}$}
+    \STATE \RETURN{$TraFP_{i,k}$}			
+\end{algorithmic}
+\end{algorithm}
+\par 其中$C_{temp}$代表频繁项集的候选项，$w_{temp}$则表示语义轨迹$Ltra_{i,k,temp}$的权值，即最长语义标签时间除以时间窗口值与记录中不同语义标签数量的倒数乘积，用户关系强度计算公式如\ref{equ:chap4:rs_trafp} 。
+\begin{equation}
+\label{equ:chap4:rs_trafp}
+RS_{TraFP}(u_{i},u_{j})=\sum_{x ,y }^{ Date_{i}, Date_{j}} p_{x,y} W_{i,j,x,y} \left |TraFP_{i,x} \cap TraFP_{j,y}   \right |
+\end{equation}
+\par 公式\ref{equ:chap4:rs_trafp}中
+
 \subsection{结果投票}
 对于用户$u_{i}$，我们对其全部好友$F_{i}$中的每一个朋友$u_{k}$使用$Ent_DTW(u_{i},u_{k})$计算用户$u_{i}$和用户$u_{k}$之间的关系强度，并对$F_{i}$中的每一个朋友按照计算得到的关系强度降序排列得到$E_{i}=\{u_{d_{1}},...,u_{d_{f_{i}}}\}$，其中$Ent_DTW(u_{i},u_{d_{a}})>Ent_DTW(u_{i},u_{d_{b}})$如果$a<b$。在此基础上，我们使用$LocLDA(u_{i},u_{k})$或者$LocW2V(u_{i},u_{k})$ 计算用户$u_{i}$和用户$u_{k}$ 之间的关系强度，并对$F_{i}$中的每一个朋友按照计算得到的关系强度降序排列得到$L_{i}=\{u_{l_{1}},...,u_{l_{f_{i}}}\}$，其中$LocLDA(u_{i},u_{l_{a}})>LocLDA(u_{i},u_{l_{b}})$或者$LocW2V(u_{i},u_{l_{a}})>LocW2V(u_{i},u_{l_{b}})$如果$a<b$。 最后我们使用$SemLDA(u_{i},u_{k})$或者$SemW2V(u_{i},u_{k})$计算用户$u_{i}$ 和用户$u_{k}$之间的关系强度，并对$F_{i}$ 中的每一个朋友按照计算得到的关系强度降序排列得到$S_{i}=\{u_{s_{1}},...,u_{s_{f_{i}}}\}$，其中$SemLDA(u_{i},u_{l_{a}})>SemLDA(u_{i},u_{l_{b}})$或者$SemW2V(u_{i},u_{l_{a}})>SemW2V(u_{i},u_{l_{b}})$如果$a<b$。 我们采用集成学习的思想对三个层次的计算结果$E_{i}$、$L_{i}$、$S_{i}$ 进行投票，投票规则为：对于与用户$u_{i}$关系第$k$强的好友$u_{v_{k}}$（$k\leq 1$且$k\ll f_{i}$），我们使用三个层次对应的方法分别计算得到$u_{d_{k}}$、$u_{l_{k}}$ 和$u_{s_{k}}$，若这三个用户都不相同，则我们认为$u_{v_{k}}=u_{d_{k}}$，若某个用户比如$u_{l_{k}}=u_{s_{k}}$出现两次及以上，我们认为$u_{v_{k}}=u_{l_{k}}$。以$V_{i}=\{u_{v_{1}},...,u_{v_{f_{1}}}\}$作为投票的最终结果。
 \section{小结}
