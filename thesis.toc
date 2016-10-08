@@ -58,15 +58,15 @@
 \contentsline {section}{\numberline {5.4}小结}{58}{section.5.4}
 \contentsline {chapter}{\numberline {6}实验数据集与实验结果分析}{59}{chapter.6}
 \contentsline {section}{\numberline {6.1}实验数据集介绍}{59}{section.6.1}
-\contentsline {section}{\numberline {6.2}评估方法}{62}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}构造真实结果}{62}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}评估方法}{63}{subsection.6.2.2}
-\contentsline {section}{\numberline {6.3}实验结果与分析}{65}{section.6.3}
-\contentsline {section}{\numberline {6.4}小结}{73}{section.6.4}
-\contentsline {chapter}{\numberline {7}结束语}{77}{chapter.7}
-\contentsline {section}{\numberline {7.1}工作总结}{77}{section.7.1}
-\contentsline {section}{\numberline {7.2}工作展望}{78}{section.7.2}
-\contentsline {chapter}{致谢}{81}{chapter*.81}
-\contentsline {chapter}{参考文献}{83}{section*.82}
-\contentsline {chapter}{作者在学期间取得的学术成果}{89}{chapter*.84}
+\contentsline {section}{\numberline {6.2}实验结果验证方法}{61}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}获取用户关系强度结果}{61}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}评估方法}{62}{subsection.6.2.2}
+\contentsline {section}{\numberline {6.3}实验结果与分析}{64}{section.6.3}
+\contentsline {section}{\numberline {6.4}小结}{72}{section.6.4}
+\contentsline {chapter}{\numberline {7}结束语}{75}{chapter.7}
+\contentsline {section}{\numberline {7.1}工作总结}{75}{section.7.1}
+\contentsline {section}{\numberline {7.2}工作展望}{76}{section.7.2}
+\contentsline {chapter}{致谢}{79}{chapter*.80}
+\contentsline {chapter}{参考文献}{81}{section*.81}
+\contentsline {chapter}{作者在学期间取得的学术成果}{87}{chapter*.83}
 \contentsfinish 
