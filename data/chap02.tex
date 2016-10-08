@@ -871,10 +871,9 @@ RS_{WiFi}(u_{i},u_{j})=\sum_{x ,y }^{ Date_{i}, Date_{j}}W_{i,j,x,y,s,t}\sum_{s,
 本章就RSMHD各层中基于不同移动感知数据源的用户关系强度计算模块进行了细致的分析和讨论，首先对本课题研究提出的RSMHD用户关系强度计算框架的计算方法进行了简单概述，通过输入用户的GPS位置感知数据、WiFi和蓝牙上下文感知数据来计算用户之间的关系强度；其次，我们分别针对RSMHD模型中的不同层的源数据处理以及输入进行了完备的描述，为接下来计算做好数据准备；然后我们分别就如何基于用户GPS轨迹数据、用户WiFi上下文感知数据、用户蓝牙上下文感知数据计算用户之间的关系强度的方法进行阐述；最后我们采用集成学习的思想对每层的计算结果进行融合得到用户之间最终的关系强度结果。在下一章中我们将主要介绍本研究实验所采用的数据集，以及RSMHD用户关系计算模型所得出的结果等。
 \section{实验数据集介绍}
 \label{sec:section5-1}
-在实验的过程中，我们使用的是由自己基于文献\cite{rawassizadeh2013ubiqlog}中的收集框架改进的一款高效、能耗低、更精确的用于收集手机上下文数据感知收集的框架StarLog\upcite{xiaoyunsensor}。在文章开始我们将研究范围缩小至一个较小范围内进行，在此我们将校园及其周围作为研究的空间范围大小，校园的学生作为研究对象进行了手机上下文信息的采集工作。每位学生使用搭载Android 操作系统的智能手机运行StarLog 程序采集数据，采集的数据主要有：用户手机设备信息、用户的GPS位置轨迹信息、WiFi蓝牙设备使用信息、通话记录信息、社交软件使用信息、手机使用情况信息等。表\ref{tablesource}详细描述了收集的上下文数据的种类和类型。为了进一步保护用户的隐私，我们对敏感信息进行了脱敏处理，并且用户在StarLog 上可以自主的选择收集哪些传感器数据以及上传哪些上下文数据结果。
+在实验的过程中，我们使用的是由自己基于文献\cite{rawassizadeh2013ubiqlog}中的收集框架改进的一款高效、能耗低、更精确的用于收集手机上下文数据感知收集的框架StarLog\upcite{xiaoyunsensor}。在文章开始我们将研究范围缩小至一个较小范围内进行，在此我们将校园及其周围作为研究的空间范围大小，校园的学生作为研究对象进行了手机上下文信息的采集工作，参与数据采集的学生分布情况以及其它信息如图 所示。每位学生使用搭载Android 操作系统的智能手机运行StarLog 程序采集数据，采集的数据主要有：用户手机设备信息、用户的GPS位置轨迹信息、WiFi蓝牙设备使用信息、通话记录信息、社交软件使用信息、手机使用情况信息等。表\ref{tablesource}详细描述了收集的上下文数据的种类和类型。为了保护用户的隐私，我们对部分敏感信息进行了脱敏处理，并且用户在StarLog上可以自主的选择所需要收集的传感器数据。
 \begin{center}
 \begin{table}[H]
-	
 	\renewcommand{\arraystretch}{1.3}
 	% if using array.sty, it might be a good idea to tweak the value of
 	% \extrarowheight as needed to properly center the text within the cells
@@ -884,7 +883,7 @@ RS_{WiFi}(u_{i},u_{j})=\sum_{x ,y }^{ Date_{i}, Date_{j}}W_{i,j,x,y,s,t}\sum_{s,
 	\centering
 	%% Some packages, such as MDW tools, offer better commands for making tables
 	%% than the plain LaTeX2e tabular which is used here.
-	\begin{tabular}{p{5cm} p{5cm} p{5cm}}
+	\begin{tabular}{p{4cm} p{4cm} p{4cm}}
 		\toprule[2pt]
 		\textbf{数据种类} & \textbf{上下文源} & \textbf{数据类型} \\
 		\hline
@@ -925,7 +924,7 @@ RS_{WiFi}(u_{i},u_{j})=\sum_{x ,y }^{ Date_{i}, Date_{j}}W_{i,j,x,y,s,t}\sum_{s,
 	\end{tabular}
 \end{table}
 \end{center}
-
+用户
 \begin{table}[htbp]
   \centering
 %  \begin{minipage}[t]{0.8\linewidth} % 如果想在表格中使用脚注，minipage是个不错的办法
