@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2016.1.8)  8 OCT 2016 11:12
+This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2016.1.8)  8 OCT 2016 19:34
 entering extended mode
 **thesis
 (E:\Research_Study\nudtPaper\thesis.tex
@@ -1280,6 +1280,18 @@ LaTeX Warning: Label `fig:tramodel' multiply defined.
 
 LaTeX Warning: Label `chap:chapter03' multiply defined.
 
+
+LaTeX Warning: Label `fig:sex' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:sex' multiply defined.
+
+
+LaTeX Warning: Label `fig:academy' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:academy' multiply defined.
+
 )
 LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 71.
 LaTeX Font Info:    Try loading font information for OML+txmi on input line 71.
@@ -1655,35 +1667,14 @@ LaTeX Font Info:    Font shape `U/fsy/m/n' will be
  [2] [3] [4
 
 ]
-(E:\Research_Study\nudtPaper\thesis.lot
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'AdobeSongStd(0)' created for font 'Adobe Song Std' with options
-. [Mapping=tex-text,BoldFont={Adobe Heiti Std},ItalicFont={Adobe Kaiti Std}].
-. 
-. This font family consists of the following shapes:
-.................................................
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'AdobeSongStd(1)' created for font 'Adobe Song Std' with options
-. [Mapping=tex-text,].
-. 
-. This font family consists of the following shapes:
-.................................................
-
-
-LaTeX Font Warning: Font shape `EU1/AdobeSongStd(1)/bx/n' undefined
-(Font)              using `EU1/AdobeSongStd(1)/m/n' instead on input line 1.
-
-)
+(E:\Research_Study\nudtPaper\thesis.lot)
 \tf@lot=\write6
  [5
 
 ] [6
 
-] (E:\Research_Study\nudtPaper\thesis.lof
+]
+(E:\Research_Study\nudtPaper\thesis.lof
 LaTeX Font Info:    Calculating math sizes for size <12.045> on input line 4.
 LaTeX Font Info:    Font shape `U/fsy/m/n' will be
 (Font)              scaled to size 10.84042pt on input line 4.
@@ -2189,26 +2180,32 @@ Missing character: There is no Ø in font txmi!
 . This font family consists of the following shapes:
 .................................................
 
-Overfull \hbox (35.99998pt too wide) in paragraph at lines 887--926
- [][] 
- []
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [59
 
 
 ]
-File: figures/figure5_1.jpg Graphic file (type QTm)
+File: figures/figure5_sex.png Graphic file (type QTm)
 
-<use  "figures/figure5_1.jpg" >
-File: figures/figure5_2.jpg Graphic file (type QTm)
- <use  "figures/figure5_2.jpg" > [60]
+<use  "figures/figure5_sex.png" >
+File: figures/figure5_academy.png Graphic file (type QTm)
+ <use  "figures/figure5_academy.png" >
+File: figures/figure5_class.png Graphic file (type QTm)
+
+<use  "figures/figure5_class.png" >
+File: figures/figure5_lab.png Graphic file (type QTm)
+ <use  "figures/figure5_lab.png" >
+File: figures/figure5_userNum.png Graphic file (type QTm)
+
+<use  "figures/figure5_userNum.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [61]
-Underfull \hbox (badness 10000) in alignment at lines 996--1035
+ [60]
+File: figures/figure5_2.jpg Graphic file (type QTm)
+
+<use  "figures/figure5_2.jpg" > [61]
+Underfull \hbox (badness 10000) in alignment at lines 980--1019
 [][] 
  []
 
@@ -2333,11 +2330,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 27312 strings out of 430478
- 494211 string characters out of 3191503
- 571304 words of memory out of 3000000
- 29900 multiletter control sequences out of 15000+200000
- 68326 words of font info for 283 fonts, out of 3000000 for 9000
+ 27313 strings out of 430478
+ 494038 string characters out of 3191503
+ 571554 words of memory out of 3000000
+ 29902 multiletter control sequences out of 15000+200000
+ 68286 words of font info for 278 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  51i,13n,85p,1341b,964s stack positions out of 5000i,500n,10000p,200000b,50000s
 

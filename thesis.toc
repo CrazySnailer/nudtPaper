@@ -66,7 +66,7 @@
 \contentsline {chapter}{\numberline {7}结束语}{77}{chapter.7}
 \contentsline {section}{\numberline {7.1}工作总结}{77}{section.7.1}
 \contentsline {section}{\numberline {7.2}工作展望}{78}{section.7.2}
-\contentsline {chapter}{致谢}{81}{chapter*.80}
-\contentsline {chapter}{参考文献}{83}{section*.81}
-\contentsline {chapter}{作者在学期间取得的学术成果}{89}{chapter*.83}
+\contentsline {chapter}{致谢}{81}{chapter*.81}
+\contentsline {chapter}{参考文献}{83}{section*.82}
+\contentsline {chapter}{作者在学期间取得的学术成果}{89}{chapter*.84}
 \contentsfinish 

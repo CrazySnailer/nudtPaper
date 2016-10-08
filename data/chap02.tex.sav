@@ -866,103 +866,91 @@ RS_{WiFi}(u_{i},u_{j})=\sum_{x ,y }^{ Date_{i}, Date_{j}}W_{i,j,x,y,s,t}\sum_{s,
 \clearpage
 \section{小结}
 \label{sec:section4-4}
-本章就RSMHD各层中基于不同移动感知数据源的用户关系强度计算模块进行了细致的分析和讨论，首先对本课题研究提出的RSMHD用户关系强度计算框架的计算方法进行了简单概述，通过输入用户的GPS位置感知数据、WiFi和蓝牙上下文感知数据来计算用户之间的关系强度；其次，我们分别针对RSMHD模型中的不同层的源数据处理以及输入进行了完备的描述，为接下来计算做好数据准备；然后我们分别就如何基于用户GPS轨迹数据、用户WiFi上下文感知数据、用户蓝牙上下文感知数据计算用户之间的关系强度的方法进行阐述；最后我们采用集成学习的思想对每层的计算结果进行融合得到用户之间最终的关系强度结果。在下一章中我们将主要介绍本研究实验所采用的数据集，以及RSMHD用户关系计算模型所得出的结果等。
 \chapter{实验数据集与实验结果分析}
 \label{chap:chapter03}
-在实验的过程中，我们使用的是由自己基于文献\cite{rawassizadeh2013ubiqlog}中的收集框架改进的一款高效、能耗低、更精确的用于收集手机上下文数据感知收集的框架StarLog\upcite{xiaoyunsensor}。在文章开始我们将研究范围缩小至一个较小范围内进行，在此我们将校园及其周围作为研究的空间范围大小，校园的学生作为研究对象进行了手机上下文信息的采集工作。每位学生使用搭载Android 操作系统的智能手机运行StarLog 程序采集数据，采集的数据主要有：用户手机设备信息、用户的GPS位置轨迹信息、WiFi蓝牙设备使用信息、通话记录信息、社交软件使用信息、手机使用情况信息等。表1详细描述了收集的上下文数据的种类和类型。为了进一步保护用户的隐私，我们对敏感信息进行了脱敏处理，并且用户在StarLog 上可以自主的选择收集哪些传感器数据以及上传哪些上下文数据结果。
+本章就RSMHD各层中基于不同移动感知数据源的用户关系强度计算模块进行了细致的分析和讨论，首先对本课题研究提出的RSMHD用户关系强度计算框架的计算方法进行了简单概述，通过输入用户的GPS位置感知数据、WiFi和蓝牙上下文感知数据来计算用户之间的关系强度；其次，我们分别针对RSMHD模型中的不同层的源数据处理以及输入进行了完备的描述，为接下来计算做好数据准备；然后我们分别就如何基于用户GPS轨迹数据、用户WiFi上下文感知数据、用户蓝牙上下文感知数据计算用户之间的关系强度的方法进行阐述；最后我们采用集成学习的思想对每层的计算结果进行融合得到用户之间最终的关系强度结果。在下一章中我们将主要介绍本研究实验所采用的数据集，以及RSMHD用户关系计算模型所得出的结果等。
 \section{实验数据集介绍}
 \label{sec:section5-1}
-我们采用真实场景下采集的数据作为验证数据集。数据集由MIT媒体实验室在2004-2005年主持的RealityMining项目收集整理得到。RealityMining 项目追踪了94个使用安装预装软件的手机的用户，这些预装软件能够记录并发送用户数据，比如：通话记录、近似5米范围内的蓝牙设备、基站塔编号、应用使用以及手机状态。该项目追踪观察了包括学生和来自同一个研究机构的两个课题组的职员总共九个月对手机的使用情况。与此同时，该项目收集了每个志愿者提供的关系数据比如谁和谁是朋友等。
-\par 每个志愿者使用Nokia6600在后台运行一个称为ContextLog的程序采集数据。在该项目中期，研究者组织了一次在线调查问卷，106 个志愿者中共有94 个人完成了该调查问卷。调查问卷内容见表\ref{tab:questionnaire}。 除此调查问卷外，采集的数据有每个志愿者手机的蓝牙MAC地址、每个志愿者开始参与该项目的日期、每个志愿者隶属的机构、每个志愿者隶属的研究小组、每个志愿者收集的IMEI、 每个志愿者的邻居、每个志愿者自己告知的工作时间、每个志愿者是否有一个规律的工作计划、每个志愿者自己告知的常去的聚集地、每个志愿者是否有一个可预言的日程安排、每个志愿者是不是把手机忘在家里或工作的地方、每个志愿者手机电量是不是经常耗光、每个志愿者生病频率、每个志愿者最近是否生病、每个志愿者是否经常出去旅游、给每个志愿者提供通话服务的运营商、每个用户每个月购买东西花费的时间、每个志愿者发短信的频率、每个志愿者是否经常被描述给其他人、每个治愈者对他所处团体的评价、每个志愿者的通信时间记录、每个志愿者收集充电记录、每个志愿者收集使用日期记录、每个志愿者手机采集数据的记录时间、每个志愿者开机关机时间记录、每个志愿者的轨迹数据记录（由基站号、区域号以及时间戳构成）、用户经过的唯一的位置（由基站号和区域号表示）、每个志愿者周围的蓝牙设备名称、每个志愿者周围的蓝牙设备的MAC地址、每个志愿者扫描周围蓝牙设备的时间、基站号及区域号对应的位置语义标签、每个志愿者使用应用的开始时间及使用时长、每个志愿者手机每天记录数据的时长、每个志愿者家对应的基站号和区域号扥等。基站号及区域号与对应的语义标签见表\ref{tab:baseSemantic}。
-\begin{longtable}[l]{l*{1}{l}}
-\caption{调查问卷\upcite{eagle2006reality}}\label{tab:questionnaire}\\
-\toprule[1.5pt]
- 问题及答案选项
-%\midrule[1pt]%
-\endfirsthead%
+在实验的过程中，我们使用的是由自己基于文献\cite{rawassizadeh2013ubiqlog}中的收集框架改进的一款高效、能耗低、更精确的用于收集手机上下文数据感知收集的框架StarLog\upcite{xiaoyunsensor}。在文章开始我们将研究范围缩小至一个较小范围内进行，在此我们将校园及其周围作为研究的空间范围大小，校园的学生作为研究对象进行了手机上下文信息的采集工作，参与数据采集的学生分布情况以及其它信息如图 所示。每位学生使用搭载Android 操作系统的智能手机运行StarLog 程序采集数据，采集的数据主要有：用户手机设备信息、用户的GPS位置轨迹信息、WiFi蓝牙设备使用信息、通话记录信息、社交软件使用信息、手机使用情况信息等。表\ref{tablesource}详细描述了收集的上下文数据的种类和类型。为了保护用户的隐私，我们对部分敏感信息进行了脱敏处理，并且用户在StarLog上可以自主的选择所需要收集的传感器数据。
+\begin{figure}[htb]
+  \centering%
+  \subfloat[原始轨迹数据]{%
+    \label{fig:3_2_2_1}
+    \includegraphics[height=4cm]{figure_4_mid_location2}}\hspace{4em}%
+  \subfloat[分段卡尔曼滤波数据]{%
+    \label{fig:3_2_2_2}
+    \includegraphics[height=4cm]{figure_4_mid_location2_kalman}}
+  \caption{分段卡尔曼滤波轨迹结果2}
+  \label{fig:3_5_2}
+\end{figure}
 
-\multicolumn{1}{l}{续表-调查问卷}\\
-\toprule[1.5pt]
- 问题及答案选项
-%\midrule[1pt]%
-\endhead%
-\hline%
 
-\multicolumn{1}{l}{续下页}%
+\begin{figure}[htb]
+  \centering%
+  \subfloat[原始轨迹数据]{%
+    \label{fig:3_2_2_1}
+    \includegraphics[height=4cm]{figure_4_mid_location2}}\hspace{4em}%
+  \subfloat[分段卡尔曼滤波数据]{%
+    \label{fig:3_2_2_2}
+    \includegraphics[height=4cm]{figure_4_mid_location2_kalman}}
+  \caption{分段卡尔曼滤波轨迹结果2}
+  \label{fig:3_5_2}
+\end{figure}
 
-\endfoot%
-\endlastfoot%
-(1)Have you travelled recently? \\
-1 Very often - more than a week/month 2 Often - week/month 3 Sometimes - \\
-several days/month 4 Rarely - several days/term 5 Never \\
-(2)Do you own a car? \\
-1 Yes 2 No \\
-(3)How many miles to you live from MIT? \\
-1. less than 1 2. 1-3 3. 4-10 4. more than 10 \\
-(4)How do you daily commute to MIT? \\
-1. By foot 2. By bike 3. By T/bus 4. By car \\
-(5)How much has your social network evolved since the start of Fall term? \\
-1. A lot 2. Somewhat 3. Slightly 4. None \\
-(6)Have you been sick recently? \\
-1. Yes, in the last week 2. Yes, in the last two weeks 3. Yes, in the last \\
-month 4. No \\
-(7)How long into the term did it take for your social circle to become what \\
-it is today? \\
-1. Still evolving 2. 2 months into term 3. 1 month into term 4. Several weeks\\
-into term 5. First couple of days here \\
-(8)I use my phone: \\
-1. exclusively for work/school related matters 2. primarily for work/school \\
-related matters,but occasionally for personal/social use \\
-3. equally for work/school and for personal/social use 4. primarily for personal\\
-/social use 5.exclusively for personal/social use \\
-(9)How often do you send text messages? \\
-1. Several times / day 2. once / day 3. once / week 4. once / month 5. never \\
-(10)The majority of my daily work communication is done through: (you can select\\
-more than one) face-face discussion \\
-1. Yes NaN. No \\
-(11)The majority of my daily work communication is done through: (you can select\\
-more than one) email \\
-2. Yes NaN. No \\
-(12)The majority of my daily work communication is done through: (you can select\\
-more than one) phone \\
-3. Yes NaN. No \\
-(13)The majority of my daily work communication is done through: (you can select\\
-more than one) text-messaging \\
-4. Yes NaN. No \\
-(14)The majority of my daily personal communication is done through: (you can \\
-select more than one) face-face discussion \\
-1. Yes NaN. No \\
-(15)The majority of my daily personal communication is done through: (you can \\
-select more than one) email \\
-2. Yes NaN. No \\
-(16)The majority of my daily personal communication is done through: (you can \\
-select more than one) phone \\
-3. Yes NaN. No \\
-(17)The majority of my daily personal communication is done through: (you can \\
-select more than one) text-messaging \\
-4. Yes NaN. No \\
-(18)I am satisfied with my experience at MIT thus far I am satisfied with my\\
-current social circle  \\
-1 – Strongly Agree 2, 3, 4, 5,6, 7 – Strongly Disagree \\
-(19)I am satisfied with my current social circle \\
-1 – Strongly Agree 2, 3, 4, 5,6, 7 – Strongly Disagree \\
-(20)I feel I have learned a lot this semester \\
-1 – Strongly Agree 2, 3, 4, 5,6, 7 – Strongly Disagree \\
-(21)I am satisfied with the content and direction of my classes and research \\
-this semester \\
-1 – Strongly Agree 2, 3, 4, 5,6, 7 – Strongly Disagree \\
-(22)I am satisfied with the support I received from my circle of friends \\
-1 – Strongly Agree 2, 3, 4, 5,6, 7 – Strongly Disagree \\
-(23)I am satisfied with the level of support I have received from the other \\
-members in my Media Lab research group/Sloan core team. \\
-1 – Strongly Agree 2, 3, 4, 5,6, 7 – Strongly Disagree \\
-(24)I am satisfied with the quality of our group meetings \\
-1 – Strongly Agree 2, 3, 4, 5,6, 7 – Strongly Disagree \\
-(25)I am satisfied with how my research group interacts on a personal level \\
-1 – Strongly Agree 2, 3, 4, 5,6, 7 – Strongly Disagree \\
-\bottomrule[1.5pt]
-\end{longtable}
 
+\begin{center}
+\begin{table}[H]
+	\renewcommand{\arraystretch}{1.3}
+	% if using array.sty, it might be a good idea to tweak the value of
+	% \extrarowheight as needed to properly center the text within the cells
+	\caption{ \textbf{\small{StarLog收集的上下文数据种类和类型}}}
+	\vspace{0.01cm}
+	\label{tablesource}
+	\centering
+	%% Some packages, such as MDW tools, offer better commands for making tables
+	%% than the plain LaTeX2e tabular which is used here.
+	\begin{tabular}{p{4cm} p{4cm} p{4cm}}
+		\toprule[2pt]
+		\textbf{数据种类} & \textbf{上下文源} & \textbf{数据类型} \\
+		\hline
+		& GPS 位置 & 数值型\\
+		\cline{2-3}
+		位置 & WiFi & 文本型\\
+		\cline{2-3}
+		& 蓝牙 & 文本型 \\
+		\hline
+		& 加速度 & 数值型\\
+		\cline{2-3}
+		活动 & 陀螺仪 & 数值型\\
+		\cline{2-3}
+		& 磁力计 & 数值型 \\
+		\cline{2-3}
+		& 手机距离 & 数值型 \\
+		\hline
+		& 应用使用 & 文本型\\
+		\cline{2-3}
+		用户交互 & 屏幕唤醒 & 文本型\\
+		\cline{2-3}
+		& 拍照 & 文本型 \\
+		\hline
+		& 通话记录 & 文本型, 音频\\
+		\cline{2-3}
+		社交活动 & 短信记录 & 文本型\\
+		\cline{2-3}
+		& 微信, QQ & 文本型 \\
+		\hline
+		& 充电状态 & 布尔型\\
+		\cline{2-3}
+		设备状态 & 网络接入状态 & 文本型\\
+		%\cline{2-3}
+		%& Ringer mode & 布尔型 \\
+		\cline{2-3}
+		& 设备模式 & 文本型 \\
+		\bottomrule[2pt]
+	\end{tabular}
+\end{table}
+\end{center}
+用户
 \begin{table}[htbp]
   \centering
 %  \begin{minipage}[t]{0.8\linewidth} % 如果想在表格中使用脚注，minipage是个不错的办法
