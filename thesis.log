@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2016.1.8)  7 OCT 2016 21:13
+This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2016.1.8)  8 OCT 2016 11:12
 entering extended mode
 **thesis
 (E:\Research_Study\nudtPaper\thesis.tex
@@ -1656,21 +1656,26 @@ LaTeX Font Info:    Font shape `U/fsy/m/n' will be
 
 ]
 (E:\Research_Study\nudtPaper\thesis.lot
-LaTeX Font Info:    Calculating math sizes for size <12.045> on input line 1.
-LaTeX Font Info:    Font shape `U/fsy/m/n' will be
-(Font)              scaled to size 10.84042pt on input line 1.
-LaTeX Font Info:    Font shape `U/fsy/m/n' will be
-(Font)              scaled to size 7.58826pt on input line 1.
-LaTeX Font Info:    Font shape `U/fsy/m/n' will be
-(Font)              scaled to size 5.4202pt on input line 1.
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'AdobeSongStd(0)' created for font 'Adobe Song Std' with options
+. [Mapping=tex-text,BoldFont={Adobe Heiti Std},ItalicFont={Adobe Kaiti Std}].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'AdobeSongStd(1)' created for font 'Adobe Song Std' with options
+. [Mapping=tex-text,].
+. 
+. This font family consists of the following shapes:
+.................................................
 
 
-Package natbib Warning: Citation `eagle2006reality' on page V undefined on inpu
-t line 1.
-
-
-Package natbib Warning: Citation `eagle2006reality' on page V undefined on inpu
-t line 1.
+LaTeX Font Warning: Font shape `EU1/AdobeSongStd(1)/bx/n' undefined
+(Font)              using `EU1/AdobeSongStd(1)/m/n' instead on input line 1.
 
 )
 \tf@lot=\write6
@@ -1679,51 +1684,19 @@ t line 1.
 ] [6
 
 ] (E:\Research_Study\nudtPaper\thesis.lof
-
-Package natbib Warning: Citation `rodriguez2014clustering' on page VII undefine
-d on input line 4.
-
-
-Package natbib Warning: Citation `rodriguez2014clustering' on page VII undefine
-d on input line 4.
-
-
-Package natbib Warning: Citation `rodriguez2014clustering' on page VII undefine
-d on input line 5.
-
-
-Package natbib Warning: Citation `rodriguez2014clustering' on page VII undefine
-d on input line 5.
-
-
-Package natbib Warning: Citation `liu2012similarity' on page VII undefined on i
-nput line 6.
-
-
-Package natbib Warning: Citation `liu2012similarity' on page VII undefined on i
-nput line 6.
-
-
-Package natbib Warning: Citation `liu2012similarity' on page VII undefined on i
-nput line 7.
-
-
-Package natbib Warning: Citation `liu2012similarity' on page VII undefined on i
-nput line 7.
-
-
-Package natbib Warning: Citation `mikolov2013efficient' on page VII undefined o
-n input line 13.
-
-
-Package natbib Warning: Citation `mikolov2013efficient' on page VII undefined o
-n input line 13.
-
-[7
+LaTeX Font Info:    Calculating math sizes for size <12.045> on input line 4.
+LaTeX Font Info:    Font shape `U/fsy/m/n' will be
+(Font)              scaled to size 10.84042pt on input line 4.
+LaTeX Font Info:    Font shape `U/fsy/m/n' will be
+(Font)              scaled to size 7.58826pt on input line 4.
+LaTeX Font Info:    Font shape `U/fsy/m/n' will be
+(Font)              scaled to size 5.4202pt on input line 4.
+ [7
 
 ])
 \tf@lof=\write7
- [8] (E:\Research_Study\nudtPaper\data/abstract.tex
+ [8]
+(E:\Research_Study\nudtPaper\data/abstract.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [1
@@ -1739,10 +1712,6 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ])
 [4] (E:\Research_Study\nudtPaper\data/chap01.tex
-
-Package natbib Warning: Citation `starner1996human' on page 1 undefined on inpu
-t line 2.
-
 .................................................
 . fontspec info: "no-scripts"
 . 
@@ -1757,171 +1726,21 @@ t line 2.
 . This font family consists of the following shapes:
 .................................................
 
+
 LaTeX Font Warning: Font shape `EU1/STZhongsong(0)/bx/n' undefined
 (Font)              using `EU1/STZhongsong(0)/m/n' instead on input line 4.
-
-
-Package natbib Warning: Citation `cheng2012inferring' on page 1 undefined on in
-put line 6.
-
-
-Package natbib Warning: Citation `eagle2006reality' on page 1 undefined on inpu
-t line 6.
-
-
-Package natbib Warning: Citation `min2013mining' on page 1 undefined on input l
-ine 6.
-
-
-Package natbib Warning: Citation `pentland2009inferring' on page 1 undefined on
- input line 6.
-
-
-Package natbib Warning: Citation `zhang2011emergence' on page 1 undefined on in
-put line 6.
-
-
-Package natbib Warning: Citation `eagle2006reality' on page 1 undefined on inpu
-t line 6.
-
-
-Package natbib Warning: Citation `miluzzo2007cenceme' on page 1 undefined on in
-put line 6.
-
-
-Package natbib Warning: Citation `wang2014studentlife' on page 1 undefined on i
-nput line 6.
-
-
-Package natbib Warning: Citation `wang2015smartgpa' on page 1 undefined on inpu
-t line 6.
-
-
-Package natbib Warning: Citation `granovetter1973strength' on page 1 undefined 
-on input line 6.
-
-
-Package natbib Warning: Citation `haythornthwaite2002strong' on page 1 undefine
-d on input line 6.
-
-
-Package natbib Warning: Citation `gustafson2012extracting' on page 1 undefined 
-on input line 6.
-
-
-Package natbib Warning: Citation `khadangi2013measuring' on page 1 undefined on
- input line 6.
-
-
-Package natbib Warning: Citation `zhao2012relationship' on page 1 undefined on 
-input line 6.
 
 [1
 
 
 
-]
-
-Package natbib Warning: Citation `zillmann2013selective' on page 2 undefined on
- input line 8.
-
-
-Package natbib Warning: Citation `zajonc1968attitudinal' on page 2 undefined on
- input line 8.
-
-
-Package natbib Warning: Citation `zillmann2000mood' on page 2 undefined on inpu
-t line 8.
-
-
-Package natbib Warning: Citation `zheng2011recommending' on page 2 undefined on
- input line 8.
-
-
-Package natbib Warning: Citation `lee2007trajectory' on page 2 undefined on inp
-ut line 8.
-
-
-Package natbib Warning: Citation `li2008mining' on page 2 undefined on input li
-ne 8.
-
-
-Package natbib Warning: Citation `lu2011mining' on page 2 undefined on input li
-ne 8.
-
-
-Package natbib Warning: Citation `granovetter1973strength' on page 2 undefined 
-on input line 15.
-
-
-Package natbib Warning: Citation `burt2009structural' on page 2 undefined on in
-put line 16.
-
-
-Package natbib Warning: Citation `carruthers2007illusion' on page 2 undefined o
-n input line 16.
-
-
-Package natbib Warning: Citation `burrows2000virtual' on page 2 undefined on in
-put line 16.
-
-
-Package natbib Warning: Citation `coles1999monoclonal' on page 2 undefined on i
-nput line 16.
-
-
-Package natbib Warning: Citation `petroczi2007measuring' on page 2 undefined on
- input line 17.
-
-[2]
-
-Package natbib Warning: Citation `hsu2007mining' on page 3 undefined on input l
-ine 19.
-
-
-Package natbib Warning: Citation `eagle2009inferring' on page 3 undefined on in
-put line 20.
-
-
-Package natbib Warning: Citation `zheng2013unsupervised' on page 3 undefined on
- input line 20.
-
-
-Package natbib Warning: Citation `do2011groupus' on page 3 undefined on input l
-ine 20.
-
-
-Package natbib Warning: Citation `mtibaa2008you' on page 3 undefined on input l
-ine 20.
-
-
-Package natbib Warning: Citation `ma2014effective' on page 3 undefined on input
- line 22.
-
-
-Package natbib Warning: Citation `ma2014effective' on page 3 undefined on input
- line 22.
-
-
+] [2]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [3]
-
-Package natbib Warning: Citation `zheng2015trajectory' on page 4 undefined on i
-nput line 31.
-
-
-Package natbib Warning: Citation `itakura1987distance' on page 4 undefined on i
-nput line 31.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [4]
-
-Package natbib Warning: Citation `gonzalez2008understanding' on page 5 undefine
-d on input line 35.
-
 [5]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -1929,28 +1748,15 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 (E:\Research_Study\nudtPaper\data/chap02.tex [7] [8
 
 ]
-
-Package natbib Warning: Citation `wegmann2002image' on page 9 undefined on inpu
-t line 6.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [9
 
 
 ]
-
-Package natbib Warning: Citation `kalman1960new' on page 10 undefined on input 
-line 20.
-
 [10]
-
-Package natbib Warning: Citation `zheng2011computing' on page 11 undefined on i
-nput line 86.
-
 File: figures/figure2_1_gps.png Graphic file (type QTm)
-<use  "figures/figure2_1_gps.png" >
+ <use  "figures/figure2_1_gps.png" >
 .................................................
 . fontspec info: "defining-font"
 . 
@@ -1975,59 +1781,18 @@ put line 95.
 .................................................
 File: figures/figure2_1cluster.png Graphic file (type QTm)
 
-<use  "figures/figure2_1cluster.png" >
-
-Package natbib Warning: Citation `macqueen1967some' on page 12 undefined on inp
-ut line 131.
-
-[12]
+<use  "figures/figure2_1cluster.png" > [12]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [13]
-
-Package natbib Warning: Citation `ester1996density' on page 14 undefined on inp
-ut line 138.
-
-
-Package natbib Warning: Citation `zhou2007discovering' on page 14 undefined on 
-input line 138.
-
 File: figures/figure2_2dbscan.png Graphic file (type QTm)
-<use  "figures/figure2_2dbscan.png" >
 
-Package natbib Warning: Citation `rodriguez2014clustering' on page 14 undefined
- on input line 145.
-
-[14]
+<use  "figures/figure2_2dbscan.png" > [14]
 File: figures/figure2_3.png Graphic file (type QTm)
  <use  "figures/figure2_3.png" >
-
-Package natbib Warning: Citation `rodriguez2014clustering' on page 15 undefined
- on input line 177.
-
-
-Package natbib Warning: Citation `rodriguez2014clustering' on page 15 undefined
- on input line 177.
-
 File: figures/figure2_4.png Graphic file (type QTm)
-<use  "figures/figure2_4.png" >
 
-Package natbib Warning: Citation `rodriguez2014clustering' on page 15 undefined
- on input line 183.
-
-
-Package natbib Warning: Citation `rodriguez2014clustering' on page 15 undefined
- on input line 183.
-
-
-Package natbib Warning: Citation `zajonc1968attitudinal' on page 15 undefined o
-n input line 189.
-
-
-Package natbib Warning: Citation `zillmann2000mood' on page 15 undefined on inp
-ut line 189.
-
-[15]
+<use  "figures/figure2_4.png" > [15]
 Missing character: There is no 经 in font txr!
 Missing character: There is no 度 in font txr!
 Missing character: There is no 纬 in font txr!
@@ -2039,35 +1804,12 @@ Missing character: There is no 戳 in font txr!
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [16]
-
-Package natbib Warning: Citation `liu2012similarity' on page 17 undefined on in
-put line 192.
-
 File: figures/figure2_1_turnTra.png Graphic file (type QTm)
+
 <use  "figures/figure2_1_turnTra.png" >
-
-Package natbib Warning: Citation `liu2012similarity' on page 17 undefined on in
-put line 197.
-
-
-Package natbib Warning: Citation `liu2012similarity' on page 17 undefined on in
-put line 197.
-
 File: figures/figure2_1_Center_of_mass.png Graphic file (type QTm)
+
 <use  "figures/figure2_1_Center_of_mass.png" >
-
-Package natbib Warning: Citation `liu2012similarity' on page 17 undefined on in
-put line 207.
-
-
-Package natbib Warning: Citation `liu2012similarity' on page 17 undefined on in
-put line 207.
-
-
-Package natbib Warning: Citation `itakura1987distance' on page 17 undefined on 
-input line 213.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [17]
@@ -2083,14 +1825,6 @@ File: figures/dtw-2.png Graphic file (type QTm)
 File: figures/dtw-3.png Graphic file (type QTm)
 
 <use  "figures/dtw-3.png" > [18]
-
-Package natbib Warning: Citation `ratanamahatana2004everything' on page 19 unde
-fined on input line 242.
-
-
-Package natbib Warning: Citation `singelis1994measurement' on page 19 undefined
- on input line 246.
-
 Missing character: There is no 寝 in font txr!
 Missing character: There is no 室 in font txr!
 Missing character: There is no ， in font txr!
@@ -2111,61 +1845,17 @@ Missing character: There is no 园 in font txr!
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [19]
-
-Package natbib Warning: Citation `farrahi2008did' on page 20 undefined on input
- line 248.
-
-
-Package natbib Warning: Citation `yangruosong' on page 20 undefined on input li
-ne 248.
-
-
-Package natbib Warning: Citation `mikolov2013efficient' on page 20 undefined on
- input line 249.
-
-
-Package natbib Warning: Citation `blei2003latent' on page 20 undefined on input
- line 251.
-
 File: figures/figure2_6_lda.png Graphic file (type QTm)
-<use  "figures/figure2_6_lda.png" >
 
-Package natbib Warning: Citation `mikolov2013efficient' on page 20 undefined on
- input line 264.
-
-[20]
+<use  "figures/figure2_6_lda.png" > [20]
 File: figures/figure2_7_cdow.png Graphic file (type QTm)
  <use  "figures/figure2_7_cdow.png" >
-
-Package natbib Warning: Citation `mikolov2013efficient' on page 21 undefined on
- input line 273.
-
-
-Package natbib Warning: Citation `mikolov2013efficient' on page 21 undefined on
- input line 273.
-
 File: figures/figure2_7_w2cmodel.png Graphic file (type QTm)
+
 <use  "figures/figure2_7_w2cmodel.png" > [21]
-
-Package natbib Warning: Citation `manku2007detecting' on page 22 undefined on i
-nput line 289.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [22]
-
-Package natbib Warning: Citation `hsu2007mining' on page 23 undefined on input 
-line 292.
-
-
-Package natbib Warning: Citation `eagle2009inferring' on page 23 undefined on i
-nput line 297.
-
-
-Package natbib Warning: Citation `zheng2013unsupervised' on page 23 undefined o
-n input line 297.
-
 [23] [24]
 File: figures/figure7_1_RSMHD.png Graphic file (type QTm)
  <use  "figures/figure7_1_RSMHD.png" >
@@ -2436,11 +2126,11 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ]
 [50] [51] [52]
 
-LaTeX Warning: Reference `figure7_1_tra' on page 53 undefined on input line 794
+LaTeX Warning: Reference `figure7_1_tra' on page 53 undefined on input line 788
 .
 
 
-LaTeX Warning: Reference `figure4_2' on page 53 undefined on input line 794.
+LaTeX Warning: Reference `figure4_2' on page 53 undefined on input line 788.
 
 .................................................
 . fontspec info: "no-scripts"
@@ -2480,135 +2170,154 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [55]
 
-LaTeX Warning: Command \O invalid in math mode on input line 867.
+LaTeX Warning: Command \O invalid in math mode on input line 861.
 
 Missing character: There is no Ø in font txmi!
 
-LaTeX Warning: Command \O invalid in math mode on input line 867.
+LaTeX Warning: Command \O invalid in math mode on input line 861.
 
 Missing character: There is no Ø in font txmi!
 [56] [57] [58
 
 ]
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'AdobeSongStd(0)' created for font 'Adobe Song Std' with options
+. [Mapping=tex-text,BoldFont={Adobe Heiti Std},ItalicFont={Adobe Kaiti Std}].
+. 
+. This font family consists of the following shapes:
+.................................................
 
-Package natbib Warning: Citation `eagle2006reality' on page 59 undefined on inp
-ut line 886.
+Overfull \hbox (35.99998pt too wide) in paragraph at lines 887--926
+ [][] 
+ []
 
 
-Package natbib Warning: Citation `eagle2006reality' on page 59 undefined on inp
-ut line 886.
-
-[59
-
-
-] [60] [61]
-File: figures/figure5_1.jpg Graphic file (type QTm)
- <use  "figures/figure5_1.jpg" >
-File: figures/figure5_2.jpg Graphic file (type QTm)
- <use  "figures/figure5_2.jpg" >
-[62]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [63]
-Underfull \hbox (badness 10000) in alignment at lines 1041--1080
+ [59
+
+
+]
+File: figures/figure5_1.jpg Graphic file (type QTm)
+
+<use  "figures/figure5_1.jpg" >
+File: figures/figure5_2.jpg Graphic file (type QTm)
+ <use  "figures/figure5_2.jpg" > [60]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [61]
+Underfull \hbox (badness 10000) in alignment at lines 996--1035
 [][] 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
+ [62]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [63]
+
+LaTeX Warning: Text page 64 contains only floats.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [64]
-
-Package natbib Warning: Citation `wikiInversion' on page 65 undefined on input 
-line 1085.
-
-[65]
-
-LaTeX Warning: Text page 66 contains only floats.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [66]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [67]
+ [65]
 File: figures/figure5_3.png Graphic file (type QTm)
 
 <use  "figures/figure5_3.png" >
 File: figures/figure5_4.png Graphic file (type QTm)
  <use  "figures/figure5_4.png" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [66]
 File: figures/figure5_5.png Graphic file (type QTm)
 
 <use  "figures/figure5_5.png" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [67]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [68]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [69]
+File: figures/figure5_6.png Graphic file (type QTm)
+
+<use  "figures/figure5_6.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [70]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [71]
-File: figures/figure5_6.png Graphic file (type QTm)
-
-<use  "figures/figure5_6.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [72]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [73]
 File: figures/figure5_7.png Graphic file (type QTm)
 
-<use  "figures/figure5_7.png" >
+<use  "figures/figure5_7.png" > [73]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [74]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [75]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[76
 
- [76]
-[77] [78
-
-] [79
+] [77
 
 
 ]) (E:\Research_Study\nudtPaper\data/ack.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [80]
-[81] [82
+ [78]
+[79] [80
 
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [83
+ [81
 
 ]
 
 LaTeX Font Warning: Font shape `EU1/TimesNewRoman(0)/m/sc' undefined
 (Font)              using `EU1/TimesNewRoman(0)/m/n' instead on input line 14.
 
-) [84] (E:\Research_Study\nudtPaper\thesis.bbl)
-(E:\Research_Study\nudtPaper\data/resume.tex) [85
+) [82] (E:\Research_Study\nudtPaper\thesis.bbl [83
 
 
-] [86
+] [84] [85]
+Underfull \hbox (badness 3189) in paragraph at lines 289--293
+[]\EU1/TimesNewRoman(0)/m/sc/12.045 Singelis T M. The measurement of independen
+t and interdependent self-
+ []
+
+[86]
+Underfull \hbox (badness 3302) in paragraph at lines 339--343
+[]\EU1/TimesNewRoman(0)/m/sc/12.045 wiki. Inversion. [][]$[][][][] [] [] [] [][
+] [] [][][][][][][][][] [] [][][] [] [] [] [][][][][] [] [][][] [] [][][][][] [
+]
+ []
+
+) (E:\Research_Study\nudtPaper\data/resume.tex [87] [88
+
+]) [89
+
+] [90
 
 ]
 \tf@thm=\write8
-
-
-Package natbib Warning: There were undefined citations.
-
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 107.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 107.
+
 (E:\Research_Study\nudtPaper\thesis.aux)
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 107.
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 107.
@@ -2624,12 +2333,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 27195 strings out of 430478
- 490700 string characters out of 3191503
- 572477 words of memory out of 3000000
- 29789 multiletter control sequences out of 15000+200000
- 68278 words of font info for 277 fonts, out of 3000000 for 9000
+ 27312 strings out of 430478
+ 494211 string characters out of 3191503
+ 571304 words of memory out of 3000000
+ 29900 multiletter control sequences out of 15000+200000
+ 68326 words of font info for 283 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 51i,13n,85p,1342b,964s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 51i,13n,85p,1341b,964s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on thesis.pdf (104 pages).
+Output written on thesis.pdf (108 pages).
