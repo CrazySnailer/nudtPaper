@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2016.1.8)  9 OCT 2016 09:34
+This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2016.1.8)  9 OCT 2016 20:59
 entering extended mode
 **thesis
 (E:\Research_Study\nudtPaper\thesis.tex
@@ -1662,9 +1662,9 @@ LaTeX Font Info:    Font shape `U/fsy/m/n' will be
 
 
 
-])
+] [2])
 \tf@toc=\write5
- [2] [3] [4
+ [3] [4
 
 ]
 (E:\Research_Study\nudtPaper\thesis.lot)
@@ -2117,11 +2117,11 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ]
 [50] [51] [52]
 
-LaTeX Warning: Reference `figure7_1_tra' on page 53 undefined on input line 788
+LaTeX Warning: Reference `figure7_1_tra' on page 53 undefined on input line 789
 .
 
 
-LaTeX Warning: Reference `figure4_2' on page 53 undefined on input line 788.
+LaTeX Warning: Reference `figure4_2' on page 53 undefined on input line 789.
 
 .................................................
 . fontspec info: "no-scripts"
@@ -2161,11 +2161,11 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [55]
 
-LaTeX Warning: Command \O invalid in math mode on input line 861.
+LaTeX Warning: Command \O invalid in math mode on input line 863.
 
 Missing character: There is no Ø in font txmi!
 
-LaTeX Warning: Command \O invalid in math mode on input line 861.
+LaTeX Warning: Command \O invalid in math mode on input line 863.
 
 Missing character: There is no Ø in font txmi!
 [56] [57] [58
@@ -2203,7 +2203,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [60]
 [61]
-Overfull \hbox (6.5319pt too wide) in alignment at lines 976--1009
+Overfull \hbox (6.5319pt too wide) in alignment at lines 979--1012
 [][] 
  []
 
@@ -2211,17 +2211,24 @@ Overfull \hbox (6.5319pt too wide) in alignment at lines 976--1009
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [62]
+Overfull \hbox (49.48029pt too wide) in paragraph at lines 1034--1066
+ [][] 
+ []
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [63]
-[64]
-File: figures/figure5_3.png Graphic file (type QTm)
- <use  "figures/figure5_3.png" >
-File: figures/figure5_4.png Graphic file (type QTm)
- <use  "figures/figure5_4.png" >
-File: figures/figure5_5.png Graphic file (type QTm)
+Overfull \hbox (54.74619pt too wide) in paragraph at lines 1098--1130
+ [][] 
+ []
 
-<use  "figures/figure5_5.png" >
+
+Overfull \hbox (49.48029pt too wide) in paragraph at lines 1139--1171
+ [][] 
+ []
+
+[64]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [65]
@@ -2231,68 +2238,41 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [67]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[68
 
- [68]
-File: figures/figure5_6.png Graphic file (type QTm)
-
-<use  "figures/figure5_6.png" >
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [69]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [70]
-File: figures/figure5_7.png Graphic file (type QTm)
-
-<use  "figures/figure5_7.png" > [71]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [72]
-[73]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [74]
-[75
+] [69
 
 
 ]) (E:\Research_Study\nudtPaper\data/ack.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [76]
-[77] [78
+ [70]
+[71] [72
 
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [79
+ [73
 
 ]
 
 LaTeX Font Warning: Font shape `EU1/TimesNewRoman(0)/m/sc' undefined
 (Font)              using `EU1/TimesNewRoman(0)/m/n' instead on input line 14.
 
-) [80] (E:\Research_Study\nudtPaper\thesis.bbl [81
+) [74] (E:\Research_Study\nudtPaper\thesis.bbl [75
 
 
-] [82] [83]
+] [76] [77]
 Underfull \hbox (badness 3189) in paragraph at lines 289--293
 []\EU1/TimesNewRoman(0)/m/sc/12.045 Singelis T M. The measurement of independen
 t and interdependent self-
  []
 
-[84]
-Underfull \hbox (badness 3302) in paragraph at lines 339--343
-[]\EU1/TimesNewRoman(0)/m/sc/12.045 wiki. Inversion. [][]$[][][][] [] [] [] [][
-] [] [][][][][][][][][] [] [][][] [] [] [] [][][][][] [] [][][] [] [][][][][] [
-]
- []
+[78]) (E:\Research_Study\nudtPaper\data/resume.tex [79] [80
 
-) (E:\Research_Study\nudtPaper\data/resume.tex [85] [86
+]) [81
 
-]) [87
-
-] [88
+] [82
 
 ]
 \tf@thm=\write8
@@ -2314,12 +2294,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 27309 strings out of 430478
- 493991 string characters out of 3191503
- 576523 words of memory out of 3000000
- 29900 multiletter control sequences out of 15000+200000
- 68286 words of font info for 278 fonts, out of 3000000 for 9000
+ 27286 strings out of 430478
+ 493583 string characters out of 3191503
+ 576645 words of memory out of 3000000
+ 29883 multiletter control sequences out of 15000+200000
+ 68278 words of font info for 277 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  51i,16n,85p,1341b,964s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on thesis.pdf (106 pages).
+Output written on thesis.pdf (100 pages).
