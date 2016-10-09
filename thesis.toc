@@ -62,7 +62,7 @@
 \contentsline {subsection}{\numberline {6.2.1}获取用户关系强度结果}{61}{subsection.6.2.1}
 \contentsline {subsection}{\numberline {6.2.2}评估方法}{62}{subsection.6.2.2}
 \contentsline {section}{\numberline {6.3}实验结果与分析}{64}{section.6.3}
-\contentsline {section}{\numberline {6.4}小结}{72}{section.6.4}
+\contentsline {section}{\numberline {6.4}小结}{73}{section.6.4}
 \contentsline {chapter}{\numberline {7}结束语}{75}{chapter.7}
 \contentsline {section}{\numberline {7.1}工作总结}{75}{section.7.1}
 \contentsline {section}{\numberline {7.2}工作展望}{76}{section.7.2}

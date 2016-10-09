@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2016.1.8)  8 OCT 2016 21:18
+This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2016.1.8)  9 OCT 2016 09:34
 entering extended mode
 **thesis
 (E:\Research_Study\nudtPaper\thesis.tex
@@ -2203,7 +2203,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [60]
 [61]
-Underfull \hbox (badness 10000) in alignment at lines 976--1015
+Overfull \hbox (6.5319pt too wide) in alignment at lines 976--1009
 [][] 
  []
 
@@ -2211,10 +2211,6 @@ Underfull \hbox (badness 10000) in alignment at lines 976--1015
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [62]
-
-LaTeX Warning: Text page 63 contains only floats.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [63]
@@ -2249,14 +2245,11 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [70]
 File: figures/figure5_7.png Graphic file (type QTm)
 
-<use  "figures/figure5_7.png" >
+<use  "figures/figure5_7.png" > [71]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [71]
-[72]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [73]
+ [72]
+[73]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [74]
@@ -2323,10 +2316,10 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  27309 strings out of 430478
  493991 string characters out of 3191503
- 577523 words of memory out of 3000000
+ 576523 words of memory out of 3000000
  29900 multiletter control sequences out of 15000+200000
  68286 words of font info for 278 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 51i,13n,85p,1341b,964s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 51i,16n,85p,1341b,964s stack positions out of 5000i,500n,10000p,200000b,50000s
 
 Output written on thesis.pdf (106 pages).
