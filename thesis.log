@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2016.1.8)  9 OCT 2016 20:59
+This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2016.1.8)  10 OCT 2016 10:59
 entering extended mode
 **thesis
 (E:\Research_Study\nudtPaper\thesis.tex
@@ -2219,28 +2219,32 @@ Overfull \hbox (49.48029pt too wide) in paragraph at lines 1034--1066
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [63]
-Overfull \hbox (54.74619pt too wide) in paragraph at lines 1098--1130
+File: figures/figure5_Fscore.png Graphic file (type QTm)
+
+<use  "figures/figure5_Fscore.png" >
+Overfull \hbox (54.74619pt too wide) in paragraph at lines 1106--1138
  [][] 
  []
 
 
-Overfull \hbox (49.48029pt too wide) in paragraph at lines 1139--1171
- [][] 
- []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[64]
+ [64]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [65]
+Overfull \hbox (49.48029pt too wide) in paragraph at lines 1147--1179
+ [][] 
+ []
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [66]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [67]
-[68
-
-] [69
+[68] [69
 
 
 ]) (E:\Research_Study\nudtPaper\data/ack.tex
@@ -2294,10 +2298,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 27286 strings out of 430478
- 493583 string characters out of 3191503
- 576645 words of memory out of 3000000
- 29883 multiletter control sequences out of 15000+200000
+ 27289 strings out of 430478
+ 493642 string characters out of 3191503
+ 568694 words of memory out of 3000000
+ 29885 multiletter control sequences out of 15000+200000
  68278 words of font info for 277 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  51i,16n,85p,1341b,964s stack positions out of 5000i,500n,10000p,200000b,50000s

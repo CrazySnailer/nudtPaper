@@ -63,14 +63,14 @@
 \contentsline {subsection}{\numberline {6.2.2}实验结果评价方法}{62}{subsection.6.2.2}
 \contentsline {section}{\numberline {6.3}实验结果与分析}{63}{section.6.3}
 \contentsline {subsection}{\numberline {6.3.1}基于GPS轨迹相似性计算用户之间的关系强度}{64}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}基于WiFi感知数据计算用户之间的关系强度}{64}{subsection.6.3.2}
-\contentsline {subsection}{\numberline {6.3.3}基于蓝牙感知数据计算用户之间的关系强度}{64}{subsection.6.3.3}
-\contentsline {subsection}{\numberline {6.3.4}基于RSMHD计算用户之间的关系强度}{64}{subsection.6.3.4}
-\contentsline {section}{\numberline {6.4}小结}{64}{section.6.4}
+\contentsline {subsection}{\numberline {6.3.2}基于WiFi感知数据计算用户之间的关系强度}{66}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.3}基于蓝牙感知数据计算用户之间的关系强度}{67}{subsection.6.3.3}
+\contentsline {subsection}{\numberline {6.3.4}基于RSMHD计算用户之间的关系强度}{68}{subsection.6.3.4}
+\contentsline {section}{\numberline {6.4}小结}{68}{section.6.4}
 \contentsline {chapter}{\numberline {7}结束语}{69}{chapter.7}
 \contentsline {section}{\numberline {7.1}工作总结}{69}{section.7.1}
 \contentsline {section}{\numberline {7.2}工作展望}{70}{section.7.2}
-\contentsline {chapter}{致谢}{73}{chapter*.73}
-\contentsline {chapter}{参考文献}{75}{section*.74}
-\contentsline {chapter}{作者在学期间取得的学术成果}{81}{chapter*.76}
+\contentsline {chapter}{致谢}{73}{chapter*.74}
+\contentsline {chapter}{参考文献}{75}{section*.75}
+\contentsline {chapter}{作者在学期间取得的学术成果}{81}{chapter*.77}
 \contentsfinish 
