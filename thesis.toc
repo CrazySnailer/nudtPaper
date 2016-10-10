@@ -67,7 +67,7 @@
 \contentsline {subsection}{\numberline {6.3.3}基于蓝牙感知数据计算用户之间的关系强度}{67}{subsection.6.3.3}
 \contentsline {subsection}{\numberline {6.3.4}基于RSMHD计算用户之间的关系强度}{68}{subsection.6.3.4}
 \contentsline {section}{\numberline {6.4}小结}{70}{section.6.4}
-\contentsline {chapter}{\numberline {7}结束语}{71}{chapter.7}
+\contentsline {chapter}{\numberline {7}总结与展望}{71}{chapter.7}
 \contentsline {section}{\numberline {7.1}工作总结}{71}{section.7.1}
 \contentsline {section}{\numberline {7.2}工作展望}{72}{section.7.2}
 \contentsline {chapter}{致谢}{75}{chapter*.77}
