@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2016.1.8)  10 OCT 2016 21:45
+This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2016.1.8)  11 OCT 2016 10:58
 entering extended mode
 **thesis
 (E:\Research_Study\nudtPaper\thesis.tex
@@ -2168,7 +2168,11 @@ Missing character: There is no Ø in font txmi!
 LaTeX Warning: Command \O invalid in math mode on input line 863.
 
 Missing character: There is no Ø in font txmi!
-[56] [57] [58
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [56]
+[57] [58
 
 ]
 File: figures/figure5_sex.png Graphic file (type QTm)
@@ -2255,35 +2259,32 @@ File: figures/figure5_rsmhd.png Graphic file (type QTm)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [68]
-[69] [70] [71
-
-
-]) (E:\Research_Study\nudtPaper\data/ack.tex [72] [73] [74
-
-]
+[69] [70]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [75
+ [71
+
+
+])
+(E:\Research_Study\nudtPaper\data/ack.tex [72]) [73
+
+] [74
 
 ]
-
-LaTeX Font Warning: Font shape `EU1/TimesNewRoman(0)/m/sc' undefined
-(Font)              using `EU1/TimesNewRoman(0)/m/n' instead on input line 14.
-
-) [76] (E:\Research_Study\nudtPaper\thesis.bbl [77
+(E:\Research_Study\nudtPaper\thesis.bbl [75
 
 
-] [78] [79]
+] [76] [77]
 Underfull \hbox (badness 3189) in paragraph at lines 289--293
-[]\EU1/TimesNewRoman(0)/m/sc/12.045 Singelis T M. The measurement of independen
-t and interdependent self-
+[]\EU1/TimesNewRoman(0)/m/n/12.045 Singelis T M. The measurement of independent
+ and interdependent self-
  []
 
-[80]) (E:\Research_Study\nudtPaper\data/resume.tex [81] [82
+[78]) (E:\Research_Study\nudtPaper\data/resume.tex [79] [80
 
-]) [83
+]) [81
 
-] [84
+] [82
 
 ]
 \tf@thm=\write8
@@ -2305,12 +2306,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 27296 strings out of 430478
- 493776 string characters out of 3191503
+ 27288 strings out of 430478
+ 493603 string characters out of 3191503
  570843 words of memory out of 3000000
- 29890 multiletter control sequences out of 15000+200000
+ 29882 multiletter control sequences out of 15000+200000
  68278 words of font info for 277 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  51i,16n,85p,1341b,964s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on thesis.pdf (102 pages).
+Output written on thesis.pdf (100 pages).
