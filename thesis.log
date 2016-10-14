@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2016.1.8)  12 OCT 2016 10:02
+This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2016.1.8)  14 OCT 2016 20:55
 entering extended mode
 **thesis
 (E:\Research_Study\nudtPaper\thesis.tex
@@ -1725,20 +1725,19 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [4]
-[5]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [6])
-(E:\Research_Study\nudtPaper\data/chap02.tex [7]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [8
+(E:\Research_Study\nudtPaper\data/chap02.tex [7] [8
 
 
-]
-[9]
+] [9]
 File: figures/figure2_1_gps.png Graphic file (type QTm)
- <use  "figures/figure2_1_gps.png" >
+
+<use  "figures/figure2_1_gps.png" >
 .................................................
 . fontspec info: "defining-font"
 . 
@@ -1747,12 +1746,9 @@ File: figures/figure2_1_gps.png Graphic file (type QTm)
 . 
 . This font family consists of the following shapes:
 .................................................
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [10]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 95.
+put line 96.
 .................................................
 . fontspec info: "defining-font"
 . 
@@ -1782,19 +1778,14 @@ Missing character: There is no 度 in font txr!
 Missing character: There is no 时 in font txr!
 Missing character: There is no 间 in font txr!
 Missing character: There is no 戳 in font txr!
-
+File: figures/figure2_1_turnTra.png Graphic file (type QTm)
+ <use  "figures/figure2_1_turnTra.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [15]
-File: figures/figure2_1_turnTra.png Graphic file (type QTm)
-
-<use  "figures/figure2_1_turnTra.png" >
 File: figures/figure2_1_Center_of_mass.png Graphic file (type QTm)
 
-<use  "figures/figure2_1_Center_of_mass.png" >
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [16]
+<use  "figures/figure2_1_Center_of_mass.png" > [16]
 Missing character: There is no … in font txr!
 Missing character: There is no … in font txr!
 Missing character: There is no … in font txr!
@@ -1806,7 +1797,10 @@ File: figures/dtw-2.png Graphic file (type QTm)
  <use  "figures/dtw-2.png" >
 File: figures/dtw-3.png Graphic file (type QTm)
 
-<use  "figures/dtw-3.png" > [17]
+<use  "figures/dtw-3.png" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [17]
 Missing character: There is no 寝 in font txr!
 Missing character: There is no 室 in font txr!
 Missing character: There is no ， in font txr!
@@ -2108,11 +2102,11 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ]
 [49] [50] [51]
 
-LaTeX Warning: Reference `figure7_1_tra' on page 52 undefined on input line 789
+LaTeX Warning: Reference `figure7_1_tra' on page 52 undefined on input line 790
 .
 
 
-LaTeX Warning: Reference `figure4_2' on page 52 undefined on input line 789.
+LaTeX Warning: Reference `figure4_2' on page 52 undefined on input line 790.
 
 .................................................
 . fontspec info: "no-scripts"
@@ -2152,11 +2146,11 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [54]
 
-LaTeX Warning: Command \O invalid in math mode on input line 863.
+LaTeX Warning: Command \O invalid in math mode on input line 864.
 
 Missing character: There is no Ø in font txmi!
 
-LaTeX Warning: Command \O invalid in math mode on input line 863.
+LaTeX Warning: Command \O invalid in math mode on input line 864.
 
 Missing character: There is no Ø in font txmi!
 
@@ -2195,45 +2189,41 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [58]
 [59]
-Overfull \hbox (6.5319pt too wide) in alignment at lines 979--1012
+Overfull \hbox (6.5319pt too wide) in alignment at lines 980--1013
 [][] 
  []
 
-
+File: figures/figure5_survey_relation.png Graphic file (type QTm)
+<use  "figures/figure5_survey_relation.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [60]
-Overfull \hbox (49.48029pt too wide) in paragraph at lines 1034--1066
- [][] 
- []
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [61]
-File: figures/figure5_Fscore.png Graphic file (type QTm)
-
-<use  "figures/figure5_Fscore.png" >
-Overfull \hbox (54.74619pt too wide) in paragraph at lines 1106--1138
+Overfull \hbox (49.48029pt too wide) in paragraph at lines 1041--1073
  [][] 
  []
 
+File: figures/figure5_Fscore.png Graphic file (type QTm)
+<use  "figures/figure5_Fscore.png" >
+Overfull \hbox (54.74619pt too wide) in paragraph at lines 1113--1145
+ [][] 
+ []
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [62]
+[62]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [63]
 File: figures/figure5_cosgraph.png Graphic file (type QTm)
 
 <use  "figures/figure5_cosgraph.png" > [64]
-Overfull \hbox (49.48029pt too wide) in paragraph at lines 1155--1187
+Overfull \hbox (49.48029pt too wide) in paragraph at lines 1162--1194
  [][] 
  []
 
 
-Overfull \hbox (49.48029pt too wide) in paragraph at lines 1195--1227
+Overfull \hbox (49.48029pt too wide) in paragraph at lines 1202--1234
  [][] 
  []
 
@@ -2294,10 +2284,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 27297 strings out of 430478
- 493769 string characters out of 3191503
- 570818 words of memory out of 3000000
- 29891 multiletter control sequences out of 15000+200000
+ 27300 strings out of 430478
+ 493852 string characters out of 3191503
+ 575859 words of memory out of 3000000
+ 29893 multiletter control sequences out of 15000+200000
  68278 words of font info for 277 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  51i,16n,85p,1341b,964s stack positions out of 5000i,500n,10000p,200000b,50000s
