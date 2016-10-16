@@ -1,8 +1,8 @@
 \contentsline {table}{\numberline {6.1}{\ignorespaces StarLog收集的上下文数据种类和类型\relax }}{58}{table.caption.65}
-\contentsline {table}{\numberline {6.2}{\ignorespaces 真实结果}}{61}{table.caption.67}
-\contentsline {table}{\numberline {6.3}{\ignorespaces 优化DTW方法得到好友列表}}{63}{table.caption.69}
+\contentsline {table}{\numberline {6.2}{\ignorespaces 志愿者的关系强度问卷表}}{61}{table.caption.67}
+\contentsline {table}{\numberline {6.3}{\ignorespaces 基于GPS轨迹计算用户之间关系强度}}{63}{table.caption.69}
 \contentsline {table}{\numberline {6.4}{\ignorespaces 示例用户关系强度矩阵\relax }}{63}{table.caption.70}
-\contentsline {table}{\numberline {6.5}{\ignorespaces 优化DTW方法得到好友列表}}{65}{table.caption.72}
-\contentsline {table}{\numberline {6.6}{\ignorespaces 优化DTW方法得到好友列表}}{67}{table.caption.74}
-\contentsline {table}{\numberline {6.7}{\ignorespaces 优化DTW方法得到好友列表}}{68}{table.caption.75}
+\contentsline {table}{\numberline {6.5}{\ignorespaces 基于WiFi感知数据计算用户之间关系强度}}{65}{table.caption.72}
+\contentsline {table}{\numberline {6.6}{\ignorespaces 基于蓝牙感知数据计算用户之间关系强度}}{67}{table.caption.74}
+\contentsline {table}{\numberline {6.7}{\ignorespaces 结果融合后的用户之间关系强度}}{68}{table.caption.75}
 \contentsfinish 
