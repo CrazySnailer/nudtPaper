@@ -1232,6 +1232,17 @@ F(rsq_{t},rsq_{m})=1-\frac{1}{Min(  \left |rsq_{t}  \right |, \left |rsq_{m}  \r
     \end{tabular}
 %  \end{minipage}
 \end{table}
+
+\par 根据RSMHD模型计算融合后的用户关系之间的社交关系强度表\ref{tab:result}，可以绘制出如图\ref{fig:rsmhd_graph}所示的用户之间的关系强度示意图（图中为了便于观察，我们过滤掉了一部分关系强度较低边）从图中可以看出，用户之间关系越亲密关系强度越强，那么他们之间的连线边就要粗一些。
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{figure5_rsmhd_graph}
+\caption{志愿者之间关系强度示意图}
+\label{fig:rsmhd_graph}
+\end{figure}
+
+
+
 \par 经过对RSMHD三层计算结果融合结果同各层计算结果的对比（见图\ref{fig:result_rsmhd}）可以发现，采用集成学习将基于用户GPS轨迹数据，WiFi上下文知数据和蓝牙感知数据的用户关系强度计算结果进行融合得出的关系强度结果能够更好的度量出志愿者之间的关系强度。
 \begin{figure}[htb]
 \centering
