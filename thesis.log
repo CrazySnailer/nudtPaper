@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2016.1.8)  16 OCT 2016 08:52
+This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2016.1.8)  16 OCT 2016 20:18
 entering extended mode
 **thesis
 (E:\Research_Study\nudtPaper\thesis.tex
@@ -1725,13 +1725,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [4]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [5]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [6])
-(E:\Research_Study\nudtPaper\data/chap02.tex [7] [8
+[5] [6]) (E:\Research_Study\nudtPaper\data/chap02.tex [7] [8
 
 
 ] [9]
@@ -1771,13 +1765,6 @@ File: figures/figure2_3.png Graphic file (type QTm)
 File: figures/figure2_4.png Graphic file (type QTm)
 
 <use  "figures/figure2_4.png" > [14]
-Missing character: There is no 经 in font txr!
-Missing character: There is no 度 in font txr!
-Missing character: There is no 纬 in font txr!
-Missing character: There is no 度 in font txr!
-Missing character: There is no 时 in font txr!
-Missing character: There is no 间 in font txr!
-Missing character: There is no 戳 in font txr!
 File: figures/figure2_1_turnTra.png Graphic file (type QTm)
  <use  "figures/figure2_1_turnTra.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -2288,7 +2275,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  27303 strings out of 430478
  493923 string characters out of 3191503
- 575931 words of memory out of 3000000
+ 575945 words of memory out of 3000000
  29895 multiletter control sequences out of 15000+200000
  68278 words of font info for 277 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
