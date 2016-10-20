@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2016.1.8)  20 OCT 2016 09:18
+This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2016.1.8)  20 OCT 2016 21:51
 entering extended mode
 **thesis
 (E:\Research_Study\nudtPaper\thesis.tex
@@ -1754,29 +1754,37 @@ put line 96.
 File: figures/figure2_1cluster.png Graphic file (type QTm)
 
 <use  "figures/figure2_1cluster.png" > [11]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [12]
 File: figures/figure2_2dbscan.png Graphic file (type QTm)
 
-<use  "figures/figure2_2dbscan.png" > [13]
-File: figures/figure2_3.png Graphic file (type QTm)
- <use  "figures/figure2_3.png" >
-File: figures/figure2_4.png Graphic file (type QTm)
+<use  "figures/figure2_2dbscan.png" > [12]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-<use  "figures/figure2_4.png" > [14]
-File: figures/figure2_1_turnTra.png Graphic file (type QTm)
- <use  "figures/figure2_1_turnTra.png" >
+ [13]
+File: figures/figure2_3.png Graphic file (type QTm)
+
+<use  "figures/figure2_3.png" >
+File: figures/figure2_4.png Graphic file (type QTm)
+ <use  "figures/figure2_4.png" > [14]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [15]
+File: figures/figure2_1_turnTra.png Graphic file (type QTm)
+
+<use  "figures/figure2_1_turnTra.png" >
 File: figures/figure2_1_Center_of_mass.png Graphic file (type QTm)
 
-<use  "figures/figure2_1_Center_of_mass.png" > [16]
+<use  "figures/figure2_1_Center_of_mass.png" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [16]
 Missing character: There is no … in font txr!
 Missing character: There is no … in font txr!
 Missing character: There is no … in font txr!
 Missing character: There is no … in font txr!
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [17]
 File: figures/dtw-1.png Graphic file (type QTm)
 
 <use  "figures/dtw-1.png" >
@@ -1785,9 +1793,6 @@ File: figures/dtw-2.png Graphic file (type QTm)
 File: figures/dtw-3.png Graphic file (type QTm)
 
 <use  "figures/dtw-3.png" >
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [17]
 Missing character: There is no 寝 in font txr!
 Missing character: There is no 室 in font txr!
 Missing character: There is no ， in font txr!
@@ -1810,12 +1815,16 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [18]
 File: figures/figure2_6_lda.png Graphic file (type QTm)
 
-<use  "figures/figure2_6_lda.png" > [19]
-File: figures/figure2_7_cdow.png Graphic file (type QTm)
- <use  "figures/figure2_7_cdow.png" >
-File: figures/figure2_7_w2cmodel.png Graphic file (type QTm)
+<use  "figures/figure2_6_lda.png" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-<use  "figures/figure2_7_w2cmodel.png" > [20]
+ [19]
+File: figures/figure2_7_cdow.png Graphic file (type QTm)
+
+<use  "figures/figure2_7_cdow.png" >
+File: figures/figure2_7_w2cmodel.png Graphic file (type QTm)
+ <use  "figures/figure2_7_w2cmodel.png" >
+[20]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [21]
@@ -2068,7 +2077,10 @@ File: figures/figure4_wifimodel.png Graphic file (type QTm)
 <use  "figures/figure4_wifimodel.png" >
 File: figures/figure4_wifi_context.png Graphic file (type QTm)
 
-<use  "figures/figure4_wifi_context.png" > [44]
+<use  "figures/figure4_wifi_context.png" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [44]
 File: figures/figure4_wifi_context_graph.png Graphic file (type QTm)
 
 <use  "figures/figure4_wifi_context_graph.png" >

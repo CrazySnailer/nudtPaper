@@ -15,13 +15,13 @@
 \contentsline {subsection}{\numberline {2.1.3}聚类算法}{11}{subsection.2.1.3}
 \contentsline {section}{\numberline {2.2}时间序列相似度度量方法}{14}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}轨迹中心距离}{16}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Dynamic Time Warping}{16}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.2}Dynamic Time Warping}{17}{subsection.2.2.2}
 \contentsline {section}{\numberline {2.3}自然语言处理方法}{18}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}LDA主题模型}{19}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}word2vec计算模型}{19}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}快速Hash算法}{21}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.2}word2vec计算模型}{20}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}快速Hash算法}{22}{subsection.2.3.3}
 \contentsline {section}{\numberline {2.4}WiFi和蓝牙数据的度量方法}{22}{section.2.4}
-\contentsline {section}{\numberline {2.5}小结}{22}{section.2.5}
+\contentsline {section}{\numberline {2.5}小结}{23}{section.2.5}
 \contentsline {chapter}{\numberline {3}RSMHD用户关系强度计算框架模型}{24}{chapter.3}
 \contentsline {section}{\numberline {3.1}RSMHD模型框架描述}{24}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}基于轨迹数据的关系强度计算模块概述}{24}{subsection.3.1.1}
