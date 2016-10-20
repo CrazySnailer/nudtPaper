@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2016.1.8)  16 OCT 2016 20:18
+This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2016.1.8)  20 OCT 2016 09:18
 entering extended mode
 **thesis
 (E:\Research_Study\nudtPaper\thesis.tex
@@ -2176,7 +2176,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [58]
 [59]
-Overfull \hbox (6.5319pt too wide) in alignment at lines 980--1013
+Overfull \hbox (6.5319pt too wide) in alignment at lines 995--1028
 [][] 
  []
 
@@ -2188,13 +2188,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [61]
-Overfull \hbox (49.48029pt too wide) in paragraph at lines 1041--1073
+Overfull \hbox (49.48029pt too wide) in paragraph at lines 1056--1088
  [][] 
  []
 
 File: figures/figure5_Fscore.png Graphic file (type QTm)
 <use  "figures/figure5_Fscore.png" >
-Overfull \hbox (54.74619pt too wide) in paragraph at lines 1113--1145
+Overfull \hbox (54.74619pt too wide) in paragraph at lines 1128--1160
  [][] 
  []
 
@@ -2205,12 +2205,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: figures/figure5_cosgraph.png Graphic file (type QTm)
 
 <use  "figures/figure5_cosgraph.png" > [64]
-Overfull \hbox (49.48029pt too wide) in paragraph at lines 1162--1194
+Overfull \hbox (49.48029pt too wide) in paragraph at lines 1177--1209
  [][] 
  []
 
 
-Overfull \hbox (49.48029pt too wide) in paragraph at lines 1202--1234
+Overfull \hbox (49.48029pt too wide) in paragraph at lines 1217--1249
  [][] 
  []
 
@@ -2273,10 +2273,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 27303 strings out of 430478
- 493923 string characters out of 3191503
- 575945 words of memory out of 3000000
- 29895 multiletter control sequences out of 15000+200000
+ 27306 strings out of 430478
+ 493961 string characters out of 3191503
+ 575998 words of memory out of 3000000
+ 29898 multiletter control sequences out of 15000+200000
  68278 words of font info for 277 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  51i,16n,85p,1341b,964s stack positions out of 5000i,500n,10000p,200000b,50000s
