@@ -1,0 +1,91 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: thesis.aux
+The style file: bstutf8.bst
+Database file #1: ref/refs.bib
+Repeated entry---line 433 of file ref/refs.bib
+ : @article{eagle2006reality
+ :                          ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 453 of file ref/refs.bib
+ : @article{pentland2009inferring
+ :                               ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 474 of file ref/refs.bib
+ : @inproceedings{miluzzo2007cenceme
+ :                                  ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 483 of file ref/refs.bib
+ : @inproceedings{wang2014studentlife
+ :                                   ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 501 of file ref/refs.bib
+ : @article{granovetter1973strength
+ :                                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 593 of file ref/refs.bib
+ : @article{zajonc1968attitudinal
+ :                               ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 663 of file ref/refs.bib
+ : @inproceedings{itakura1987distance
+ :                                   ,
+I'm skipping whatever remains of this entry
+-- BUPTThesis.bst version 1.0 Beta 1 (2009/05/31) by Yu Zhang.
+-- http://code.google.com/p/buptthesis/
+-- See the "userguide.pdf" manual for usage information.
+Warning--The editor in cheng2012inferring is missing.
+Warning--empty editor in cheng2012inferring
+Warning--The editor in min2013mining is missing.
+Warning--empty editor in min2013mining
+`editor' is a missing field, not a string, for entry miluzzo2007cenceme
+while executing---line 2530 of file bstutf8.bst
+Warning--there's a publisher but no address in miluzzo2007cenceme
+Warning--The editor in wang2014studentlife is missing.
+Warning--empty editor in wang2014studentlife
+Warning--The editor in wang2015smartgpa is missing.
+Warning--empty editor in wang2015smartgpa
+Warning--empty journal in gustafson2012extracting
+Warning--empty pages in gustafson2012extracting
+Warning--The editor in khadangi2013measuring is missing.
+Warning--empty editor in khadangi2013measuring
+Warning--there's a publisher but no address in zillmann2013selective
+Warning--The editor in lee2007trajectory is missing.
+Warning--empty editor in lee2007trajectory
+Warning--The editor in li2008mining is missing.
+Warning--empty editor in li2008mining
+Warning--there's a publisher but no address in burt2009structural
+Warning--The editor in hsu2007mining is missing.
+Warning--empty editor in hsu2007mining
+Warning--The editor in zheng2013unsupervised is missing.
+Warning--empty editor in zheng2013unsupervised
+Warning--The editor in do2011groupus is missing.
+Warning--empty editor in do2011groupus
+Warning--The editor in mtibaa2008you is missing.
+Warning--empty editor in mtibaa2008you
+Warning--The editor in itakura1987distance is missing.
+Warning--empty editor in itakura1987distance
+Warning--there's a publisher but no address in zheng2011computing
+Warning--The editor in macqueen1967some is missing.
+Warning--empty editor in macqueen1967some
+Warning--The editor in ester1996density is missing.
+Warning--empty editor in ester1996density
+Warning--The editor in liu2012similarity is missing.
+Warning--empty editor in liu2012similarity
+Warning--The editor in ratanamahatana2004everything is missing.
+Warning--empty editor in ratanamahatana2004everything
+Warning--empty pages in ratanamahatana2004everything
+Warning--The editor in farrahi2008did is missing.
+Warning--empty editor in farrahi2008did
+Warning--there's a school but no address in yangruosong
+Warning--empty pages in mikolov2013efficient
+Warning--The editor in manku2007detecting is missing.
+Warning--empty editor in manku2007detecting
+Too many commas in name 1 of "Xiaoyun Mo, Dianxi Shi, Ruosong Yang, Han Li, ZheHang Tong, Feng Wang" for entry xiaoyunsensor
+while executing---line 2530 of file bstutf8.bst
+Too many commas in name 1 of "Xiaoyun Mo, Dianxi Shi, Ruosong Yang, Han Li, ZheHang Tong, Feng Wang" for entry xiaoyunsensor
+while executing---line 2530 of file bstutf8.bst
+Too many commas in name 1 of "Xiaoyun Mo, Dianxi Shi, Ruosong Yang, Han Li, ZheHang Tong, Feng Wang" for entry xiaoyunsensor
+while executing---line 2530 of file bstutf8.bst
+Warning--empty pages in xiaoyunsensor
+
+Done.
+(There were 11 error messages)
