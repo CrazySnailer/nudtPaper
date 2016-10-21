@@ -692,9 +692,9 @@ RS_{Bth}(u_{i},u_{j})=\sum_{x ,y }^{ Date_{i}, Date_{j}}W_{i,j,x,y,s,t}\sum_{s,t
 \label{fig:userNum}
 \end{figure}
 \par 从采集的学生志愿者的数据信息分析中，我们发现还存在一些不足：首先，从图\ref{fig:userNum}中我们可以看出并不是所有的志愿者都积极的参与到本次研究课题的数据收集环节，存在少部分志愿者没有能够坚持每天使用StarLog来收集自己每天的手机感知数据，这将会对用户之间的关系强度计算产生一定的影响；其次，某个用户A主观认为和另一个用户B是好朋友，而用户B不是和用户A是好朋友，因此我们提出社交关系满足对称性和反自反性的假设，即在数据集中学生A认为和学生B是好朋友，那么用学生A也是学生B的好朋友，即$rs(u_{A},u_{B})=rs(u_{B},u_{A})$是学生A和自身不参与关系强度计算。
-\section{剔除轨迹中的异常点}
+\section{剔除轨迹中的异常点实验结果}
 由于在获取GPS位置信息的时候会受到位置漂移的影响，导致在获取用户实际位置的时候可能产生采样的误差甚至跳跃，为了使得最终计算得到的关系强度结果更为准确我们需要对GPS轨迹数据进行滤波分析。在第二章中描述了常用的三种滤波方法，在本章中将会针对三种滤波算法进行最后结果展示并根据结果分析最终采用此滤波算法的原因。
-\par 首先接下来使用我们来分析观察各种滤波算法对用户轨迹中异常点检测剔除的效果，如图如图\ref{fig:3_2_1}、\ref{fig:3_2_2}所示。
+\par 首先接下来使用我们来分析观察各种滤波算法对用户轨迹中异常点检测剔除的效果，如图如图\ref{fig:3_2_1}所示。
 \begin{figure}[htb]
   \centering%
   \subfloat[原始轨迹数据]{%
@@ -703,22 +703,22 @@ RS_{Bth}(u_{i},u_{j})=\sum_{x ,y }^{ Date_{i}, Date_{j}}W_{i,j,x,y,s,t}\sum_{s,t
   \subfloat[中值滤波后的轨迹数据]{%
     \label{fig:3_2_2_1}
     \includegraphics[height=4cm]{figure_4_mid_location1_ed}}
-  \caption{轨迹中值滤波实验结果1}
+  \caption{轨迹中值滤波实验结果}
   \label{fig:3_2_1}
 \end{figure}
-\begin{figure}[htb]
-  \centering%
-  \subfloat[原始轨迹数据]{%
-    \label{fig:3_2_2_1}
-    \includegraphics[height=4cm]{figure_4_mid_location2}}\hspace{4em}%
-  \subfloat[中值滤波后的轨迹数据]{%
-    \label{fig:3_2_2_2}
-    \includegraphics[height=4cm]{figure_4_mid_location2_ed}}
-  \caption{轨迹中值滤波实验结果2}
-  \label{fig:3_2_2}
-\end{figure}
+%\begin{figure}[htb]
+%  \centering%
+%  \subfloat[原始轨迹数据]{%
+%    \label{fig:3_2_2_1}
+%    \includegraphics[height=4cm]{figure_4_mid_location2}}\hspace{4em}%
+%  \subfloat[中值滤波后的轨迹数据]{%
+%    \label{fig:3_2_2_2}
+%    \includegraphics[height=4cm]{figure_4_mid_location2_ed}}
+%  \caption{轨迹中值滤波实验结果2}
+%  \label{fig:3_2_2}
+%\end{figure}
 \par 从实验结果中我们可以观察到虽然中值滤波能够过滤掉其中少部分的位置漂移点，但是针对于一些明显的轨漂移点却没有能够很有效的识别过滤。
-\par 接下来我们再使用均值滤波算法对用户轨迹进行分析，观察均值滤波算法对用户轨迹中异常点的检测情况，部分实验结果见图图\ref{fig:3_3_1}、\ref{fig:3_3_2}。
+\par 接下来我们再使用均值滤波算法对用户轨迹进行分析，观察均值滤波算法对用户轨迹中异常点的检测情况，部分实验结果见图图\ref{fig:3_3_1}。
 \begin{figure}[htb]
   \centering%
   \subfloat[原始轨迹数据]{%
@@ -727,22 +727,22 @@ RS_{Bth}(u_{i},u_{j})=\sum_{x ,y }^{ Date_{i}, Date_{j}}W_{i,j,x,y,s,t}\sum_{s,t
   \subfloat[均值滤波后的轨迹数据]{%
     \label{fig:3_2_2_1}
     \includegraphics[height=4cm]{figure_4_mid_location1_avg}}
-  \caption{轨迹均值滤波实验结果1}
+  \caption{轨迹均值滤波实验结果}
   \label{fig:3_3_1}
 \end{figure}
-\begin{figure}[htb]
-  \centering%
-  \subfloat[原始轨迹数据]{%
-    \label{fig:3_2_2_1}
-    \includegraphics[height=4cm]{figure_4_mid_location2}}\hspace{4em}%
-  \subfloat[均值滤波后的轨迹数据]{%
-    \label{fig:3_2_2_2}
-    \includegraphics[height=4cm]{figure_4_mid_location2_avg}}
-  \caption{轨迹均值滤波实验结果2}
-  \label{fig:3_3_2}
-\end{figure}
+%\begin{figure}[htb]
+%  \centering%
+%  \subfloat[原始轨迹数据]{%
+%    \label{fig:3_2_2_1}
+%    \includegraphics[height=4cm]{figure_4_mid_location2}}\hspace{4em}%
+%  \subfloat[均值滤波后的轨迹数据]{%
+%    \label{fig:3_2_2_2}
+%    \includegraphics[height=4cm]{figure_4_mid_location2_avg}}
+%  \caption{轨迹均值滤波实验结果2}
+%  \label{fig:3_3_2}
+%\end{figure}
 \par 通过对比观察滤波结果图可以发现，相对于中值滤波，均值滤波能够较好的平滑用户的轨迹变化曲线，剔除GPS漂移点。但是，同样无法很有效的处理漂移偏差大的位置点。
-\par 通过采取卡尔曼滤波算法得到的用户轨迹如图\ref{fig:3_4_1}、\ref{fig:3_4_2}，根据观察图中滤波后的用户轨迹数据，我们可以发现虽然图形变得平滑了许多，但是却使得原有的轨迹信息收到了模糊，难以有效的将两个用户轨迹进行相似度计算。
+\par 通过采取卡尔曼滤波算法得到的用户轨迹如图\ref{fig:3_4_1}，根据观察图中滤波后的用户轨迹数据，我们可以发现虽然图形变得平滑了许多，但是却使得原有的轨迹信息收到了模糊，难以有效的将两个用户轨迹进行相似度计算。
 \begin{figure}[htb]
   \centering%
   \subfloat[原始轨迹数据]{%
@@ -751,21 +751,21 @@ RS_{Bth}(u_{i},u_{j})=\sum_{x ,y }^{ Date_{i}, Date_{j}}W_{i,j,x,y,s,t}\sum_{s,t
   \subfloat[卡尔曼滤波后的轨迹数据]{%
     \label{fig:3_2_2_1}
     \includegraphics[height=4cm]{figure_4_mid_location1_kalman_ed}}
-  \caption{卡尔曼滤波实验结果1}
+  \caption{卡尔曼滤波实验结果}
   \label{fig:3_4_1}
 \end{figure}
-\begin{figure}[htb]
-  \centering%
-  \subfloat[原始轨迹数据]{%
-    \label{fig:3_2_2_1}
-    \includegraphics[height=4cm]{figure_4_mid_location2}}\hspace{4em}%
-  \subfloat[卡尔曼滤波后的轨迹数据]{%
-    \label{fig:3_2_2_2}
-    \includegraphics[height=4cm]{figure_4_mid_location2_kalman_ed}}
-  \caption{卡尔曼滤波实验结果2}
-  \label{fig:3_4_2}
-\end{figure}
-\par 在本研究中，我们采用了一种基于速度的分段卡尔曼滤波方法。考虑到在一个时间片内，如果当前位置点的速度和它之前的位置点的速度绝对差大于$\Delta v$ 时（$\Delta v$作为一个未知的参数，需要我们在实际使用中给出）采用这样的方法将原有用户轨迹切分为$n$段然后针对每一段轨迹采用卡尔曼滤波算法，最终的部分轨迹滤波结果见图\ref{fig:3_5_1}、\ref{fig:3_5_2},可见经过按照速度分段后使用卡尔曼滤波能够比较好的过滤掉漂移点。
+%\begin{figure}[htb]
+%  \centering%
+%  \subfloat[原始轨迹数据]{%
+%    \label{fig:3_2_2_1}
+%   \includegraphics[height=4cm]{figure_4_mid_location2}}\hspace{4em}%
+%  \subfloat[卡尔曼滤波后的轨迹数据]{%
+%    \label{fig:3_2_2_2}
+%    \includegraphics[height=4cm]{figure_4_mid_location2_kalman_ed}}
+%  \caption{卡尔曼滤波实验结果2}
+%  \label{fig:3_4_2}
+%\end{figure}
+\par 在本研究中，我们采用了一种基于速度的分段卡尔曼滤波方法。考虑到在一个时间片内，如果当前位置点的速度和它之前的位置点的速度绝对差大于$\Delta v$ 时（$\Delta v$作为一个未知的参数，需要我们在实际使用中给出）采用这样的方法将原有用户轨迹切分为$n$段然后针对每一段轨迹采用卡尔曼滤波算法，最终的部分轨迹滤波结果见图\ref{fig:3_5_1}可见经过按照速度分段后使用卡尔曼滤波能够比较好的过滤掉漂移点。
 \begin{figure}[htb]
   \centering%
   \subfloat[原始轨迹数据]{%
@@ -774,21 +774,21 @@ RS_{Bth}(u_{i},u_{j})=\sum_{x ,y }^{ Date_{i}, Date_{j}}W_{i,j,x,y,s,t}\sum_{s,t
   \subfloat[分段卡尔曼滤波数据]{%
     \label{fig:3_2_2_1}
     \includegraphics[height=4cm]{figure_4_mid_location1_kalman}}
-  \caption{分段卡尔曼滤波轨迹结果1}
+  \caption{分段卡尔曼滤波轨迹结果}
   \label{fig:3_5_1}
 \end{figure}
-\begin{figure}[htb]
-  \centering%
-  \subfloat[原始轨迹数据]{%
-    \label{fig:3_2_2_1}
-    \includegraphics[height=4cm]{figure_4_mid_location2}}\hspace{4em}%
-  \subfloat[分段卡尔曼滤波数据]{%
-    \label{fig:3_2_2_2}
-    \includegraphics[height=4cm]{figure_4_mid_location2_kalman}}
-  \caption{分段卡尔曼滤波轨迹结果2}
-  \label{fig:3_5_2}
-\end{figure}
-\par 本小节主要针对前文中提及的三种常用的滤波算法进行了实验结果展示和效果分析，初步得出了使用卡尔曼滤波更加可行的判断结果。
+%\begin{figure}[htb]
+%  \centering%
+%  \subfloat[原始轨迹数据]{%
+%    \label{fig:3_2_2_1}
+%    \includegraphics[height=4cm]{figure_4_mid_location2}}\hspace{4em}%
+%  \subfloat[分段卡尔曼滤波数据]{%
+%    \label{fig:3_2_2_2}
+%    \includegraphics[height=4cm]{figure_4_mid_location2_kalman}}
+%  \caption{分段卡尔曼滤波轨迹结果2}
+%  \label{fig:3_5_2}
+%\end{figure}
+%\par 本小节主要针对前文中提及的三种常用的滤波算法进行了实验结果展示和效果分析，初步得出了使用卡尔曼滤波更加可行的判断结果。
 
 \section{轨迹中停留点检测}
 通过对停留点的识别，能够让我们更加深入的了解和认识用户的日常轨迹，同时从一个更加细粒度的层次来分析用户之间的轨迹相似度，停留点检测实验结果如图\ref{fig:SP_1}、\ref{fig:SP_2}所示，图中所得到的每一个停留点都具有丰富的现实意义，能够有效地表示用户访问的地点、位置。
@@ -819,7 +819,7 @@ RS_{Bth}(u_{i},u_{j})=\sum_{x ,y }^{ Date_{i}, Date_{j}}W_{i,j,x,y,s,t}\sum_{s,t
 \label{traclustar}
 本节针对上面得到的用户轨迹中的停留点，采用不同的聚类算法所得到的不同的聚类结果进行描述。在前面的章节中我们详细介绍了聚类中常用的三种算法K-means聚类、DJ-Cluster的密度聚类和最新发表的改进的密度聚类算法，接下来我们将在实验中对这三种聚类算法进行比较。
 \par 首先我们对用户轨迹数据采用K-means算法进行聚类实验，但是K-means聚类算法具有以下的明显的缺点：首先是K-means聚类结果依赖于参数$k$的初始化，其中$k$是指聚类个数。$k$个数的确定往往是靠经验值设定；其次是K-means算法初始化时聚类中心的选择，因为该算法采用的随机初始化聚类中心点，中心点选择不同会导致聚类的结果也出现差异甚至影响聚类的时间复杂度，使得聚类结果容易得到局部最优解而非全局最优解；最后的一个缺点是K-means聚类算法对原始数据中的噪音点和离群点非常敏感，聚类结果很容易受到离群点的影响从而导致簇的偏移。
-\par 在本研究中因为是针对用户的空间轨迹进行聚类分析，而现实生活中用户的停留点主要是以相隔距离比较大的建筑等，因此在采用K-means聚类过程中，对噪音点的影响基本可以忽略不计，最主要的就是考虑不同的参数$k$对最终聚类结果的影响，图\ref{fig:3_8_1}、\ref{fig:3_8_2}主要展示不同的参数$k$取值对最终轨迹聚类结果的影响。图\ref{fig:3_9_1}、\ref{fig:3_9_2}在地图上标记了在不同参数$k$取值情况下的簇中心使得能够有更加直观的观察。
+\par 在本研究中因为是针对用户的空间轨迹进行聚类分析，而现实生活中用户的停留点主要是以相隔距离比较大的建筑等，因此在采用K-means聚类过程中，对噪音点的影响基本可以忽略不计，最主要的就是考虑不同的参数$k$对最终聚类结果的影响，图\ref{fig:3_8_1}主要展示不同的参数$k$取值对最终轨迹聚类结果的影响。图\ref{fig:3_9_1}在地图上标记了在不同参数$k$取值情况下的簇中心使得能够有更加直观的观察。
 \begin{figure}[htb]
   \centering%
   \subfloat[原始轨迹数据]{%
@@ -834,7 +834,7 @@ RS_{Bth}(u_{i},u_{j})=\sum_{x ,y }^{ Date_{i}, Date_{j}}W_{i,j,x,y,s,t}\sum_{s,t
   \subfloat[参数k=5]{%
     \label{fig:3_8_1_4}
     \includegraphics[height=5cm]{figure4_tra1_kmeans_5}}
-  \caption{基于K-means的轨迹聚类实验结果1}
+  \caption{基于K-means的轨迹聚类实验结果}
   \label{fig:3_8_1}
 \end{figure}
 \begin{figure}[htb]
@@ -851,67 +851,13 @@ RS_{Bth}(u_{i},u_{j})=\sum_{x ,y }^{ Date_{i}, Date_{j}}W_{i,j,x,y,s,t}\sum_{s,t
   \subfloat[参数k=5]{%
     \label{fig:3_9_1_4}
     \includegraphics[height=6cm]{figure4_tra1_map_k5}}
-  \caption{基于K-means的轨迹聚类实验结果地图展示1}
+  \caption{基于K-means的轨迹聚类实验结果地图展示}
   \label{fig:3_9_1}
 \end{figure}
-\begin{figure}[htb]
-  \centering%
-  \subfloat[原始轨迹数据]{%
-    \label{fig:3_8_2_1}
-    \includegraphics[height=5cm]{figure4_tra2}}%\hspace{4em}
-  \subfloat[参数k=3]{%
-    \label{fig:3_8_2_2}
-    \includegraphics[height=5cm]{figure4_tra2_kmeans_3}}\\
-  \subfloat[参数k=4]{%
-    \label{fig:3_8_2_3}
-    \includegraphics[height=5cm]{figure4_tra2_kmeans_4}}
-  \subfloat[参数k=5]{%
-    \label{fig:3_8_2_4}
-    \includegraphics[height=5cm]{figure4_tra2_kmeans_5}}
-  \caption{基于K-means的轨迹聚类实验结果2}
-  \label{fig:3_8_2}
-\end{figure}
-\begin{figure}[htb]
-  \centering%
-  \subfloat[原始轨迹数据]{%
-    \label{fig:3_9_2_1}
-    \includegraphics[height=6cm]{figure4_tra2_map}}%\hspace{4em}
-  \subfloat[参数k=3]{%
-    \label{fig:3_9_2_2}
-    \includegraphics[height=6cm]{figure4_tra2_map_k3}}
-  \subfloat[参数k=4]{%
-    \label{fig:3_9_2_3}
-    \includegraphics[height=6cm]{figure4_tra2_map_k4}}
-  \subfloat[参数k=5]{%
-    \label{fig:3_9_2_4}
-    \includegraphics[height=6cm]{figure4_tra2_map_k5}}
-  \caption{基于K-means的轨迹聚类实验结果地图展示2}
-  \label{fig:3_9_2}
-\end{figure}
-\par 通过对轨迹数据的聚类分析我们可以得知，如果在聚类前我们能够确切的知道用户的轨迹数据应该划分的簇的个数，那么K-means聚类算法将会得出非常合理的结果，我们在观察图\ref{fig:3_9_1}、\ref{fig:3_9_2}时发现，当簇的个数越接近符合用户访问位置个数的时候，那么聚类点将更能够反映出真实的情况，在图\ref{fig:3_11_1}中，(a)所对应的聚类得到的簇包含了实际上没有正确的将用户访问过的位置区分开，因为这两个访问的位置距离相隔太近，导致K-means算法将这两个簇合并为一个簇，但是如果我们将聚类个数设置为5就能够成功的识别出这两个位置。在另一实验结果图\ref{fig:3_11_2}中也出现了类似的情况。但是根据图中实验情况分析发现对于一部分在路上的点被划分到了聚类簇中，同时有些应该被单独聚类成一个独立的簇的点被划分到了在路上的点中，这些都是因为我们无法正确的给出符合当前轨迹访问点个数的聚类个数所造成的。
-\par 接下来将会基于DJ-Cluster 算法来对轨迹数据进行聚类并对结果进行分析。DJ-Cluster算法是基于密度聚类算法DBSCAN而改进的一种密度聚类算法，通过利用密度相连的原理可以发现任意形状的簇，但是算法存在有一个局限性：算法的性能和准确性依赖于参数$Eps$（邻域半径）和$MinPts$（最少点数量），如果邻域半径的取值过大那么所有的点将会划分为同一个簇，因此在实际的使用过程中，需要不断地对参数进行调整才能得到比较理想的结果，如图\ref{fig:3_10_1}、\ref{fig:3_10_2}结果所示，实际地图中结果展示如图\ref{fig:3_11_1}、\ref{fig:3_11_2}所示。
-\begin{figure}[htb]
-  \centering%
-  \subfloat[原始轨迹数据]{%
-    \label{fig:3_10_1_1}
-    \includegraphics[height=4cm]{figure4_tra_for_dj_1}}\hspace{4em}%
-  \subfloat[DJ-Cluster聚类结果]{%
-    \label{fig:3_10_1_2}
-    \includegraphics[height=4cm]{figure4_tra_result_dj_1}}
-  \caption{基于DJ-Cluster的轨迹聚类实验结果1}
-  \label{fig:3_10_1}
-\end{figure}
-\begin{figure}[htb]
-  \centering%
-  \subfloat[原始轨迹数据]{%
-    \label{fig:3_11_1_1}
-    \includegraphics[height=6cm]{figure4_tra_map_dj1}}\hspace{4em}%
-  \subfloat[DJ-Cluster聚类结果]{%
-    \label{fig:3_11_1_2}
-    \includegraphics[height=6cm]{figure4_tra_map_result_dj_1}}
-  \caption{基于DJ-Cluster的轨迹聚类实验结果地图展示1}
-  \label{fig:3_11_1}
-\end{figure}
+
+\par 通过对轨迹数据的聚类分析我们可以得知，如果在聚类前我们能够确切的知道用户的轨迹数据应该划分的簇的个数，那么K-means聚类算法将会得出非常合理的结果，我们在观察图\ref{fig:3_9_1}时发现，当簇的个数越接近符合用户访问位置个数的时候，那么聚类点将更能够反映出真实的情况，在图\ref{fig:3_9_1}中，(a)所对应的聚类得到的簇包含了实际上没有正确的将用户访问过的位置区分开，因为这两个访问的位置距离相隔太近，导致K-means算法将这两个簇合并为一个簇，但是如果我们将聚类个数设置为5就能够成功的识别出这两个位置，这些都是因为我们无法正确的给出符合当前轨迹访问点个数的聚类个数所造成的。
+\par 接下来将会基于DJ-Cluster 算法来对轨迹数据进行聚类并对结果进行分析。DJ-Cluster算法是基于密度聚类算法DBSCAN而改进的一种密度聚类算法，通过利用密度相连的原理可以发现任意形状的簇，但是算法存在有一个局限性：算法的性能和准确性依赖于参数$Eps$（邻域半径）和$MinPts$（最少点数量），如果邻域半径的取值过大那么所有的点将会划分为同一个簇，因此在实际的使用过程中，需要不断地对参数进行调整才能得到比较理想的结果，如图\ref{fig:3_10_2}结果所示，实际地图中结果展示如图\ref{fig:3_11_2}所示。
+
 \begin{figure}[htb]
   \centering%
   \subfloat[原始轨迹数据]{%
@@ -920,7 +866,7 @@ RS_{Bth}(u_{i},u_{j})=\sum_{x ,y }^{ Date_{i}, Date_{j}}W_{i,j,x,y,s,t}\sum_{s,t
   \subfloat[DJ-Cluster聚类结果]{%
     \label{fig:3_10_2_2}
     \includegraphics[height=4cm]{figure4_tra_result_dj_2}}
-  \caption{基于DJ-Cluster的轨迹聚类实验结果2}
+  \caption{基于DJ-Cluster的轨迹聚类实验结果}
   \label{fig:3_10_2}
 \end{figure}
 \begin{figure}[htb]
@@ -931,11 +877,11 @@ RS_{Bth}(u_{i},u_{j})=\sum_{x ,y }^{ Date_{i}, Date_{j}}W_{i,j,x,y,s,t}\sum_{s,t
   \subfloat[DJ-Cluster聚类结果]{%
     \label{fig:3_11_2_2}
     \includegraphics[height=6cm]{figure4_tra_map_result_dj_2}}
-  \caption{基于DJ-Cluster的轨迹聚类实验结果地图展示2}
+  \caption{基于DJ-Cluster的轨迹聚类实验结果地图展示}
   \label{fig:3_11_2}
 \end{figure}
-\par 通过观察结果地图展示和原始数据对比能够发现，相比于K-means算法DJ-Cluster能够得到比较正确的结果，但是结果依赖于对前面所描述的参数的不断调整。从图\ref{fig:3_11_1}中(a)中描绘的用户位置点集合(b)中得到的聚类结果进行分析，右上角是宿舍区域，因为当前点比较少，未能够正确的将这个区域聚类成一个单独的簇进行标记。但是从图\ref{fig:3_11_2}中发现DJ-Cluster基本得到了非常好的聚类结果。受限于DJ-Cluster算法对参数的敏感性，接下来将介绍一种新的聚类算法，该算法将大大降低对参数和数据的依赖性。
-\par 接下来进一步展示在Science上发表的聚类算法，该算法通过结合现实理论，假设聚类的中心实质上是有局部密度低的点所环绕的，并且这点和另外密度高的点距离都比较大。这样通过计算得到每个点的当前密度值后根据划分的边界阈值进行密度点的划分，找出每个块中密度最大的点并将其周围密度小于该点密度的点加入到当前簇中得到最终的聚类结果。该算法因为考虑当将点密度排序后进行处理，保持了点密度顺序的相对稳定的同时减小了半径阈值带来的影响。聚类算法的具体的实验结果见图\ref{fig:3_12_1}、\ref{fig:3_12_2}，将聚类结果通过地图展示如图\ref{fig:3_13_1}、\ref{fig:3_13_2}所示，从图\ref{fig:3_12_1}中可以观察到聚类结果是比较
+\par 通过观察结果地图展示和原始数据对比能够发现，相比于K-means算法DJ-Cluster能够得到比较正确的结果，但是结果依赖于对前面所描述的参数的不断调整。从图图\ref{fig:3_11_2}中发现DJ-Cluster基本得到了非常好的聚类结果。受限于DJ-Cluster算法对参数的敏感性，接下来将介绍一种新的聚类算法，该算法将大大降低对参数和数据的依赖性。
+\par 接下来进一步展示在Science上发表的聚类算法，该算法通过结合现实理论，假设聚类的中心实质上是有局部密度低的点所环绕的，并且这点和另外密度高的点距离都比较大。这样通过计算得到每个点的当前密度值后根据划分的边界阈值进行密度点的划分，找出每个块中密度最大的点并将其周围密度小于该点密度的点加入到当前簇中得到最终的聚类结果。该算法因为考虑当将点密度排序后进行处理，保持了点密度顺序的相对稳定的同时减小了半径阈值带来的影响。聚类算法的具体的实验结果见图\ref{fig:3_12_1}将聚类结果通过地图展示如图\ref{fig:3_13_1}所示，从图\ref{fig:3_12_1}中可以观察到聚类结果是比较
 \begin{figure}[htb]
   \centering%
   \subfloat[原始轨迹数据]{%
@@ -944,7 +890,7 @@ RS_{Bth}(u_{i},u_{j})=\sum_{x ,y }^{ Date_{i}, Date_{j}}W_{i,j,x,y,s,t}\sum_{s,t
   \subfloat[聚类结果]{%
     \label{fig:3_12_1_2}
     \includegraphics[height=4cm]{figure4_science_1_cluster}}
-  \caption{轨迹聚类实验结果展示1}
+  \caption{轨迹聚类实验结果展示}
   \label{fig:3_12_1}
 \end{figure}
 \begin{figure}[htb]
@@ -955,39 +901,18 @@ RS_{Bth}(u_{i},u_{j})=\sum_{x ,y }^{ Date_{i}, Date_{j}}W_{i,j,x,y,s,t}\sum_{s,t
   \subfloat[聚类结果]{%
     \label{fig:3_13_1_2}
     \includegraphics[height=6cm]{figure4_tra_map_result_science1}}
-  \caption{轨迹聚类实验结果地图表示1}
+  \caption{轨迹聚类实验结果地图表示}
   \label{fig:3_13_1}
 \end{figure}
-\begin{figure}[htb]
-  \centering%
-  \subfloat[原始轨迹数据]{%
-    \label{fig:3_12_2_1}
-    \includegraphics[height=4cm]{figure4_tra_for_science2}}\hspace{4em}%
-  \subfloat[聚类结果]{%
-    \label{fig:3_12_2_2}
-    \includegraphics[height=4cm]{figure4_science_2_cluster}}
-  \caption{轨迹聚类实验结果展示2}
-  \label{fig:3_12_2}
-\end{figure}
-\begin{figure}[htb]
-  \centering%
-  \subfloat[原始轨迹数据]{%
-    \label{fig:3_13_2_1}
-    \includegraphics[height=6cm]{figure4_tra_map_science2}}\hspace{4em}%
-  \subfloat[聚类结果]{%
-    \label{fig:3_13_2_2}
-    \includegraphics[height=6cm]{figure4_tra_map_result_science2}}
-  \caption{轨迹聚类实验结果地图表示2}
-  \label{fig:3_13_2}
-\end{figure}
-\par 通过分析图\ref{fig:3_12_1}和图\ref{fig:3_12_1}中的聚类结果发现该聚类算法能够比较正确的将用户的轨迹数据进行聚类同时也不依赖于太敏感的参数输入。在图\ref{fig:3_12_1}中用户正确访问的地方应该是五个，虽然(b)中的聚类结果也得出了五个簇中心位置，但是未能将寝室这一簇识别出来而是将在体育馆周围的点标注为聚类簇。虽然在最终的结果上有的会出现一点误差，但是能够去除对数据和参数的敏感性减少对实验的干预，在本研究中显得更加难能可贵和适用。
+
+\par 通过分析图\ref{fig:3_12_1}和图\ref{fig:3_12_1}中的聚类结果发现该聚类算法能够比较正确的将用户的轨迹数据进行聚类同时也不依赖于太敏感的参数输入。在图\ref{fig:3_12_1}中用户正确访问的地方应该是五个，虽然(b)中的聚类结果也得出了五个簇中心位置，但是未能将寝室这一簇识别出来而是将在体育馆周围的点标注为聚类簇。虽然在最终的结果上有的会出现一点误差，但是能够去除对数据和参数的敏感性减少对实验的干预，在本研究中显得更加适用。
 
 
 \section{实验结果验证方法}
 \label{sec:section5-2}
-在上面的章节中我们主要描述了本研究实验所用到的智能手机上下文感知数据集，鉴于StarLog在采集用户手机感知数据时并没有能够直接给出用户之间的关系强度值或者顺序，因此在此之前我们需要得到一个比较符合志愿者真实情况的社会关系强度结果，并用我们提出的顺序比较法来对RSMHD模型的结果进行评价。
+在上面的章节中我们主要描述了本研究实验所用到的智能手机上下文感知数据集，鉴于StarLog在采集用户手机感知数据时并没有能够直接给出用户之间的关系强度值或者顺序，因此在此之前我们需要得到一个比较符合志愿者真实情况的社会关系强度结果，并用我们提出的顺序比较法来对多源感知数据关系强度计算框架的计算结果进行评价。
 \subsection{获取用户关系强度结果}
-根据绪论中所提及到的心理学相关的理论知识，从中证实得到在现实生活中关系亲密的两个用户会更加倾向于一起进行面对面的交流、共同进行社交活动导致人们更加倾向于喜欢在态度、兴趣、价值观、背景和人格上和其相似的人。由此得知，在日常生活当中兴趣相投的人更容易成为朋友成为朋友。在现实生活中的推理方法通常是借助问卷调查的形式，通过被调查者填写问卷的相似性来作为用户之间的关系强度，但是这样的方法具有一定局限性和不确定性。首先，心理学中根据问卷来判断被调查者的相似性需要大量的符合心理学逻辑的调查题目，而普通问卷的内容受限且缺乏心理学逻辑；其次是志愿者在填写问卷时受到多种因素干扰无法选定最符合自己的选项。综上所述，我们为了简便可靠，在志愿者参加移动数据采集前按照意识将志愿者名单基于关系强度排序（当某志愿者并没有对剩余志愿者进行完全排序时候，我们即采用他已排序的结果作为验证结果），同时在数据采集结束后再将志愿者名单根据关系强度进行排序，得到两张用户关系强度表\ref{tab:truthresult}。
+在现实生活中的推理方法通常是借助问卷调查的形式，通过被调查者填写问卷的相似性来作为用户之间的关系强度，但是这样的方法具有一定局限性和不确定性。首先，心理学中根据问卷来判断被调查者的相似性需要大量的符合心理学逻辑的调查题目，而普通问卷的内容受限且缺乏心理学逻辑；其次是志愿者在填写问卷时受到多种因素干扰无法选定最符合自己的选项。综上所述，我们为了简便可靠，在志愿者参加移动数据采集前按照意识将志愿者名单基于关系强度排序（当某志愿者并没有对剩余志愿者进行完全排序时候，我们即采用他已排序的结果作为验证结果），同时在数据采集结束后再将志愿者名单根据关系强度进行排序，得到两张用户关系强度表\ref{tab:truthresult}。
 \par 从表中我们可以得出发现志愿者并没有对剩余全部人员给出关系强度排序，往往是对少部分参与者进行排序；同时，有的志愿者可能因为无法对剩余志愿者进行排序而缺少该数据，我们在实验结果验证的时候首先剔除没有给出关系强度排序的志愿者，然后对于每位志愿者我们输出与他们填写的排序长度相同的结果进行比较。
 \begin{table}[htb]
   \centering
@@ -1038,7 +963,7 @@ RS_{Bth}(u_{i},u_{j})=\sum_{x ,y }^{ Date_{i}, Date_{j}}W_{i,j,x,y,s,t}\sum_{s,t
 \label{fig:survey_relation}
 \end{figure}
 \subsection{实验结果评价方法}
-在前面的章节介绍中我们通过志愿者根据主观意愿填写的用户关系排序表可以得到志愿者自身和其他志愿者之间的一个关系强度序列$rsq_{t}$，同时基于RSMHD计算模型我们能够得到用户之间关系强度值经过排序后输出一个关系强度序列$rsq_{m}$。因此，我们对实验结果的评价的关键问题在于如何通过比较$rsq_{t}$和$rsq_{m}$的序列相似性来评价RSMHD模型计算结果。
+在前面的章节介绍中我们通过志愿者根据主观意愿填写的用户关系排序表可以得到志愿者自身和其他志愿者之间的一个关系强度序列$rsq_{t}$，同时基于多源感知数据关系强度计算模型我们能够得到用户之间关系强度值经过排序后输出一个关系强度序列$rsq_{m}$。因此，我们对实验结果的评价的关键问题在于如何通过比较$rsq_{t}$和$rsq_{m}$的序列相似性来评价RSMHD模型计算结果。
 \par 传统的最长公共子串的序列相似计算方法在本研究中因受限于用户问卷关系序列的长度影响，导致计算结果依赖于用户的初始化关系强度序列长度。我们采用基于序列熵的计算序列$rsq_{t}$和序列$rsq_{m}$ 的全局一致性度量方法。首先我们求出$rsq_{t}$和$rsq_{m}$的最长公共子串$LCS(rsq_{t},rsq_{m})=s_{1}s_{2}\cdots s_{n}$，假设$s_{r}(1\leqslant r \leqslant n)$与$rsq_{t}$和$rsq_{m}$中对应的用户标识是$rsq_{tr}$和$rsq_{mr}$，则评价函数$F(rsq_{t},rsq_{m})$的计算如公式\ref{equ:chap5:Score}所示。
 \begin{equation}
 \label{equ:chap5:Score}
@@ -1049,7 +974,7 @@ F(rsq_{t},rsq_{m})=1-\frac{1}{Min(  \left |rsq_{t}  \right |, \left |rsq_{m}  \r
 \label{sec:section5-3}
 实验环境采用了Ubuntu 14.04 x64，10GB 内存，Intel core i5 3.2GHz 4 核处理器，使用Python编码实现整个计算流程。
 \subsection{基于GPS轨迹相似性计算用户之间的关系强度}
-通过利用StarLog收集的用户轨迹数据集，我们处理得到的用户GPS轨迹数据$Ntra$、用户日常语义轨迹数据$Ltra$、用户轨迹运动模式数据$TraPF$和$TraSQ$。我们根据\ref{sec:tra_relation}中描述的方法计算用户$u_{i}$同其它志愿者$u_{j}(j \in volunteers, j \neq i)$之间的关系强度，即通过加权DTW算法计算用户基于日常语义轨迹数据$Ltra$的关系强度结果，通过快速hash语义变换计算用户基于日常语义轨迹数据$Ltra$的关系强度，通过$TraPF$和$TraSQ$计算用户基于轨迹运动模式的关系强度，最后对三维数据结果进行融合，得到用户之间基于日常轨迹数据的关系强度结果如表\ref{tab:result_tra}所示。
+通过利用StarLog收集的用户轨迹数据集，我们处理得到的用户GPS轨迹数据$Ntra$、用户日常语义轨迹数据$Ltra$、用户轨迹运动模式数据$TraPF$和$TraSQ$。我们出计算用户$u_{i}$同其它志愿者$u_{j}(j \in volunteers, j \neq i)$之间的关系强度，即通过加权DTW算法计算用户基于日常语义轨迹数据$Ltra$的关系强度结果，通过快速hash语义变换计算用户基于日常语义轨迹数据$Ltra$的关系强度，通过$TraPF$计算用户基于轨迹运动模式的关系强度，最后对三维数据结果进行融合，得到用户之间基于日常轨迹数据的关系强度结果如表\ref{tab:result_tra}所示。
 \begin{table}[htbp]
   \centering
 %  \begin{minipage}[t]{0.8\linewidth} % 如果想在表格中使用脚注，minipage是个不错的办法
