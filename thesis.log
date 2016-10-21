@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2016.1.8)  20 OCT 2016 21:51
+This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2016.1.8)  21 OCT 2016 08:30
 entering extended mode
 **thesis
 (E:\Research_Study\nudtPaper\thesis.tex
@@ -1680,7 +1680,7 @@ LaTeX Font Info:    Font shape `U/fsy/m/n' will be
 ])
 \tf@lof=\write7
  [6]
-(E:\Research_Study\nudtPaper\data/abstract.tex
+(E:\Research_Study\nudtPaper\data/abstract_1.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [1
@@ -1695,7 +1695,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ])
-[4] (E:\Research_Study\nudtPaper\data/chap01.tex
+[4] (E:\Research_Study\nudtPaper\data/chap01_1.tex
 .................................................
 . fontspec info: "no-scripts"
 . 
@@ -1725,7 +1725,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [4]
-[5] [6]) (E:\Research_Study\nudtPaper\data/chap02.tex [7] [8
+[5] [6]) (E:\Research_Study\nudtPaper\data/chap02_1.tex [7] [8
 
 
 ] [9]
@@ -2286,11 +2286,11 @@ LaTeX Warning: There were multiply-defined labels.
  ) 
 Here is how much of TeX's memory you used:
  27306 strings out of 430478
- 493961 string characters out of 3191503
+ 493979 string characters out of 3191503
  575998 words of memory out of 3000000
  29898 multiletter control sequences out of 15000+200000
  68278 words of font info for 277 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 51i,16n,85p,1341b,964s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 51i,16n,85p,1343b,964s stack positions out of 5000i,500n,10000p,200000b,50000s
 
 Output written on thesis.pdf (92 pages).
