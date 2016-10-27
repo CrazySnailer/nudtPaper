@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2016.1.8)  26 OCT 2016 20:30
+This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2016.1.8)  27 OCT 2016 20:05
 entering extended mode
 **thesis
 (E:\Research_Study\nudtPaper\thesis.tex
@@ -1828,8 +1828,14 @@ File: figures/figure4_wifimodel.png Graphic file (type QTm)
 File: figures/figure4_wifi_context.png Graphic file (type QTm)
 
 <use  "figures/figure4_wifi_context.png" >
-File: figures/figure4_wifi_context_graph.png Graphic file (type QTm)
+Overfull \hbox (4.87192pt too wide) in paragraph at lines 419--426
+\xeCJK@song/m/n/12.045 息，| $\OML/txmi/m/it/12.045 WiFi context \OT1/txr/m/n
+/12.045 = \OMS/txsy/m/n/12.045 f\OT1/txr/m/n/12.045 (\OML/txmi/m/it/12.045 SSID
+[]; BSSID[]; level[]; state[]; time[]\OT1/txr/m/n/12.045 ) [] (\OML/txmi/m/it/1
+2.045 SSID[]; BSSID[]; level[]; [] 
+ []
 
+File: figures/figure4_wifi_context_graph.png Graphic file (type QTm)
 <use  "figures/figure4_wifi_context_graph.png" >
 File: figures/figure4_Bluetoothmodel.png Graphic file (type QTm)
 
@@ -1907,17 +1913,18 @@ Missing character: There is no Ø in font txmi!
 LaTeX Warning: Command \O invalid in math mode on input line 573.
 
 Missing character: There is no Ø in font txmi!
-[41] [42]
+File: figures/figure5_ronghe.png Graphic file (type QTm)
+<use  "figures/figure5_ronghe.png" > [41] [42]
 File: figures/figure5_sex.png Graphic file (type QTm)
- <use  "figures/figure5_sex.png" >
+
+<use  "figures/figure5_sex.png" >
 File: figures/figure5_academy.png Graphic file (type QTm)
-
-<use  "figures/figure5_academy.png" >
+ <use  "figures/figure5_academy.png" >
 File: figures/figure5_class.png Graphic file (type QTm)
- <use  "figures/figure5_class.png" >
-File: figures/figure5_lab.png Graphic file (type QTm)
 
-<use  "figures/figure5_lab.png" >
+<use  "figures/figure5_class.png" >
+File: figures/figure5_lab.png Graphic file (type QTm)
+ <use  "figures/figure5_lab.png" >
 .................................................
 . fontspec info: "defining-font"
 . 
@@ -2040,7 +2047,7 @@ File: figures/figure4_tra_map_result_science1.png Graphic file (type QTm)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [51]
-Overfull \hbox (6.5319pt too wide) in alignment at lines 923--956
+Overfull \hbox (6.5319pt too wide) in alignment at lines 930--963
 [][] 
  []
 
@@ -2049,7 +2056,7 @@ File: figures/figure5_survey_relation.png Graphic file (type QTm)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [53]
-Overfull \hbox (49.48029pt too wide) in paragraph at lines 984--1016
+Overfull \hbox (49.48029pt too wide) in paragraph at lines 991--1023
  [][] 
  []
 
@@ -2058,7 +2065,7 @@ File: figures/figure5_Fscore.png Graphic file (type QTm)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [55]
-Overfull \hbox (54.74619pt too wide) in paragraph at lines 1056--1088
+Overfull \hbox (54.74619pt too wide) in paragraph at lines 1063--1095
  [][] 
  []
 
@@ -2068,26 +2075,26 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [56]
 [57]
-Overfull \hbox (49.48029pt too wide) in paragraph at lines 1105--1137
+Overfull \hbox (49.48029pt too wide) in paragraph at lines 1112--1144
  [][] 
  []
 
 
-Overfull \hbox (49.48029pt too wide) in paragraph at lines 1145--1177
+Overfull \hbox (49.48029pt too wide) in paragraph at lines 1152--1184
  [][] 
  []
 
 File: figures/figure5_rsmhd_graph.png Graphic file (type QTm)
 <use  "figures/figure5_rsmhd_graph.png" >
+File: figures/figure5_rsmhd.png Graphic file (type QTm)
+ <use  "figures/figure5_rsmhd.png" >
+[58] [59]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [58]
-Overfull \vbox (63.97488pt too high) has occurred while \output is active []
+ [60]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-[59]
-File: figures/figure5_rsmhd.png Graphic file (type QTm)
- <use  "figures/figure5_rsmhd.png" > [60] [61]
+ [61]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [62
@@ -2128,10 +2135,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 27197 strings out of 430478
- 491649 string characters out of 3191503
- 557488 words of memory out of 3000000
- 29813 multiletter control sequences out of 15000+200000
+ 27200 strings out of 430478
+ 491705 string characters out of 3191503
+ 559533 words of memory out of 3000000
+ 29815 multiletter control sequences out of 15000+200000
  68254 words of font info for 274 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  51i,16n,85p,1341b,960s stack positions out of 5000i,500n,10000p,200000b,50000s

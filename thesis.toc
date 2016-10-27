@@ -52,11 +52,11 @@
 \contentsline {subsection}{\numberline {5.6.2}基于WiFi感知数据计算用户之间的关系强度}{56}{subsection.5.6.2}
 \contentsline {subsection}{\numberline {5.6.3}基于蓝牙感知数据计算用户之间的关系强度}{58}{subsection.5.6.3}
 \contentsline {subsection}{\numberline {5.6.4}基于多源感知数据计算用户之间的关系强度结果}{58}{subsection.5.6.4}
-\contentsline {section}{\numberline {5.7}小结}{61}{section.5.7}
+\contentsline {section}{\numberline {5.7}小结}{59}{section.5.7}
 \contentsline {chapter}{\numberline {6}总结与展望}{62}{chapter.6}
 \contentsline {section}{\numberline {6.1}工作总结}{62}{section.6.1}
 \contentsline {section}{\numberline {6.2}工作展望}{63}{section.6.2}
-\contentsline {chapter}{致谢}{64}{chapter*.68}
-\contentsline {chapter}{参考文献}{66}{section*.69}
-\contentsline {chapter}{作者在学期间取得的学术成果}{71}{chapter*.71}
+\contentsline {chapter}{致谢}{64}{chapter*.69}
+\contentsline {chapter}{参考文献}{66}{section*.70}
+\contentsline {chapter}{作者在学期间取得的学术成果}{71}{chapter*.72}
 \contentsfinish 
