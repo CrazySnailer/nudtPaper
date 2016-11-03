@@ -16,11 +16,11 @@
 \contentsline {section}{\numberline {2.2}时间序列相似度度量方法}{14}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}轨迹中心距离}{15}{subsection.2.2.1}
 \contentsline {subsection}{\numberline {2.2.2}动态时间归整计算距离}{16}{subsection.2.2.2}
-\contentsline {section}{\numberline {2.3}自然语言处理方法}{18}{section.2.3}
+\contentsline {section}{\numberline {2.3}自然语言处理方法}{17}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}LDA主题模型}{18}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}word2vec深度计算模型}{19}{subsection.2.3.2}
 \contentsline {subsection}{\numberline {2.3.3}Hash余弦相似度算法}{21}{subsection.2.3.3}
-\contentsline {section}{\numberline {2.4}WiFi感知数据的度量方法}{22}{section.2.4}
+\contentsline {section}{\numberline {2.4}WiFi感知数据的度量方法}{21}{section.2.4}
 \contentsline {section}{\numberline {2.5}蓝牙感知数据的度量方法}{22}{section.2.5}
 \contentsline {section}{\numberline {2.6}小结}{22}{section.2.6}
 \contentsline {chapter}{\numberline {3}面向多源感知数据结构化描述和处理}{23}{chapter.3}
@@ -57,7 +57,7 @@
 \contentsline {chapter}{\numberline {6}总结与展望}{62}{chapter.6}
 \contentsline {section}{\numberline {6.1}工作总结}{62}{section.6.1}
 \contentsline {section}{\numberline {6.2}工作展望}{63}{section.6.2}
-\contentsline {chapter}{致谢}{64}{chapter*.69}
-\contentsline {chapter}{参考文献}{66}{section*.70}
-\contentsline {chapter}{作者在学期间取得的学术成果}{71}{chapter*.72}
+\contentsline {chapter}{致谢}{64}{chapter*.68}
+\contentsline {chapter}{参考文献}{66}{section*.69}
+\contentsline {chapter}{作者在学期间取得的学术成果}{71}{chapter*.71}
 \contentsfinish 
