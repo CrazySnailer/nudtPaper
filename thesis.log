@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2016.1.8)  3 NOV 2016 10:12
+This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2016.1.8)  6 DEC 2016 11:11
 entering extended mode
 **thesis
 (E:\Research_Study\nudtPaper\thesis.tex
@@ -6,9 +6,6 @@ LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for loaded.
 (E:\Research_Study\nudtPaper\nudtpaper.cls
 Document Class: nudtpaper 2011/07/17 v2.2 NUDT paper template
-
-Package nudtpaper Warning: Unknown Option 'openany' on input line 49.
-
 (G:\CTEX\MiKTeX\tex\latex\base\ifthen.sty
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
@@ -1539,6 +1536,8 @@ LaTeX Font Info:    Font shape `U/fsy/m/n' will be
 File: se-ascii-print.def 2010/03/01 v1.8 stringenc: Printable ASCII characters
 ) [1
 
+] [2
+
 ]
 LaTeX Font Info:    Calculating math sizes for size <16.06> on input line 78.
 LaTeX Font Info:    Font shape `U/fsy/m/n' will be
@@ -1547,7 +1546,9 @@ LaTeX Font Info:    Font shape `U/fsy/m/n' will be
 (Font)              scaled to size 10.11768pt on input line 78.
 LaTeX Font Info:    Font shape `U/fsy/m/n' will be
 (Font)              scaled to size 7.22694pt on input line 78.
- [2
+ [3
+
+] [4
 
 ]
 .................................................
@@ -1558,10 +1559,12 @@ LaTeX Font Info:    Font shape `U/fsy/m/n' will be
 . 
 . This font family consists of the following shapes:
 .................................................
- [3
 
-]
-(E:\Research_Study\nudtPaper\thesis.toc
+[5
+
+] [6
+
+] (E:\Research_Study\nudtPaper\thesis.toc
 .................................................
 . fontspec info: "defining-font"
 . 
@@ -1615,6 +1618,8 @@ LaTeX Font Info:    Font shape `U/fsy/m/n' will be
 \tf@lot=\write6
  [3
 
+] [4
+
 ]
 (E:\Research_Study\nudtPaper\thesis.lof
 LaTeX Font Info:    Calculating math sizes for size <12.045> on input line 8.
@@ -1624,11 +1629,11 @@ LaTeX Font Info:    Font shape `U/fsy/m/n' will be
 (Font)              scaled to size 7.58826pt on input line 8.
 LaTeX Font Info:    Font shape `U/fsy/m/n' will be
 (Font)              scaled to size 5.4202pt on input line 8.
- [4
+ [5
 
 ])
 \tf@lof=\write7
- [5]
+ [6]
 (E:\Research_Study\nudtPaper\data/abstract_2.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -1667,24 +1672,25 @@ LaTeX Font Warning: Font shape `EU1/STZhongsong(0)/bx/n' undefined
 
 
 
-] [2]
+] [2] [3] [4]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [3]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [4]
-[5]
+ [5]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [6])
 (E:\Research_Study\nudtPaper\data/chap02_2.tex [7] [8
 
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-] [9]
+ [9
+
+
+]
+[10]
 File: figures/figure2_1_gps.png Graphic file (type QTm)
-
-<use  "figures/figure2_1_gps.png" >
+ <use  "figures/figure2_1_gps.png" >
 .................................................
 . fontspec info: "defining-font"
 . 
@@ -1693,30 +1699,30 @@ File: figures/figure2_1_gps.png Graphic file (type QTm)
 . 
 . This font family consists of the following shapes:
 .................................................
- [10]
+ [11]
 File: figures/figure2_1cluster.png Graphic file (type QTm)
 
 <use  "figures/figure2_1cluster.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [11]
+ [12]
 File: figures/figure2_2dbscan.png Graphic file (type QTm)
 
 <use  "figures/figure2_2dbscan.png" >
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[12]
+[13]
 File: figures/science_p.png Graphic file (type QTm)
  <use  "figures/science_p.png" >
 File: figures/science_orpints.png Graphic file (type QTm)
  <use  "figures/science_orpints.png" >
 File: figures/science_canshu.png Graphic file (type QTm)
 
-<use  "figures/science_canshu.png" > [13]
+<use  "figures/science_canshu.png" > [14]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [14]
+ [15]
 File: figures/figure2_1_turnTra.png Graphic file (type QTm)
 
 <use  "figures/figure2_1_turnTra.png" >
@@ -1725,38 +1731,49 @@ File: figures/figure2_1_Center_of_mass.png Graphic file (type QTm)
 <use  "figures/figure2_1_Center_of_mass.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [15]
-[16]
+ [16]
 Missing character: There is no … in font txr!
 Missing character: There is no … in font txr!
 Missing character: There is no … in font txr!
 Missing character: There is no … in font txr!
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [17]
 File: figures/dtw-1.png Graphic file (type QTm)
- <use  "figures/dtw-1.png" >
+
+<use  "figures/dtw-1.png" >
 File: figures/dtw-2.png Graphic file (type QTm)
  <use  "figures/dtw-2.png" >
 File: figures/dtw-3.png Graphic file (type QTm)
 
-<use  "figures/dtw-3.png" > [17]
-File: figures/figure2_6_lda.png Graphic file (type QTm)
- <use  "figures/figure2_6_lda.png" > [18]
-File: figures/figure2_7_cdow.png Graphic file (type QTm)
+<use  "figures/dtw-3.png" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-<use  "figures/figure2_7_cdow.png" >
-File: figures/figure2_7_w2cmodel.png Graphic file (type QTm)
- <use  "figures/figure2_7_w2cmodel.png" >
+ [18]
+File: figures/figure2_6_lda.png Graphic file (type QTm)
+
+<use  "figures/figure2_6_lda.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [19]
+File: figures/figure2_7_cdow.png Graphic file (type QTm)
+
+<use  "figures/figure2_7_cdow.png" >
+File: figures/figure2_7_w2cmodel_bak1.png Graphic file (type QTm)
+
+<use  "figures/figure2_7_w2cmodel_bak1.png" > [20]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [20]
-[21] [22]
+ [21]
+[22] [23] [24
+
+]
 File: figures/figure4_2.png Graphic file (type QTm)
  <use  "figures/figure4_2.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [23
+ [25
 
 
 ]
@@ -1778,13 +1795,19 @@ File: figures/figure_4_stay-point_semantic.png Graphic file (type QTm)
 <use  "figures/figure_4_stay-point_semantic.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [24]
-File: figures/figure4_matchlabel.png Graphic file (type QTm)
-
-<use  "figures/figure4_matchlabel.png" >
+ [26]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [25]
+ [27]
+File: figures/figure4_matchlabel_a.png Graphic file (type QTm)
+
+<use  "figures/figure4_matchlabel_a.png" >
+File: figures/figure4_matchlabel_b.png Graphic file (type QTm)
+
+<use  "figures/figure4_matchlabel_b.png" >
+File: figures/figure4_matchlabel_c.png Graphic file (type QTm)
+
+<use  "figures/figure4_matchlabel_c.png" >
 File: figures/figure4_map_label1.png Graphic file (type QTm)
 
 <use  "figures/figure4_map_label1.png" >
@@ -1796,70 +1819,70 @@ File: figures/figure4_map_label3.png Graphic file (type QTm)
 <use  "figures/figure4_map_label3.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [26]
-File: figures/figure4_tra_model.png Graphic file (type QTm)
+ [28]
+File: figures/figure4_tra_model_bak1.png Graphic file (type QTm)
 
-<use  "figures/figure4_tra_model.png" >
+<use  "figures/figure4_tra_model_bak1.png" >
 File: figures/figure4_semantic_model.png Graphic file (type QTm)
 
 <use  "figures/figure4_semantic_model.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [27]
+ [29]
 File: figures/figure4_tra_semantic_model.png Graphic file (type QTm)
 
 <use  "figures/figure4_tra_semantic_model.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [28]
-File: figures/figure4_wifimodel.png Graphic file (type QTm)
+ [30]
+File: figures/figure4_wifimodel_bak1.png Graphic file (type QTm)
 
-<use  "figures/figure4_wifimodel.png" >
+<use  "figures/figure4_wifimodel_bak1.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [29]
-File: figures/figure4_wifi_context.png Graphic file (type QTm)
+ [31]
+File: figures/figure4_wifi_context_bak1.png Graphic file (type QTm)
 
-<use  "figures/figure4_wifi_context.png" >
-Overfull \hbox (4.87192pt too wide) in paragraph at lines 436--443
+<use  "figures/figure4_wifi_context_bak1.png" >
+Overfull \hbox (4.87192pt too wide) in paragraph at lines 455--462
 \xeCJK@song/m/n/12.045 息，| $\OML/txmi/m/it/12.045 WiFi context \OT1/txr/m/n
 /12.045 = \OMS/txsy/m/n/12.045 f\OT1/txr/m/n/12.045 (\OML/txmi/m/it/12.045 SSID
 []; BSSID[]; level[]; state[]; time[]\OT1/txr/m/n/12.045 ) [] (\OML/txmi/m/it/1
 2.045 SSID[]; BSSID[]; level[]; [] 
  []
 
-File: figures/figure4_wifi_context_graph.png Graphic file (type QTm)
-<use  "figures/figure4_wifi_context_graph.png" >
-File: figures/figure4_Bluetoothmodel.png Graphic file (type QTm)
+File: figures/figure4_wifi_context_graph_bak1.png Graphic file (type QTm)
+<use  "figures/figure4_wifi_context_graph_bak1.png" >
+File: figures/figure4_Bluetoothmodel_bak1.png Graphic file (type QTm)
 
-<use  "figures/figure4_Bluetoothmodel.png" >
+<use  "figures/figure4_Bluetoothmodel_bak1.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [30]
-File: figures/figure4_Bluetooth_contex.png Graphic file (type QTm)
+ [32]
+File: figures/figure4_Bluetooth_contex_bak1.png Graphic file (type QTm)
 
-<use  "figures/figure4_Bluetooth_contex.png" >
-File: figures/figure4_Bluetooth_contex_graph.png Graphic file (type QTm)
+<use  "figures/figure4_Bluetooth_contex_bak1.png" >
+File: figures/figure4_Bluetooth_contex_graph_bak1.png Graphic file (type QTm)
 
-<use  "figures/figure4_Bluetooth_contex_graph.png" > [31] [32]
-File: figures/figure7_1_RSMHD.png Graphic file (type QTm)
+<use  "figures/figure4_Bluetooth_contex_graph_bak1.png" > [33] [34]
+File: figures/figure7_1_RSMHD_bak1.png Graphic file (type QTm)
 
-<use  "figures/figure7_1_RSMHD.png" >
-File: figures/figure7_1_tra.png Graphic file (type QTm)
- <use  "figures/figure7_1_tra.png" >
-[33
+<use  "figures/figure7_1_RSMHD_bak1.png" >
+File: figures/figure7_1_tra_bak1.png Graphic file (type QTm)
+
+<use  "figures/figure7_1_tra_bak1.png" > [35
 
 
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [34]
+ [36]
 Missing character: There is no 、 in font txr!
 Missing character: There is no 、 in font txr!
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [35]
+ [37]
 .................................................
 . fontspec info: "defining-font"
 . 
@@ -1877,37 +1900,37 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 . This font family consists of the following shapes:
 .................................................
 
-[36]
-File: figures/figure5_quick_hash.png Graphic file (type QTm)
- <use  "figures/figure5_quick_hash.png" > [37]
+[38]
+File: figures/figure5_quick_hash_bak1.png Graphic file (type QTm)
+ <use  "figures/figure5_quick_hash_bak1.png" > [39]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [38]
-File: figures/figure_3_RSMHDwifibluee.png Graphic file (type QTm)
+ [40]
+File: figures/figure_3_RSMHDwifibluee_bak1.png Graphic file (type QTm)
 
-<use  "figures/figure_3_RSMHDwifibluee.png" >
+<use  "figures/figure_3_RSMHDwifibluee_bak1.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [39]
+ [41]
 
-LaTeX Warning: Command \O invalid in math mode on input line 583.
-
-Missing character: There is no Ø in font txmi!
-
-LaTeX Warning: Command \O invalid in math mode on input line 583.
-
-Missing character: There is no Ø in font txmi!
-[40]
-
-LaTeX Warning: Command \O invalid in math mode on input line 589.
+LaTeX Warning: Command \O invalid in math mode on input line 602.
 
 Missing character: There is no Ø in font txmi!
 
-LaTeX Warning: Command \O invalid in math mode on input line 589.
+LaTeX Warning: Command \O invalid in math mode on input line 602.
 
 Missing character: There is no Ø in font txmi!
-File: figures/figure5_ronghe.png Graphic file (type QTm)
-<use  "figures/figure5_ronghe.png" > [41] [42]
+[42]
+
+LaTeX Warning: Command \O invalid in math mode on input line 608.
+
+Missing character: There is no Ø in font txmi!
+
+LaTeX Warning: Command \O invalid in math mode on input line 608.
+
+Missing character: There is no Ø in font txmi!
+File: figures/figure5_ronghe_bak2.png Graphic file (type QTm)
+<use  "figures/figure5_ronghe_bak2.png" > [43] [44]
 File: figures/figure5_sex.png Graphic file (type QTm)
 
 <use  "figures/figure5_sex.png" >
@@ -1929,7 +1952,7 @@ File: figures/figure5_lab.png Graphic file (type QTm)
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [43
+ [45
 
 
 ]
@@ -1938,7 +1961,7 @@ File: figures/figure5_userNum.png Graphic file (type QTm)
 <use  "figures/figure5_userNum.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [44]
+ [46]
 File: figures/figure_4_mid_location1.png Graphic file (type QTm)
 
 <use  "figures/figure_4_mid_location1.png" >
@@ -1950,7 +1973,7 @@ File: figures/figure_4_mid_location1.png Graphic file (type QTm)
 <use  "figures/figure_4_mid_location1.png" >
 File: figures/figure_4_mid_location1_avg.png Graphic file (type QTm)
 
-<use  "figures/figure_4_mid_location1_avg.png" > [45]
+<use  "figures/figure_4_mid_location1_avg.png" > [47]
 File: figures/figure_4_mid_location1.png Graphic file (type QTm)
 
 <use  "figures/figure_4_mid_location1.png" >
@@ -1977,10 +2000,10 @@ File: figures/figure_4_location2_sp.png Graphic file (type QTm)
 <use  "figures/figure_4_location2_sp.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [46]
+ [48]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [47]
+ [49]
 File: figures/figure4_tra1.png Graphic file (type QTm)
 
 <use  "figures/figure4_tra1.png" >
@@ -2006,10 +2029,10 @@ File: figures/figure4_tra1_map_k5.png Graphic file (type QTm)
 <use  "figures/figure4_tra1_map_k5.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [48]
+ [50]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [49]
+ [51]
 File: figures/figure4_tra_for_dj_2.png Graphic file (type QTm)
 
 <use  "figures/figure4_tra_for_dj_2.png" >
@@ -2024,7 +2047,7 @@ File: figures/figure4_tra_map_result_dj_2.png Graphic file (type QTm)
 <use  "figures/figure4_tra_map_result_dj_2.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [50]
+ [52]
 File: figures/figure4_tra_for_science1.png Graphic file (type QTm)
 
 <use  "figures/figure4_tra_for_science1.png" >
@@ -2039,26 +2062,26 @@ File: figures/figure4_tra_map_result_science1.png Graphic file (type QTm)
 <use  "figures/figure4_tra_map_result_science1.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [51]
-Overfull \hbox (6.5319pt too wide) in alignment at lines 946--979
+ [53]
+Overfull \hbox (6.5319pt too wide) in alignment at lines 965--998
 [][] 
  []
 
 File: figures/figure5_survey_relation.png Graphic file (type QTm)
-<use  "figures/figure5_survey_relation.png" > [52]
+<use  "figures/figure5_survey_relation.png" > [54]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [53]
-Overfull \hbox (49.48029pt too wide) in paragraph at lines 1007--1039
+ [55]
+Overfull \hbox (49.48029pt too wide) in paragraph at lines 1026--1058
  [][] 
  []
 
 File: figures/figure5_Fscore.png Graphic file (type QTm)
-<use  "figures/figure5_Fscore.png" > [54]
+<use  "figures/figure5_Fscore.png" > [56]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [55]
-Overfull \hbox (54.74619pt too wide) in paragraph at lines 1079--1111
+ [57]
+Overfull \hbox (54.74619pt too wide) in paragraph at lines 1098--1130
  [][] 
  []
 
@@ -2066,14 +2089,14 @@ File: figures/figure5_cosgraph.png Graphic file (type QTm)
 <use  "figures/figure5_cosgraph.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [56]
-[57]
-Overfull \hbox (49.48029pt too wide) in paragraph at lines 1128--1160
+ [58]
+[59]
+Overfull \hbox (49.48029pt too wide) in paragraph at lines 1147--1179
  [][] 
  []
 
 
-Overfull \hbox (49.48029pt too wide) in paragraph at lines 1168--1200
+Overfull \hbox (49.48029pt too wide) in paragraph at lines 1187--1219
  [][] 
  []
 
@@ -2081,35 +2104,42 @@ File: figures/figure5_rsmhd_graph.png Graphic file (type QTm)
 <use  "figures/figure5_rsmhd_graph.png" >
 File: figures/figure5_rsmhd.png Graphic file (type QTm)
  <use  "figures/figure5_rsmhd.png" >
-[58] [59]
+[60] [61]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [60]
+ [62]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [61]
+ [63]
+[64
+
+]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [62
+ [65
 
 
 ])
-(E:\Research_Study\nudtPaper\data/ack.tex [63]
+(E:\Research_Study\nudtPaper\data/ack.tex [66]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [64
+ [67
 
 ])
-[65] (E:\Research_Study\nudtPaper\thesis.bbl [66
+[68] (E:\Research_Study\nudtPaper\thesis.bbl [69
 
 
-] [67] [68]
+] [70] [71]
 Underfull \hbox (badness 3189) in paragraph at lines 289--293
 []\EU1/TimesNewRoman(0)/m/n/12.045 Singelis T M. The measurement of independent
  and interdependent self-
  []
 
-[69]) (E:\Research_Study\nudtPaper\data/resume.tex [70]) [71
+[72]) (E:\Research_Study\nudtPaper\data/resume.tex [73] [74
+
+]) [75
+
+] [76
 
 ]
 \tf@thm=\write8
@@ -2128,12 +2158,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 27212 strings out of 430478
- 491978 string characters out of 3191503
- 560003 words of memory out of 3000000
- 29826 multiletter control sequences out of 15000+200000
+ 27221 strings out of 430478
+ 492291 string characters out of 3191503
+ 560353 words of memory out of 3000000
+ 29833 multiletter control sequences out of 15000+200000
  68254 words of font info for 274 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 51i,16n,85p,1340b,960s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 51i,16n,85p,1248b,960s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on thesis.pdf (83 pages).
+Output written on thesis.pdf (92 pages).

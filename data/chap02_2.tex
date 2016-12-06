@@ -84,7 +84,7 @@ P_{k}=E\left [ e_{k} {e_{k}}^{T}  \right ]
 \end{equation}
 \par 综合\ref{equ:chap2:kalman-10}、\ref{equ:chap2:kalman-11}、\ref{equ:chap2:kalman-12}针对单个模型的测量利用上述说描述的所有公式就能够通过不断的迭代计算得出最优的估算结果。对于上述介绍的三种滤波技术而言，均值滤波在剔除数值中的随机噪音表现良好，但是不易消除脉冲误差；中值滤波能够减少偶然数据波动带来的误差影响，但是对变化快速的数据不宜使用；卡尔曼滤波最终的结果会优于前两者，但是模型较为复杂，所要求的运算时间复杂度也高于前面的滤波算法。
 \subsection{用户轨迹访问点}
-现实生活中用户的日常轨迹通常是有一系列包含了地理坐标和时间戳的GPS位置点构成，每个坐标点包含了详细的经纬度、时间戳信息、海拔高度、移动速度等信息。如图\ref{fig:2_1}所示。我们可以通过一些算法检测出用户在一段轨迹运动中停留过的地方称之为访问点\upcite{zheng2011computing}，本文的访问点并不是指运动速度静止的点，而是由一系列GPS点构成的。如图\ref{fig:2_1}中$p_{4} \sim p_{8}$构成了一个访问点stay point在图中由红色点表示。这个点表示用户在该区域内的停留时间超过了一个设定的时间阈值$\Delta T$，相比于用户的其他轨迹位置点，这些计算得出的访问点蕴含了更重要的信息，通过语义标签甚至可以得出用户去过某家餐馆和电影院等。基于以上理论，用户的GPS位置轨迹可以转换为一组由访问点所组成的序列，如$sp_{1}\overset{\Delta_{t1}}{\rightarrow} sp_{2}\overset{\Delta_{t2}}{\rightarrow}\cdots \overset{\Delta_{tn-1}}{\rightarrow}sp_{n}$，这样由访问点所表示的序列不仅对原有数据维度进行了压缩，同时也保存了用户的重要信息。
+现实生活中用户的日常轨迹通常是有一系列包含了地理坐标和时间戳的GPS位置点构成，每个坐标点包含了详细的经纬度、时间戳信息、海拔高度、移动速度等信息。如图\ref{fig:2_1}所示。我们可以通过一些算法检测出用户在一段轨迹运动中停留过的地方称之为访问点\upcite{zheng2011computing}，本文的访问点并不是指运动速度静止的点，而是由一系列GPS点构成的。如图\ref{fig:2_1}中$p_{4} \sim p_{8}$构成了一个访问点stay point 在图中由红色点表示。这个点表示用户在该区域内的停留时间超过了一个设定的时间阈值$\Delta T$，相比于用户的其他轨迹位置点，这些计算得出的访问点蕴含了更重要的信息，通过语义标签甚至可以得出用户去过某家餐馆和电影院等。基于以上理论，用户的GPS位置轨迹可以转换为一组由访问点所组成的序列，如$sp_{1}\overset{\Delta_{t1}}{\rightarrow} sp_{2}\overset{\Delta_{t2}}{\rightarrow}\cdots \overset{\Delta_{tn-1}}{\rightarrow}sp_{n}$，这样由访问点所表示的序列不仅对原有数据维度进行了压缩，同时也保存了用户的重要信息。
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{figure2_1_gps}
@@ -96,7 +96,7 @@ P_{k}=E\left [ e_{k} {e_{k}}^{T}  \right ]
 \par 聚类是属于无监督学习中的一种重要的方法，在其他的机器学习方法中如：回归分析、朴素贝叶斯网络等的数据都是带有类别标签$\gamma$，也就是说在训练集中的样例就已经给出了样例的类别，而聚类数据样本却没有给出样本类别$\gamma$聚类的目标是根据组内元素距离最小，组间距离最大将原始数据划分为若干组如图\ref{figure2_1cluster}所示。本节主要介绍几种常用的聚类分析方法：K-Means聚类算法、基于密度的DJ-Cluster 聚类算法以及近年发表的一种改进的基于密度的聚类算法。
 \begin{figure}[htp]
 \centering
-\includegraphics[width=0.7\textwidth]{figure2_1cluster}
+\includegraphics[width=0.6\textwidth]{figure2_1cluster}
 \caption{聚类效果示意图}
 \label{figure2_1cluster}
 \end{figure}
@@ -261,7 +261,7 @@ p(w_{t}|context)=p(w_{t}|w_{t-k},w_{t-k+1},\cdots ,w_{t-1},w_{t+1},\cdots w_{t+k
 \end{figure}
 \begin{figure}[htp]
 \centering
-\includegraphics[width=0.7\textwidth]{figure2_7_w2cmodel}
+\includegraphics[width=0.8\textwidth]{figure2_7_w2cmodel_bak1}
 \caption{word2vec神经网络层次结构图}
 \label{fig:2_7}
 \end{figure}
@@ -375,13 +375,32 @@ RSBD(A,B)=\sum_{t_{i} \in D}^{ } Wt_{i} \mathop{interactive(a_{i},b_{j})}_{\fora
 \caption{位置语义标签示意图}
 \label{fig:tra_senantic}
 \end{figure}
-\par 在语义化的过程中，我们首先构建了一个符合当前范围内的语义标签数据库，里面包含了学校内部各个位置语义点以及学校周边大部分的位置语义信息，在为用户轨迹添加语义标签时，首先查找语义标签数据库内是否有相匹配的位置点。具体的匹配过程如图\ref{fig:matchlabel}所示，图中首先我们需要人为设定一个距离阈值，用来衡量当前位置点与语义标签位置点之间的关系。图\ref{fig:matchlabel}中a所示：当访问点或簇中心点距离语义标签库中有且仅有一个位置点的距离小于设定的阈值，则把当前语义标签赋予给当前位置；若如图\ref{fig:matchlabel}中b所示，当半径阈值内不止一个符合要求的语义标签点时，我们选择和当前位置点距离最近的语义标签作为当前位置点的标签；当语义标签数据库中无法查询到与当前位置相匹配的标签点时，将会调用反地理编码，获取到当前位置的语义标签，结果示意图如图\ref{fig:map_label}所示，在图\ref{fig:map_label}(a)和(b)中，因为这两处地理位置的语义标签都已经存在于语义标签数据库中，所以查询时就返回数据库中的标签，而(c)中的位置因为暂时没有保存在标签数据库中，因此调用百度地图API将得到的中心点坐标转换为百度地图数据库中的标注地址并将结果返回和保存。
-\begin{figure}[htp]
-\centering
-\includegraphics[width=0.8\textwidth]{figure4_matchlabel}
-\caption{语义标签识别示意图}
-\label{fig:matchlabel}
+\par 在语义化的过程中，我们首先构建了一个符合当前范围内的语义标签数据库，里面包含了学校内部各个位置语义点以及学校周边大部分的位置语义信息，在为用户轨迹添加语义标签时，首先查找语义标签数据库内是否有相匹配的位置点。具体的匹配过程如图\ref{fig:matchlabel}所示，图中首先我们需要人为设定一个距离阈值，用来衡量当前位置点与语义标签位置点之间的关系。图\ref{fig:labela}所示：当访问点或簇中心点距离语义标签库中有且仅有一个位置点的距离小于设定的阈值，则把当前语义标签赋予给当前位置；若如图\ref{fig:labelb}所示，当半径阈值内不止一个符合要求的语义标签点时，我们选择和当前位置点距离最近的语义标签作为当前位置点的标签；当语义标签数据库中无法查询到与当前位置相匹配的标签点时，将会调用反地理编码，获取到当前位置的语义标签，结果示意图如图\ref{fig:map_label}所示，在图\ref{fig:map_label}(a) 和\ref{fig:map_label}(b)中，因为这两处地理位置的语义标签都已经存在于语义标签数据库中，所以查询时就返回数据库中的标签，而\ref{fig:map_label}(c)中的位置因为暂时没有保存在标签数据库中，因此调用百度地图API将得到的中心点坐标转换为百度地图数据库中的标注地址并将结果返回和保存。
+%\begin{figure}[htp]
+%\centering
+%\includegraphics[width=0.8\textwidth]{figure4_matchlabel_bak1}
+%\caption{语义标签识别示意图}
+%\label{fig:matchlabel}
+%\end{figure}
+
+\begin{figure}[htb]
+  \centering%
+  \subfloat[位置语义1]{%
+    \label{fig:labela}
+    \includegraphics[width=0.25\textwidth]{figure4_matchlabel_a}}\hspace{2em}%
+  \subfloat[位置语义2]{%
+    \label{fig:labelb}
+    \includegraphics[width=0.25\textwidth]{figure4_matchlabel_b}}\hspace{2em}%
+  \subfloat[位置语义3]{%
+    \label{fig:labelc}
+    \includegraphics[width=0.25\textwidth]{figure4_matchlabel_c}}
+  \caption{语义标签识别示意图}
+  \label{fig:matchlabel}
 \end{figure}
+
+
+
+
 
 \begin{figure}[htb]
   \centering%
@@ -405,7 +424,7 @@ RSBD(A,B)=\sum_{t_{i} \in D}^{ } Wt_{i} \mathop{interactive(a_{i},b_{j})}_{\fora
 \par 根据前面章节中获取的用户位置信息多为一个经纬度点的集合或一个几何形状，没有包含任何可以直接识别的信息。通过轨迹语义化，我们基于用户的GPS 轨迹得到了用户的语义位置轨迹。不同于用户地理轨迹的抽象表示方法，用户的语义轨迹表示更加具有难度和挑战性，根据前面的描述得知：现实生活中同一个用户多次访问同一语义位置所产生的空间位置访问点可能不相同(GPS 定位存在偏移)，直接对访问点进行语义化并不可行，因此我们在节\ref{traclustar}中针对部分访问点进行聚类得到用户的轨迹中访问点的聚类簇，然后用当前的结果替换原有轨迹中对应的访问点。如图\ref{fig:semantic_model}所示，我们首先从用户GPS 轨迹数据中抽象出表示用户空间地理位置的空间轨迹数据结构；然后对聚类后得到的访问点添加语义标签得到用户的语义轨迹。现实生活中，人们日常轨迹中的位置移动常常表现为从一个位置移动到另一个位置（如早上从寝室步行到食堂再去图书馆等），在图\ref{fig:semantic_model}中我们借鉴这样的想法将用户每天的GPS运动轨迹向量序列化后的结果赋值为用户的轨迹向量，再根据时间戳信息结合语义标签构建用户的语义轨迹时间向量，得到用户在一段时间片内的语义轨迹向量，最后将每天的轨迹向量合并得到用户的语义轨迹序列描述，通过对这种语义轨迹的结构化表示，可以有效地将空间轨迹转换为用户的日常语义轨迹，便于下一步计算用户之间的关系强度。
 \begin{figure}[htp]
 \centering
-\includegraphics[width=0.8\textwidth]{figure4_tra_model}
+\includegraphics[width=0.8\textwidth]{figure4_tra_model_bak1}
 \caption{用户轨迹的抽象表示}
 \label{fig:tramodel_abstract}
 \end{figure}
@@ -429,21 +448,21 @@ RSBD(A,B)=\sum_{t_{i} \in D}^{ } Wt_{i} \mathop{interactive(a_{i},b_{j})}_{\fora
 在日常生活中WiFi的感知距离因为受到发射器功率以及周围环境的影响，导致正常WiFi的覆盖范围大约在20米左右。当用户处在不用的上下文环境中时其周围能够被StarLog所感知到的WiFi环境也是不同的，不仅如此，对于一个很小的范围内（如教室、图书馆、办公室等）的WiFi上下文环境基本是极度相似的甚至相同的，也就是说能够探明检测到的WiFi列表应该是相同的，因此我们根据WiFi感知数据的这一特性来计算用户之间的关系强度。根据图\ref{fig:7_1_wifi}中的处理流程描述，首选我们将原始WiFi感知数据进行处理，从中提取出有用的数据信息（如WiFi接入名称、WiFi强度、WiFi接入点的MAC地址、扫描时间等）；其次在提取出的数据的基础之上，我们根据探测的时间戳信息，将WiFi数据序列化。如图\ref{fig:wifimodel_process}所示，我们采用矩阵的方式来表示所有用户在整个数据收集期间的WiFi序列集合，其中每一行表示实验数据收集的时间维度从第一天到第N天；每一列代表一个独立的用户，其中$[i,j]$表示用户$u_{j}$在第$i$天的的WiFi向量数据。每一条WiFi向量数据都是由许多切片时间内的WiFi 上下文（WiFi context）所构成的。
 \begin{figure}[htp]
 \centering
-\includegraphics[width=0.8\textwidth]{figure4_wifimodel}
+\includegraphics[width=0.8\textwidth]{figure4_wifimodel_bak1}
 \caption{WiFi数据结构化表示示意图}
 \label{fig:wifimodel_process}
 \end{figure}
 \par 每一次所感知的WiFi上下文环境信息是不仅包含了WiFi连接名，还包含了接入点MAC地址、信号强度、设备类型等复杂的信息，如图\ref{fig:wifi_context}所示，WiFi-context更形象的描述是当前WiFi数据收集时刻时，设备周围的感知信息和环境信息， $WiFi \ context= \{ (SSID_{1},BSSID_{1},level_{1},state_{1},time_{1}) \cdots  (SSID_{n},BSSID_{n},level_{n}, \\ state_{n},time_{n}) \}$，本课题转换视角将WiFi感知序列拟物化，看做我们现实中生活的环境，考虑到当用户1当前时刻所处的环境和用户2所处的环境极度相似或者相同的时候，那么我们就认为二者在同一个环境中也就是产生了现实交互比没有在同一环境中的用户具有更强的关系强度。因此我们将当前时刻的环境用无向带权图来表示，即假设每一个能够探知的WiFi源都与设备存在一条边，然后用户在一段时间内的数据就成了一张图如图\ref{fig:wifi_context_graph}，最后比较两个用户的在每一个时间切片下的图的相似性推断出用户的关系强度。
 \begin{figure}[htp]
 \centering
-\includegraphics[width=0.7\textwidth]{figure4_wifi_context}
+\includegraphics[width=0.7\textwidth]{figure4_wifi_context_bak1}
 \caption{WiFi上下文抽象化表示示意图}
 \label{fig:wifi_context}
 \end{figure}
 
 \begin{figure}[htp]
 \centering
-\includegraphics[width=0.7\textwidth]{figure4_wifi_context_graph}
+\includegraphics[width=0.7\textwidth]{figure4_wifi_context_graph_bak1}
 \caption{WiFi图结构抽象化表示}
 \label{fig:wifi_context_graph}
 \end{figure}
@@ -451,21 +470,21 @@ RSBD(A,B)=\sum_{t_{i} \in D}^{ } Wt_{i} \mathop{interactive(a_{i},b_{j})}_{\fora
 相比于WiFi设备的感知距离，蓝牙设备的感知距离进一步受限缩减为5到10米左右，在这样短距离的情况下，则可以考虑二者有现实生活中的交互，然而这种方法是有局限的即如果在某一时刻内设备能够搜索到多个蓝牙设备而有未和其中任何一个设备进行连接，那么计算用户之间的相似度就不能采用上述的方法。因此我们采用节\ref{wifi_pro_tec}中相似的数据抽象化方法，将收集到的用户蓝牙感知数据进行按照图\ref{fig:7_1_wifi}中的流程将蓝牙数据进行结构化清洗并结构化存储如图\ref{fig:Bluetoothmodel}所示，得到蓝牙的上下文感知信息表示如图\ref{fig:bluetooth_context}，最后我们同样采用图的数据结构对蓝牙上下文信息进行存储，如图\ref{fig:bluetooth_context_graph}，其中$:Bluetooth \ context= \{ (D\_name{1},MAC_{1},bond\_status_{1},time_{1}) \cdots  (D\_name{n},MAC_{n},bond\_status_{n},time_{n}) \}$。
 \begin{figure}[htp]
 \centering
-\includegraphics[width=0.7\textwidth]{figure4_Bluetoothmodel}
+\includegraphics[width=0.7\textwidth]{figure4_Bluetoothmodel_bak1}
 \caption{蓝牙数据结构化表示示意图}
 \label{fig:Bluetoothmodel}
 \end{figure}
 
 \begin{figure}[htp]
 \centering
-\includegraphics[width=0.7\textwidth]{figure4_Bluetooth_contex}
+\includegraphics[width=0.7\textwidth]{figure4_Bluetooth_contex_bak1}
 \caption{蓝牙数据上下文抽象化表示示意图}
 \label{fig:bluetooth_context}
 \end{figure}
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=0.7\textwidth]{figure4_Bluetooth_contex_graph}
+\includegraphics[width=0.7\textwidth]{figure4_Bluetooth_contex_graph_bak1}
 \caption{蓝牙数据图结构抽象化表示}
 \label{fig:bluetooth_context_graph}
 \end{figure}
@@ -482,7 +501,7 @@ RSBD(A,B)=\sum_{t_{i} \in D}^{ } Wt_{i} \mathop{interactive(a_{i},b_{j})}_{\fora
 %\par RSMHD模型从三种不同的数据源即用户日常轨迹、用户手机WiFi感知数据、用户手机蓝牙感知数据抽象出三种不同的层次度量模型，在基于用户轨迹度量层次中，又分解出三种度量维度，三种维度由低到高，由细粒度到粗粒度的度量使这一层次的计算结果更加有效和具有说服力，并最终根据这三层数据源的度量结果，借鉴集成学习的方法进行多层结果的融合。因此RSMHD以摒弃了单一的感知数据源采用多层数据源的用户关系计算并且最终对每层结果进行融合，能够更加有效全面的推理出现实生活中用户之间的社交关系强度。
 \begin{figure}[htp]
 \centering
-\includegraphics[width=0.8\textwidth]{figure7_1_RSMHD}
+\includegraphics[width=0.8\textwidth]{figure7_1_RSMHD_bak1}
 \caption{多源感知数据关系强度计算框架图}
 \label{fig:7_1}
 \end{figure}
@@ -492,7 +511,7 @@ RSBD(A,B)=\sum_{t_{i} \in D}^{ } Wt_{i} \mathop{interactive(a_{i},b_{j})}_{\fora
 如图\ref{fig:7_1}中所示，第二层是基于用户的日常轨迹计算用户之间的关系强度模型，在基于用户轨迹度量层次中，又分解出三种度量维度，三种维度由低到高，由细粒度到粗粒度的度量使这一层次的计算结果更加有效和具有说服力，并最终根据这三层数据源的度量结果，详细的模块框架结构如图\ref{fig:7_1_tra} 所示，在基于用户轨迹数据的计算过程中，我们进一步从用户轨迹数据的三个维度出发：用户的空间轨迹轨迹推导用户之间的关系强度、用户的语义轨迹关系推导用户之间的关系强度、用户日常轨迹中挖掘出的运动模式来推导用户之间的关系强度。
 \begin{figure}[htp]
 \centering
-\includegraphics[width=0.8\textwidth]{figure7_1_tra}
+\includegraphics[width=0.8\textwidth]{figure7_1_tra_bak1}
 \caption{RSMHD中基于用户轨迹计算模块详细框架图}
 \label{fig:7_1_tra}
 \end{figure}
@@ -517,7 +536,7 @@ RS_{Ltra}(u_{i},u_{j})=\sum_{x ,y }^{ Date_{i}, Date_{j}}W_{i,j,x,y,s,t}\sum_{s,
 \end{equation}
 \begin{figure}[htb]
 \centering
-\includegraphics[width=0.8\textwidth]{figure5_quick_hash}
+\includegraphics[width=0.8\textwidth]{figure5_quick_hash_bak1}
 \caption{用户语义轨迹快速hash变换计算示意图}
 \label{fig:quick_hash}
 \end{figure}
@@ -569,7 +588,7 @@ RS_{Tra}=\frac{1}{w_{1}} RS_{dtw}(u_{i},u_{j})+\frac{1}{w_{2}}RS_{Ltra}(u_{i},u_
 
 \begin{figure}[htp]
 \centering
-\includegraphics[width=0.8\textwidth]{figure_3_RSMHDwifibluee}
+\includegraphics[width=0.8\textwidth]{figure_3_RSMHDwifibluee_bak1}
 \caption{RSMHD中基于WiFi和蓝牙计算模块详细框架图}
 \label{fig:7_1_wifi}
 \end{figure}
@@ -596,7 +615,7 @@ RS_{Bth}(u_{i},u_{j})=\sum_{x ,y }^{ Date_{i}, Date_{j}}W_{i,j,x,y,s,t}\sum_{s,t
 根据前文中所描述的计算方法，整个多源感知数据关系强度计算结果融合示意图如\ref{fig:ronghe}所示，当得到用户$u_{i}$与$u_{j}$的GPS轨迹数据，WiFi上下文知数据和蓝牙感知数据后，调用函数$RS_{Tra}(u_{i},u_{j})$ 计算得出用户$u_{i}$与$u_{j}$基于GPS 轨迹数据的用户之间关系强度$rs_{1}$；通过函数$RS_{WiFi}(u_{i},u_{j})$对用户$u_{i}$与$u_{j}$的收集的智能手机的WiFi上下文感知数据进行处理计算得出用户之间基于WiFi感知数据的强度$rs_{2}$；最后根据用户采集的蓝牙感知数据通过处理得到$Bth\_D_{i}$、$Bth\_D_{j}$作为函数$RS_{Bth}(u_{i},u_{j})$ 的输入，计算得到用户之间基于蓝牙感知上下文环境数据的关系强度$rs_{3}$。最后采用集成学习的思想，对每个层次计算得出的用户关系强度结果采用算法\ref{alg5_1bagging} 进行融合，得到最终用户$u_{i}$与$u_{j}$之间的关系强度$rs(u_{i},u_{j})$。
 \begin{figure}[htb]
 \centering
-\includegraphics[width=0.8\textwidth]{figure5_ronghe}
+\includegraphics[width=0.8\textwidth]{figure5_ronghe_bak2}
 \caption{计算结果融合示意图}
 \label{fig:ronghe}
 \end{figure}
