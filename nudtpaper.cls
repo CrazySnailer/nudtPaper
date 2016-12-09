@@ -290,6 +290,7 @@
     \@afterheading
   \fi
 }
+
 \newcommand\cabstractname{摘\hspace{1em}要}
 \newcommand\eabstractname{ABSTRACT}
 \newcommand\ckeywordsname{关键词}

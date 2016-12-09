@@ -1,94 +1,94 @@
-\contentsline {figure}{\numberline {2.1}{\ignorespaces 用户GPS轨迹示例图\relax }}{12}{figure.caption.8}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces 聚类效果示意图\relax }}{13}{figure.caption.9}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces DBSCAN密度直达和密度可达示意图\relax }}{14}{figure.caption.10}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Science聚类结果效果图\relax }}{15}{figure.caption.11}
-\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {生成数据的概率分布}}}{15}{subfigure.4.1}
-\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {样本数据}}}{15}{subfigure.4.2}
-\contentsline {subfigure}{\numberline {((c))}{\ignorespaces {聚类中各点的$\rho $和$\delta $取值}}}{15}{subfigure.4.3}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces 轨迹相似计算示例\textsuperscript {\cite {liu2012similarity}}\relax }}{16}{figure.caption.12}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces 基于Center of mass轨迹计算示例\textsuperscript {\cite {liu2012similarity}}\relax }}{17}{figure.caption.13}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces DTW算法匹配序列结果示意图\relax }}{18}{figure.caption.14}
-\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始序列}}}{18}{subfigure.7.1}
-\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {DTW算法匹配模式结果}}}{18}{subfigure.7.2}
-\contentsline {subfigure}{\numberline {((c))}{\ignorespaces {DTW算法拉伸序列计算距离}}}{18}{subfigure.7.3}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces LDA的图模型表示\relax }}{20}{figure.caption.15}
-\contentsline {figure}{\numberline {2.9}{\ignorespaces word2vec神经网络结构图\textsuperscript {\cite {mikolov2013efficient}}\relax }}{21}{figure.caption.16}
-\contentsline {figure}{\numberline {2.10}{\ignorespaces word2vec神经网络层次结构图\relax }}{21}{figure.caption.17}
-\contentsline {figure}{\numberline {3.1}{\ignorespaces 基于多层次多粒度轨迹的用户关系强度计算\relax }}{25}{figure.caption.19}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces 现实生活中的访问点示意图\relax }}{26}{figure.caption.20}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces 位置语义标签示意图\relax }}{28}{figure.caption.21}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces 语义标签识别示意图\relax }}{28}{figure.caption.22}
-\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {位置语义1}}}{28}{subfigure.4.1}
-\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {位置语义2}}}{28}{subfigure.4.2}
-\contentsline {subfigure}{\numberline {((c))}{\ignorespaces {位置语义3}}}{28}{subfigure.4.3}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces 语义标签结果示意图\relax }}{29}{figure.caption.23}
-\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {语义标签数据库标签示意图1}}}{29}{subfigure.5.1}
-\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {语义标签数据库标签示意图2}}}{29}{subfigure.5.2}
-\contentsline {subfigure}{\numberline {((c))}{\ignorespaces {反地理编码标签示意图}}}{29}{subfigure.5.3}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces 用户轨迹的抽象表示\relax }}{30}{figure.caption.24}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces 用户语义轨迹描述模型\relax }}{31}{figure.caption.25}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces 语义轨迹示意图\relax }}{31}{figure.caption.26}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces WiFi数据结构化表示示意图\relax }}{32}{figure.caption.27}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces WiFi上下文抽象化表示示意图\relax }}{33}{figure.caption.28}
-\contentsline {figure}{\numberline {3.11}{\ignorespaces WiFi图结构抽象化表示\relax }}{33}{figure.caption.29}
-\contentsline {figure}{\numberline {3.12}{\ignorespaces 蓝牙数据结构化表示示意图\relax }}{33}{figure.caption.30}
-\contentsline {figure}{\numberline {3.13}{\ignorespaces 蓝牙数据上下文抽象化表示示意图\relax }}{34}{figure.caption.31}
-\contentsline {figure}{\numberline {3.14}{\ignorespaces 蓝牙数据图结构抽象化表示\relax }}{34}{figure.caption.32}
-\contentsline {figure}{\numberline {4.1}{\ignorespaces 多源感知数据关系强度计算框架图\relax }}{36}{figure.caption.34}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces RSMHD中基于用户轨迹计算模块详细框架图\relax }}{36}{figure.caption.35}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces 用户语义轨迹快速hash变换计算示意图\relax }}{39}{figure.caption.36}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces RSMHD中基于WiFi和蓝牙计算模块详细框架图\relax }}{41}{figure.caption.37}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces 计算结果融合示意图\relax }}{43}{figure.caption.38}
-\contentsline {figure}{\numberline {5.1}{\ignorespaces 学生志愿者信息1\relax }}{45}{figure.caption.40}
-\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {性别分布}}}{45}{subfigure.1.1}
-\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {院系分布}}}{45}{subfigure.1.2}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces 学生志愿者信息2\relax }}{46}{figure.caption.41}
-\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {年级分布}}}{46}{subfigure.2.1}
-\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {实验室分布}}}{46}{subfigure.2.2}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces 学生志愿者数据采集说明\relax }}{47}{figure.caption.43}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces 轨迹中值滤波实验结果\relax }}{48}{figure.caption.44}
-\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始轨迹数据}}}{48}{subfigure.4.1}
-\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {中值滤波后的轨迹数据}}}{48}{subfigure.4.2}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces 轨迹均值滤波实验结果\relax }}{48}{figure.caption.45}
-\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始轨迹数据}}}{48}{subfigure.5.1}
-\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {均值滤波后的轨迹数据}}}{48}{subfigure.5.2}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces 卡尔曼滤波实验结果\relax }}{49}{figure.caption.46}
-\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始轨迹数据}}}{49}{subfigure.6.1}
-\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {卡尔曼滤波后的轨迹数据}}}{49}{subfigure.6.2}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces 分段卡尔曼滤波轨迹结果\relax }}{49}{figure.caption.47}
-\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始轨迹数据}}}{49}{subfigure.7.1}
-\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {分段卡尔曼滤波数据}}}{49}{subfigure.7.2}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces 访问点检测实验结果1\relax }}{49}{figure.caption.48}
-\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始轨迹数据}}}{49}{subfigure.8.1}
-\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {检测出的访问点}}}{49}{subfigure.8.2}
-\contentsline {figure}{\numberline {5.9}{\ignorespaces 访问点检测实验结果2\relax }}{50}{figure.caption.49}
-\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始轨迹数据}}}{50}{subfigure.9.1}
-\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {检测出的访问点}}}{50}{subfigure.9.2}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces 基于K-means的轨迹聚类实验结果\relax }}{51}{figure.caption.50}
-\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始轨迹数据}}}{51}{subfigure.10.1}
-\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {参数k=3}}}{51}{subfigure.10.2}
-\contentsline {subfigure}{\numberline {((c))}{\ignorespaces {参数k=4}}}{51}{subfigure.10.3}
-\contentsline {subfigure}{\numberline {((d))}{\ignorespaces {参数k=5}}}{51}{subfigure.10.4}
-\contentsline {figure}{\numberline {5.11}{\ignorespaces 基于K-means的轨迹聚类实验结果地图展示\relax }}{51}{figure.caption.51}
-\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始轨迹数据}}}{51}{subfigure.11.1}
-\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {参数k=3}}}{51}{subfigure.11.2}
-\contentsline {subfigure}{\numberline {((c))}{\ignorespaces {参数k=4}}}{51}{subfigure.11.3}
-\contentsline {subfigure}{\numberline {((d))}{\ignorespaces {参数k=5}}}{51}{subfigure.11.4}
-\contentsline {figure}{\numberline {5.12}{\ignorespaces 基于DJ-Cluster的轨迹聚类实验结果\relax }}{52}{figure.caption.52}
-\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始轨迹数据}}}{52}{subfigure.12.1}
-\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {DJ-Cluster聚类结果}}}{52}{subfigure.12.2}
-\contentsline {figure}{\numberline {5.13}{\ignorespaces 基于DJ-Cluster的轨迹聚类实验结果地图展示\relax }}{52}{figure.caption.53}
-\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始轨迹数据}}}{52}{subfigure.13.1}
-\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {DJ-Cluster聚类结果}}}{52}{subfigure.13.2}
-\contentsline {figure}{\numberline {5.14}{\ignorespaces 轨迹聚类实验结果展示\relax }}{53}{figure.caption.54}
-\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始轨迹数据}}}{53}{subfigure.14.1}
-\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {聚类结果}}}{53}{subfigure.14.2}
-\contentsline {figure}{\numberline {5.15}{\ignorespaces 轨迹聚类实验结果地图表示\relax }}{53}{figure.caption.55}
-\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始轨迹数据}}}{53}{subfigure.15.1}
-\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {聚类结果}}}{53}{subfigure.15.2}
-\contentsline {figure}{\numberline {5.16}{\ignorespaces 志愿者关系图\relax }}{56}{figure.caption.57}
-\contentsline {figure}{\numberline {5.17}{\ignorespaces 基于不同时间粒度的实验结果\relax }}{58}{figure.caption.60}
-\contentsline {figure}{\numberline {5.18}{\ignorespaces 不同方法计算WiFi数据的实验结果\relax }}{60}{figure.caption.62}
-\contentsline {figure}{\numberline {5.19}{\ignorespaces 志愿者之间关系强度示意图\relax }}{63}{figure.caption.65}
-\contentsline {figure}{\numberline {5.20}{\ignorespaces 多源感知数据关系强度计算框架计算结果比较\relax }}{63}{figure.caption.66}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces 用户GPS轨迹示例图\relax }}{10}{figure.caption.8}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces 聚类效果示意图\relax }}{11}{figure.caption.9}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces DBSCAN密度直达和密度可达示意图\relax }}{12}{figure.caption.10}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Science聚类结果效果图\relax }}{13}{figure.caption.11}
+\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {生成数据的概率分布}}}{13}{subfigure.4.1}
+\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {样本数据}}}{13}{subfigure.4.2}
+\contentsline {subfigure}{\numberline {((c))}{\ignorespaces {聚类中各点的$\rho $和$\delta $取值}}}{13}{subfigure.4.3}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces 轨迹相似计算示例\textsuperscript {\cite {liu2012similarity}}\relax }}{14}{figure.caption.12}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces 基于Center of mass轨迹计算示例\textsuperscript {\cite {liu2012similarity}}\relax }}{15}{figure.caption.13}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces DTW算法匹配序列结果示意图\relax }}{16}{figure.caption.14}
+\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始序列}}}{16}{subfigure.7.1}
+\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {DTW算法匹配模式结果}}}{16}{subfigure.7.2}
+\contentsline {subfigure}{\numberline {((c))}{\ignorespaces {DTW算法拉伸序列计算距离}}}{16}{subfigure.7.3}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces LDA的图模型表示\relax }}{18}{figure.caption.15}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces word2vec神经网络结构图\textsuperscript {\cite {mikolov2013efficient}}\relax }}{19}{figure.caption.16}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces word2vec神经网络层次结构图\relax }}{19}{figure.caption.17}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces 基于多层次多粒度轨迹的用户关系强度计算\relax }}{23}{figure.caption.19}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces 现实生活中的访问点示意图\relax }}{24}{figure.caption.20}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces 位置语义标签示意图\relax }}{26}{figure.caption.21}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces 语义标签识别示意图\relax }}{26}{figure.caption.22}
+\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {位置语义1}}}{26}{subfigure.4.1}
+\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {位置语义2}}}{26}{subfigure.4.2}
+\contentsline {subfigure}{\numberline {((c))}{\ignorespaces {位置语义3}}}{26}{subfigure.4.3}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces 语义标签结果示意图\relax }}{27}{figure.caption.23}
+\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {语义标签数据库标签示意图1}}}{27}{subfigure.5.1}
+\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {语义标签数据库标签示意图2}}}{27}{subfigure.5.2}
+\contentsline {subfigure}{\numberline {((c))}{\ignorespaces {反地理编码标签示意图}}}{27}{subfigure.5.3}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces 用户轨迹的抽象表示\relax }}{28}{figure.caption.24}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces 用户语义轨迹描述模型\relax }}{29}{figure.caption.25}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces 语义轨迹示意图\relax }}{29}{figure.caption.26}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces WiFi数据结构化表示示意图\relax }}{30}{figure.caption.27}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces WiFi上下文抽象化表示示意图\relax }}{30}{figure.caption.28}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces WiFi图结构抽象化表示\relax }}{31}{figure.caption.29}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces 蓝牙数据结构化表示示意图\relax }}{31}{figure.caption.30}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces 蓝牙数据上下文抽象化表示示意图\relax }}{32}{figure.caption.31}
+\contentsline {figure}{\numberline {3.14}{\ignorespaces 蓝牙数据图结构抽象化表示\relax }}{32}{figure.caption.32}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces 基于异构感知数据的用户关系强度计算框架图\relax }}{34}{figure.caption.34}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces RSCHD中基于用户轨迹计算模块详细框架图\relax }}{34}{figure.caption.35}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces 用户语义轨迹快速hash变换计算示意图\relax }}{37}{figure.caption.36}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces RSCHD中基于WiFi和蓝牙计算模块详细框架图\relax }}{39}{figure.caption.37}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces 计算结果融合示意图\relax }}{41}{figure.caption.38}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces 学生志愿者信息1\relax }}{43}{figure.caption.40}
+\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {性别分布}}}{43}{subfigure.1.1}
+\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {院系分布}}}{43}{subfigure.1.2}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces 学生志愿者信息2\relax }}{44}{figure.caption.41}
+\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {年级分布}}}{44}{subfigure.2.1}
+\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {实验室分布}}}{44}{subfigure.2.2}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces 学生志愿者数据采集说明\relax }}{45}{figure.caption.43}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces 轨迹中值滤波实验结果\relax }}{46}{figure.caption.44}
+\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始轨迹数据}}}{46}{subfigure.4.1}
+\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {中值滤波后的轨迹数据}}}{46}{subfigure.4.2}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces 轨迹均值滤波实验结果\relax }}{46}{figure.caption.45}
+\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始轨迹数据}}}{46}{subfigure.5.1}
+\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {均值滤波后的轨迹数据}}}{46}{subfigure.5.2}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces 卡尔曼滤波实验结果\relax }}{47}{figure.caption.46}
+\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始轨迹数据}}}{47}{subfigure.6.1}
+\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {卡尔曼滤波后的轨迹数据}}}{47}{subfigure.6.2}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces 分段卡尔曼滤波轨迹结果\relax }}{47}{figure.caption.47}
+\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始轨迹数据}}}{47}{subfigure.7.1}
+\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {分段卡尔曼滤波数据}}}{47}{subfigure.7.2}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces 访问点检测实验结果1\relax }}{47}{figure.caption.48}
+\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始轨迹数据}}}{47}{subfigure.8.1}
+\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {检测出的访问点}}}{47}{subfigure.8.2}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces 访问点检测实验结果2\relax }}{48}{figure.caption.49}
+\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始轨迹数据}}}{48}{subfigure.9.1}
+\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {检测出的访问点}}}{48}{subfigure.9.2}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces 基于K-means的轨迹聚类实验结果\relax }}{49}{figure.caption.50}
+\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始轨迹数据}}}{49}{subfigure.10.1}
+\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {参数k=3}}}{49}{subfigure.10.2}
+\contentsline {subfigure}{\numberline {((c))}{\ignorespaces {参数k=4}}}{49}{subfigure.10.3}
+\contentsline {subfigure}{\numberline {((d))}{\ignorespaces {参数k=5}}}{49}{subfigure.10.4}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces 基于K-means的轨迹聚类实验结果地图展示\relax }}{49}{figure.caption.51}
+\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始轨迹数据}}}{49}{subfigure.11.1}
+\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {参数k=3}}}{49}{subfigure.11.2}
+\contentsline {subfigure}{\numberline {((c))}{\ignorespaces {参数k=4}}}{49}{subfigure.11.3}
+\contentsline {subfigure}{\numberline {((d))}{\ignorespaces {参数k=5}}}{49}{subfigure.11.4}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces 基于DJ-Cluster的轨迹聚类实验结果\relax }}{50}{figure.caption.52}
+\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始轨迹数据}}}{50}{subfigure.12.1}
+\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {DJ-Cluster聚类结果}}}{50}{subfigure.12.2}
+\contentsline {figure}{\numberline {5.13}{\ignorespaces 基于DJ-Cluster的轨迹聚类实验结果地图展示\relax }}{50}{figure.caption.53}
+\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始轨迹数据}}}{50}{subfigure.13.1}
+\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {DJ-Cluster聚类结果}}}{50}{subfigure.13.2}
+\contentsline {figure}{\numberline {5.14}{\ignorespaces 轨迹聚类实验结果展示\relax }}{51}{figure.caption.54}
+\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始轨迹数据}}}{51}{subfigure.14.1}
+\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {聚类结果}}}{51}{subfigure.14.2}
+\contentsline {figure}{\numberline {5.15}{\ignorespaces 轨迹聚类实验结果地图表示\relax }}{51}{figure.caption.55}
+\contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始轨迹数据}}}{51}{subfigure.15.1}
+\contentsline {subfigure}{\numberline {((b))}{\ignorespaces {聚类结果}}}{51}{subfigure.15.2}
+\contentsline {figure}{\numberline {5.16}{\ignorespaces 志愿者关系图\relax }}{54}{figure.caption.57}
+\contentsline {figure}{\numberline {5.17}{\ignorespaces 基于不同时间粒度的实验结果\relax }}{56}{figure.caption.60}
+\contentsline {figure}{\numberline {5.18}{\ignorespaces 不同方法计算WiFi数据的实验结果\relax }}{58}{figure.caption.62}
+\contentsline {figure}{\numberline {5.19}{\ignorespaces 志愿者之间关系强度示意图\relax }}{59}{figure.caption.65}
+\contentsline {figure}{\numberline {5.20}{\ignorespaces 多源感知数据关系强度计算框架计算结果比较\relax }}{62}{figure.caption.66}
 \contentsfinish 

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2016.1.8)  6 DEC 2016 11:11
+This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2016.1.8)  9 DEC 2016 11:04
 entering extended mode
 **thesis
 (E:\Research_Study\nudtPaper\thesis.tex
@@ -1242,53 +1242,53 @@ LaTeX Warning: Label `fig:3_3_1_1' multiply defined.
 LaTeX Warning: Label `sub@fig:3_3_1_1' multiply defined.
 
 )
-LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 71.
-LaTeX Font Info:    Try loading font information for OML+txmi on input line 71.
+LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 73.
+LaTeX Font Info:    Try loading font information for OML+txmi on input line 73.
 
  (G:\CTEX\UserData\tex\latex\txfonts\omltxmi.fd
 File: omltxmi.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 71.
-LaTeX Font Info:    Try loading font information for OMS+txsy on input line 71.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 73.
+LaTeX Font Info:    Try loading font information for OMS+txsy on input line 73.
 
 
 (G:\CTEX\UserData\tex\latex\txfonts\omstxsy.fd
 File: omstxsy.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 71.
-LaTeX Font Info:    Try loading font information for OMX+txex on input line 71.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 73.
+LaTeX Font Info:    Try loading font information for OMX+txex on input line 73.
 
 
 (G:\CTEX\UserData\tex\latex\txfonts\omxtxex.fd
 File: omxtxex.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 71.
-LaTeX Font Info:    Try loading font information for U+txexa on input line 71.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 73.
+LaTeX Font Info:    Try loading font information for U+txexa on input line 73.
 
 (G:\CTEX\UserData\tex\latex\txfonts\utxexa.fd
 File: utxexa.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 71.
-LaTeX Font Info:    Try loading font information for T3+cmr on input line 71.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 73.
+LaTeX Font Info:    Try loading font information for T3+cmr on input line 73.
 
 (G:\CTEX\MiKTeX\tex\latex\tipa\t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
 
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -1334,7 +1334,7 @@ Package: ltcaption 2013/06/09 v1.4-94 longtable captions (AR)
 )
 Package caption Info: End \AtBeginDocument code.
 \AtBeginShipoutBox=\box51
-Package hyperref Info: Link coloring ON on input line 71.
+Package hyperref Info: Link coloring ON on input line 73.
 
 (G:\CTEX\MiKTeX\tex\latex\hyperref\nameref.sty
 Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
@@ -1344,9 +1344,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count364
 )
-LaTeX Info: Redefining \ref on input line 71.
-LaTeX Info: Redefining \pageref on input line 71.
-LaTeX Info: Redefining \nameref on input line 71.
+LaTeX Info: Redefining \ref on input line 73.
+LaTeX Info: Redefining \pageref on input line 73.
+LaTeX Info: Redefining \nameref on input line 73.
 
 (E:\Research_Study\nudtPaper\thesis.out)
 (E:\Research_Study\nudtPaper\thesis.out)
@@ -1375,39 +1375,39 @@ LaTeX Info: Redefining \nameref on input line 71.
 . <->"Adobe Kaiti Std/ICU:script=latn;language=DFLT;mapping=tex-text;"
 .................................................
 \c@lstlisting=\count366
-LaTeX Font Info:    Calculating math sizes for size <10.53937> on input line 78
+LaTeX Font Info:    Calculating math sizes for size <10.53937> on input line 80
 .
-LaTeX Font Info:    Try loading font information for OT1+txr on input line 78.
+LaTeX Font Info:    Try loading font information for OT1+txr on input line 80.
 
 (G:\CTEX\UserData\tex\latex\txfonts\ot1txr.fd
 File: ot1txr.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsya on input line 78.
+LaTeX Font Info:    Try loading font information for U+txsya on input line 80.
 
 (G:\CTEX\UserData\tex\latex\txfonts\utxsya.fd
 File: utxsya.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsyb on input line 78.
+LaTeX Font Info:    Try loading font information for U+txsyb on input line 80.
 
 (G:\CTEX\UserData\tex\latex\txfonts\utxsyb.fd
 File: utxsyb.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txmia on input line 78.
+LaTeX Font Info:    Try loading font information for U+txmia on input line 80.
 
 (G:\CTEX\UserData\tex\latex\txfonts\utxmia.fd
 File: utxmia.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsyc on input line 78.
+LaTeX Font Info:    Try loading font information for U+txsyc on input line 80.
 
 (G:\CTEX\UserData\tex\latex\txfonts\utxsyc.fd
 File: utxsyc.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `U/fsy/m/n' will be
-(Font)              scaled to size 9.48535pt on input line 78.
+(Font)              scaled to size 9.48535pt on input line 80.
 LaTeX Font Info:    Font shape `U/fsy/m/n' will be
-(Font)              scaled to size 6.63971pt on input line 78.
+(Font)              scaled to size 6.63971pt on input line 80.
 LaTeX Font Info:    Font shape `U/fsy/m/n' will be
-(Font)              scaled to size 4.74268pt on input line 78.
+(Font)              scaled to size 4.74268pt on input line 80.
 \g_fontspec_family_Adobe Fangsong Std_int=\count367
 .................................................
 . fontspec info: "no-font-shape"
@@ -1494,14 +1494,14 @@ LaTeX Font Info:    Font shape `U/fsy/m/n' will be
 . * 'normal' with NFSS spec.:
 . <->"STZhongsong/ICU:mapping=tex-text;"
 .................................................
-LaTeX Font Info:    Calculating math sizes for size <14.05249> on input line 78
+LaTeX Font Info:    Calculating math sizes for size <14.05249> on input line 80
 .
 LaTeX Font Info:    Font shape `U/fsy/m/n' will be
-(Font)              scaled to size 12.64714pt on input line 78.
+(Font)              scaled to size 12.64714pt on input line 80.
 LaTeX Font Info:    Font shape `U/fsy/m/n' will be
-(Font)              scaled to size 8.85295pt on input line 78.
+(Font)              scaled to size 8.85295pt on input line 80.
 LaTeX Font Info:    Font shape `U/fsy/m/n' will be
-(Font)              scaled to size 6.32356pt on input line 78.
+(Font)              scaled to size 6.32356pt on input line 80.
 .................................................
 . fontspec info: "defining-font"
 . 
@@ -1539,13 +1539,13 @@ File: se-ascii-print.def 2010/03/01 v1.8 stringenc: Printable ASCII characters
 ] [2
 
 ]
-LaTeX Font Info:    Calculating math sizes for size <16.06> on input line 78.
+LaTeX Font Info:    Calculating math sizes for size <16.06> on input line 80.
 LaTeX Font Info:    Font shape `U/fsy/m/n' will be
-(Font)              scaled to size 14.45389pt on input line 78.
+(Font)              scaled to size 14.45389pt on input line 80.
 LaTeX Font Info:    Font shape `U/fsy/m/n' will be
-(Font)              scaled to size 10.11768pt on input line 78.
+(Font)              scaled to size 10.11768pt on input line 80.
 LaTeX Font Info:    Font shape `U/fsy/m/n' will be
-(Font)              scaled to size 7.22694pt on input line 78.
+(Font)              scaled to size 7.22694pt on input line 80.
  [3
 
 ] [4
@@ -1675,22 +1675,14 @@ LaTeX Font Warning: Font shape `EU1/STZhongsong(0)/bx/n' undefined
 ] [2] [3] [4]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [5]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [6])
-(E:\Research_Study\nudtPaper\data/chap02_2.tex [7] [8
-
-]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [9
+ [5])
+(E:\Research_Study\nudtPaper\data/chap02_2.tex [6] [7
 
 
-]
-[10]
-File: figures/figure2_1_gps.png Graphic file (type QTm)
- <use  "figures/figure2_1_gps.png" >
+] [8]
+File: figures/figure2_1_gps_bak1.png Graphic file (type QTm)
+
+<use  "figures/figure2_1_gps_bak1.png" >
 .................................................
 . fontspec info: "defining-font"
 . 
@@ -1699,30 +1691,37 @@ File: figures/figure2_1_gps.png Graphic file (type QTm)
 . 
 . This font family consists of the following shapes:
 .................................................
- [11]
-File: figures/figure2_1cluster.png Graphic file (type QTm)
+ [9]
+File: figures/figure2_1cluster_bak1.png Graphic file (type QTm)
 
-<use  "figures/figure2_1cluster.png" >
+<use  "figures/figure2_1cluster_bak1.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [12]
+ [10]
 File: figures/figure2_2dbscan.png Graphic file (type QTm)
 
 <use  "figures/figure2_2dbscan.png" >
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[13]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [11]
 File: figures/science_p.png Graphic file (type QTm)
- <use  "figures/science_p.png" >
+
+<use  "figures/science_p.png" >
 File: figures/science_orpints.png Graphic file (type QTm)
  <use  "figures/science_orpints.png" >
 File: figures/science_canshu.png Graphic file (type QTm)
 
-<use  "figures/science_canshu.png" > [14]
+<use  "figures/science_canshu.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [15]
+ [12]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [13]
 File: figures/figure2_1_turnTra.png Graphic file (type QTm)
 
 <use  "figures/figure2_1_turnTra.png" >
@@ -1731,7 +1730,7 @@ File: figures/figure2_1_Center_of_mass.png Graphic file (type QTm)
 <use  "figures/figure2_1_Center_of_mass.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [16]
+ [14]
 Missing character: There is no … in font txr!
 Missing character: There is no … in font txr!
 Missing character: There is no … in font txr!
@@ -1739,7 +1738,7 @@ Missing character: There is no … in font txr!
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [17]
+ [15]
 File: figures/dtw-1.png Graphic file (type QTm)
 
 <use  "figures/dtw-1.png" >
@@ -1750,38 +1749,38 @@ File: figures/dtw-3.png Graphic file (type QTm)
 <use  "figures/dtw-3.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [18]
+ [16]
 File: figures/figure2_6_lda.png Graphic file (type QTm)
 
 <use  "figures/figure2_6_lda.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [19]
+ [17]
 File: figures/figure2_7_cdow.png Graphic file (type QTm)
 
 <use  "figures/figure2_7_cdow.png" >
-File: figures/figure2_7_w2cmodel_bak1.png Graphic file (type QTm)
+File: figures/figure2_7_w2cmodel_bak2.png Graphic file (type QTm)
 
-<use  "figures/figure2_7_w2cmodel_bak1.png" > [20]
+<use  "figures/figure2_7_w2cmodel_bak2.png" > [18]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [21]
-[22] [23] [24
+ [19]
+[20] [21] [22
 
 ]
-File: figures/figure4_2.png Graphic file (type QTm)
- <use  "figures/figure4_2.png" >
+File: figures/figure4_2_bak1.png Graphic file (type QTm)
+ <use  "figures/figure4_2_bak1.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [25
+ [23
 
 
 ]
-File: figures/figure_4_stay-points.png Graphic file (type QTm)
+File: figures/figure_4_stay-points_bak1.png Graphic file (type QTm)
 
-<use  "figures/figure_4_stay-points.png" >
+<use  "figures/figure_4_stay-points_bak1.png" >
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 339.
+put line 341.
 .................................................
 . fontspec info: "defining-font"
 . 
@@ -1790,15 +1789,20 @@ put line 339.
 . 
 . This font family consists of the following shapes:
 .................................................
-File: figures/figure_4_stay-point_semantic.png Graphic file (type QTm)
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'AdobeSongStd(0)' created for font 'Adobe Song Std' with options
+. [Mapping=tex-text,BoldFont={Adobe Heiti Std},ItalicFont={Adobe Kaiti Std}].
+. 
+. This font family consists of the following shapes:
+.................................................
+File: figures/figure_4_stay-point_semantic_bak1.png Graphic file (type QTm)
 
-<use  "figures/figure_4_stay-point_semantic.png" >
+<use  "figures/figure_4_stay-point_semantic_bak1.png" > [24]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [26]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [27]
+ [25]
 File: figures/figure4_matchlabel_a.png Graphic file (type QTm)
 
 <use  "figures/figure4_matchlabel_a.png" >
@@ -1819,32 +1823,32 @@ File: figures/figure4_map_label3.png Graphic file (type QTm)
 <use  "figures/figure4_map_label3.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
+ [26]
+File: figures/figure4_tra_model_bak2.png Graphic file (type QTm)
+
+<use  "figures/figure4_tra_model_bak2.png" >
+File: figures/figure4_semantic_model_bak1.png Graphic file (type QTm)
+
+<use  "figures/figure4_semantic_model_bak1.png" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [27]
+File: figures/figure4_tra_semantic_model_bak1.png Graphic file (type QTm)
+
+<use  "figures/figure4_tra_semantic_model_bak1.png" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [28]
-File: figures/figure4_tra_model_bak1.png Graphic file (type QTm)
+File: figures/figure4_wifimodel_bak2.png Graphic file (type QTm)
 
-<use  "figures/figure4_tra_model_bak1.png" >
-File: figures/figure4_semantic_model.png Graphic file (type QTm)
-
-<use  "figures/figure4_semantic_model.png" >
+<use  "figures/figure4_wifimodel_bak2.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [29]
-File: figures/figure4_tra_semantic_model.png Graphic file (type QTm)
-
-<use  "figures/figure4_tra_semantic_model.png" >
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [30]
-File: figures/figure4_wifimodel_bak1.png Graphic file (type QTm)
-
-<use  "figures/figure4_wifimodel_bak1.png" >
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [31]
 File: figures/figure4_wifi_context_bak1.png Graphic file (type QTm)
 
 <use  "figures/figure4_wifi_context_bak1.png" >
-Overfull \hbox (4.87192pt too wide) in paragraph at lines 455--462
+Overfull \hbox (4.87192pt too wide) in paragraph at lines 459--466
 \xeCJK@song/m/n/12.045 息，| $\OML/txmi/m/it/12.045 WiFi context \OT1/txr/m/n
 /12.045 = \OMS/txsy/m/n/12.045 f\OT1/txr/m/n/12.045 (\OML/txmi/m/it/12.045 SSID
 []; BSSID[]; level[]; state[]; time[]\OT1/txr/m/n/12.045 ) [] (\OML/txmi/m/it/1
@@ -1853,115 +1857,93 @@ Overfull \hbox (4.87192pt too wide) in paragraph at lines 455--462
 
 File: figures/figure4_wifi_context_graph_bak1.png Graphic file (type QTm)
 <use  "figures/figure4_wifi_context_graph_bak1.png" >
-File: figures/figure4_Bluetoothmodel_bak1.png Graphic file (type QTm)
+File: figures/figure4_Bluetoothmodel_bak2.png Graphic file (type QTm)
 
-<use  "figures/figure4_Bluetoothmodel_bak1.png" >
+<use  "figures/figure4_Bluetoothmodel_bak2.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [32]
+ [30]
 File: figures/figure4_Bluetooth_contex_bak1.png Graphic file (type QTm)
 
 <use  "figures/figure4_Bluetooth_contex_bak1.png" >
 File: figures/figure4_Bluetooth_contex_graph_bak1.png Graphic file (type QTm)
 
-<use  "figures/figure4_Bluetooth_contex_graph_bak1.png" > [33] [34]
-File: figures/figure7_1_RSMHD_bak1.png Graphic file (type QTm)
+<use  "figures/figure4_Bluetooth_contex_graph_bak1.png" > [31] [32]
+File: figures/figure7_1_RSCHD_bak3.png Graphic file (type QTm)
 
-<use  "figures/figure7_1_RSMHD_bak1.png" >
-File: figures/figure7_1_tra_bak1.png Graphic file (type QTm)
+<use  "figures/figure7_1_RSCHD_bak3.png" >
+File: figures/figure7_1_tra_bak2.png Graphic file (type QTm)
 
-<use  "figures/figure7_1_tra_bak1.png" > [35
+<use  "figures/figure7_1_tra_bak2.png" > [33
 
 
 ]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [34]
+Missing character: There is no 、 in font txr!
+Missing character: There is no 、 in font txr!
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [35]
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'AdobeSongStd(0)' created for font 'Adobe Song Std' with options
+. [Mapping=tex-text,BoldFont={Adobe Heiti Std},ItalicFont={Adobe Kaiti Std}].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'AdobeSongStd(0)' created for font 'Adobe Song Std' with options
+. [Mapping=tex-text,BoldFont={Adobe Heiti Std},ItalicFont={Adobe Kaiti Std}].
+. 
+. This font family consists of the following shapes:
+.................................................
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [36]
-Missing character: There is no 、 in font txr!
-Missing character: There is no 、 in font txr!
+File: figures/figure5_quick_hash_bak2.png Graphic file (type QTm)
 
+<use  "figures/figure5_quick_hash_bak2.png" > [37]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [37]
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'AdobeSongStd(0)' created for font 'Adobe Song Std' with options
-. [Mapping=tex-text,BoldFont={Adobe Heiti Std},ItalicFont={Adobe Kaiti Std}].
-. 
-. This font family consists of the following shapes:
-.................................................
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'AdobeSongStd(0)' created for font 'Adobe Song Std' with options
-. [Mapping=tex-text,BoldFont={Adobe Heiti Std},ItalicFont={Adobe Kaiti Std}].
-. 
-. This font family consists of the following shapes:
-.................................................
+ [38]
+File: figures/figure_3_RSCHDwifibluee_bak2.png Graphic file (type QTm)
 
-[38]
-File: figures/figure5_quick_hash_bak1.png Graphic file (type QTm)
- <use  "figures/figure5_quick_hash_bak1.png" > [39]
+<use  "figures/figure_3_RSCHDwifibluee_bak2.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [40]
-File: figures/figure_3_RSMHDwifibluee_bak1.png Graphic file (type QTm)
+ [39]
+[40]
+File: figures/figure5_ronghe_bak3.png Graphic file (type QTm)
+ <use  "figures/figure5_ronghe_bak3.png" > [41] [42]
+File: figures/figure5_sex_1.png Graphic file (type QTm)
 
-<use  "figures/figure_3_RSMHDwifibluee_bak1.png" >
+<use  "figures/figure5_sex_1.png" >
+File: figures/figure5_academy_1.png Graphic file (type QTm)
+ <use  "figures/figure5_academy_1.png" >
+File: figures/figure5_class_1.png Graphic file (type QTm)
+
+<use  "figures/figure5_class_1.png" >
+File: figures/figure5_lab_1.png Graphic file (type QTm)
+ <use  "figures/figure5_lab_1.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [41]
-
-LaTeX Warning: Command \O invalid in math mode on input line 602.
-
-Missing character: There is no Ø in font txmi!
-
-LaTeX Warning: Command \O invalid in math mode on input line 602.
-
-Missing character: There is no Ø in font txmi!
-[42]
-
-LaTeX Warning: Command \O invalid in math mode on input line 608.
-
-Missing character: There is no Ø in font txmi!
-
-LaTeX Warning: Command \O invalid in math mode on input line 608.
-
-Missing character: There is no Ø in font txmi!
-File: figures/figure5_ronghe_bak2.png Graphic file (type QTm)
-<use  "figures/figure5_ronghe_bak2.png" > [43] [44]
-File: figures/figure5_sex.png Graphic file (type QTm)
-
-<use  "figures/figure5_sex.png" >
-File: figures/figure5_academy.png Graphic file (type QTm)
- <use  "figures/figure5_academy.png" >
-File: figures/figure5_class.png Graphic file (type QTm)
-
-<use  "figures/figure5_class.png" >
-File: figures/figure5_lab.png Graphic file (type QTm)
- <use  "figures/figure5_lab.png" >
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'AdobeSongStd(0)' created for font 'Adobe Song Std' with options
-. [Mapping=tex-text,BoldFont={Adobe Heiti Std},ItalicFont={Adobe Kaiti Std}].
-. 
-. This font family consists of the following shapes:
-.................................................
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [45
+ [43
 
 
 ]
-File: figures/figure5_userNum.png Graphic file (type QTm)
+File: figures/figure5_userNum_bak1.png Graphic file (type QTm)
 
-<use  "figures/figure5_userNum.png" >
+<use  "figures/figure5_userNum_bak1.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [46]
+ [44]
 File: figures/figure_4_mid_location1.png Graphic file (type QTm)
 
 <use  "figures/figure_4_mid_location1.png" >
@@ -1973,7 +1955,7 @@ File: figures/figure_4_mid_location1.png Graphic file (type QTm)
 <use  "figures/figure_4_mid_location1.png" >
 File: figures/figure_4_mid_location1_avg.png Graphic file (type QTm)
 
-<use  "figures/figure_4_mid_location1_avg.png" > [47]
+<use  "figures/figure_4_mid_location1_avg.png" > [45]
 File: figures/figure_4_mid_location1.png Graphic file (type QTm)
 
 <use  "figures/figure_4_mid_location1.png" >
@@ -2000,10 +1982,10 @@ File: figures/figure_4_location2_sp.png Graphic file (type QTm)
 <use  "figures/figure_4_location2_sp.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [48]
+ [46]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [49]
+ [47]
 File: figures/figure4_tra1.png Graphic file (type QTm)
 
 <use  "figures/figure4_tra1.png" >
@@ -2029,10 +2011,10 @@ File: figures/figure4_tra1_map_k5.png Graphic file (type QTm)
 <use  "figures/figure4_tra1_map_k5.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [50]
+ [48]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [51]
+ [49]
 File: figures/figure4_tra_for_dj_2.png Graphic file (type QTm)
 
 <use  "figures/figure4_tra_for_dj_2.png" >
@@ -2047,7 +2029,7 @@ File: figures/figure4_tra_map_result_dj_2.png Graphic file (type QTm)
 <use  "figures/figure4_tra_map_result_dj_2.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [52]
+ [50]
 File: figures/figure4_tra_for_science1.png Graphic file (type QTm)
 
 <use  "figures/figure4_tra_for_science1.png" >
@@ -2062,93 +2044,82 @@ File: figures/figure4_tra_map_result_science1.png Graphic file (type QTm)
 <use  "figures/figure4_tra_map_result_science1.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [53]
-Overfull \hbox (6.5319pt too wide) in alignment at lines 965--998
+ [51]
+Overfull \hbox (6.5319pt too wide) in alignment at lines 973--1033
 [][] 
  []
 
 File: figures/figure5_survey_relation.png Graphic file (type QTm)
-<use  "figures/figure5_survey_relation.png" > [54]
+<use  "figures/figure5_survey_relation.png" > [52]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [53]
+File: figures/figure5_Fscore.png Graphic file (type QTm)
+
+<use  "figures/figure5_Fscore.png" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [54]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [55]
-Overfull \hbox (49.48029pt too wide) in paragraph at lines 1026--1058
- [][] 
- []
-
-File: figures/figure5_Fscore.png Graphic file (type QTm)
-<use  "figures/figure5_Fscore.png" > [56]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [57]
-Overfull \hbox (54.74619pt too wide) in paragraph at lines 1098--1130
- [][] 
- []
-
+ [56]
 File: figures/figure5_cosgraph.png Graphic file (type QTm)
+
 <use  "figures/figure5_cosgraph.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [58]
-[59]
-Overfull \hbox (49.48029pt too wide) in paragraph at lines 1147--1179
- [][] 
- []
+ [57]
+[58]
+File: figures/figure5_RSCHD_graph.png Graphic file (type QTm)
+ <use  "figures/figure5_RSCHD_graph.png" >
+File: figures/figure5_RSCHD.png Graphic file (type QTm)
 
+<use  "figures/figure5_RSCHD.png" > [59]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Overfull \hbox (49.48029pt too wide) in paragraph at lines 1187--1219
- [][] 
- []
-
-File: figures/figure5_rsmhd_graph.png Graphic file (type QTm)
-<use  "figures/figure5_rsmhd_graph.png" >
-File: figures/figure5_rsmhd.png Graphic file (type QTm)
- <use  "figures/figure5_rsmhd.png" >
-[60] [61]
+ [60]
+[61]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [62]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [63]
-[64
+ [63
 
-]
+
+])
+(E:\Research_Study\nudtPaper\data/ack.tex [64]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [65
 
-
 ])
-(E:\Research_Study\nudtPaper\data/ack.tex [66]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [67
-
-])
-[68] (E:\Research_Study\nudtPaper\thesis.bbl [69
+[66] (E:\Research_Study\nudtPaper\thesis.bbl [67
 
 
-] [70] [71]
+] [68] [69]
 Underfull \hbox (badness 3189) in paragraph at lines 289--293
 []\EU1/TimesNewRoman(0)/m/n/12.045 Singelis T M. The measurement of independent
  and interdependent self-
  []
 
-[72]) (E:\Research_Study\nudtPaper\data/resume.tex [73] [74
+[70]) (E:\Research_Study\nudtPaper\data/resume.tex [71] [72
 
-]) [75
+]) [73
 
-] [76
+] [74
 
 ]
 \tf@thm=\write8
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 104.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 104.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 106.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 106.
 
 (E:\Research_Study\nudtPaper\thesis.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 104.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 104.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 106.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 106.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -2158,12 +2129,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 27221 strings out of 430478
- 492291 string characters out of 3191503
- 560353 words of memory out of 3000000
- 29833 multiletter control sequences out of 15000+200000
- 68254 words of font info for 274 fonts, out of 3000000 for 9000
+ 27234 strings out of 430478
+ 492697 string characters out of 3191503
+ 561373 words of memory out of 3000000
+ 29845 multiletter control sequences out of 15000+200000
+ 68262 words of font info for 275 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 51i,16n,85p,1248b,960s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 51i,17n,85p,1237b,966s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on thesis.pdf (92 pages).
+Output written on thesis.pdf (90 pages).
