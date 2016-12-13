@@ -114,7 +114,7 @@ E=\sum_{i=1}^{k}\sum_{p\subset C}^{p}{\left | p-m_{i} \right |^{2}}
 \caption{DBSCAN密度直达和密度可达示意图}
 \label{fig:figure2_2dbscan}
 \end{figure}
-\par Rodriguez A等人2014年在Science上发表了一种新的基于密度的聚类算法\upcite{rodriguez2014clustering}。该算法相比较于之前的聚类算法，具有对参数不敏感便于输出正确的聚类结果的有点。该算法的主要改进想法是针对所有待聚类的组标点基于它们之间的距离，提出了两个新的标准属性：$\rho$和$\delta$，基于聚类中心点具有：中心点自身的密度大，即它的密度超过邻域集合点的密度同时距离其它密度大的中心点之间的距离也足够大这样的特征，其中局部密度$\rho$采用Cut-off kernel计算方式，公式如\ref{equ:chap2:Cut-off-kernel}所示,其中$p_{i}$表示S中与数据点$x_{i}$距离小于$d_{c}$的点的数量；$d_{c}$为截断距离需要用户事先设定并且保证$d_{c} >0$。
+\par Rodriguez A等人2014年在《Science》上发表了一种新的基于密度的聚类算法\upcite{rodriguez2014clustering}。该算法相比较于之前的聚类算法，具有对参数不敏感便于输出正确的聚类结果的有点。该算法的主要改进想法是针对所有待聚类的组标点基于它们之间的距离，提出了两个新的标准属性：$\rho$和$\delta$，基于聚类中心点具有：中心点自身的密度大，即它的密度超过邻域集合点的密度同时距离其它密度大的中心点之间的距离也足够大这样的特征，其中局部密度$\rho$采用Cut-off kernel计算方式，公式如\ref{equ:chap2:Cut-off-kernel}所示,其中$p_{i}$表示S中与数据点$x_{i}$距离小于$d_{c}$的点的数量；$d_{c}$为截断距离需要用户事先设定并且保证$d_{c} >0$。
 \begin{equation}
 \label{equ:chap2:Cut-off-kernel}
 \rho_{i}=\sum_{j \in I_{s}\setminus {i}}^{ }\chi (d_{ij}-d_{c})
@@ -252,7 +252,7 @@ word2vec是Google在2013年开源的一种词向量计算算法\upcite{mikolov20
 \label{equ:chap2:word2vec_01}
 p(w_{t}|context)=p(w_{t}|w_{t-k},w_{t-k+1},\cdots ,w_{t-1},w_{t+1},\cdots w_{t+k})
 \end{equation}
-\par 现在的CBOW计算采用层次的Softmax算法，每个单词$w_{i}$都可以有一条从根节点出发被唯一访问到的路径，这条路径就形成了词语的编码。
+\par CBOW计算采用层次的Softmax算法，每个单词$w_{i}$都可以有一条从根节点出发被唯一访问到的路径，这条路径就形成了词语的编码。
 \begin{figure}[htp]
 \centering
 \includegraphics[width=0.8\textwidth]{figure2_7_cdow}
@@ -275,20 +275,22 @@ L=\sum_{w\in C}\sum_{j=2}^{Num^{w}}\{(1-w_{j})log[\sigma(v_{w}^{T}\theta_{j-1}^{
 基于word2vec的计算方法针对文档的分词结果，再根据神经网络模型计算得到每个词的向量表示，但是这样无疑增加了整个计算过程的时间复杂度，本文研究目的是能够为众多用户提供一种计算关系强度的框架，因此如果采用传统的Hash算法进行处理，则能够减少程序的运行时间，来自于GoogleMoses Charikar针对海量文档快速计算相似计算提出了一种局部敏感hash算法\upcite{manku2007detecting},其核心内容恰巧和word2vec相反：希望将数据进行降维处理，将原始的高维词向量通过一系列运算映射到低维的词向量，最后来计算相似性。
 \par 以上介绍了几种方法在自然语言处理中都得到了广泛的应用，因此综合考虑使用最后一种方法来作为计算方法， 在后面还会详细讲解如何使用hash来度量用户之间的关系强度，以及在不同处理方法之间进行横向和纵向的比较。
 \section{WiFi感知数据的度量方法}
+\label{sec:section2-4}
 WiFi和蓝牙作为一种主动对外界感知和探索所得到的感知信息，已经证实能够被用来分析用户之间的社交关系。文献\cite{hsu2007mining}通过收集到用户的WiFi数据，然后将用户的WiFi数据同现实语义位置进行关联，得到了WiFi的语义向量，这样就能够得到基于WiFi的用户活动轨迹序列，提出了一种新的模型AMVD(average minimum vector distance)来计算人与人之间的距离，其计算公式如\ref{equ:chap2:amvd}所示，其中$a_{i}$和$b_{j}$ 表示用户A和用户B之间的联合向量，$d(a_{i},b_{j})$表示计算二者向量之间的曼哈顿距离。
 \begin{equation}
 \label{equ:chap2:amvd}
 AMVD(A,B)=\frac{1}{\left | A \right |}\sum_{\forall a_{i} \in A}^{ }  \mathop{\arg\min}_{\forall b_{j} \in B} d(a_{i},b_{j})
 \end{equation}
 \section{蓝牙感知数据的度量方法}
+\label{sec:section2-5}
 蓝牙数据和GPS轨迹数据都能够推测出用户之间的交互行为，蓝牙作为一种近距离的无线通讯手段，收到波长影响使得通讯距离只能是5-10米内，因此蓝牙感知数据能够进一步描述了用户之间在现实生活中的物理接触。前人的研究中，有根据蓝牙信息来简单计算出用户在现实空间中的面对面交互次数如公式\ref{equ:chap2:amvdbluetooth}，从而推测出用户的社会关系情况\upcite{eagle2009inferring,zheng2013unsupervised}。在本文中，我们使用了新的数据结构来表示用户的WiFi、蓝牙感知数据，同时直接计算其感知上下文环境信息的相似度作为用户之间环境的相似度的参照。
 \begin{equation}
 \label{equ:chap2:amvdbluetooth}
 RSBD(A,B)=\sum_{t_{i} \in D}^{ } Wt_{i} \mathop{interactive(a_{i},b_{j})}_{\forall a_{i} \in A \forall b_{j} \in B}
 \end{equation}
 \section{小结}
-\label{sec:section2-4}
-本章详细的从本课题研究的三个数据源出发对不同数据源的研究方法、现状进行了详细的分析和讨论。2.1节讨论了在用户原始GPS 轨迹数据处理中要解决的三个主要问题：剔除异常点、用户轨迹访问点以及空间轨迹的聚类。2.2节则是介绍了计算用户轨迹序列相似度的常用方法，并以此结果作为用户的关系强度计算结果。2.3节从自然语言处理的角度介绍了常用的文档相似性检测计算方法，为计算用户语义轨迹的相似度提供了可行性算法。2.4节从WiFi和蓝牙数据处理计算角度出发，介绍了前人研究的计算方法理论，为本研究中所采取的基于上下文环境的计算方式作出铺垫。
+\label{sec:section2-6}
+本章详细的从本课题研究的异构数据出发对不同数据源的研究方法、现状进行了详细的分析和讨论。节\ref{sec:section2-1}讨论了在用户原始GPS 轨迹数据处理中要解决的三个主要问题：剔除异常点、用户轨迹访问点以及空间轨迹的聚类。节\ref{sec:section2-2}则是介绍了计算用户轨迹序列相似度的常用方法，并以此结果作为用户的关系强度计算结果。节\ref{sec:section2-3}从自然语言处理的角度介绍了常用的文档相似性检测计算方法，为计算用户语义轨迹的相似度提供了可行性算法。节\ref{sec:section2-4}，\ref{sec:section2-5}从WiFi 和蓝牙数据处理计算角度出发，介绍了前人研究的计算方法理论，为本研究中所采取的基于上下文环境的计算方式作出铺垫。
 
 
 \chapter{异构感知数据的结构化描述和处理}
@@ -434,7 +436,7 @@ RSBD(A,B)=\sum_{t_{i} \in D}^{ } Wt_{i} \mathop{interactive(a_{i},b_{j})}_{\fora
 \begin{figure}[htp]
 \centering
 %\includegraphics[height=7.5cm,width=0.7\textwidth]{figure4_semantic_model_bak2}
-\includegraphics[width=0.5\textwidth]{figure4_semantic_model_bak2}
+\includegraphics[width=0.5\textwidth]{figure4_semantic_model_bak3}
 \caption{用户语义轨迹描述模型}
 \label{fig:semantic_model}
 \end{figure}
@@ -693,7 +695,7 @@ RS_{Bth}(u_{i},u_{j})=\sum_{x ,y }^{ Date_{i}, Date_{j}}W_{i,j,x,y,s,t}\sum_{s,t
 	%% Some packages, such as MDW tools, offer better commands for making tables
 	%% than the plain LaTeX2e tabular which is used here.
 	\begin{tabular}{p{4cm} p{4cm} p{4cm}}
-   
+
 		%\toprule[1.5pt]
 		\textbf{数据种类} & \textbf{上下文源} & \textbf{数据类型} \\
 		\hline
@@ -968,6 +970,7 @@ RS_{Bth}(u_{i},u_{j})=\sum_{x ,y }^{ Date_{i}, Date_{j}}W_{i,j,x,y,s,t}\sum_{s,t
 \begin{table}[htb]
 \wuhao
   \centering
+  \begin{threeparttable}
   \begin{minipage}[t]{0.8\linewidth} % 如果想在表格中使用脚注，minipage是个不错的办法
   \caption[志愿者的关系强度问卷表]{志愿者之间的关系强度问卷表}
   \label{tab:truthresult}
@@ -1009,7 +1012,7 @@ RS_{Bth}(u_{i},u_{j})=\sum_{x ,y }^{ Date_{i}, Date_{j}}W_{i,j,x,y,s,t}\sum_{s,t
       \hline
       \mbox{$u_{17} $}& \mbox{$< u_{12},u_{5},u_{21},u_{20},u_{19},u_{13}   >$}\\
       \hline
-      \mbox{$u_{18} $}&\mbox{$ -$}\\
+      \mbox{$u_{18} $}&\mbox{$ -$ \tnote{1}}\\
       \hline
       \mbox{$u_{19} $}&\mbox{$ <u_{3},u_{20},u_{13}>$}\\
       \hline
@@ -1032,15 +1035,15 @@ RS_{Bth}(u_{i},u_{j})=\sum_{x ,y }^{ Date_{i}, Date_{j}}W_{i,j,x,y,s,t}\sum_{s,t
       \mbox{$u_{28}$} &\mbox{$ <u_{26},u_{25}>$}\\
       \bottomrule[1.5pt]
     \end{tabular*}
+     \begin{tablenotes}
+        \footnotesize
+        \item[1] $-$ 表示用户$u_{i}$没有对志愿者中其他用户进行关系强度排序，故结果为空。
+      \end{tablenotes}
   \end{minipage}
+  \end{threeparttable}
 \end{table}
 \par 根据志愿者在自我意识形态下对志愿者之间的关系排序后的结果表\ref{tab:truthresult}，我们可以得到用户关系图表示，如下图\ref{fig:survey_relation}所示，其中孤立点表示没有填写关系强度排序问卷的志愿者。
-\begin{figure}[htb]
-\centering
-\includegraphics[width=0.9\textwidth]{figure5_survey_relation}
-\caption{志愿者关系图}
-\label{fig:survey_relation}
-\end{figure}
+bb
 \subsection{实验结果评价方法}
 在前面的章节介绍中我们通过志愿者根据主观意愿填写的用户关系排序表可以得到志愿者自身和其他志愿者之间的一个关系强度序列$rsq_{t}$，同时基于多源感知数据关系强度计算模型我们能够得到用户之间关系强度值经过排序后输出一个关系强度序列$rsq_{m}$。因此，我们对实验结果的评价的关键问题在于如何通过比较$rsq_{t}$和$rsq_{m}$的序列相似性来评价RSCHD模型计算结果。
 \par 传统的最长公共子串的序列相似计算方法在本研究中因受限于用户问卷关系序列的长度影响，导致计算结果依赖于用户的初始化关系强度序列长度。我们采用基于序列熵的计算序列$rsq_{t}$和序列$rsq_{m}$ 的全局一致性度量方法。首先我们求出$rsq_{t}$和$rsq_{m}$的最长公共子串$LCS(rsq_{t},rsq_{m})=s_{1}s_{2}\cdots s_{n}$，假设$s_{r}(1\leqslant r \leqslant n)$与$rsq_{t}$和$rsq_{m}$中对应的用户标识是$rsq_{tr}$和$rsq_{mr}$，则评价函数$F(rsq_{t},rsq_{m})$的计算如公式\ref{equ:chap5:Score}所示。
