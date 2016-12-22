@@ -86,8 +86,9 @@
 \contentsline {figure}{\numberline {5.15}{\ignorespaces 轨迹聚类实验结果地图表示\relax }}{51}{figure.caption.55}
 \contentsline {subfigure}{\numberline {((a))}{\ignorespaces {原始轨迹数据}}}{51}{subfigure.15.1}
 \contentsline {subfigure}{\numberline {((b))}{\ignorespaces {聚类结果}}}{51}{subfigure.15.2}
-\contentsline {figure}{\numberline {5.16}{\ignorespaces 基于不同时间粒度的实验结果\relax }}{56}{figure.caption.60}
-\contentsline {figure}{\numberline {5.17}{\ignorespaces 不同方法计算WiFi数据的实验结果\relax }}{58}{figure.caption.62}
-\contentsline {figure}{\numberline {5.18}{\ignorespaces 志愿者之间关系强度示意图\relax }}{61}{figure.caption.65}
-\contentsline {figure}{\numberline {5.19}{\ignorespaces 多源感知数据关系强度计算框架计算结果比较\relax }}{61}{figure.caption.66}
+\contentsline {figure}{\numberline {5.16}{\ignorespaces 志愿者关系图\relax }}{54}{figure.caption.58}
+\contentsline {figure}{\numberline {5.17}{\ignorespaces 基于不同时间粒度的实验结果\relax }}{56}{figure.caption.61}
+\contentsline {figure}{\numberline {5.18}{\ignorespaces 不同方法计算WiFi数据的实验结果\relax }}{58}{figure.caption.63}
+\contentsline {figure}{\numberline {5.19}{\ignorespaces 志愿者之间关系强度示意图\relax }}{59}{figure.caption.66}
+\contentsline {figure}{\numberline {5.20}{\ignorespaces 异构感知数据关系强度计算框架计算结果比较\relax }}{62}{figure.caption.67}
 \contentsfinish 

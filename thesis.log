@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2016.1.8)  13 DEC 2016 15:23
+This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2016.1.8)  22 DEC 2016 15:24
 entering extended mode
 **thesis
 (E:\Research_Study\nudtPaper\thesis.tex
@@ -2068,11 +2068,8 @@ LaTeX Font Info:    Font shape `U/fsy/m/n' will be
 . 
 . This font family consists of the following shapes:
 .................................................
-
-LaTeX Warning: Reference `fig:survey_relation' on page 52 undefined on input li
-ne 1045.
-
-[52]
+File: figures/figure5_survey_relation.png Graphic file (type QTm)
+<use  "figures/figure5_survey_relation.png" > [52]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [53]
@@ -2084,26 +2081,26 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [55]
 File: figures/figure5_cosgraph.png Graphic file (type QTm)
 
-<use  "figures/figure5_cosgraph.png" > [56]
+<use  "figures/figure5_cosgraph.png" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [56]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [57]
-File: figures/figure5_RSCHD_graph.png Graphic file (type QTm)
-
-<use  "figures/figure5_RSCHD_graph.png" >
-File: figures/figure5_RSCHD.png Graphic file (type QTm)
- <use  "figures/figure5_RSCHD.png" >
 [58]
+File: figures/figure5_RSCHD_graph.png Graphic file (type QTm)
+ <use  "figures/figure5_RSCHD_graph.png" >
+File: figures/figure5_RSCHD.png Graphic file (type QTm)
+
+<use  "figures/figure5_RSCHD.png" > [59]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [59]
-[60]
+ [60]
+[61]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [61]
-[62
-
-]
+ [62]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [63
@@ -2144,17 +2141,14 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 107.
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 
-LaTeX Warning: There were undefined references.
-
-
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 27337 strings out of 430478
- 494258 string characters out of 3191503
- 573549 words of memory out of 3000000
- 29943 multiletter control sequences out of 15000+200000
+ 27339 strings out of 430478
+ 494320 string characters out of 3191503
+ 562592 words of memory out of 3000000
+ 29944 multiletter control sequences out of 15000+200000
  84026 words of font info for 324 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  51i,20n,85p,1237b,966s stack positions out of 5000i,500n,10000p,200000b,50000s
